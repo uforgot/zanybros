@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Zanybros</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script src="assets/js/vendor/modernizr.js"></script>
+    <script src="assets/js/vendor/detectizr.js"></script>
+    <script>
+        Detectizr.detect({detectScreen:false});
+    </script>
+</head>
+<body>
+
+<div id="app" class="wrap" >
+    <navigation data-navigation-url="assets/data/navigation.json"></navigation>
+    <router-view></router-view>
+</div>
+
+
+<script src="assets/js/app.bundle.js"></script>
+
+
+
+</body>
+</html>
