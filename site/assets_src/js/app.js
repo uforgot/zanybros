@@ -21,6 +21,6 @@ const app = new Vue({
     },
 
     created:function(){
-
+        console.log('sss');
     }
 });

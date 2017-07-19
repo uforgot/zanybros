@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.css
+*.map
+
+
+#/.gitignore
+/node_modules/
+/.idea/
+/site/assets/

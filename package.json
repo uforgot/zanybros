@@ -1,5 +1,5 @@
 {
-  "name": "zanybros_2017",
+  "name": "zanybros",
   "version": "0.0.1",
   "scripts": {
     "start": "webpack --watch",
