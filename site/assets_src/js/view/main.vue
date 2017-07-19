@@ -4,12 +4,19 @@
 
 <template>
     <div class="container">
-        main
+        <image-frame width="100%" data-img="assets/images/main/sample1.jpg"></image-frame>
     </div>
 </template>
 
 <script>
+    import compImageFrame from '../component/imageFrame.vue'
+
     export default {
+        components:{
+            "image-frame": compImageFrame
+        },
+
+
         created() {
 
         }

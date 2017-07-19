@@ -6,6 +6,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import router from './router';
 
+require('./bootstrap');
+
 Vue.use(VueRouter);
 
 const app = new Vue({
@@ -21,6 +23,6 @@ const app = new Vue({
     },
 
     created:function(){
-        console.log('sss');
+
     }
 });

@@ -5,13 +5,62 @@
 
 body { background:#000; font-family:"Gotham-Ultra"; color:#fff;}
 
-.navigation {position:absolute; background:#fff; color:#000; width:320px; height:100%; left:-320px; z-index:1000;}
-.navigation.show {left:0;}
-.navigation .logo {position:absolute; left:46px; top:46px; font-family:"Gotham-UltraItalic";  font-size:20px; }
-.navigation .menu-list {position:absolute; left:46px; top:320px;}
-.navigation .menu-list menu {font-family:"Gotham-UltraItalic";  font-size:36px; }
-.navigation footer {position:absolute; left:46px; bottom:50px; opacity:0.5;}
-.navigation .button {position:absolute; display:block; left:320 + 29px; top:29px; width:65px; height:65px; border:2px solid #fff; cursor:pointer}
+.navigation {
+  position: fixed;
+  background: #fff;
+  color: #000;
+  width: 320px;
+  height: 100%;
+  left: -320px;
+  z-index: 1000;
+
+  &.show {
+    left: 0;
+  }
+  .logo {
+    position: absolute;
+    left: 46px;
+    top: 46px;
+    font-family: "Gotham-UltraItalic";
+    font-size: 20px;
+  }
+  .menu-list {
+    position: absolute;
+    left: 46px;
+    top: 320px;
+  }
+  .menu-list menu {
+    font-family: "Gotham-UltraItalic";
+    font-size: 36px;
+
+    a {
+      opacity:0.2;
+      @include css-transition-out(opacity, 0.1, 0);
+
+      &:hover {
+        opacity:1.0;
+      }
+    }
+  }
+  footer {
+    position: absolute;
+    left: 46px;
+    bottom: 50px;
+    opacity: 0.5;
+  }
+  .button {
+    position: absolute;
+    display: block;
+    left: 320 + 29px;
+    top: 29px;
+    width: 65px;
+    height: 65px;
+    border: 2px solid #fff;
+    cursor: pointer
+  }
+
+  @include css-transition-out(left, 0.3, 0);
+}
+//@include css-transition(.navigation,0.5s);
 
 .container {position:relative; background: #000; color:#fff; width:100%; z-index:100;}
-.container {text-align:right; font-size:300px;}
