@@ -1,0 +1,24 @@
+{
+  "menu" : [
+    {
+      "name" : "ABOUT US",
+      "link" : "/about"
+    },
+    {
+      "name" : "MV.",
+      "link" : "/portfolio/mv"
+    },
+    {
+      "name" : "CF.",
+      "link" : "/portfolio/cf"
+    },
+    {
+      "name" : "CONTACT",
+      "link" : "/contact"
+    }
+  ],
+  "footer" : {
+    "copyright" :
+        "Copyright 2017.\nZANYBROS\nall rights reserved."
+  }
+}
