@@ -1,22 +1,35 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="img-frame">
-        <img :src="this.dataImg">
+    <div class="img-frame"
+         :style="{
+             width: frameWidth,
+             height: frameHeight,
+
+             'background-image': 'url(' + frameImageSrc + ')'
+         }
+
+    ">
+        <slot></slot>
     </div>
 </template>
 
 
 <!-- script -->
 <script>
+    var mixinResize = require('../mixin/resize.vue');
+
     export default {
+        mixins: [mixinResize],
 
         props : {
-            'width' : {
-                Type : String
+            'data-width' : {
+                Type : String,
+                default : '100%'
             },
-            'height' : {
-                Type : String
+            'data-height' : {
+                Type : String,
+                default : '100%'
             },
             'data-img' : {
                 Type : String
@@ -34,14 +47,30 @@
         },
 
         data: function() {
-            return {};
+            return {
+            };
         },
 
         computed:{
-            computedWidth : function () {
-                if (width=='100%') {
-                    return window.height;
+            frameWidth : function () {
+                if (this.isPercentValue(this.dataWidth)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.dataWidth), this.windowWidth);
                 }
+                return this.dataWidth;
+            },
+
+            frameHeight : function () {
+                if (this.dataHeight == 'auto') {
+                    return this.frameWidth;
+                }
+                if (this.isPercentValue(this.dataHeight)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.dataHeight), this.windowHeight);
+                }
+                return this.dataHeight;
+            },
+
+            frameImageSrc : function() {
+                return this.dataImg;
             }
         },
 
@@ -53,11 +82,9 @@
 
         },
 
-        computed:{
-
-        },
 
         components:{
+
         },
 
         mounted : function() {
@@ -65,21 +92,22 @@
         },
 
         created:function(){
-            console.log('aaaa');
+
         }
     }
 </script>
 
 
-<style lang="scss">
+<style scoped lang="scss">
     @import "~scssMixin";
 
     .img-frame {
-        @include opacity(0.5);
+        float:left;
+        display:inline-block;
 
-        display:block;
-        background:#ff0000;
-        width:100%;
-        height:2000px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
     }
 </style>

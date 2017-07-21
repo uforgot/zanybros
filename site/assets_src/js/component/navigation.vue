@@ -1,18 +1,18 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="navigation" v-bind:class="{ show : isShow}">
+    <div class="navigation animation" v-bind:class="{ show : isShow}">
         <div class="logo">
             <router-link to="/">ZANYBROS</router-link>
         </div>
-        <div class="menu-list">
+        <ul class="menu-list">
             <navigation-menu
                     v-for="item in dataMenuList"
-                    v-bind:key ="item.id"
-                    v-bind:data-name="item.name"
-                    v-bind:data-link="item.link"
+                    :key ="item.id"
+                    :data-name="item.name"
+                    :data-link="item.link"
             />
-        </div>
+        </ul>
         <footer>
             <p v-html="txtCopyright"></p>
         </footer>
@@ -62,12 +62,10 @@
             },
 
             toggleMenu : function() {
-
                 this.isShow = this.isShow?false:true;
             },
 
             setData : function($response) {
-                console.log($response);
                 this.dataMenuList = $response.data.menu;
                 this.dataCopyright = $response.data.footer.copyright;
             }
@@ -93,3 +91,15 @@
         }
     }
 </script>
+
+<style scoped lang="scss">
+    @import "~scssMixin";
+
+    .animation {
+        @include css-transition-out(left, 0.3, 0);
+    }
+
+    .show {
+        left:0;
+    }
+</style>

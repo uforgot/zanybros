@@ -7,6 +7,7 @@ import VueRouter from 'vue-router';
 import router from './router';
 
 require('./bootstrap');
+require('./util');
 
 Vue.use(VueRouter);
 
@@ -15,7 +16,8 @@ const app = new Vue({
     router,
 
     components:{
-        "navigation": require('./component/navigation.vue'),
+        "comp-navigation": require('./component/navigation.vue'),
+        "view-root" : require('./view/root.vue')
     },
 
     mounted : function() {

@@ -1,10 +1,10 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <menu>
+    <li class="menu">
         <router-link v-bind:to="dataLink">{{dataName}}</router-link>
         <!--<a v-bind:href="dataLink">{{dataName}}</a>-->
-    </menu>
+    </li>
 </template>
 
 
@@ -53,3 +53,16 @@
         }
     }
 </script>
+
+<style scoped lang="scss">
+    @import "~scssMixin";
+
+    .menu {
+        a {
+            @include css-transition-out(opacity, 0.2, 0);
+            &:hover {
+                opacity: 1.0;
+            }
+        }
+    }
+</style>
