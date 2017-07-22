@@ -61,13 +61,13 @@
                 );
             },
 
-            toggleMenu : function() {
-                this.isShow = this.isShow?false:true;
-            },
-
             setData : function($response) {
                 this.dataMenuList = $response.data.menu;
                 this.dataCopyright = $response.data.footer.copyright;
+            },
+
+            toggleMenu : function() {
+                this.isShow = this.isShow?false:true;
             }
         },
 

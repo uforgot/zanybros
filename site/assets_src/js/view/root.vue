@@ -15,200 +15,43 @@
              height: frameHeight
          }"
     >
-            <view-main :data-index="0" :data-left="currentContentsLeft" :data="mainData"></view-main>
-            <view-main :data-index="1" :data-left="currentContentsLeft" :data="aboutData"></view-main>
-            <view-main :data-index="2" :data-left="currentContentsLeft" :data="portfolioData"></view-main>
-            <view-main :data-index="3" :data-left="currentContentsLeft" :data="contactData"></view-main>
+            <view-main
+                    v-for="item, key in dataContentsList"
+                    :key ="key++"
 
+                    :data-index="key-1"
+                    :data-left="currentContentsLeft"
+                    :data="item">
+            </view-main>
         </div>
 </template>
 
 <script>
+    import axios from 'axios'
     let mixinResize = require('../mixin/resize.vue');
 
     export default {
         mixins: [mixinResize],
 
+        props : {
+            'data-contents-url': {
+                Type: String,
+                required: true
+            }
+        },
+
         data: function() {
             return {
+                dataContentsList:[],
+
                 isDrag:0,
                 startLeft:0,
-                defaultLeft:0,
                 distance:0,
 
                 animationInterval:null,
                 targetContentsLeft:0,
                 currentContentsLeft:0,
 
-                mainData : [
-                    {
-                        dataImg : 'assets/images/main/main.jpg',
-                        dataWidth : '100%',
-                        dataHeight : '100%'
-                    },
-                    {
-                        dataImg : 'assets/images/main/main.jpg',
-                        dataWidth : '100%',
-                        dataHeight : '100%'
-                    },
-                ],
-                aboutData : [
-                    {
-                        dataImg : 'assets/images/main/about_1.jpg',
-                        dataWidth : '100%',
-                        dataHeight : '100%'
-                    },
-                    {
-                        dataImg : 'assets/images/main/about_2.jpg',
-                        dataWidth : '100%',
-                        dataHeight : '100%'
-                    },
-                    {
-                        dataImg : 'assets/images/main/about_3.jpg',
-                        dataWidth : '100%',
-                        dataHeight : '100%'
-                    },
-                    {
-                        dataImg : 'assets/images/main/about_4.jpg',
-                        dataWidth : '100%',
-                        dataHeight : '100%'
-                    },
-                ],
-                portfolioData : [
-                    {
-                        dataImg : 'assets/images/main/portfolio.jpg',
-                        dataWidth : '100%',
-                        dataHeight : '100%'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_1.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_2.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_3.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_4.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_5.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_6.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_7.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_8.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_9.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_10.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_11.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_12.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_13.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_14.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_15.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_16.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_17.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_18.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_19.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_20.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_21.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_22.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_23.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-                    {
-                        dataImg : 'assets/images/main/portfolio_24.jpg',
-                        dataWidth : '25%',
-                        dataHeight : 'auto'
-                    },
-
-                ],
-                contactData : [
-                    {
-                        dataImg : 'assets/images/main/contact_1.jpg',
-                        dataWidth : '100%',
-                        dataHeight : '100%'
-                    }
-                ]
             }
         },
 
@@ -217,10 +60,27 @@
         },
 
         methods: {
+            loadData : function() {
+                axios({
+                    method:'get',
+                    url: this.dataContentsUrl,
+                    responseType:'json'
+                }).then(
+                    ($response) => this.setData($response)
+                ).catch(
+                    ($error) => console.log($error)
+                );
+            },
+
+            setData : function($response) {
+                console.log($response.data.contents);
+                this.dataContentsList = $response.data.contents;
+            },
+
+            //event
             handleMouseDown: function ($e) {
                 this.isDrag = true;
                 this.startX = $e.pageX;
-                this.defaultX = 0;
             },
 
             handleMouseUp: function ($e) {
@@ -289,6 +149,11 @@
         mounted() {
             this.animationInterval = setInterval(this.handleTimer, 1000/60);
         },
+
+        created:function(){
+            console.log("init root :" + this.dataContentsUrl);
+            this.loadData();
+        }
     }
 </script>
 
