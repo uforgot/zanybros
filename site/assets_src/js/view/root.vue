@@ -4,12 +4,6 @@
 
 <template>
     <div class="content-container"
-
-         @mousedown="handleMouseDown"
-         @mousemove="handleMouseMove"
-         @mouseup="handleMouseUp"
-         @mouseleave="handleMouseLeave"
-
          :style="{
              width: frameWidth,
              height: frameHeight
@@ -21,7 +15,9 @@
 
                     :data-index="key-1"
                     :data-left="currentContentsLeft"
-                    :data="item">
+                    :data="item"
+                    :data-scale="currentContentsScale"
+            >
             </view-main>
         </div>
 </template>
@@ -29,9 +25,10 @@
 <script>
     import axios from 'axios'
     let mixinResize = require('../mixin/resize.vue');
+    let mixinInteractionEvent = require('../mixin/interactionEvent.vue');
 
     export default {
-        mixins: [mixinResize],
+        mixins: [mixinResize, mixinInteractionEvent],
 
         props : {
             'data-contents-url': {
@@ -51,6 +48,9 @@
                 animationInterval:null,
                 targetContentsLeft:0,
                 currentContentsLeft:0,
+
+                targetContentsScale:1,
+                currentContentsScale:1
 
             }
         },
@@ -96,16 +96,34 @@
                 this.isDrag = false;
                 this.setContentsSnapLeft();
             },
+
             handleTimer: function ($e) {
-                this.currentContentsLeft +=  (this.targetContentsLeft - this.currentContentsLeft)/4;
+                if (this.isDrag) {
+                    this.targetContentsScale = 0.5;
+                } else {
+                    this.targetContentsScale = 1.0;
+                }
+
+                this.currentContentsLeft = this.setEasingValue(this.targetContentsLeft, this.currentContentsLeft, 4);
+//                this.currentContentsScale = this.setEasingValue(this.targetContentsScale, this.currentContentsScale, 4);
+//                this.currentContentsScale +=  (this.targetContentsScale - this.currentContentsScale)/4;
+//                this.currentContentsLeft +=  (this.targetContentsLeft - this.currentContentsLeft)/4;
+            },
+
+            setEasingValue: function($targetValue , $currentValue, $easingValue) {
+                if (Math.abs($targetValue - $currentValue) > 0.005) {
+                    return $currentValue + ($targetValue - $currentValue)/$easingValue;
+                } else {
+                    return $targetValue;
+                }
             },
 
             setContentsLeft: function($x) {
                 this.distance = $x - this.startX;
                 this.startX = $x;
 
-                var minX = (this.windowWidth * 1/8);
-                var maxX = (this.windowWidth * 3)*-1 + (this.windowWidth * 1/8)*-1;
+                let minX = (this.windowWidth * 1/8);
+                let maxX = (this.windowWidth * 3)*-1 + (this.windowWidth * 1/8)*-1;
 
                 this.targetContentsLeft = this.currentContentsLeft + (this.distance * 20);
 
@@ -119,7 +137,7 @@
             },
 
             setContentsSnapLeft: function() {
-                var indexX = Math.abs(Math.round((this.targetContentsLeft)/this.windowWidth));
+                let indexX = Math.abs(Math.round((this.targetContentsLeft)/this.windowWidth));
                 this.setContentsLeftByIndex(indexX);
             },
 
@@ -139,15 +157,22 @@
             },
         },
 
-        created() {
-
-        },
-
         beforeDestroy: function () {
             clearInterval(this.animationInterval);
+
+            this.$off('customMouseDown', (e)=>this.handleMouseDown(e));
+            this.$off('customMouseUp', (e)=>this.handleMouseUp(e));
+            this.$off('customMouseMove', (e)=>this.handleMouseMove(e));
+            this.$off('customMouseLeave', (e)=>this.handleMouseLeave(e));
         },
+
         mounted() {
             this.animationInterval = setInterval(this.handleTimer, 1000/60);
+
+            this.$on('customMouseDown', (e)=>this.handleMouseDown(e));
+            this.$on('customMouseUp', (e)=>this.handleMouseUp(e));
+            this.$on('customMouseMove', (e)=>this.handleMouseMove(e));
+            this.$on('customMouseLeave', (e)=>this.handleMouseLeave(e));
         },
 
         created:function(){

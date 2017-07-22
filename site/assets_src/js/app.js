@@ -21,7 +21,9 @@ const app = new Vue({
     },
 
     mounted : function() {
-
+        this.$on('customMouseDown', function (msg) {
+            console.log('app caught in parent', msg)
+        });
     },
 
     created:function(){
