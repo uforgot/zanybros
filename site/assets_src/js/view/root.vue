@@ -14,9 +14,9 @@
                     :key ="key++"
 
                     :data-index="key-1"
-                    :data-left="currentContentsLeft"
+                    :data-left="currentContentsX"
                     :data="item"
-                    :data-scale="currentContentsScale"
+                    :data-drag="isDrag"
             >
             </view-main>
         </div>
@@ -24,11 +24,11 @@
 
 <script>
     import axios from 'axios'
-    let mixinResize = require('../mixin/resize.vue');
+    let mixinResizeEvent = require('../mixin/resizeEvent.vue');
     let mixinInteractionEvent = require('../mixin/interactionEvent.vue');
 
     export default {
-        mixins: [mixinResize, mixinInteractionEvent],
+        mixins: [mixinResizeEvent, mixinInteractionEvent],
 
         props : {
             'data-contents-url': {
@@ -41,17 +41,14 @@
             return {
                 dataContentsList:[],
 
-                isDrag:0,
-                startLeft:0,
+                isDrag:false,
+                startX:0,
+                startY:0,
                 distance:0,
 
                 animationInterval:null,
-                targetContentsLeft:0,
-                currentContentsLeft:0,
-
-                targetContentsScale:1,
-                currentContentsScale:1
-
+                targetContentsX:0,
+                currentContentsX:0,
             }
         },
 
@@ -73,77 +70,88 @@
             },
 
             setData : function($response) {
-                console.log($response.data.contents);
                 this.dataContentsList = $response.data.contents;
             },
 
             //event
-            handleMouseDown: function ($e) {
+            handleInteractionStart: function ($e) {
                 this.isDrag = true;
-                this.startX = $e.pageX;
+                this.startX = $e.x;
+                this.startY = $e.y;
+                this.distanceX = 0;
+                this.distanceY = 0;
             },
 
-            handleMouseUp: function ($e) {
+            handleInteractionEnd: function () {
                 this.isDrag = false;
-                this.setContentsSnapLeft();
+                this.setContentsSnapX();
             },
 
-            handleMouseMove: function ($e) {
+            handleInteractionMove: function ($e) {
                 if (!this.isDrag) return;
-                this.setContentsLeft($e.pageX);
-            },
-            handleMouseLeave: function ($e) {
-                this.isDrag = false;
-                this.setContentsSnapLeft();
-            },
 
-            handleTimer: function ($e) {
-                if (this.isDrag) {
-                    this.targetContentsScale = 0.5;
-                } else {
-                    this.targetContentsScale = 1.0;
+                if (this.distanceY > 5) {
+                    this.isDrag = false;
+                    this.setContentsSnapX();
+                    return;
                 }
 
-                this.currentContentsLeft = this.setEasingValue(this.targetContentsLeft, this.currentContentsLeft, 4);
-//                this.currentContentsScale = this.setEasingValue(this.targetContentsScale, this.currentContentsScale, 4);
-//                this.currentContentsScale +=  (this.targetContentsScale - this.currentContentsScale)/4;
-//                this.currentContentsLeft +=  (this.targetContentsLeft - this.currentContentsLeft)/4;
+                if (this.distanceX > 10) {
+                    $e.e.preventDefault();              // this one is the key
+                    $e.e.stopPropagation();
+                }
+
+                this.setContentsPosition($e.x, $e.y);
+            },
+
+            handleInteractionCancel: function () {
+                this.isDrag = false;
+                this.setContentsSnapX();
+            },
+
+            handleTimer: function () {
+                this.currentContentsX = this.setEasingValue(this.targetContentsX, this.currentContentsX, 4);
             },
 
             setEasingValue: function($targetValue , $currentValue, $easingValue) {
-                if (Math.abs($targetValue - $currentValue) > 0.005) {
+                if (Math.abs($targetValue - $currentValue) > 1) {
                     return $currentValue + ($targetValue - $currentValue)/$easingValue;
                 } else {
                     return $targetValue;
                 }
             },
 
-            setContentsLeft: function($x) {
-                this.distance = $x - this.startX;
+            setContentsPosition: function($x, $y) {
+                this.distanceX = $x - this.startX;
+                this.distanceY = $y - this.startY;
+
                 this.startX = $x;
+                this.startY = $y;
 
-                let minX = (this.windowWidth * 1/8);
-                let maxX = (this.windowWidth * 3)*-1 + (this.windowWidth * 1/8)*-1;
+                let minX = 0;// (this.windowWidth * 1/8);
+                let maxX = (this.windowWidth * (this.dataContentsList.length-1))*-1;//  + (this.windowWidth * 1/8)*-1;
 
-                this.targetContentsLeft = this.currentContentsLeft + (this.distance * 20);
+                this.targetContentsX = this.currentContentsX + (this.distanceX * (this.windowWidth/80 ));
 
-                if (this.targetContentsLeft > minX) {
-                    this.targetContentsLeft = minX;
+//                console.log(this.targetContentsX + " " + this.distanceX + " "  + $x + " " + this.startX + " " + this.isDrag );
+
+                if (this.targetContentsX > minX) {
+                    this.targetContentsX = minX;
                 }
 
-                if (this.targetContentsLeft < maxX) {
-                    this.targetContentsLeft = maxX;
+                if (this.targetContentsX < maxX) {
+                    this.targetContentsX = maxX;
                 }
             },
 
-            setContentsSnapLeft: function() {
-                let indexX = Math.abs(Math.round((this.targetContentsLeft)/this.windowWidth));
-                this.setContentsLeftByIndex(indexX);
+            setContentsSnapX: function() {
+                let indexX = Math.abs(Math.round((this.targetContentsX)/this.windowWidth));
+                this.setContentsXByIndex(indexX);
             },
 
-            setContentsLeftByIndex: function($index) {
+            setContentsXByIndex: function($index) {
                 let tmpX = (this.windowWidth * -1) * $index;
-                this.targetContentsLeft = tmpX;
+                this.targetContentsX = tmpX;
             }
 
         },
@@ -160,19 +168,19 @@
         beforeDestroy: function () {
             clearInterval(this.animationInterval);
 
-            this.$off('customMouseDown', (e)=>this.handleMouseDown(e));
-            this.$off('customMouseUp', (e)=>this.handleMouseUp(e));
-            this.$off('customMouseMove', (e)=>this.handleMouseMove(e));
-            this.$off('customMouseLeave', (e)=>this.handleMouseLeave(e));
+            this.$off('interactionStart', (e)=>this.handleInteractionStart(e));
+            this.$off('interactionEnd', (e)=>this.handleInteractionEnd(e));
+            this.$off('interactionMove', (e)=>this.handleInteractionMove(e));
+            this.$off('interactionCancel', (e)=>this.handleInteractionCancel(e));
         },
 
         mounted() {
             this.animationInterval = setInterval(this.handleTimer, 1000/60);
 
-            this.$on('customMouseDown', (e)=>this.handleMouseDown(e));
-            this.$on('customMouseUp', (e)=>this.handleMouseUp(e));
-            this.$on('customMouseMove', (e)=>this.handleMouseMove(e));
-            this.$on('customMouseLeave', (e)=>this.handleMouseLeave(e));
+            this.$on('interactionStart', (e)=>this.handleInteractionStart(e));
+            this.$on('interactionEnd', (e)=>this.handleInteractionEnd(e));
+            this.$on('interactionMove', (e)=>this.handleInteractionMove(e));
+            this.$on('interactionCancel', (e)=>this.handleInteractionCancel(e));
         },
 
         created:function(){

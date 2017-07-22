@@ -17,10 +17,10 @@
 
 <!-- script -->
 <script>
-    var mixinResize = require('../mixin/resize.vue');
+    var mixinResizeEvent = require('../mixin/resizeEvent.vue');
 
     export default {
-        mixins: [mixinResize],
+        mixins: [mixinResizeEvent],
 
         props : {
             'data-width' : {

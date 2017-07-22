@@ -3,10 +3,12 @@
  */
 
 <template>
-    <section class="container"
-         :style="{
-             'transform':computedPositionX
-         }"
+    <section class="container animation"
+
+             :class="{ 'zoom-out' : dataDrag}"
+             :style="{
+                 left:computedPositionX
+             }"
     >
         <comp-imageFrame
                 v-for="item in data"
@@ -19,13 +21,16 @@
 </template>
 
 <script>
-    let mixinResize = require('../mixin/resize.vue');
+    let mixinResizeEvent = require('../mixin/resizeEvent.vue');
 
     export default {
-        mixins: [mixinResize],
+        mixins: [mixinResizeEvent],
 
         props : {
             'data-drag' : {
+                type: Boolean,
+                default :false
+
             },
             'data-index' : {
                 type: Number
@@ -34,7 +39,7 @@
                 type: Number
             },
             'data': {
-                Type: Array
+                type: Array
             }
         },
 
@@ -46,7 +51,8 @@
         computed:{
             computedPositionX: function() {
 //                console.log(this.dataIndex + " " + this.dataLeft);
-                return 'translateX(' + ((this.dataIndex * this.windowWidth) +  this.dataLeft) + 'px' + ')';
+                return ((this.dataIndex * this.windowWidth) +  this.dataLeft) + 'px';
+//                return 'translateX(' + ((this.dataIndex * this.windowWidth) +  this.dataLeft) + 'px' + ')';
             },
             computedScale: function() {
                 return 'scale(' + this.dataScale + ')';
@@ -62,5 +68,12 @@
 <style scoped lang="scss">
     @import "~scssMixin";
 
+    .animation {
+        @include css-transition-out(transform, 0.3, 0);
+    }
+
+    .zoom-out {
+        @include transform(scale(0.9));
+    }
 
 </style>
