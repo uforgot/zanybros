@@ -1,52 +1,95 @@
 {
-  "contents" : [
-    [
-      {
-        "dataImg" : "assets/images/test/main.jpg",
-        "dataWidth" : "100%",
-        "dataHeight" : "100%"
-      }
-    ],
+  "contentsData" : [
+    {
+      "title": "ABOUT US",
+      "contents" : [
+        {
+          "dataBackgroundImg": "assets/images/about.jpg",
+          "dataImg" : "assets/images/about_txt.png",
+          "dataWidth": "100%",
+          "dataHeight": "100%",
+          "dataAlign": "center"
+        },
+        {
+          "dataBackgroundImg": "assets/images/about_bg.png",
+          "dataImg": "assets/images/about_contents_1.png",
+          "dataWidth": "100%",
+          "dataHeight": "100%",
+          "dataAlign": "center"
+        },
+        {
+          "dataBackgroundImg": "assets/images/blank.png",
+          "dataImg": "assets/images/about_contents_2.png",
+          "dataWidth": "100%",
+          "dataHeight": "90%",
+          "dataAlign": "center"
+        },
+        {
+          "dataBackgroundImg": "assets/images/about_bg.png",
+          "dataImg": "assets/images/about_contents_3.png",
+          "dataWidth": "100%",
+          "dataHeight": "100%",
+          "dataAlign": "center"
+        },
+        {
+          "dataBackgroundImg": "assets/images/about_bg.png",
+          "dataImg": "assets/images/about_contents_4.png",
+          "dataWidth": "100%",
+          "dataHeight": "100%",
+          "dataAlign": "center"
+        }
 
-    [
-      {
-        "dataImg" : "assets/images/test/about1.jpg",
-        "dataWidth" : "100%",
-        "dataHeight" : "100%"
-      },
-      {
-        "dataImg" : "assets/images/test/about2.jpg",
-        "dataWidth" : "100%",
-        "dataHeight" : "100%"
-      }
-    ],
 
-    [
-      {
-        "dataImg" : "assets/images/test/portfolio1.jpg",
-        "dataWidth" : "100%",
-        "dataHeight" : "100%"
-      },
-      {
-        "dataImg" : "assets/images/test/portfolio2.jpg",
-        "dataWidth" : "100%",
-        "dataHeight" : "100%"
-      },
-      {
-        "dataImg" : "assets/images/test/portfolio3.jpg",
-        "dataWidth" : "100%",
-        "dataHeight" : "100%"
-      }
-    ],
+      ]
+    },
 
-    [
-      {
-        "dataImg" : "assets/images/test/contact.jpg",
-        "dataWidth" : "100%",
-        "dataHeight" : "100%"
-      }
-    ]
+    {
+      "title": "OUR WORKS",
+      "contents" : [
+        {
+          "dataBackgroundImg": "assets/images/works.jpg",
+          "dataImg": "assets/images/works_txt.png",
+          "dataWidth": "100%",
+          "dataHeight": "100%",
+          "dataAlign": "center"
+        },
+        {
+          "dataBackgroundImg": "assets/images/works_bg.png",
+          "dataImg": "assets/images/works_portfolio_txt.png",
+          "dataWidth": "100%",
+          "dataHeight": "200%",
+          "dataAlign": "top"
+        }
+      ]
+    },
 
+    {
+      "title": "CONTACT US",
+      "contents" : [
+        {
+          "dataBackgroundImg": "assets/images/contact_1.jpg",
+          "dataImg": "assets/images/contact_1_txt.png",
+          "dataWidth": "100%",
+          "dataHeight": "100%",
+          "dataAlign": "center"
+        },
+        {
+          "dataBackgroundImg": "assets/images/contact_2.jpg",
+          "dataImg": "assets/images/contact_2_txt.png",
+          "dataWidth": "100%",
+          "dataHeight": "100%",
+          "dataAlign": "center"
+        },
+        {
+          "dataBackgroundImg": "assets/images/contact_3.jpg",
+          "dataImg": "assets/images/contact_3_txt.png",
+          "dataWidth": "100%",
+          "dataHeight": "100%",
+          "dataAlign": "center"
+        }
+
+      ]
+    }
 
   ]
 }

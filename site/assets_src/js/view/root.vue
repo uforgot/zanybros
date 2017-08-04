@@ -4,22 +4,32 @@
 
 <template>
     <div class="content-container"
+         :class="{ 'zoom-out' : isDrag, 'animation-zoom-in' : isDrag, 'animation-zoom-out' : !isDrag}"
          :style="{
              width: frameWidth,
              height: frameHeight
          }"
     >
-            <view-main
-                    v-for="item, key in dataContentsList"
-                    :key ="key++"
+        <view-main-background
+                v-for="item, key in dataContentsList"
+                :key ="key++"
 
-                    :data-index="key-1"
-                    :data-left="currentContentsX"
-                    :data="item"
-                    :data-drag="isDrag"
-            >
-            </view-main>
-        </div>
+                :data-index="key-1"
+                :data-left="currentContentsX"
+                :data="item"
+                :data-drag="isDrag"
+        ></view-main-background>
+        <view-main
+                v-for="item, key in dataContentsList"
+                :key ="key++"
+
+                :data-index="key-1"
+                :data-left="currentContentsX"
+                :data="item"
+                :data-drag="isDrag"
+        >
+        </view-main>
+    </div>
 </template>
 
 <script>
@@ -53,7 +63,8 @@
         },
 
         components:{
-            "view-main": require('../view/main.vue')
+            "view-main": require('../view/main.vue'),
+            "view-main-background": require('../view/mainBackground.vue')
         },
 
         methods: {
@@ -70,12 +81,13 @@
             },
 
             setData : function($response) {
-                this.dataContentsList = $response.data.contents;
+                this.dataContentsList = $response.data.contentsData;
             },
 
             //event
             handleInteractionStart: function ($e) {
                 this.isDrag = true;
+                this.$emit('drag-control', true);
                 this.startX = $e.x;
                 this.startY = $e.y;
                 this.distanceX = 0;
@@ -84,19 +96,20 @@
 
             handleInteractionEnd: function () {
                 this.isDrag = false;
+                this.$emit('drag-control', false);
                 this.setContentsSnapX();
             },
 
             handleInteractionMove: function ($e) {
                 if (!this.isDrag) return;
 
-                if (this.distanceY > 5) {
-                    this.isDrag = false;
-                    this.setContentsSnapX();
-                    return;
-                }
+//                if (this.distanceY > 1) {
+//                    this.isDrag = false;
+//                    this.setContentsSnapX();
+//                    return;
+//                }
 
-                if (this.distanceX > 10) {
+                if (this.distanceX > 1) {
                     $e.e.preventDefault();              // this one is the key
                     $e.e.stopPropagation();
                 }
@@ -111,6 +124,11 @@
 
             handleTimer: function () {
                 this.currentContentsX = this.setEasingValue(this.targetContentsX, this.currentContentsX, 4);
+            },
+
+            handleResize: function () {
+                this.setContentsSnapX();
+                this.currentContentsX = this.targetContentsX;
             },
 
             setEasingValue: function($targetValue , $currentValue, $easingValue) {
@@ -128,12 +146,10 @@
                 this.startX = $x;
                 this.startY = $y;
 
-                let minX = 0;// (this.windowWidth * 1/8);
-                let maxX = (this.windowWidth * (this.dataContentsList.length-1))*-1;//  + (this.windowWidth * 1/8)*-1;
+                let minX = 0;//this.windowWidth * 1/8;
+                let maxX = (this.windowWidth * (this.dataContentsList.length-1))*-1; // + (this.windowWidth * 1/8)*-1;
 
-                this.targetContentsX = this.currentContentsX + (this.distanceX * (this.windowWidth/80 ));
-
-//                console.log(this.targetContentsX + " " + this.distanceX + " "  + $x + " " + this.startX + " " + this.isDrag );
+                this.targetContentsX = this.currentContentsX + (this.distanceX * (50));
 
                 if (this.targetContentsX > minX) {
                     this.targetContentsX = minX;
@@ -168,6 +184,7 @@
         beforeDestroy: function () {
             clearInterval(this.animationInterval);
 
+            window.removeEventListener('resize', this. handleResize);
             this.$off('interactionStart', (e)=>this.handleInteractionStart(e));
             this.$off('interactionEnd', (e)=>this.handleInteractionEnd(e));
             this.$off('interactionMove', (e)=>this.handleInteractionMove(e));
@@ -175,13 +192,15 @@
         },
 
         mounted() {
-            this.animationInterval = setInterval(this.handleTimer, 1000/60);
+            this.animationInterval = setInterval(this.handleTimer, 1000/40);
 
+            window.addEventListener('resize', this.handleResize);
             this.$on('interactionStart', (e)=>this.handleInteractionStart(e));
             this.$on('interactionEnd', (e)=>this.handleInteractionEnd(e));
             this.$on('interactionMove', (e)=>this.handleInteractionMove(e));
             this.$on('interactionCancel', (e)=>this.handleInteractionCancel(e));
         },
+
 
         created:function(){
             console.log("init root :" + this.dataContentsUrl);
@@ -192,6 +211,18 @@
 
 <style scoped lang="scss">
     @import "~scssMixin";
+
+    .animation-zoom-out {
+        //@include css-transition-out(transform, 0.3, 0.2);
+    }
+
+    .animation-zoom-in {
+        //@include css-transition-out(transform, 0.2, 0);
+    }
+
+    .zoom-out {
+        //@include transform(scale(1.0));
+    }
 
 
 </style>

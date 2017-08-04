@@ -7,6 +7,8 @@ import Vue from 'vue';
 Vue.mixin({
     methods: {
         isPercentValue : ($value) => {
+            $value = String($value);
+
             if (($value.split('%').length) == 2) {
                 return true;
             }
@@ -14,6 +16,7 @@ Vue.mixin({
         },
 
         getPercentValue : ($value) => {
+            $value = String($value);
             return Number($value.split('%')[0]);
         },
 
@@ -22,3 +25,4 @@ Vue.mixin({
         }
     }
 })
+

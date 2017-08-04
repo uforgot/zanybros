@@ -14,19 +14,22 @@
     <script>
         Detectizr.detect({detectScreen:false});
     </script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js'></script>
+    <script src='https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.3/dat.gui.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js'></script>
+
+    <script src="assets/js/bootstrap.js"></script>
+
 </head>
 <body>
 
-<div id="app" class="wrap">
-    <comp-navigation data-navigation-url="assets/data/navigation.json"></comp-navigation>
-    <!--<router-view></router-view>-->
-    <!--<div class="container">-->
-        <!--<view-test></view-test>-->
-        <!--<view-about></view-about>-->
-        <!--<view-portfolio></view-portfolio>-->
-        <!--<view-contact></view-contact>-->
-    <!--</div>-->
-    <view-root data-contents-url="assets/data/contents.json"></view-root>
+<div id="WebGL-output"></div>
+<div id="app" class="wrap" >
+    <view-background :data-drag="isDrag"></view-background>
+    <view-root v-on:drag-control="dragHandler" data-contents-url="assets/data/contents.json"></view-root>
+    <view-frame :data-drag="isDrag"></view-frame>
 </div>
 
 

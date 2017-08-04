@@ -52,6 +52,7 @@ const config = {
     plugins: [
         new CopyWebpackPlugin(
             [
+                {from:"./js/bootstrap.js", to:"./js/bootstrap.js"},
                 {from:"./js/vendor/modernizr.js", to:"./js/vendor/modernizr.js"},
                 {from:"./js/vendor/detectizr.js", to:"./js/vendor/detectizr.js"},
 

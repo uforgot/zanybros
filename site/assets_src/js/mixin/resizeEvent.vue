@@ -8,9 +8,11 @@
         data() {
             return {
                 windowWidth: window.innerWidth,
-                windowHeight: window.innerHeight
+                windowHeight: window.innerHeight,
             };
         },
+
+
         methods: {
             handleWindowResize(event) {
                 this.windowWidth = event.currentTarget.innerWidth;
