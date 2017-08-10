@@ -3,14 +3,13 @@
  */
 
 <template>
-    <section class="rect"
-             :class="{ 'zoom-out' : dataDrag, 'animation-zoom-in' : dataDrag, 'animation-zoom-out' : !dataDrag}"
+    <section
              :style="{
                  height: frameHeight,
                  left:computedPositionX
              }"
     >
-        <comp-imageFrame
+        <comp-image-frame
                 v-for="item in dataContents"
                 :key ="item.id"
                 :data-width ="item.dataWidth"
@@ -24,21 +23,17 @@
                 }"
             >
             </div>
-        </comp-imageFrame>
+        </comp-image-frame>
     </section>
 </template>
 
 <script>
-    let mixinResizeEvent = require('../mixin/resizeEvent.vue');
+    import MixinControlResize from '../mixin/mixin-control-resize.vue';
 
     export default {
-        mixins: [mixinResizeEvent],
+        mixins: [ MixinControlResize ],
 
         props : {
-            'data-drag' : {
-                type: Boolean,
-                default :false
-            },
             'data-index' : {
                 type: Number
             },
@@ -51,7 +46,7 @@
         },
 
         components:{
-            "comp-imageFrame": require('../component/imageFrame.vue')
+            "comp-image-frame": require('../component/comp-image-frame.vue')
         },
 
 
@@ -61,9 +56,7 @@
             },
 
             computedPositionX: function() {
-//                console.log(this.dataIndex + " " + this.dataLeft);
                 return ((this.dataIndex * this.windowWidth) +  this.dataLeft) + 'px';
-//                return 'translateX(' + ((this.dataIndex * this.windowWidth) +  this.dataLeft) + 'px' + ')';
             },
             computedScale: function() {
                 return 'scale(' + this.dataScale + ')';
@@ -82,22 +75,4 @@
 
 <style scoped lang="scss">
     @import "~scssMixin";
-
-    .rect {
-        clip: rect(0, 100vw, 100vh, 0);
-    }
-
-    .animation-zoom-out {
-        @include css-transition-out(clip, 0.4, 0.2);
-    }
-
-    .animation-zoom-in {
-        @include css-transition-out(clip, 0.2, 0);
-    }
-
-    .zoom-out {
-        clip: rect(50vh, 80vw, 50vh, 20vw);
-    }
-
-
 </style>

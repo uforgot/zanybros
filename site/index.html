@@ -15,23 +15,15 @@
         Detectizr.detect({detectScreen:false});
     </script>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js'></script>
-    <script src='https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.3/dat.gui.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js'></script>
-
     <script src="assets/js/bootstrap.js"></script>
-
 </head>
 <body>
-
+<script>
+    const ZanyBrosDataUrl = 'assets/data/contents.json';
+</script>
 <div id="WebGL-output"></div>
-<div id="app" class="wrap" >
-    <view-background :data-drag="isDrag"></view-background>
-    <view-root v-on:drag-control="dragHandler" data-contents-url="assets/data/contents.json"></view-root>
-    <view-frame :data-drag="isDrag"></view-frame>
-</div>
 
+<div id="app" data-contents-url="assets/data/contents.json"></div>
 
 <script src="assets/js/app.bundle.js"></script>
 

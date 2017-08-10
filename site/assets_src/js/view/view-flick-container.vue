@@ -4,54 +4,52 @@
 
 <template>
     <div class="content-container"
-         :class="{ 'zoom-out' : isDrag, 'animation-zoom-in' : isDrag, 'animation-zoom-out' : !isDrag}"
+         :class="{ 'root-zoom-out' : dataFolding, 'root-animation-zoom-in' : dataFolding, 'root-animation-zoom-out' : !dataFolding}"
          :style="{
              width: frameWidth,
              height: frameHeight
          }"
     >
-        <view-main-background
+        <view-flick-contents
                 v-for="item, key in dataContentsList"
                 :key ="key++"
 
                 :data-index="key-1"
                 :data-left="currentContentsX"
                 :data="item"
-                :data-drag="isDrag"
-        ></view-main-background>
-        <view-main
-                v-for="item, key in dataContentsList"
-                :key ="key++"
-
-                :data-index="key-1"
-                :data-left="currentContentsX"
-                :data="item"
-                :data-drag="isDrag"
+                :data-folding="dataFolding"
         >
-        </view-main>
+        </view-flick-contents>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
-    let mixinResizeEvent = require('../mixin/resizeEvent.vue');
-    let mixinInteractionEvent = require('../mixin/interactionEvent.vue');
+    import {EventBus} from '../events/event-bus.js';
+    import MixinControlResize from '../mixin/mixin-control-resize.vue';
+    import MixinEventCustom from '../mixin/mixin-event-custom.vue';
+
+    import ViewFlickContents from './view-flick-contents.vue';
 
     export default {
-        mixins: [mixinResizeEvent, mixinInteractionEvent],
+        mixins: [ MixinControlResize, MixinEventCustom ],
 
         props : {
-            'data-contents-url': {
-                Type: String,
+            'data-contents-list' : {
+                type:Array,
                 required: true
+            },
+            'data-folding': {
+                Type: Boolean,
+                required: true
+            },
+            'data-current-menu-index' : {
+                Type: Number,
+                required:true
             }
         },
 
         data: function() {
             return {
-                dataContentsList:[],
-
-                isDrag:false,
                 startX:0,
                 startY:0,
                 distance:0,
@@ -63,31 +61,16 @@
         },
 
         components:{
-            "view-main": require('../view/main.vue'),
-            "view-main-background": require('../view/mainBackground.vue')
+            "view-flick-contents": ViewFlickContents,
         },
 
         methods: {
-            loadData : function() {
-                axios({
-                    method:'get',
-                    url: this.dataContentsUrl,
-                    responseType:'json'
-                }).then(
-                    ($response) => this.setData($response)
-                ).catch(
-                    ($error) => console.log($error)
-                );
-            },
-
-            setData : function($response) {
-                this.dataContentsList = $response.data.contentsData;
-            },
 
             //event
             handleInteractionStart: function ($e) {
-                this.isDrag = true;
-                this.$emit('drag-control', true);
+                if (window.scrollY>0) { return;}
+
+                EventBus.$emit(EventBus.CONTENTS_FOLDING_EVENT, true);
                 this.startX = $e.x;
                 this.startY = $e.y;
                 this.distanceX = 0;
@@ -95,34 +78,25 @@
             },
 
             handleInteractionEnd: function () {
-                this.isDrag = false;
-                this.$emit('drag-control', false);
+                EventBus.$emit(EventBus.CONTENTS_FOLDING_EVENT, false);
                 this.setContentsSnapX();
             },
 
             handleInteractionMove: function ($e) {
-                if (!this.isDrag) return;
-
-//                if (this.distanceY > 1) {
-//                    this.isDrag = false;
-//                    this.setContentsSnapX();
-//                    return;
-//                }
-
-                if (this.distanceX > 1) {
-                    $e.e.preventDefault();              // this one is the key
-                    $e.e.stopPropagation();
-                }
+                if (!this.dataFolding) return;
 
                 this.setContentsPosition($e.x, $e.y);
             },
 
             handleInteractionCancel: function () {
-                this.isDrag = false;
+                EventBus.$emit(EventBus.CONTENTS_FOLDING_EVENT, false);
                 this.setContentsSnapX();
             },
 
             handleTimer: function () {
+                if (!this.dataFolding) {
+                    this.targetContentsX = (this.windowWidth * -1) * (this.dataCurrentMenuIndex - 1);
+                }
                 this.currentContentsX = this.setEasingValue(this.targetContentsX, this.currentContentsX, 4);
             },
 
@@ -162,6 +136,7 @@
 
             setContentsSnapX: function() {
                 let indexX = Math.abs(Math.round((this.targetContentsX)/this.windowWidth));
+                EventBus.$emit(EventBus.MENU_CLICK_EVENT, indexX+1);
                 this.setContentsXByIndex(indexX);
             },
 
@@ -178,33 +153,32 @@
             },
             frameHeight : function () {
                 return this.windowHeight + 'px';
-            },
+            }
         },
 
         beforeDestroy: function () {
             clearInterval(this.animationInterval);
 
-            window.removeEventListener('resize', this. handleResize);
-            this.$off('interactionStart', (e)=>this.handleInteractionStart(e));
-            this.$off('interactionEnd', (e)=>this.handleInteractionEnd(e));
-            this.$off('interactionMove', (e)=>this.handleInteractionMove(e));
-            this.$off('interactionCancel', (e)=>this.handleInteractionCancel(e));
+            window.removeEventListener('resize', (e)=>this.handleResize);
+            this.$off(this.CUSTOM_EVENT.INTERACTION_START, (e)=>this.handleInteractionStart(e));
+            this.$off(this.CUSTOM_EVENT.INTERACTION_END, (e)=>this.handleInteractionEnd(e));
+            this.$off(this.CUSTOM_EVENT.INTERACTION_MOVE, (e)=>this.handleInteractionMove(e));
+            this.$off(this.CUSTOM_EVENT.INTERACTION_CANCEL, (e)=>this.handleInteractionCancel(e));
         },
 
         mounted() {
             this.animationInterval = setInterval(this.handleTimer, 1000/40);
 
-            window.addEventListener('resize', this.handleResize);
-            this.$on('interactionStart', (e)=>this.handleInteractionStart(e));
-            this.$on('interactionEnd', (e)=>this.handleInteractionEnd(e));
-            this.$on('interactionMove', (e)=>this.handleInteractionMove(e));
-            this.$on('interactionCancel', (e)=>this.handleInteractionCancel(e));
+            window.addEventListener('resize', (e)=>this.handleResize);
+            this.$on(this.CUSTOM_EVENT.INTERACTION_START, (e)=>this.handleInteractionStart(e));
+            this.$on(this.CUSTOM_EVENT.INTERACTION_END, (e)=>this.handleInteractionEnd(e));
+            this.$on(this.CUSTOM_EVENT.INTERACTION_MOVE, (e)=>this.handleInteractionMove(e));
+            this.$on(this.CUSTOM_EVENT.INTERACTION_CANCEL, (e)=>this.handleInteractionCancel(e));
         },
 
 
         created:function(){
-            console.log("init root :" + this.dataContentsUrl);
-            this.loadData();
+
         }
     }
 </script>
@@ -212,16 +186,16 @@
 <style scoped lang="scss">
     @import "~scssMixin";
 
-    .animation-zoom-out {
-        //@include css-transition-out(transform, 0.3, 0.2);
+    .root-animation-zoom-out {
+        @include css-transition-out(transform, 0.3, 0);
     }
 
-    .animation-zoom-in {
-        //@include css-transition-out(transform, 0.2, 0);
+    .root-animation-zoom-in {
+        @include css-transition-out(transform, 0.2, 0);
     }
 
-    .zoom-out {
-        //@include transform(scale(1.0));
+    .root-zoom-out {
+        @include transform(scale(0.8));
     }
 
 

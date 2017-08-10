@@ -5,10 +5,8 @@
          :style="{
              width: frameWidth,
              height: frameHeight,
-
              'background-image': 'url(' + frameImageSrc + ')'
          }
-
     ">
         <slot></slot>
     </div>
@@ -17,7 +15,7 @@
 
 <!-- script -->
 <script>
-    var mixinResizeEvent = require('../mixin/resizeEvent.vue');
+    var mixinResizeEvent = require('../mixin/mixin-control-resize.vue');
 
     export default {
         mixins: [mixinResizeEvent],

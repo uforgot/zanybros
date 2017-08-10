@@ -8,7 +8,7 @@ const scssMixin = path.resolve(__dirname, './site/assets_src/scss/mixin.scss');
 const config = {
     context: path.resolve(__dirname, './site/assets_src/'),
     entry: {
-        'app':['./js/app.js']
+        'app':['./js/main.js']
     },
 
     output: {
