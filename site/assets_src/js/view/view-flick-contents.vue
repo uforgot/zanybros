@@ -9,26 +9,20 @@
                  transform : computedPositionX
              }"
     >
-        <comp-image-frame
+        <div
                 v-for="item in dataContents"
+                :is="item.component"
                 :key ="item.id"
-                :data-width ="item.dataWidth"
-                :data-height="item.dataHeight"
-                :data-img="item.dataBackgroundImg"
+                :json-data = "item.data"
         >
-            <div class="content"
-                :style="{
-                    'background-image': 'url(' + item.dataImg + ')',
-                    'background-position' : item.dataAlign
-                }"
-            >
-            </div>
-        </comp-image-frame>
+        </div>
     </section>
 </template>
 
 <script>
     import MixinControlResize from '../mixin/mixin-control-resize.vue';
+
+
 
     export default {
         mixins: [ MixinControlResize ],
@@ -46,7 +40,10 @@
         },
 
         components:{
-            "comp-image-frame": require('../component/comp-image-frame.vue')
+            "comp-image-frame": require('../component/comp-image-frame.vue'),
+            "comp-video-frame": require('../component/comp-video-frame.vue'),
+
+            "view-main-about": require('./view-main-about.vue')
         },
 
 

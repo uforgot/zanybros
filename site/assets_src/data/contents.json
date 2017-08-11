@@ -4,42 +4,66 @@
       "title": "ABOUT US",
       "contents" : [
         {
-          "dataBackgroundImg": "assets/images/about.jpg",
-          "dataImg" : "assets/images/about_txt.png",
-          "dataWidth": "100%",
-          "dataHeight": "100%",
-          "dataAlign": "center"
+          "component": "view-main-about",
+          "data" : {
+
+          }
         },
         {
-          "dataBackgroundImg": "assets/images/about_bg.png",
-          "dataImg": "assets/images/about_contents_1.png",
-          "dataWidth": "100%",
-          "dataHeight": "100%",
-          "dataAlign": "center"
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
         },
         {
-          "dataBackgroundImg": "assets/images/blank.png",
-          "dataImg": "assets/images/about_contents_2.png",
-          "dataWidth": "100%",
-          "dataHeight": "90%",
-          "dataAlign": "center"
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
         },
         {
-          "dataBackgroundImg": "assets/images/about_bg.png",
-          "dataImg": "assets/images/about_contents_3.png",
-          "dataWidth": "100%",
-          "dataHeight": "100%",
-          "dataAlign": "center"
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
         },
         {
-          "dataBackgroundImg": "assets/images/about_bg.png",
-          "dataImg": "assets/images/about_contents_4.png",
-          "dataWidth": "100%",
-          "dataHeight": "100%",
-          "dataAlign": "center"
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
+        },
+        {
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
         }
-
-
       ]
     },
 
@@ -47,18 +71,59 @@
       "title": "OUR WORKS",
       "contents" : [
         {
-          "dataBackgroundImg": "assets/images/works.jpg",
-          "dataImg": "assets/images/works_txt.png",
-          "dataWidth": "100%",
-          "dataHeight": "100%",
-          "dataAlign": "center"
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
         },
         {
-          "dataBackgroundImg": "assets/images/works_bg.png",
-          "dataImg": "assets/images/works_portfolio_txt.png",
-          "dataWidth": "100%",
-          "dataHeight": "200%",
-          "dataAlign": "top"
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
+        },
+        {
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
+        },
+        {
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
+        },
+        {
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
         }
       ]
     },
@@ -67,27 +132,60 @@
       "title": "CONTACT US",
       "contents" : [
         {
-          "dataBackgroundImg": "assets/images/contact_1.jpg",
-          "dataImg": "assets/images/contact_1_txt.png",
-          "dataWidth": "100%",
-          "dataHeight": "100%",
-          "dataAlign": "center"
-        },
-        {
-          "dataBackgroundImg": "assets/images/contact_2.jpg",
-          "dataImg": "assets/images/contact_2_txt.png",
-          "dataWidth": "100%",
-          "dataHeight": "100%",
-          "dataAlign": "center"
-        },
-        {
-          "dataBackgroundImg": "assets/images/contact_3.jpg",
-          "dataImg": "assets/images/contact_3_txt.png",
-          "dataWidth": "100%",
-          "dataHeight": "100%",
-          "dataAlign": "center"
-        }
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
 
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
+        },
+        {
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
+        },
+        {
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
+        },
+        {
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
+        },
+        {
+          "component": "comp-image-frame",
+          "data" : {
+            "backgroundImg": "assets/images/about.jpg",
+            "width": "100%",
+            "height": "100%",
+
+            "img": "assets/images/about_txt.png",
+            "align": "center"
+          }
+        }
       ]
     }
 

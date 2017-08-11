@@ -1,19 +1,16 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="img-frame"
+    <div class="content about-main"
          :style="{
              width: frameWidth,
-             height: frameHeight,
-             'background-image': 'url(' + frameImageSrc + ')'
+             height: frameHeight
          }
     ">
-        <div class="content"
-        :style="{
-        'background-image': 'url(' + jsonData.img + ')',
-        'background-position' : jsonData.align
-        }"
-        >
+        <div class="title">
+            <div>WIDEN</div>
+            <div>THE VIEW OF</div>
+            <div>CREATIVITY</div>
         </div>
     </div>
 </template>
@@ -39,25 +36,12 @@
 
         computed:{
             frameWidth : function () {
-                if (this.isPercentValue(this.jsonData.width)) {
-                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowWidth);
-                }
-                return this.jsonData.width;
+                return this.windowWidth;
             },
 
             frameHeight : function () {
-                if (this.jsonData.height === 'auto') {
-                    return this.frameWidth();
-                }
-                if (this.isPercentValue(this.jsonData.height)) {
-                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowHeight);
-                }
-                return this.jsonData.height;
+                return this.windowHeight;
             },
-
-            frameImageSrc : function() {
-                return this.jsonData.backgroundImg;
-            }
         },
 
         beforeMount:function(){

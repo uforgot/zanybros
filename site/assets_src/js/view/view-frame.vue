@@ -13,7 +13,6 @@
         >
         </div>
 
-
         <div class="logo"><a href="#about">ZANYBROS</a></div>
 
         <div class="bar left"

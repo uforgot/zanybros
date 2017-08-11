@@ -128,8 +128,7 @@
             },
 
             setContentsXByIndex: function($index) {
-                let tmpX = (this.windowWidth * -1) * ($index - 1);
-                this.targetContentsX = tmpX;
+                this.targetContentsX = (this.windowWidth * -1) * ($index - 1);
             }
 
         },

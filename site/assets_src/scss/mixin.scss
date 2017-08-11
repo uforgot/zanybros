@@ -149,55 +149,6 @@
     #{$prefix}animation-delay: $delay;
   }
 }
-
-
-@include keyframes(sec1-bg-2) {
-  0% { @include  opacity(0);}
-  14% { @include  opacity(1);}
-  80% { @include  opacity(1);}
-  96% { @include  opacity(0);}
-}
-@include keyframes(sec1-bg-3) {
-  6% { @include  opacity(0);}
-  26% { @include  opacity(1);}
-  70% { @include  opacity(1);}
-  84% { @include  opacity(0);}
-}
-@include keyframes(sec1-bg-4) {
-  0% { @include  opacity(0);}
-  28% { @include  opacity(1);}
-  65% { @include  opacity(1);}
-  95% { @include  opacity(0);}
-}
-@include keyframes(sec1-bg-5) {
-  0% { @include  opacity(0);}
-  50% { @include  opacity(1);}
-  58% { @include  opacity(1);}
-  90% { @include  opacity(0);}
-}
-
-@include keyframes(sec4fromUpToDown) {
-  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0); @include opacity(0);} }
-  45% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,300px);}}
-  60% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1);}}
-
-  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0);@include opacity(1);}}
-}
-@include keyframes(sec4fromDownToUp) {
-  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0); @include opacity(0);} }
-  45% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,-300px);}}
-  60% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1);}}
-
-  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0);@include opacity(1);}}
-}
-@include keyframes(sec4fromDownToUpMin) {
-  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,250px); @include opacity(0);} }
-  45% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,-50px);}}
-  60% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1);}}
-
-  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0);@include opacity(1);}}
-}
-
 /* line */
 @mixin line($width:1px,$height:1px,$color:#000){
   width : $width; border-top:#{$height} solid $color;
