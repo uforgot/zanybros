@@ -4,7 +4,7 @@
 @import "mixin";
 
 body {
-  background: #ccc;
+  background: #333;
   font-family: "GothamUltra";
   color: #000;
 
@@ -59,7 +59,7 @@ body {
   top:0;
   color: #000;
   width: 100%;
-  z-index: 1100;
+  z-index: 1000;
 
   .logo {
     position: absolute;
@@ -69,7 +69,7 @@ body {
     margin-left:-100px;
     text-align:center;
     font-family: "GothamUltraItalic";
-    font-size: 24px;
+    font-size: 22px;
     color:#fff;
   }
 
@@ -77,6 +77,28 @@ body {
     position:absolute;
     right:20px;
     top:20px;
+  }
+
+  .menu-container {
+    display:none;
+  }
+  .language-container {
+    display:none;
+  }
+
+  .border-container {
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    //background:#f00;
+    border:0px solid #ccc;
+
+    pointer-events: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
+    background: none !important;
   }
 
   .menu {
@@ -105,18 +127,25 @@ body {
     position:absolute;
     top:50vh;
     width:25px;
-    height:5px;
+    height:6px;
     background:#fff;
 
+    pointer-events: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
 
-    &.left{
-      left:30px;
-    }
+  }
+}
 
-    &.right {
-      right:30px;
-    }
 
+@keyframes bar-left-animation {
+  0% {
+    width:25px;
+  }
+  50% {
+    width:5px;
+  }
+  100% {
+    width:5px;
   }
 }
 

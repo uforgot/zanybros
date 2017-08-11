@@ -6,7 +6,7 @@
     <section
              :style="{
                  height: frameHeight,
-                 left:computedPositionX
+                 transform : computedPositionX
              }"
     >
         <comp-image-frame
@@ -56,7 +56,9 @@
             },
 
             computedPositionX: function() {
-                return ((this.dataIndex * this.windowWidth) +  this.dataLeft) + 'px';
+                let x = ((this.dataIndex * this.windowWidth) +  this.dataLeft) + 'px';
+                return 'translate3d(' + x + ',0,0)';
+
             },
             computedScale: function() {
                 return 'scale(' + this.dataScale + ')';

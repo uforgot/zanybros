@@ -1,45 +1,86 @@
+@mixin borderRadius($pos:'',$r:0px) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    @if($pos==''){
+      #{$prefix}border-radius : $r;
+    }
+    @else{
+      #{$prefix}border-#{$pos}-radius : $r;
+    }
+
+  }
+}
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacityIE: $opacity * 100;
   filter: alpha(opacity=$opacityIE);
 }
 
-/* blur */
-@mixin blur($value) {
-  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-    #{$prefix}filter: blur($value+px);
-  }
+@mixin rotateY($degree) {
+  -ms-transform: rotateY($degree); /* IE 9 */
+  -webkit-transform: rotateY($degree); /* Chrome, Safari, Opera */
+  transform: rotateY($degree);
+}
+/* rotate */
+@mixin rotate($degree) {
+  -ms-transform: rotate($degree); /* IE 9 */
+  -webkit-transform: rotate($degree); /* Chrome, Safari, Opera */
+  transform: rotate($degree);
 }
 
 /* transform */
+@mixin transform( $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}transform: $value;
+  }
+}
+@mixin transform-origin( $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}transform-origin: $value;
+  }
+}
+@mixin perspective( $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}perspective: $value;
+  }
+}
+/* transition */
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  transition: $args;
+}
 @mixin no-transition() {
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -o-transition: none !important;
   transition: none !important;
 }
-@mixin transform( $value) {
-  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-    #{$prefix}transform: $value;
-  }
-}
-
-@mixin transform-css-transition($value) {
-  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-    #{$prefix}transition: #{$prefix}transform #{$value};
-  }
-}
-@mixin transform-transition($time,$delay,$bezier) {
+/* transform-transition */
+@mixin transform-transition($time:1,$delay:0,$bezier:'') {
   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
     #{$prefix}transition: #{$prefix}transform #{$time}s cubic-bezier(#{$bezier});
     #{$prefix}transition-delay: #{$delay}s;
   }
 }
 @mixin transform-transition-inout($time:1,$delay:0){
-  $bezier: .70, 0, .20, 1;
+  $bezier: .5, 0, .5, 1;
   @include transform-transition($time,$delay,$bezier);
 }
-
+@mixin transform-transition-in($time:1,$delay:0){
+  $bezier: .5, 0, 1, .5;
+  @include transform-transition($time,$delay,$bezier);
+}
+@mixin transform-transition-out($time:1,$delay:0){
+  $bezier: 0, .5, .5, 1;
+  @include transform-transition($time,$delay,$bezier);
+}
+/* css-transition */
+@mixin css-value-transition($value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}transition: #{$value};
+  }
+}
 @mixin css-transition($property,$time,$delay,$bezier) {
   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
     #{$prefix}transition: #{$property} #{$time}s cubic-bezier(#{$bezier});
@@ -56,22 +97,17 @@
 }
 @mixin css-transition-out($property:all,$time:1,$delay:0){
   $bezier: 0, .5, .5, 1;
-  @include css-transition($property,$time,$delay,$bezier);
+  @include css-transition($property,$time,$delay,$bezier );
 }
 
-@mixin border-box() {
-  box-sizing: border-box;
+/* transform-css-transition */
+@mixin transform-css-transition($value) {
   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-    #{prefix}box-sizing: border-box;
+    #{$prefix}transition: #{$prefix}transform #{$value};
   }
 }
 
-@mixin transition($args) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  transition: $args;
-}
+
 /* keyframes */
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
@@ -98,121 +134,80 @@
   -o-animation: #{$str};
   animation: #{$str};
 }
-
-@mixin animationFrame($str, $count, $duration) {
+@mixin animationFrame($str, $count, $duration:1s,$delay:0,$ease:linear,$direct:normal) {
   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
     #{$prefix}animation-name: $str;
     #{$prefix}animation-iteration-count: $count;
     #{$prefix}animation-duration: $duration;
+    #{$prefix}animation-delay: $delay;
+    #{$prefix}animation-timing-function: $ease;
+    #{$prefix}animation-direction: $direct;
   }
 }
-
 @mixin animationDelay($delay) {
   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
     #{$prefix}animation-delay: $delay;
   }
 }
 
-@include keyframes(scroll-loop) {
-  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translateY(0);} }
-  50% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translateY(5px);} }
-  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translateY(0);} }
+
+@include keyframes(sec1-bg-2) {
+  0% { @include  opacity(0);}
+  14% { @include  opacity(1);}
+  80% { @include  opacity(1);}
+  96% { @include  opacity(0);}
 }
-@include keyframes(kv-loop1) {
-  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0) rotate(0deg); @include opacity(0)} }
-  25% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' { @include opacity(1)} }
-  50% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(10px,10px) rotate(10deg);@include opacity(0)}}
-  50% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1)}}
-  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0) rotate(0deg);@include opacity(0)}}
+@include keyframes(sec1-bg-3) {
+  6% { @include  opacity(0);}
+  26% { @include  opacity(1);}
+  70% { @include  opacity(1);}
+  84% { @include  opacity(0);}
 }
-@include keyframes(kv-loop2) {
-  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0) rotate(0deg); @include opacity(1)} }
-  50% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(10px,10px) rotate(10deg);@include opacity(0)}}
-  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0) rotate(0deg);@include opacity(1)}}
+@include keyframes(sec1-bg-4) {
+  0% { @include  opacity(0);}
+  28% { @include  opacity(1);}
+  65% { @include  opacity(1);}
+  95% { @include  opacity(0);}
 }
-@include keyframes(kv-loop3) {
-  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0) rotate(0deg); @include opacity(0.5)} }
-  20% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1)} }
-  40% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(0.5)} }
-  60% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(10px,10px) rotate(10deg);@include opacity(0)}}
-  75% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(0.5)} }
-  90% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1)} }
-  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0) rotate(0deg);@include opacity(0.5)}}
-}
-@include keyframes(kv-loop4) {
-  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0) rotate(0deg); @include opacity(0.2)} }
-  15% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1)} }
-  30% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(0.1)} }
-  45% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(10px,10px) rotate(10deg);@include opacity(0.8)} }
-  60% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(0.3)}}
-  75% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1)} }
-  90% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(0)} }
-  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0) rotate(0deg);@include opacity(0.2)}}
-}
-/*txt transition*/
-@mixin basic_trans($x,$y:0,$time:0.7){
-  @include opacity(0);@include transform(translate(#{$x},#{$y}));@include transform-css-transition('#{$time}s cubic-bezier(.5, 0, .5, 1), opacity #{$time}s cubic-bezier(.5, 0, 1, .5)')
-}
-@mixin basic_trans_out($x,$y:0,$time:0.7){
-  @include opacity(0);@include transform(translate(#{$x},#{$y}));@include transform-css-transition('#{$time}s cubic-bezier( 0, .5, .5, 1), opacity #{$time}s cubic-bezier(.5, 0, 1, .5)')
-}
-@mixin basic_trans_on(){
-  @include opacity(1);@include transform(translate(0,0));
+@include keyframes(sec1-bg-5) {
+  0% { @include  opacity(0);}
+  50% { @include  opacity(1);}
+  58% { @include  opacity(1);}
+  90% { @include  opacity(0);}
 }
 
+@include keyframes(sec4fromUpToDown) {
+  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0); @include opacity(0);} }
+  45% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,300px);}}
+  60% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1);}}
+
+  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0);@include opacity(1);}}
+}
+@include keyframes(sec4fromDownToUp) {
+  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0); @include opacity(0);} }
+  45% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,-300px);}}
+  60% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1);}}
+
+  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0);@include opacity(1);}}
+}
+@include keyframes(sec4fromDownToUpMin) {
+  0% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,250px); @include opacity(0);} }
+  45% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,-50px);}}
+  60% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  @include opacity(1);}}
+
+  100% {   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  #{$prefix}transform: translate(0,0);@include opacity(1);}}
+}
 
 /* line */
-@mixin line($width,$height,$color:#000,$time:0.5){
-  position: absolute; width : $width; height : $height;border-top:1px solid $color;
-  @include opacity(0);
-  @include css-transition-inout(all,$time);
+@mixin line($width:1px,$height:1px,$color:#000){
+  width : $width; border-top:#{$height} solid $color;
 }
 
-@mixin lineTop($width,$height,$color:#000,$time:0.5){
-  position: absolute; width : $width; height : $height;border-left:1px solid $color;
-  @include opacity(0);
-  @include css-transition-inout(all,$time);
+@mixin lineTop($height:1px,$width:1px,$color:#000){
+  width : $width; height : $height;border-left:#{$width} solid $color;
 }
 
-/* rotate */
-@mixin rotate($degree) {
-  -ms-transform: rotate($degree); /* IE 9 */
-  -webkit-transform: rotate($degree); /* Chrome, Safari, Opera */
-  transform: rotate($degree);
+/* font */
+@mixin calLetterSpacing( $spacing ){
+  letter-spacing: -($spacing / 1000) + em;
 }
-
-/* fonts */
-@mixin fontSetting($font,$size,$ls,$lh){
-  font-family:$font;
-  font-size:$size;
-  letter-spacing:$ls;
-  line-height:$lh;
-  font-weight:100;
-}
-
-@mixin fontLayout( $t,$r,$b,$l,$tt){
-  padding:$t+px $r+px $b+px $l+px;
-  margin-top:$tt+px;
-}
-
-/* drop shadow */
-@mixin boxShadow($blurX, $blurY, $blurRadius, $alpha) {
-  box-shadow: $blurX+px $blurY+px $blurRadius+px rgba(0,0,0,$alpha);
-  @each $prefix in -webkit-, -moz-, '' {
-    #{$prefix}box-shadow: $blurX+px $blurY+px $blurRadius+px rgba(0,0,0,$alpha);
-  }
-}
-
-/* image center */
-@mixin setCenter( $x, $y, $width, $height) {
-  margin-top:$height/2 * -1 + px;
-  margin-left:$width/2 * -1 + px;
-
-  left:$x + $width/2 + px;
-  top:$y + $height/2 + px;
-
-  width:$width + px;
-  height:$height + px;
-}
-
-

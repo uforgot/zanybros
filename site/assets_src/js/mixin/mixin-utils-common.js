@@ -9,7 +9,7 @@ Vue.mixin({
         isPercentValue : ($value) => {
             $value = String($value);
 
-            if (($value.split('%').length) == 2) {
+            if (($value.split('%').length) === 2) {
                 return true;
             }
             return false;

@@ -27,6 +27,7 @@
     import {EventBus} from '../events/event-bus.js';
     import MixinControlResize from '../mixin/mixin-control-resize.vue';
     import MixinEventCustom from '../mixin/mixin-event-custom.vue';
+    import TWEEN from '@tweenjs/tween.js';
 
     import ViewFlickContents from './view-flick-contents.vue';
 
@@ -50,13 +51,14 @@
 
         data: function() {
             return {
+                isResize:false,
+
                 startX:0,
                 startY:0,
                 distance:0,
 
-                animationInterval:null,
-                targetContentsX:0,
                 currentContentsX:0,
+                targetContentsX:0
             }
         },
 
@@ -93,24 +95,9 @@
                 this.setContentsSnapX();
             },
 
-            handleTimer: function () {
-                if (!this.dataFolding) {
-                    this.targetContentsX = (this.windowWidth * -1) * (this.dataCurrentMenuIndex - 1);
-                }
-                this.currentContentsX = this.setEasingValue(this.targetContentsX, this.currentContentsX, 4);
-            },
-
             handleResize: function () {
+                this.isResize = true;
                 this.setContentsSnapX();
-                this.currentContentsX = this.targetContentsX;
-            },
-
-            setEasingValue: function($targetValue , $currentValue, $easingValue) {
-                if (Math.abs($targetValue - $currentValue) > 1) {
-                    return $currentValue + ($targetValue - $currentValue)/$easingValue;
-                } else {
-                    return $targetValue;
-                }
             },
 
             setContentsPosition: function($x, $y) {
@@ -123,7 +110,7 @@
                 let minX = 0;//this.windowWidth * 1/8;
                 let maxX = (this.windowWidth * (this.dataContentsList.length-1))*-1; // + (this.windowWidth * 1/8)*-1;
 
-                this.targetContentsX = this.currentContentsX + (this.distanceX * (50));
+                this.targetContentsX += (this.distanceX * (4));
 
                 if (this.targetContentsX > minX) {
                     this.targetContentsX = minX;
@@ -135,16 +122,39 @@
             },
 
             setContentsSnapX: function() {
-                let indexX = Math.abs(Math.round((this.targetContentsX)/this.windowWidth));
-                EventBus.$emit(EventBus.MENU_CLICK_EVENT, indexX+1);
+                let indexX = Math.abs(Math.round((this.targetContentsX)/this.windowWidth)) + 1;
+                EventBus.$emit(EventBus.MENU_CLICK_EVENT, indexX);
                 this.setContentsXByIndex(indexX);
             },
 
             setContentsXByIndex: function($index) {
-                let tmpX = (this.windowWidth * -1) * $index;
+                let tmpX = (this.windowWidth * -1) * ($index - 1);
                 this.targetContentsX = tmpX;
             }
 
+        },
+
+        watch : {
+            targetContentsX : function($newValue, $oldValue){
+                function animate() {
+                    if(TWEEN.update()) {
+                        requestAnimationFrame(animate);
+                    }
+                }
+
+                new TWEEN.Tween({ tweeningNumber : $oldValue })
+                    .to({ tweeningNumber : $newValue }, (this.isFolding || this.isResize) ?0:200)
+                    .onUpdate(($e) =>
+                        {
+                            this.currentContentsX = Number($e.tweeningNumber.toFixed(2));
+                            this.isResize = false;
+                        }
+                    )
+                    .start();
+
+
+                animate();
+            }
         },
 
         computed:{
@@ -157,9 +167,9 @@
         },
 
         beforeDestroy: function () {
-            clearInterval(this.animationInterval);
+            EventBus.$off(EventBus.MENU_CLICK_EVENT, this.setContentsXByIndex);
 
-            window.removeEventListener('resize', (e)=>this.handleResize);
+            window.removeEventListener('resize', this.handleResize);
             this.$off(this.CUSTOM_EVENT.INTERACTION_START, (e)=>this.handleInteractionStart(e));
             this.$off(this.CUSTOM_EVENT.INTERACTION_END, (e)=>this.handleInteractionEnd(e));
             this.$off(this.CUSTOM_EVENT.INTERACTION_MOVE, (e)=>this.handleInteractionMove(e));
@@ -167,9 +177,9 @@
         },
 
         mounted() {
-            this.animationInterval = setInterval(this.handleTimer, 1000/40);
+            EventBus.$on(EventBus.MENU_CLICK_EVENT, this.setContentsXByIndex);
 
-            window.addEventListener('resize', (e)=>this.handleResize);
+            window.addEventListener('resize', this.handleResize);
             this.$on(this.CUSTOM_EVENT.INTERACTION_START, (e)=>this.handleInteractionStart(e));
             this.$on(this.CUSTOM_EVENT.INTERACTION_END, (e)=>this.handleInteractionEnd(e));
             this.$on(this.CUSTOM_EVENT.INTERACTION_MOVE, (e)=>this.handleInteractionMove(e));
@@ -187,15 +197,19 @@
     @import "~scssMixin";
 
     .root-animation-zoom-out {
-        @include css-transition-out(transform, 0.3, 0);
+        @include css-value-transition('
+            transform 0.2s ease-out
+        ');
     }
 
     .root-animation-zoom-in {
-        @include css-transition-out(transform, 0.2, 0);
+        @include css-value-transition('
+            transform 0.2s ease-out
+        ');
     }
 
     .root-zoom-out {
-        @include transform(scale(0.8));
+        //@include transform(scale(0.8));
     }
 
 

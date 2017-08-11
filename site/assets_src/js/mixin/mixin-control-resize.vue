@@ -14,14 +14,15 @@
 
 
         methods: {
-            handleWindowResize(event) {
+            handleWindowResize : function(event) {
                 this.windowWidth = event.currentTarget.innerWidth;
                 this.windowHeight = window.innerHeight;
             },
         },
         beforeDestroy: function () {
-            window.removeEventListener('resize', this. handleWindowResize);
+            window.removeEventListener('resize', this.handleWindowResize);
         },
+
         mounted() {
             window.addEventListener('resize', this.handleWindowResize);
         },

@@ -36,7 +36,7 @@
         methods : {
             setMenuHandler:function($index) {
                 // 메뉴 포커스 제어
-                console.log('setMenu--> ' + $index);
+//                console.log('setMenu--> ' + $index);
                 switch ($index) {
                     case 1:
                         window.location.href = '#about';

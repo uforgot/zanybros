@@ -3,7 +3,7 @@
  */
 import Axios from 'axios'
 import Vue from 'vue';
-import Router from './routie';
+import Router from './vendor/routie';
 
 //전역 유틸 mixin
 import './mixin/mixin-utils-common';
