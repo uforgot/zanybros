@@ -14,17 +14,17 @@
 
 
         methods: {
-            handleWindowResize : function(event) {
-                this.windowWidth = event.currentTarget.innerWidth;
+            handleWindowResizeMixin : function() {
+                this.windowWidth = window.innerWidth;//event.currentTarget.innerWidth;
                 this.windowHeight = window.innerHeight;
             },
         },
         beforeDestroy: function () {
-            window.removeEventListener('resize', this.handleWindowResize);
+            window.removeEventListener('resize', this.handleWindowResizeMixin);
         },
 
         mounted() {
-            window.addEventListener('resize', this.handleWindowResize);
+            window.addEventListener('resize', this.handleWindowResizeMixin);
         },
     }
 </script>

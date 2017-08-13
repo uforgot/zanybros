@@ -1,9 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 *.css
 *.map
-
+*.mp4
 
 #/.gitignore
 /node_modules/
 /.idea/
 /site/assets/
+/site/assets_src/images/mp4/

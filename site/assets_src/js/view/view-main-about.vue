@@ -5,12 +5,19 @@
          :style="{
              width: frameWidth,
              height: frameHeight
-         }
-    ">
+         }"
+    >
+        <comp-video-frame
+                :video-url="jsonData.videoUrl"
+                :video-width="jsonData.videoWidth"
+                :video-height="jsonData.videoHeight"
+        ></comp-video-frame>
         <div class="title">
-            <div>WIDEN</div>
-            <div>THE VIEW OF</div>
-            <div>CREATIVITY</div>
+            <h1>
+                WIDEN<br>
+                THE VIEW OF<br>
+                CREATIVE
+            </h1>
         </div>
     </div>
 </template>
@@ -19,6 +26,7 @@
 <!-- script -->
 <script>
     import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import compVideoFrame from '../component/comp-video-frame.vue';
 
     export default {
         mixins: [mixinResizeEvent],
@@ -31,21 +39,31 @@
 
         data: function() {
             return {
+
             };
         },
 
         computed:{
             frameWidth : function () {
-                return this.windowWidth;
+                if (this.isPercentValue(this.jsonData.width)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowWidth);
+                }
+                return this.jsonData.width;
             },
 
             frameHeight : function () {
-                return this.windowHeight;
+                if (this.jsonData.height === 'auto') {
+                    return this.frameWidth();
+                }
+                if (this.isPercentValue(this.jsonData.height)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowHeight);
+                }
+                return this.jsonData.height;
             },
         },
 
-        beforeMount:function(){
-
+        components:{
+            "comp-video-frame": compVideoFrame,
         },
 
         methods:{
@@ -53,30 +71,17 @@
         },
 
 
-        components:{
+        beforeDestroy: function () {
 
         },
 
-        mounted : function() {
+        mounted() {
 
         },
-
-        created:function(){
-
-        }
     }
 </script>
 
 
 <style scoped lang="scss">
     @import "~scssMixin";
-
-    .img-frame {
-        float:left;
-        display:inline-block;
-
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
 </style>

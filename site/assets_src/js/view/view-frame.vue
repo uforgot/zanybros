@@ -136,7 +136,7 @@
     }
 
     .border-folding {
-        border:20px solid #fff;
+        border:30px solid #fff;
     }
 
 

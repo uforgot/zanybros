@@ -5,6 +5,7 @@
 <template>
     <section
              :style="{
+                 width: frameWidth,
                  height: frameHeight,
                  transform : computedPositionX
              }"
@@ -21,8 +22,6 @@
 
 <script>
     import MixinControlResize from '../mixin/mixin-control-resize.vue';
-
-
 
     export default {
         mixins: [ MixinControlResize ],
@@ -48,7 +47,12 @@
 
 
         computed:{
+            frameWidth : function () {
+                return this.windowWidth;
+            },
+
             frameHeight : function () {
+                // todo : contents 내부 내용의 height 값을 나타내도록 해야함
                 return this.getPixelValueByPercentValue(100,this.windowHeight);
             },
 

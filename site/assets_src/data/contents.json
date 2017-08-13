@@ -1,193 +1,198 @@
 {
-  "contentsData" : [
-    {
-      "title": "ABOUT US",
-      "contents" : [
+    "contentsData" : [
         {
-          "component": "view-main-about",
-          "data" : {
+            "title": "ABOUT US",
+            "contents" : [
+                {
+                    "component": "view-main-about",
+                    "data" : {
+                        "videoUrl" : "assets/images/mp4/about_reel.mp4",
+                        "videoWidth" : 960,
+                        "videoHeight" : 540,
+                        "width": "100%",
+                        "height": "100%"
 
-          }
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                }
+            ]
         },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
 
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
+        {
+            "title": "OUR WORKS",
+            "contents" : [
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                }
+            ]
         },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
 
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
         {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
+            "title": "CONTACT US",
+            "contents" : [
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
 
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
 
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
 
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "img": "assets/images/about_txt.png",
+                        "align": "center"
+                    }
+                }
+            ]
         }
-      ]
-    },
 
-    {
-      "title": "OUR WORKS",
-      "contents" : [
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        }
-      ]
-    },
-
-    {
-      "title": "CONTACT US",
-      "contents" : [
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        },
-        {
-          "component": "comp-image-frame",
-          "data" : {
-            "backgroundImg": "assets/images/about.jpg",
-            "width": "100%",
-            "height": "100%",
-
-            "img": "assets/images/about_txt.png",
-            "align": "center"
-          }
-        }
-      ]
-    }
-
-  ]
+    ]
 }
