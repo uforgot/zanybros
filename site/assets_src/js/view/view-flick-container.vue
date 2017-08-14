@@ -63,7 +63,7 @@
         },
 
         components:{
-            "view-flick-contents": ViewFlickContents,
+            ViewFlickContents,
         },
 
         methods: {

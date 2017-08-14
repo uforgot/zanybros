@@ -1,22 +1,25 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="content about-main"
+    <div class="content main contact"
          :style="{
              width: frameWidth,
              height: frameHeight
          }"
     >
-        <comp-video-frame
-                :video-url="jsonData.videoUrl"
+        <comp-youtube-frame
+                :video-id="jsonData.videoId"
                 :video-width="jsonData.videoWidth"
                 :video-height="jsonData.videoHeight"
-        ></comp-video-frame>
-        <div class="title">
+        ></comp-youtube-frame>
+        <div class="title"
+             :style="{
+             width: frameWidth,
+             height: frameHeight
+         }"
+>
             <h1>
-                WIDEN<br>
-                THE VIEW OF<br>
-                CREATIVE
+                <p>CONTACT TO US</p>
             </h1>
         </div>
     </div>
@@ -25,11 +28,11 @@
 
 <!-- script -->
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
-    import compVideoFrame from '../component/comp-video-frame.vue';
+    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
 
     export default {
-        mixins: [mixinResizeEvent],
+        mixins: [MixinResizeEvent],
 
         props : {
             'json-data': {
@@ -63,7 +66,7 @@
         },
 
         components:{
-            "comp-video-frame": compVideoFrame,
+            CompYoutubeFrame,
         },
 
         methods:{

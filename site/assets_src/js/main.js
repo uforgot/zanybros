@@ -3,6 +3,13 @@
  */
 import Axios from 'axios'
 import Vue from 'vue';
+
+//vue plugins
+import VueYouTubeEmbed from 'vue-youtube-embed';
+Vue.use(VueYouTubeEmbed);
+
+
+
 import Router from './vendor/routie';
 
 //전역 유틸 mixin

@@ -22,6 +22,12 @@
 
 <script>
     import MixinControlResize from '../mixin/mixin-control-resize.vue';
+    import CompImageFrame from '../component/comp-image-frame.vue';
+    import CompVideoFrame from '../component/comp-video-frame.vue';
+
+    import ViewAboutMain from '../view/view-about-main.vue';
+    import ViewWorksMain from '../view/view-works-main.vue';
+    import ViewContactMain from '../view/view-contact-main.vue';
 
     export default {
         mixins: [ MixinControlResize ],
@@ -39,21 +45,22 @@
         },
 
         components:{
-            "comp-image-frame": require('../component/comp-image-frame.vue'),
-            "comp-video-frame": require('../component/comp-video-frame.vue'),
-
-            "view-main-about": require('./view-main-about.vue')
+            CompImageFrame,
+            CompVideoFrame,
+            ViewAboutMain,
+            ViewWorksMain,
+            ViewContactMain
         },
 
 
         computed:{
             frameWidth : function () {
-                return this.windowWidth;
+                return this.windowWidth + 'px';
             },
 
             frameHeight : function () {
                 // todo : contents 내부 내용의 height 값을 나타내도록 해야함
-                return this.getPixelValueByPercentValue(100,this.windowHeight);
+                return this.windowHeight + 'px';
             },
 
             computedPositionX: function() {

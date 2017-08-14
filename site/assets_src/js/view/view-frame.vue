@@ -31,6 +31,26 @@
             }"
         ></div>
 
+        <div class="side-menu left">
+            <div class="container">
+                <ul>
+                    <li>ABOUT US</li>
+                    <li>OUR WORKS</li>
+                    <li>CONTACT US</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="side-menu right">
+            <div class="container">
+                <ul>
+                    <li>ABOUT US</li>
+                    <li>OUR WORKS</li>
+                    <li>CONTACT US</li>
+                </ul>
+            </div>
+        </div>
+
         <div class="language-container">
             <div>EN</div>
             <div>CH</div>
@@ -47,7 +67,6 @@
                 <li :class="{ 'menu-is-active' : dataCurrentMenuIndex == 3}">
                     <a href="#contact">CONTACT US</a>
                 </li>
-
             </ul>
         </div>
 
@@ -107,7 +126,7 @@
 
     .bar-left-folding {
         left:140px !important;
-        width:6px;
+        width:$barWidth;
         height:80px;
         margin-top:-40px;
     }
@@ -118,7 +137,7 @@
 
     .bar-right-folding {
         right:140px !important;
-        width:6px;
+        width:$barWidth;
         height:80px;
         margin-top:-40px;
     }
@@ -136,7 +155,7 @@
     }
 
     .border-folding {
-        border:30px solid #fff;
+        border:20px solid #fff;
     }
 
 

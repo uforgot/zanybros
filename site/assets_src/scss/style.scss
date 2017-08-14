@@ -1,10 +1,14 @@
-@import "normalize";
-@import "common";
-@import "webfont";
-@import "mixin";
+@import "common/mixin";
+@import "common/normalize";
+@import "common/common";
+
+@import "webfont.scss";
+@import "frame.scss";
+@import "background.scss";
+@import "contents_about.scss";
 
 body {
-    background: #333;
+    background: #000;
     font-family: "GothamUltra";
     color: #000;
 
@@ -12,8 +16,6 @@ body {
     width: 100%;
 
     position:fixed;
-    //mobile
-    //overflow:hidden;
 }
 
 *:not(input):not(textarea) {
@@ -26,143 +28,8 @@ body {
     display: none;
 }
 
-.background-container {
-    color:#fff;
-
-    .left-text {
-        position: absolute;
-        left: -260px;
-        top: 50%;
-        padding:80px;
-        font-family: "GothamUltraItalic";
-        font-size: 160px;
-        margin-top: -160px;
-        @include transform(rotate(90deg));
-    }
-
-    .right-text {
-        position: absolute;
-        right: -260px;
-        top: 50%;
-        padding:80px;
-        font-family: "GothamUltraItalic";
-        font-size: 160px;
-        margin-top: -160px;
-        margin-left: 0;
-        @include transform(rotate(90deg));
-    }
-}
-
-.frame-container {
-    position: fixed;
-    left:0;
-    top:0;
-    color: #000;
-    width: 100%;
-    z-index: 1000;
-
-    .logo {
-        position: absolute;
-        left: 50vw;
-        top: 30px;
-        width:200px;
-        margin-left:-100px;
-        text-align:center;
-        font-family: "GothamUltraItalic";
-        font-size: 22px;
-        color:#fff;
-    }
-
-    .btn-menu {
-        position:absolute;
-        right:20px;
-        top:20px;
-    }
-
-    .menu-container {
-        display:none;
-    }
-    .language-container {
-        display:none;
-    }
-
-    .border-container {
-        display:block;
-        position:absolute;
-        left:0;
-        top:0;
-        width:100vw;
-        height:100vh;
-        //background:#f00;
-        border:0 solid #ccc;
-
-        pointer-events: none;
-        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
-        background: none !important;
-    }
-
-    .menu {
-        position:absolute;
-        text-align:center;
-        font-family: "GothamUltra";
-        font-size:12px;
-        color:#fff;
-        width:120px;
-        top:50vh;
-        margin-top:-5px;
-        //border: #ff0000 1px solid;
-
-        &.left{
-            left:0;
-            margin-left:-10px;
-            @include transform(rotate(90deg));
-        }
-        &.right {
-            right:0;
-            margin-right:-10px;
-            @include transform(rotate(-90deg));
-        }
-    }
-    .bar {
-        position:absolute;
-        top:50vh;
-        width:25px;
-        height:6px;
-        background:#fff;
-
-        pointer-events: none;
-        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
-
-    }
-}
-
-
-@keyframes bar-left-animation {
-    0% {
-        width:25px;
-    }
-    50% {
-        width:5px;
-    }
-    100% {
-        width:5px;
-    }
-}
-
 #app {
     overflow: hidden;
-}
-
-.comp-video-frame {
-    display:inline-block;
-    overflow:hidden;
-
-    .container {
-        position:absolute;
-        display: block;
-        left:50%;
-        top:50%;
-    }
 }
 
 .content-container {
@@ -170,9 +37,9 @@ body {
     left:0;
     top:0;
     color: #fff;
-    z-index: 100;
+    //z-index: 100;
 
-    width: 100vw;
+    //width: 100%;
 
     overflow:hidden;
 
@@ -180,7 +47,7 @@ body {
         position: absolute;
         left:0;
         top:0;
-        width:100%;
+        //width:100%;
         //height:100%;
 
         box-sizing: border-box;
@@ -188,13 +55,11 @@ body {
         -webkit-box-sizing: border-box;
 
         //-webkit-overflow-scrolling: touch;
-        overflow-x:hidden;
+        //overflow-x:hidden;
         overflow-y:scroll;
 
         .content {
             position:relative;
-            width:100%;
-            height:100%;
 
             background-repeat: no-repeat;
             background-position: center;
@@ -203,59 +68,6 @@ body {
             text-align:center;
         }
 
-        .about-main {
-
-            .title {
-                position:absolute;
-                left:0;
-                top:0;
-                width:100%;
-                height:100%;
-
-                h1 {
-                    position:absolute;;
-                    width:100%;
-                    top:50%;
-                    transform: translateY(-50%);
-                    font-size :8vw;
-                    //font-family : "GothamMedium";
-                    font-style: italic;
-                }
-            }
-        }
-    }
-
-    .background {
-        position:absolute;
-        left:0;
-        top:0;
-
-        .bar {
-            position: absolute;
-            left: 50vw;
-            margin-left: -30vw;
-            top: 50vh;
-            width: 60vw;
-            height: 5px;
-            background-color: #fff;
-
-            //@include opacity(0);
-        }
-
-        .txt {
-            position: absolute;
-            left: 50vw;
-            top:50vh;
-            //top: 90vh;
-            width:400px;
-            margin-left:-200px;
-            margin-top:-80px;
-            color:#fff;
-            font-family: "GothamUltra";
-            font-size:40px;
-            text-align:center;
-
-            //@include opacity(0);
-        }
     }
 }
+

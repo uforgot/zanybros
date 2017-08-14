@@ -1,23 +1,7 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="img-frame"
-         :style="{
-             width: frameWidth,
-             height: frameHeight,
-             'background-image': 'url(' + frameImageSrc + ')'
-         }
-    ">
-        <div class="content"
-        :style="{
-        'background-image': 'url(' + jsonData.img + ')',
-        'background-position' : jsonData.align,
-        'width' : frameWidth,
-        'height' : frameHeight
-        }"
-        >
-        </div>
-    </div>
+    <div class="main-scroll">SCROLL DOWN</div>
 </template>
 
 

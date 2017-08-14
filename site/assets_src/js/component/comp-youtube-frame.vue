@@ -1,37 +1,49 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="comp-video-frame"
+    <div class="comp-youtube-frame"
          :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }
     ">
         <div class="container"
+             :class="[{show:isReady}]"
              :style="{
                          'margin-left':videoFrameMarginLeft,
                          'margin-top': videoFrameMarginTop
                     }"
         >
-            <video  autoplay loop
-                    :src="videoUrl"
-                    :width="videoFrameWidth"
-                    :height="videoFrameHeight"
-            ></video>
+            <youtube :video-id="videoId"
+                     @ready="setYoutubeReady"
+                     :player-vars="{
+                         autoplay: 1,
+                         loop: 1,
+                         controls: 0,
+                         rel: 0,
+                         fs:0,
+                         modestbranding:1,
+                         showinfo:0
+                     }"
+                     :mute="true"
+                     @ended="handlePlayEnd"
+            ></youtube>
         </div>
+        <div class="din"></div>
     </div>
 </template>
 
 
 <!-- script -->
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
+//    import CompYoutubeEmbed from 'vue-youtube-embed';
+    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
 
     export default {
-        mixins: [mixinResizeEvent],
+        mixins: [MixinResizeEvent],
 
         props : {
-            'video-url': {
+            'video-Id': {
                 Type : String,
                 Required : true
             },
@@ -45,6 +57,9 @@
 
         data: function() {
             return {
+                isReady:false,
+                player:null,
+
                 videoFrameWidth:0,
                 videoFrameHeight:0
             };
@@ -69,7 +84,13 @@
         },
 
         methods:{
+            setYoutubeReady : function($player) {
+                this.player = $player;
+                this.handleWindowResize();
+                this.isReady = true;
+            },
             handleWindowResize: function() {
+
                 let size = this.getSizeByFrameSize(
                     {width:this.videoWidth, height:this.videoHeight},
                     {width:this.frameWidth, height:this.frameHeight},
@@ -77,6 +98,12 @@
 
                 this.videoFrameWidth = size.width;
                 this.videoFrameHeight = size.height;
+                if (this.player !== null) {
+                    this.player.setSize(this.videoFrameWidth, this.videoFrameHeight);
+                }
+            },
+            handlePlayEnd : function($player) {
+                $player.playVideo();
             }
         },
 
@@ -100,7 +127,7 @@
 <style scoped lang="scss">
     @import "~scssMixin";
 
-    .comp-video-frame {
+    .comp-youtube-frame {
         display:block;
         overflow:hidden;
         position:absolute;
@@ -108,10 +135,25 @@
         top:0;
 
         .container {
+            visibility: hidden;
             position:absolute;
             display: block;
             left:50%;
             top:50%;
+
+            &.show {
+                visibility: visible;
+            }
+        }
+
+        .din  {
+            position:absolute;
+            left:0;
+            top:0;
+            background: #000 ;
+            width:100%;
+            height:100%;
+            @include opacity($video-Din-Opacity);
         }
     }
 </style>

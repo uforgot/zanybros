@@ -3,7 +3,7 @@ const path = require('path');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const scssMixin = path.resolve(__dirname, './site/assets_src/scss/mixin.scss');
+const scssMixin = path.resolve(__dirname, './site/assets_src/scss/common/mixin.scss');
 
 const config = {
     context: path.resolve(__dirname, './site/assets_src/'),

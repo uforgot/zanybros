@@ -1,32 +1,42 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="img-frame"
+    <div class="content main about"
          :style="{
              width: frameWidth,
-             height: frameHeight,
-             'background-image': 'url(' + frameImageSrc + ')'
-         }
-    ">
-        <div class="content"
-        :style="{
-        'background-image': 'url(' + jsonData.img + ')',
-        'background-position' : jsonData.align,
-        'width' : frameWidth,
-        'height' : frameHeight
-        }"
+             height: frameHeight
+         }"
+    >
+        <comp-video-frame
+                :video-url="jsonData.videoUrl"
+                :video-width="jsonData.videoWidth"
+                :video-height="jsonData.videoHeight"
+        ></comp-video-frame>
+        <div class="title"
+             :style="{
+             width: frameWidth,
+             height: frameHeight
+         }"
         >
+            <h1>
+                <p>WIDEN</p>
+                <p>THE VIEW OF</p>
+                <p>CREATIVE</p>
+            </h1>
         </div>
+        <comp-main-scroll></comp-main-scroll>
     </div>
 </template>
 
 
 <!-- script -->
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import CompVideoFrame from '../component/comp-video-frame.vue';
+    import CompMainScroll from '../component/comp-main-scroll.vue';
 
     export default {
-        mixins: [mixinResizeEvent],
+        mixins: [MixinResizeEvent],
 
         props : {
             'json-data': {
@@ -36,6 +46,7 @@
 
         data: function() {
             return {
+
             };
         },
 
@@ -56,14 +67,11 @@
                 }
                 return this.jsonData.height;
             },
-
-            frameImageSrc : function() {
-                return this.jsonData.backgroundImg;
-            }
         },
 
-        beforeMount:function(){
-
+        components:{
+            "comp-video-frame": CompVideoFrame,
+            "comp-main-scroll" : CompMainScroll
         },
 
         methods:{
@@ -71,30 +79,17 @@
         },
 
 
-        components:{
+        beforeDestroy: function () {
 
         },
 
-        mounted : function() {
+        mounted() {
 
         },
-
-        created:function(){
-
-        }
     }
 </script>
 
 
 <style scoped lang="scss">
     @import "~scssMixin";
-
-    .img-frame {
-        float:left;
-        display:inline-block;
-
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
 </style>
