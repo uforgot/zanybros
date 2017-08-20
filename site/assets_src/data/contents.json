@@ -6,7 +6,7 @@
                 {
                     "component": "view-about-main",
                     "data" : {
-                        "videoUrl" : "assets/images/mp4/about_reel.mp4",
+                        "videoId" : "DqW4tcUQogU",
                         "videoWidth" : 960,
                         "videoHeight" : 540,
                         "width": "100%",
@@ -16,26 +16,130 @@
                 {
                     "component": "comp-image-frame",
                     "data" : {
-                        "backgroundImg": "assets/images/about_bg.png",
+                        "backgroundImg": "assets/images/about/section1_bg.jpg",
                         "width": "100%",
                         "height": "100%",
 
-                        "img": "assets/images/about_contents_1.png",
-                        "align": "center"
+                        "content" : {
+                            "component": "comp-txt-about",
+                            "align": "left",
+                            "title": [
+                                "We are creators of content",
+                                "that pursues newness that is",
+                                "unforgettable."
+                            ],
+                            "comment": [
+                                "It started as a professional music video production in 2001,",
+                                "and now it is expanding its business field with total contents",
+                                "channel such as advertisement, movie, drama production,",
+                                "overseas artist discovery, education and self-visual contents",
+                                "based on various networking and image technology."
+                            ]
+                        }
                     }
                 },
                 {
                     "component": "comp-image-frame",
                     "data" : {
-                        "backgroundImg": "assets/images/about_bg.png",
+                        "backgroundImg": "assets/images/about/section2_bg.jpg",
+                        "width": "100%",
+                        "height": "50%",
+
+                        "content" : {
+                            "component": "comp-txt-about",
+                            "align": "center",
+                            "title": [
+                                "We eliminate",
+                                "the boundaries of the creative",
+                                "and present a new perspective."
+                            ],
+                            "comment": [
+                                "He has global filming experience in Asia, North America, Europe,",
+                                "and has networking with leading productions and entertainment companies around the world.",
+                                "",
+                                "We are presenting new creatives by developing skills necessary for skillful staffs,",
+                                "genres and visual effects from conceptual planning through production to post",
+                                "production, crossing continent, language, and cultural boundaries."
+                            ]
+                        }
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about/section3_bg.jpg",
+                        "width": "100%",
+                        "height": "60%",
+
+                        "content" : {
+                            "component": "comp-txt-about",
+                            "align": "right",
+                            "title": [
+                                "We lead",
+                                "ever-changing trends and",
+                                "technologies."
+                            ],
+                            "comment": [
+                                "Trends and technologies change day by day, but we have",
+                                "used that opportunity as an opportunity. Enjoy new things,",
+                                "share ideas, inspire artists,customers, and advertisers.",
+                                "",
+                                " We continually improve and embrace new technologies,",
+                                "new ways of thinking for our greatest work."
+                            ]
+                        }
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about/section4_bg.jpg",
                         "width": "100%",
                         "height": "100%",
 
-                        "img": "assets/images/about_contents_3.png",
-                        "align": "center"
+                        "content" : {
+                            "component": "comp-txt-about",
+                            "align": "left",
+                            "title": [
+                                "We are creators of content",
+                                "that pursues newness that is",
+                                "unforgettable."
+                            ],
+                            "comment": [
+                                "It started as a professional music video production in 2001,",
+                                "and now it is expanding its business field with total contents",
+                                "channel such as advertisement, movie, drama production,",
+                                "overseas artist discovery, education and self-visual contents",
+                                "based on various networking and image technology."
+                            ]
+                        }
+                    }
+                },
+                {
+                    "component": "comp-image-frame",
+                    "data" : {
+                        "backgroundImg": "assets/images/about/section5_bg.jpg",
+                        "width": "100%",
+                        "height": "100%",
+
+                        "content" : {
+                            "component": "comp-txt-about",
+                            "align": "left",
+                            "title": [
+                                "We are creators of content",
+                                "that pursues newness that is",
+                                "unforgettable."
+                            ],
+                            "comment": [
+                                "It started as a professional music video production in 2001,",
+                                "and now it is expanding its business field with total contents",
+                                "channel such as advertisement, movie, drama production,",
+                                "overseas artist discovery, education and self-visual contents",
+                                "based on various networking and image technology."
+                            ]
+                        }
                     }
                 }
-
             ]
         },
 
@@ -50,17 +154,6 @@
                         "videoHeight" : 540,
                         "width": "100%",
                         "height": "100%"
-                    }
-                },
-                {
-                    "component": "comp-image-frame",
-                    "data" : {
-                        "backgroundImg": "assets/images/works_bg.png",
-                        "width": "100%",
-                        "height": "100%",
-
-                        "img": "assets/images/works_portfolio_txt.png",
-                        "align": "center"
                     }
                 }
             ]
@@ -77,50 +170,6 @@
                         "videoHeight" : 540,
                         "width": "100%",
                         "height": "100%"
-                    }
-                },
-                {
-                    "component": "comp-image-frame",
-                    "data" : {
-                        "backgroundImg": "assets/images/about.jpg",
-                        "width": "100%",
-                        "height": "100%",
-
-                        "img": "assets/images/about_txt.png",
-                        "align": "center"
-                    }
-                },
-                {
-                    "component": "comp-image-frame",
-                    "data" : {
-                        "backgroundImg": "assets/images/about.jpg",
-                        "width": "100%",
-                        "height": "100%",
-
-                        "img": "assets/images/about_txt.png",
-                        "align": "center"
-                    }
-                },
-                {
-                    "component": "comp-image-frame",
-                    "data" : {
-                        "backgroundImg": "assets/images/about.jpg",
-                        "width": "100%",
-                        "height": "100%",
-
-                        "img": "assets/images/about_txt.png",
-                        "align": "center"
-                    }
-                },
-                {
-                    "component": "comp-image-frame",
-                    "data" : {
-                        "backgroundImg": "assets/images/about.jpg",
-                        "width": "100%",
-                        "height": "100%",
-
-                        "img": "assets/images/about_txt.png",
-                        "align": "center"
                     }
                 }
             ]

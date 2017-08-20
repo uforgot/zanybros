@@ -31,25 +31,25 @@
             }"
         ></div>
 
-        <div class="side-menu left">
-            <div class="container">
-                <ul>
-                    <li>ABOUT US</li>
-                    <li>OUR WORKS</li>
-                    <li>CONTACT US</li>
-                </ul>
-            </div>
-        </div>
+        <!--<div class="side-menu left">-->
+            <!--<div class="container">-->
+                <!--<ul>-->
+                    <!--<li>ABOUT US</li>-->
+                    <!--<li>OUR WORKS</li>-->
+                    <!--<li>CONTACT US</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="side-menu right">
-            <div class="container">
-                <ul>
-                    <li>ABOUT US</li>
-                    <li>OUR WORKS</li>
-                    <li>CONTACT US</li>
-                </ul>
-            </div>
-        </div>
+        <!--<div class="side-menu right">-->
+            <!--<div class="container">-->
+                <!--<ul>-->
+                    <!--<li>ABOUT US</li>-->
+                    <!--<li>OUR WORKS</li>-->
+                    <!--<li>CONTACT US</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
 
         <div class="language-container">
             <div>EN</div>
@@ -121,22 +121,22 @@
     }
 
     .left {
-        left:50px;
+        left:20px;
     }
 
     .bar-left-folding {
-        left:140px !important;
+        left:40px !important;
         width:$barWidth;
         height:80px;
         margin-top:-40px;
     }
 
     .right {
-        right:50px;
+        right:20px;
     }
 
     .bar-right-folding {
-        right:140px !important;
+        right:40px !important;
         width:$barWidth;
         height:80px;
         margin-top:-40px;

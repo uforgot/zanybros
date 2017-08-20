@@ -29,6 +29,8 @@
     import ViewWorksMain from '../view/view-works-main.vue';
     import ViewContactMain from '../view/view-contact-main.vue';
 
+    import ViewAboutSub from '../view/view-about-sub.vue';
+
     export default {
         mixins: [ MixinControlResize ],
 
@@ -49,7 +51,8 @@
             CompVideoFrame,
             ViewAboutMain,
             ViewWorksMain,
-            ViewContactMain
+            ViewContactMain,
+            ViewAboutSub
         },
 
 

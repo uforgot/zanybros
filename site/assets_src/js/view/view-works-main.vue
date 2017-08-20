@@ -3,8 +3,8 @@
     <!-- 페이지 본문 컨텐츠 영역 -->
     <div class="content main works"
          :style="{
-             width: frameWidth,
-             height: frameHeight
+             width: frameWidth + 'px',
+             height: frameHeight + 'px'
          }"
     >
         <comp-youtube-frame
@@ -14,8 +14,8 @@
         ></comp-youtube-frame>
         <div class="title"
              :style="{
-             width: frameWidth,
-             height: frameHeight
+             width: frameWidth + 'px',
+             height: frameHeight + 'px'
          }"
 >
             <h1>

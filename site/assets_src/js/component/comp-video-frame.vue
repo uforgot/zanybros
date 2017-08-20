@@ -14,10 +14,10 @@
                     }"
         >
             <video  autoplay loop
-                    :src="videoUrl"
                     :width="videoFrameWidth"
                     :height="videoFrameHeight"
             ></video>
+            <!--:src="videoUrl"-->
         </div>
     </div>
 </template>

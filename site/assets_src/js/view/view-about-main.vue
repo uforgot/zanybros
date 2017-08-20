@@ -3,19 +3,19 @@
     <!-- 페이지 본문 컨텐츠 영역 -->
     <div class="content main about"
          :style="{
-             width: frameWidth,
-             height: frameHeight
+             width: frameWidth + 'px',
+             height: frameHeight + 'px'
          }"
     >
-        <comp-video-frame
-                :video-url="jsonData.videoUrl"
+        <comp-youtube-frame
+                :video-id="jsonData.videoId"
                 :video-width="jsonData.videoWidth"
                 :video-height="jsonData.videoHeight"
-        ></comp-video-frame>
+        ></comp-youtube-frame>
         <div class="title"
              :style="{
-             width: frameWidth,
-             height: frameHeight
+             width: frameWidth + 'px',
+             height: frameHeight + 'px'
          }"
         >
             <h1>
@@ -32,7 +32,7 @@
 <!-- script -->
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
-    import CompVideoFrame from '../component/comp-video-frame.vue';
+    import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
     import CompMainScroll from '../component/comp-main-scroll.vue';
 
     export default {
@@ -70,7 +70,7 @@
         },
 
         components:{
-            "comp-video-frame": CompVideoFrame,
+            "comp-youtube-frame" : CompYoutubeFrame,
             "comp-main-scroll" : CompMainScroll
         },
 

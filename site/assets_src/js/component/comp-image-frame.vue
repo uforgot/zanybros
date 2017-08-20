@@ -1,32 +1,40 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="img-frame"
-         :style="{
-             width: frameWidth,
-             height: frameHeight,
-             'background-image': 'url(' + frameImageSrc + ')'
-         }
-    ">
+    <comp-image
+        :data-width="frameWidth"
+        :data-height="frameHeight"
+        :data-src="frameImageSrc"
+    >
+        <div class="content">
+            <div v-bind:is="jsonData.content.component"
+                :json-data="jsonData.content"
+            ></div>
+        </div>
+
         <div class="content"
         :style="{
         'background-image': 'url(' + jsonData.img + ')',
         'background-position' : jsonData.align,
-        'width' : frameWidth,
-        'height' : frameHeight
+        'background-size' : jsonData.size,
+        'width' : contentWidth + 'px',
+        'height' : contentHeight + 'px'
         }"
         >
+            <slot></slot>
         </div>
-    </div>
+    </comp-image>
 </template>
 
 
 <!-- script -->
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import CompImage from '../component/comp-image.vue';
+    import CompTxtAbout from '../component/comp-txt-about.vue';
 
     export default {
-        mixins: [mixinResizeEvent],
+        mixins: [MixinResizeEvent],
 
         props : {
             'json-data': {
@@ -40,6 +48,20 @@
         },
 
         computed:{
+            contentWidth : function() {
+                if (this.isPercentValue(this.jsonData.contentWidth)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.contentWidth), this.frameWidth);
+                }
+                return (this.jsonData.contentWidth > this.frameWidth)?this.frameWidth:this.jsonData.contentWidth;
+            },
+
+            contentHeight : function() {
+                if (this.isPercentValue(this.jsonData.contentHeight)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.contentHeight), this.frameHeight);
+                }
+                return (this.jsonData.contentHeight > this.frameHeight)?this.jsonData.contentHeight:this.frameHeight;
+            },
+
             frameWidth : function () {
                 if (this.isPercentValue(this.jsonData.width)) {
                     return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowWidth);
@@ -72,7 +94,8 @@
 
 
         components:{
-
+            CompImage,
+            CompTxtAbout
         },
 
         mounted : function() {
@@ -88,13 +111,4 @@
 
 <style scoped lang="scss">
     @import "~scssMixin";
-
-    .img-frame {
-        float:left;
-        display:inline-block;
-
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
 </style>

@@ -17,7 +17,7 @@ Vue.mixin({
         },
 
         getPixelValueByPercentValue : function ($value, $max) {
-            return ($max * ($value/100) ) + 'px'
+            return ($max * ($value/100) );
         },
 
         getSizeByFrameSize : function ($size, $frameSize) {
@@ -43,6 +43,10 @@ Vue.mixin({
             }
 
             return size;
+        },
+
+        getJsonMultilineTxt : function ($str) {
+            return $str.join('\n');
         }
     }
 });

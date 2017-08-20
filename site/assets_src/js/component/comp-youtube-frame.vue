@@ -17,7 +17,7 @@
             <youtube :video-id="videoId"
                      @ready="setYoutubeReady"
                      :player-vars="{
-                         autoplay: 1,
+                         autoplay: 0,
                          loop: 1,
                          controls: 0,
                          rel: 0,

@@ -8,11 +8,8 @@
 
     .logo {
         position: absolute;
-        left: 50vw;
+        left: 40px;
         top: 30px;
-        width:200px;
-        margin-left:-100px;
-        text-align:center;
         font-family: "GothamUltraItalic";
         font-size: 22px;
         color:#fff;
@@ -25,7 +22,8 @@
     }
 
     .menu-container {
-        display:none;
+        position:absolute;
+        display:block;
     }
     .language-container {
         display:none;
