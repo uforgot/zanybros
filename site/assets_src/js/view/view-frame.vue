@@ -4,52 +4,7 @@
 
 <template>
     <div class="frame-container">
-        <div class="border-container"
-             :class = "{
-                    'border-folding': dataFolding,
-                    'border-animation-folding': dataFolding,
-                    'border-animation-normal': !dataFolding
-            }"
-        >
-        </div>
-
-        <div class="logo"><a href="#about">ZANYBROS</a></div>
-
-        <div class="bar left"
-            :class = "{
-                    'bar-left-folding': dataFolding,
-                    'bar-animation-folding': dataFolding,
-                    'bar-animation-normal': !dataFolding
-            }"
-        ></div>
-
-        <div class="bar right"
-            :class = "{
-                    'bar-right-folding': dataFolding,
-                    'bar-animation-folding': dataFolding,
-                    'bar-animation-normal': !dataFolding
-            }"
-        ></div>
-
-        <!--<div class="side-menu left">-->
-            <!--<div class="container">-->
-                <!--<ul>-->
-                    <!--<li>ABOUT US</li>-->
-                    <!--<li>OUR WORKS</li>-->
-                    <!--<li>CONTACT US</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="side-menu right">-->
-            <!--<div class="container">-->
-                <!--<ul>-->
-                    <!--<li>ABOUT US</li>-->
-                    <!--<li>OUR WORKS</li>-->
-                    <!--<li>CONTACT US</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</div>-->
+        <div class="logo"><a href="/">ZANYBROS</a></div>
 
         <div class="language-container">
             <div>EN</div>
@@ -58,14 +13,14 @@
 
         <div class="menu-container">
             <ul>
-                <li :class="{ 'menu-is-active' : dataCurrentMenuIndex == 1}">
-                    <a href="#about">ABOUT US</a>
+                <li>
+                    <router-link to="/about">ABOUT US</router-link>
                 </li>
-                <li :class="{ 'menu-is-active' : dataCurrentMenuIndex == 2}">
-                    <a href="#works">OUR WORKS</a>
+                <li>
+                    <router-link to="/works">OUR WORKS</router-link>
                 </li>
-                <li :class="{ 'menu-is-active' : dataCurrentMenuIndex == 3}">
-                    <a href="#contact">CONTACT US</a>
+                <li>
+                    <router-link to="/contact">CONTACT US</router-link>
                 </li>
             </ul>
         </div>
@@ -78,14 +33,7 @@
 
     export default {
         props : {
-            'data-folding': {
-                Type: Boolean,
-                required: true
-            },
-            'data-current-menu-index' : {
-                Type: Number,
-                required:true
-            }
+
         },
 
         computed:{
@@ -100,70 +48,7 @@
 <style scoped lang="scss">
     @import "~scssMixin";
 
-    .bar-animation-folding {
-        @include css-value-transition('
-            left 0.1s ease-out,
-            right 0.1s ease-out,
-            width  0.1s ease-out,
-            height  0.2s 0.2s ease-out,
-            margin-top  0.2s 0.2s ease-out
-        ');
+    .router-link-active {
+        color:red;
     }
-
-    .bar-animation-normal {
-        @include css-value-transition('
-            left 0.2s 0.2s ease-out,
-            right 0.2s 0.2s ease-out,
-            width  0.2s 0.2s ease-out,
-            height  0.1s ease-out,
-            margin-top  0.1s ease-out
-        ');
-    }
-
-    .left {
-        left:20px;
-    }
-
-    .bar-left-folding {
-        left:40px !important;
-        width:$barWidth;
-        height:80px;
-        margin-top:-40px;
-    }
-
-    .right {
-        right:20px;
-    }
-
-    .bar-right-folding {
-        right:40px !important;
-        width:$barWidth;
-        height:80px;
-        margin-top:-40px;
-    }
-
-    .border-animation-folding {
-        @include css-value-transition('
-            border 0.2s ease-out
-        ');
-    }
-
-    .border-animation-normal {
-        @include css-value-transition('
-            border 0.2s ease-out
-        ');
-    }
-
-    .border-folding {
-        border:20px solid #fff;
-    }
-
-
-
-    .menu-is-active {
-        color:#ff0000;
-    }
-
-
-
 </style>

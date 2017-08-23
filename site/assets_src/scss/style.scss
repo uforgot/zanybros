@@ -6,22 +6,14 @@
 @import "frame.scss";
 @import "background.scss";
 @import "contents_about.scss";
+@import "contents_works.scss";
 
 body {
-    background: #000;
+    background: #333;
     font-family: "GothamUltra";
-    color: #000;
+    color: #fff;
 
-    height: 100%;
     width: 100%;
-
-    position:fixed;
-}
-
-*:not(input):not(textarea) {
-    -webkit-user-select: none; /* disable selection/Copy of UIWebView */
-    -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 ::-webkit-scrollbar {
@@ -29,83 +21,116 @@ body {
 }
 
 #app {
-    overflow: hidden;
+    //overflow: hidden;
 }
 
-.content-container {
-    position: absolute;
-    left:0;
-    top:0;
-    color: #fff;
-    overflow:hidden;
+.view-content-margin {
+    display             : block;
+    position            : relative;
+}
 
-    section {
-        position: absolute;
-        left:0;
-        top:0;
-
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-
-        overflow-y:scroll;
-
-        .content {
-            position:relative;
-            text-align:center;
-            margin: 0 auto;
-
-            width:100%;
-            height:100%;
-
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-
-
-        .img-frame {
-            position:relative;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-
-        .txt-holder {
-            display:block;
-            position:absolute;
-            left:50%;
-            top:50%;
-            transform: translateY(-50%);
-            width:700px;
-            margin-left:-350px;
-
-            h1 {
-                white-space:pre-line;
-                font-family: "GothamMedium";
-                line-height:3.2vh;
-                font-size: 3vh;
-                margin-bottom: 2vh;
-            }
-
-            p {
-                white-space:pre-line;
-                font-family: "GothamMedium";
-                font-size: 1.2vh;
-                line-height: 1.8vh;
-            }
-
-            &.left {
-                margin-left:-40%;
-                text-align: left;
-            }
-
-            &.right {
-                margin-left:10%;
-                text-align: left;
-            }
-        }
-
+.view-content-title {
+    display: block;
+    position:relative;
+    .title {
+        position:absolute;
+        bottom:0;
+        text-align:center;
+        width:100%;
+        font-family : "GothamUltra";
+        font-size: 1.5vh;
+        padding-bottom:3vh;
     }
 }
 
+.view-content-holder {
+    display             : block;
+    position            : relative;
+    text-align          : center;
+    margin              : 0 auto;
+
+    .content {
+        background-repeat   : no-repeat;
+        background-position : center;
+        background-size     : cover;
+    }
+
+    .img-frame {
+        position            : relative;
+        background-repeat   : no-repeat;
+        background-position : center;
+        background-size     : cover;
+    }
+
+    .content-image {
+        display   : block;
+        position  : absolute;
+        left      : 50%;
+        top       : 50%;
+        transform : translateX(-50%) translateY(-50%);
+
+        &.left {
+            left : 30%;
+        }
+        &.right {
+            left : 60%;
+        }
+
+        .title {
+            display : none;
+        }
+    }
+
+    .content-video {
+        display: block;
+        position: relative;;
+    }
+
+}
+
+.view-footer {
+    position:relative;
+    display:block;
+    background:#000;
+
+    width:100%;
+    text-align:center;
+
+    .contact {
+        h1 {
+            font-family: "GothamMedium";
+            font-weight: bold;
+            font-size:20px;
+            margin-bottom:30px
+        }
+        p {
+            font-family: "GothamLight";
+            font-style: italic;
+            font-size:24px;
+        }
+        .email {
+            display:inline-block;
+            position:relative;
+
+            font-family: "GothamLight";
+            font-style: italic;
+            font-size:24px;
+            border-bottom: 1px solid #ffffff;
+        }
+        padding: 50px 0 0 0;
+    }
+    .copyright {
+        font-family: "GothamMedium";
+        font-size:8px;
+        padding: 50px 0 50px 0;
+
+        .logo {
+            left: 40px;
+            top: 30px;
+            font-family: "GothamUltraItalic";
+            font-size: 22px;
+            color:#fff;
+            margin-bottom:10px;
+        }
+    }
+}

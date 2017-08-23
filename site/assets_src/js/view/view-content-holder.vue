@@ -1,29 +1,25 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <comp-image
-        :data-width="frameWidth"
-        :data-height="frameHeight"
-        :data-src="frameImageSrc"
-    >
-        <div class="content">
-            <div v-bind:is="jsonData.content.component"
-                :json-data="jsonData.content"
-            ></div>
-        </div>
-
-        <div class="content"
-        :style="{
-        'background-image': 'url(' + jsonData.img + ')',
-        'background-position' : jsonData.align,
-        'background-size' : jsonData.size,
-        'width' : contentWidth + 'px',
-        'height' : contentHeight + 'px'
+    <div class="view-content-holder"
+         :style="{
+             'background-color': backgroundColor,
+             width: frameWidth + 'px',
+             height: frameHeight + 'px'
         }"
-        >
-            <slot></slot>
-        </div>
-    </comp-image>
+    >
+        <comp-image v-if="hasBackgroundImage"
+                :data-width="frameWidth"
+                :data-height="frameHeight"
+                :data-src="frameImageSrc"
+        ></comp-image>
+        <div
+                v-for="item in content"
+                :is="item.component"
+                :key ="item.id"
+                :json-data = "item"
+        ></div>
+    </div>
 </template>
 
 
@@ -31,7 +27,15 @@
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompImage from '../component/comp-image.vue';
-    import CompTxtAbout from '../component/comp-txt-about.vue';
+
+    import ContentImage from '../content/content-image.vue';
+
+    import ContentAboutTxt from '../content/content-about-txt.vue';
+    import ContentAboutAward from '../content/content-about-award.vue';
+    import ContentAboutPartner from '../content/content-about-partner.vue';
+    import ContentAboutCategory from '../content/content-about-category.vue';
+
+    import ContentVideo from '../content/content-video.vue';
 
     export default {
         mixins: [MixinResizeEvent],
@@ -81,6 +85,18 @@
 
             frameImageSrc : function() {
                 return this.jsonData.backgroundImg;
+            },
+
+            hasBackgroundImage : function() {
+                return (this.jsonData.backgroundImg)?true:false;
+            },
+
+            backgroundColor : function() {
+                return (this.jsonData.backgroundColor)?this.jsonData.backgroundColor:"#000";
+            },
+
+            content : function() {
+                return this.jsonData.content;
             }
         },
 
@@ -92,10 +108,17 @@
 
         },
 
-
         components:{
             CompImage,
-            CompTxtAbout
+
+            ContentImage,
+            ContentVideo,
+
+            ContentAboutTxt,
+            ContentAboutAward,
+            ContentAboutPartner,
+            ContentAboutCategory
+
         },
 
         mounted : function() {
@@ -107,7 +130,6 @@
         }
     }
 </script>
-
 
 <style scoped lang="scss">
     @import "~scssMixin";

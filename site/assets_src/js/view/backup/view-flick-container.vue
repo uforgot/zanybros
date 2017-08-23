@@ -24,10 +24,10 @@
 </template>
 
 <script>
-    import {EventBus} from '../events/event-bus.js';
-    import MixinControlResize from '../mixin/mixin-control-resize.vue';
-    import MixinEventCustom from '../mixin/mixin-event-custom.vue';
-    import TWEEN from '../vendor/Tween';
+    import {EventBus} from '../../events/event-bus.js';
+    import MixinControlResize from '../../mixin/mixin-control-resize.vue';
+    import MixinEventCustom from '../../mixin/mixin-event-custom.vue';
+    import TWEEN from '../../vendor/Tween';
 
     import ViewFlickContents from './view-flick-contents.vue';
 

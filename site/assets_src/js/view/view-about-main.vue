@@ -1,7 +1,7 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="content main about"
+    <div class="content-holder view-about-main"
          :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
@@ -18,13 +18,14 @@
              height: frameHeight + 'px'
          }"
         >
-            <h1>
-                <p>WIDEN</p>
-                <p>THE VIEW OF</p>
-                <p>CREATIVE</p>
-            </h1>
+            <ul>
+                <li>WHO WE ARE</li>
+                <li>WHAT WE DO</li>
+                <li>2017 SHOWREEL</li>
+                <li>AWARDS</li>
+                <li>PARTNERS</li>
+            </ul>
         </div>
-        <comp-main-scroll></comp-main-scroll>
     </div>
 </template>
 
@@ -88,7 +89,6 @@
         },
     }
 </script>
-
 
 <style scoped lang="scss">
     @import "~scssMixin";

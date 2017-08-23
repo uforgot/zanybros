@@ -1,8 +1,8 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="txt-holder"
-         :class="jsonData.align"
+    <div class="content-about-txt"
+         :class="jsonData.class"
     >
         <h1 v-html="txtTitle">
         </h1>
@@ -37,7 +37,6 @@
             txtComment : function () {
                 return this.getJsonMultilineTxt(this.jsonData.comment);
             }
-
         },
 
         beforeMount:function(){

@@ -1,21 +1,178 @@
-.main {
+.view-about {
+    .view-about-main {
+        display:block;
+        position:relative;
 
-    .title {
-        position:absolute;
-        left:0;
-        top:0;
-        width:100%;
-        height:100%;
+        .title {
+            position : absolute;
+            left     : 0;
+            top      : 0;
+            width    : 100%;
+            height   : 100%;
+
+            ul {
+                position    : absolute;
+                left        : 50%;
+                width       : 80%;
+                top         : 50%;
+                transform   : translateX(-50%);
+                font-size   : 9vh;
+                font-family : "GothamUltra";
+                line-height : 8vh;
+                text-align  : left;
+            }
+        }
+    }
+
+    .content-about-txt {
+        display     : block;
+        position    : absolute;
+        left        : 50%;
+        top         : 50%;
+        transform   : translateY(-50%);
+        width       : 700px;
+        margin-left : -350px;
 
         h1 {
-            position:absolute;;
-            width:100%;
-            top:50%;
-            transform: translateY(-50%);
-            font-size :8vw;
-            font-family : "GothamUltra";
-            //font-style: italic;
+            white-space   : pre-line;
+            font-family   : "GothamMedium";
+            line-height   : 3.2vh;
+            font-size     : 3vh;
+            margin-bottom : 2vh;
+        }
+
+        p {
+            white-space : pre-line;
+            font-family : "GothamMedium";
+            font-size   : 1.2vh;
+            line-height : 1.8vh;
+        }
+
+        &.left {
+            margin-left : -40%;
+            text-align  : left;
+        }
+
+        &.right {
+            width       : auto;
+            margin-left : 10%;
+            text-align  : left;
+        }
+    }
+
+    .content-about-award {
+        display    : block;
+        position   : relative;
+        left       : 50%;
+        top        : 0;
+        width      : 80%;
+        max-width  : 1355px;
+        transform  : translateX(-50%);
+        text-align : center;
+        padding    : 50px 0 50px 0;
+
+        .title {
+            display : none;
+        }
+
+        .award {
+            float      : left;
+            display    : inline-block;
+            text-align : left;
+            margin     : 0 25px 50px 25px;
+
+            h1 {
+                white-space    : pre-line;
+                font-family    : "GothamMedium";
+                text-transform : uppercase;
+                font-size      : 2vh;
+                line-height    : 2.2vh;
+                margin-bottom  : 5px;
+            }
+
+            p {
+                white-space : pre-line;
+                font-family : "GothamMedium";
+                font-size   : 1vh;
+                line-height : 1.5vh;
+            }
+        }
+        &:after {
+            visibility : hidden;
+            display    : block;
+            font-size  : 0;
+            content    : " ";
+            clear      : both;
+            height     : 0;
+        }
+
+    }
+
+    .content-about-partner {
+        display                 : flex;
+        display                 : -webkit-flex; /* Safari 8 */
+        flex-wrap               : wrap;
+        -webkit-flex-wrap       : wrap; /* Safari 8 */
+        justify-content         : center;
+        -webkit-justify-content : center; /* Safari 8 */
+
+        position                : relative;
+        left                    : 50%;
+        top                     : 0;
+        width                   : 80%;
+        max-width               : 1400px;
+        transform               : translateX(-50%);
+        text-align              : center;
+        padding                 : 20px 0 60px 0;
+
+        .title {
+            display : none;
+        }
+
+        .partner {
+            float      : left;
+            display    : inline-block;
+            text-align : center;
+            margin     : 0 10px 20px 10px;
+
+            img {
+                width : 125px;
+            }
+        }
+
+        &:after {
+            visibility : hidden;
+            display    : block;
+            font-size  : 0;
+            content    : " ";
+            clear      : both;
+            height     : 0;
+        }
+    }
+
+    .content-about-category {
+        .title {
+            display : none;
+        }
+
+        ul {
+            position : absolute;
+            display  : block;
+            li {
+                position : absolute;
+
+                .title {
+                    position    : absolute;
+                    display     : block;
+                    left        : 20px;
+                    top         : 50%;
+                    white-space : pre-line;
+                    text-align  : left;
+                    font-family : "GothamMedium";
+                    font-size   : 1vw;
+                    font-weight : bold;
+                }
+            }
         }
     }
 }
-

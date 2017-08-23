@@ -21,15 +21,15 @@
 </template>
 
 <script>
-    import MixinControlResize from '../mixin/mixin-control-resize.vue';
-    import CompImageFrame from '../component/comp-image-frame.vue';
-    import CompVideoFrame from '../component/comp-video-frame.vue';
+    import MixinControlResize from '../../mixin/mixin-control-resize.vue';
+    import CompImageFrame from '../view-content-holder.vue';
+    import CompVideoFrame from '../../component/comp-video-frame.vue';
 
-    import ViewAboutMain from '../view/view-about-main.vue';
-    import ViewWorksMain from '../view/view-works-main.vue';
-    import ViewContactMain from '../view/view-contact-main.vue';
+    import ViewAboutMain from '../view-about-main.vue';
+    import ViewWorksMain from '../view-works-main.vue';
+    import ViewContactMain from '../contact/view-contact-main.vue';
 
-    import ViewAboutSub from '../view/view-about-sub.vue';
+    import ViewAboutSub from '../about/view-about-sub.vue';
 
     export default {
         mixins: [ MixinControlResize ],

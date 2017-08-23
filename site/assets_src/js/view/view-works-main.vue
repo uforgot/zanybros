@@ -1,7 +1,7 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="content main works"
+    <div class="content-holder view-works-main"
          :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
@@ -18,10 +18,7 @@
              height: frameHeight + 'px'
          }"
 >
-            <h1>
-                <p>SOMETHING M.V Prodcution</p>
-                <p>TVXQ</p>
-            </h1>
+
         </div>
     </div>
 </template>
@@ -30,7 +27,7 @@
 <!-- script -->
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
-    import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
+    import CompYoutubeFrame from '..//component/comp-youtube-frame.vue';
 
     export default {
         mixins: [MixinResizeEvent],

@@ -1,0 +1,63 @@
+.view-works {
+    .view-works-main {
+        display:block;
+        position:relative;
+
+        .title {
+            position : absolute;
+            left     : 0;
+            top      : 0;
+            width    : 100%;
+            height   : 100%;
+
+            ul {
+                position    : absolute;
+                left        : 50%;
+                width       : 80%;
+                top         : 50%;
+                transform   : translateX(-50%);
+                font-size   : 9vh;
+                font-family : "GothamUltra";
+                line-height : 8vh;
+                text-align  : left;
+            }
+        }
+    }
+
+    .view-works-holder {
+        display     : block;
+        position    : relative;
+
+        .content-works-item {
+            display:inline-block;
+            position:absolute;
+            overflow:hidden;
+
+            .title {
+                white-space    : pre-line;
+                font-family    : "GothamMedium";
+                text-transform : uppercase;
+                font-size      : 2vh;
+                line-height    : 2.2vh;
+                margin-bottom  : 5px;
+            }
+
+            .comment {
+                white-space : pre-line;
+                font-family : "GothamMedium";
+                font-size   : 1vh;
+                line-height : 1.5vh;
+            }
+        }
+        &:after {
+            visibility : hidden;
+            display    : block;
+            font-size  : 0;
+            content    : " ";
+            clear      : both;
+            height     : 0;
+        }
+
+    }
+
+}

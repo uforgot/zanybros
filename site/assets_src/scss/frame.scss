@@ -24,79 +24,22 @@
     .menu-container {
         position:absolute;
         display:block;
+        height:60px;
+        right:40px;
+        top:40px;
+        color: #fff;
+        font-family: "Gotham";
+        font-weight :bold;
+        font-size : 12px;
+
+        li {
+            float:left;
+            display:inline-block;
+            padding-left:20px;
+        }
     }
     .language-container {
         display:none;
     }
 
-    .border-container {
-        display:block;
-        position:absolute;
-        left:0;
-        top:0;
-        width:100vw;
-        height:100vh;
-        //background.scss:#f00;
-        border:0 solid #ccc;
-
-        pointer-events: none;
-        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
-        background: none !important;
-    }
-
-    .side-menu {
-        position:absolute;
-        font-family: "GothamMedium";
-        font-size:10px;
-        color:#fff;
-        width:170px;
-        top:50vh;
-
-        margin-top:5px;
-
-        .container {
-            position:absolute;
-            width:100%;
-            left:0;
-            top:0;
-
-
-            height:20px;
-            overflow:hidden;
-
-            ul {
-                position:absolute;
-                left:0;
-                top:0;
-                width:100%;
-                li{
-                    width:100%;
-                    height:20px;
-                    text-align:center;
-                }
-            }
-        }
-
-        &.left{
-            left:-50px;
-            margin-left:0;
-            @include transform(rotate(90deg));
-        }
-        &.right {
-            right:-50px;
-            margin-right:0;
-            @include transform(rotate(-90deg));
-        }
-    }
-    .bar {
-        position:absolute;
-        top:50vh;
-        width:20px;
-        height:$barWidth;
-        background:#fff;
-
-        pointer-events: none;
-        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
-
-    }
 }

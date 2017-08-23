@@ -358,158 +358,60 @@
                         "content" : [
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s1.jpg",
+                                "imageUrl" : "assets/images/works/1.jpg",
                                 "VideoId" : "U9HBT6sRSZ",
+
                                 "width" : "400",
-                                "height" : "400"
+                                "height" : "400",
+
+                                "title": [
+                                    "GIRL’S GENERATION",
+                                    "YURI X SEOHYUN :",
+                                    "SECRET"
+                                ],
+
+                                "comment": [
+                                    "Client : Liveworks company",
+                                    "Director : Hong Wonki",
+                                    "Director of Photography: Kim Joonhong",
+                                    "Production Design : Jeon Eunyoung",
+                                    "Post production : ASTRO digital.LAB"
+                                ]
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s2.jpg",
+                                "imageUrl" : "assets/images/works/2.jpg",
                                 "VideoId" : "U9HBT6sRSZ",
+
                                 "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s3.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s4.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s5.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s6.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s7.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s8.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s9.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s10.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s11.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s12.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s13.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s14.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s15.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s16.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "height" : "200",
+
+
+                                "title": [
+                                    "GIRL’S GENERATION",
+                                    "YURI X SEOHYUN :",
+                                    "SECRET"
+                                ],
+
+                                "comment": [
+                                    "Client : Liveworks company",
+                                    "Director : Hong Wonki",
+                                    "Director of Photography: Kim Joonhong",
+                                    "Production Design : Jeon Eunyoung",
+                                    "Post production : ASTRO digital.LAB"
+                                ]
                             }
-
-
-
-                        ,
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m1.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m2.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m3.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m4.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m5.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
-                            }
-
-
                         ]
+                    }
+                },
+                {
+                    "component": "view-works-main",
+                    "data" : {
+                        "videoId" : "U9HBT6sRSZ8",
+                        "videoWidth" : 960,
+                        "videoHeight" : 540,
+                        "width": "100%",
+                        "height": "100%"
                     }
                 }
             ]

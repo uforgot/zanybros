@@ -17,7 +17,7 @@
             <youtube :video-id="videoId"
                      @ready="setYoutubeReady"
                      :player-vars="{
-                         autoplay: 0,
+                         autoplay: 1,
                          loop: 1,
                          controls: 0,
                          rel: 0,
@@ -36,7 +36,6 @@
 
 <!-- script -->
 <script>
-//    import CompYoutubeEmbed from 'vue-youtube-embed';
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
 
     export default {

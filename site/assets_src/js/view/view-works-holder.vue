@@ -1,0 +1,129 @@
+<!-- template -->
+<template>
+    <!-- 페이지 본문 컨텐츠 영역 -->
+    <ul class="view-works-holder"
+         :style="{
+             'background-color': backgroundColor,
+             width: frameWidth + 'px',
+             height: frameHeight + 'px'
+        }"
+    >
+        <content-works-list
+                :line-gap="400"
+                :align="align"
+                :min-line-gap="100"
+                :max-line-gap="100"
+                :single-max-width="500"
+                :watch="content"
+        >
+            <content-works-item
+                    v-for="(item, index) in content"
+                    :width="item.width"
+                    :height="item.height"
+                    :order="index"
+                    :key="item.id"
+            ><img :src="item.imageUrl" width="item.width" height="item.height">
+            </content-works-item>
+        </content-works-list>
+
+    </ul>
+</template>
+
+
+<!-- script -->
+<script>
+    import ContentWorksItem from '../content/content-works-item.vue';
+    import ContentWorksList from '../content/content-works-list.vue';
+    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
+
+    export default {
+        mixins: [MixinResizeEvent],
+
+        props : {
+            'json-data': {
+                Type : Object
+            }
+        },
+
+        data: function() {
+            return {
+                align:"center",
+                content:Object
+            };
+        },
+
+        computed:{
+            contentWidth : function() {
+                if (this.isPercentValue(this.jsonData.contentWidth)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.contentWidth), this.frameWidth);
+                }
+                return (this.jsonData.contentWidth > this.frameWidth)?this.frameWidth:this.jsonData.contentWidth;
+            },
+
+            contentHeight : function() {
+                if (this.isPercentValue(this.jsonData.contentHeight)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.contentHeight), this.frameHeight);
+                }
+                return (this.jsonData.contentHeight > this.frameHeight)?this.jsonData.contentHeight:this.frameHeight;
+            },
+
+            frameWidth : function () {
+                if (this.isPercentValue(this.jsonData.width)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowWidth);
+                }
+                return this.jsonData.width;
+            },
+
+            frameHeight : function () {
+                if (this.jsonData.height === 'auto') {
+                    return this.frameWidth();
+                }
+                if (this.isPercentValue(this.jsonData.height)) {
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowHeight);
+                }
+                return this.jsonData.height;
+            },
+
+            backgroundColor : function() {
+                return (this.jsonData.backgroundColor)?this.jsonData.backgroundColor:"#000";
+            }
+        },
+
+        beforeMount:function(){
+
+        },
+
+        methods:{
+
+        },
+
+        components:{
+            ContentWorksList,
+            ContentWorksItem
+        },
+
+        mounted : function() {
+
+        },
+
+        created:function(){
+            this.content = [];
+
+            console.log(this.jsonData.content.length);
+            for (let i=0;i<3;i++) {
+                for (let j=0;j<this.jsonData.content.length;j++) {
+                    this.content.push(this.jsonData.content[j]);
+                }
+            }
+
+
+            this.content.sort(function () {
+                return Math.random() - 0.5
+            })
+        }
+    }
+</script>
+
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
