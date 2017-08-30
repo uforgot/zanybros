@@ -35,6 +35,12 @@
     import ContentAboutPartner from '../content/content-about-partner.vue';
     import ContentAboutCategory from '../content/content-about-category.vue';
 
+    import ContentContactTxt from '../content/content-contact-txt.vue';
+    import ContentContactGallery from '../content/content-contact-gallery.vue';
+    import ContentContactPeople from '../content/content-contact-people.vue';
+    import ContentContactPeopleTitle from '../content/content-contact-people-title.vue';
+    import ContentContactPeopleSubTitle from '../content/content-contact-people-sub-title.vue';
+
     import ContentVideo from '../content/content-video.vue';
 
     export default {
@@ -117,8 +123,13 @@
             ContentAboutTxt,
             ContentAboutAward,
             ContentAboutPartner,
-            ContentAboutCategory
+            ContentAboutCategory,
 
+            ContentContactTxt,
+            ContentContactGallery,
+            ContentContactPeople,
+            ContentContactPeopleTitle,
+            ContentContactPeopleSubTitle
         },
 
         mounted : function() {

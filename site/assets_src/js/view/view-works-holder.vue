@@ -22,7 +22,14 @@
                     :height="item.height"
                     :order="index"
                     :key="item.id"
-            ><img :src="item.imageUrl" width="item.width" height="item.height">
+            >
+                <div class="img-frame"
+                     :style="{
+                        width: '100%',
+                        height: '100%',
+                        'background-image': 'url(' + item.imageUrl + ')'
+                    }"
+               ></div>
             </content-works-item>
         </content-works-list>
 
@@ -110,7 +117,14 @@
             this.content = [];
 
             console.log(this.jsonData.content.length);
-            for (let i=0;i<3;i++) {
+            let i=0;
+
+            for (i=0;i<this.jsonData.content.length;i++) {
+                this.jsonData.content[i].width =  this.jsonData.content[i].width/2;
+                this.jsonData.content[i].height =  this.jsonData.content[i].height/2;
+            }
+
+            for (i=0;i<2;i++) {
                 for (let j=0;j<this.jsonData.content.length;j++) {
                     this.content.push(this.jsonData.content[j]);
                 }

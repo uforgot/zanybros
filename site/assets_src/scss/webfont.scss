@@ -1,5 +1,6 @@
 /* Webfont:  */
 
+
 @font-face {
   font-family: 'GothamMedium';
   src: url('../fonts/GothamMedium.eot');
@@ -38,19 +39,6 @@
   font-style: normal;
 }
 
-
-@font-face {
-  font-family: 'GothamUltraItalic';
-  src: url('../fonts/GothamUltraItalic.eot');
-  src: url('../fonts/GothamUltraItalic.eot?#iefix') format('embedded-opentype'),
-  //url('../fonts/GothamUltraItalic.woff2') format('woff2'),
-  url('../fonts/GothamUltraItalic.woff') format('woff'),
-  url('../fonts/GothamUltraItalic.ttf') format('truetype'),
-  url('../fonts/GothamUltraItalic.svg#GothamUltraItalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @font-face {
   font-family: 'GothamUltra';
   src: url('../fonts/GothamUltra.eot');
@@ -71,4 +59,64 @@ body,input,textarea,select,button, td {
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   -moz-font-feature-settings:"liga", "kern";
+}
+
+.logo {
+  font-family: "GothamUltra";
+  font-size: 22px;
+  font-style : italic;
+}
+
+h1 {
+  white-space   : pre-line;
+  font-size   : 7.5vh;
+  font-family : "GothamUltra";
+  line-height : 7.5vh;
+}
+
+h2 {
+  white-space   : pre-line;
+  font-family   : "GothamMedium";
+  font-size     : 3.0vh;
+  line-height   : 4.0vh;
+  font-weight   : normal;
+}
+
+h3 {
+  white-space   : pre-line;
+  font-family : "GothamUltra";
+  font-size: 1.5vh;
+  line-height:2.5vh;
+}
+
+h4 {
+  white-space   : pre-line;
+  font-family : "GothamMedium";
+  font-weight : bold;
+  font-size: 1.5vh;
+  line-height: 2vh;
+}
+
+h5 {
+  white-space   : pre-line;
+  font-family    : "GothamMedium";
+  font-size      : 2vh;
+  line-height: 2vh;
+}
+
+h6 {
+  white-space   : pre-line;
+  font-family    : "GothamUltra";
+  font-size      : 14px;
+  line-height    : 16px;
+}
+
+
+p {
+  white-space : pre-line;
+  font-family : "GothamMedium";
+  font-size   : 14px;
+  line-height : 20px;
+  letter-spacing : -0.02em;
+  @include opacity(0.9);
 }

@@ -13,7 +13,7 @@
             'color' : color
          }"
     >
-        <div class="title" v-html="getJsonMultilineTxt(jsonData.title)"></div>
+        <h3 v-html="getJsonMultilineTxt(jsonData.title)"></h3>
     </div>
 </template>
 

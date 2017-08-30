@@ -10,7 +10,6 @@
         position: absolute;
         left: 40px;
         top: 30px;
-        font-family: "GothamUltraItalic";
         font-size: 22px;
         color:#fff;
     }
@@ -41,5 +40,50 @@
     .language-container {
         display:none;
     }
+}
 
+
+.view-footer {
+    position:relative;
+    display:block;
+    background:#000;
+
+    width:100%;
+    text-align:center;
+
+    .contact {
+        h1 {
+            font-family: "GothamMedium";
+            font-weight: bold;
+            font-size:20px;
+            margin-bottom:30px
+        }
+        p {
+            font-family: "GothamLight";
+            font-style: italic;
+            font-size:20px;
+            line-height:30px;
+        }
+        .email {
+            display:inline-block;
+            position:relative;
+
+            font-family: "GothamLight";
+            font-style: italic;
+            font-size:20px;
+            border-bottom: 1px solid #ffffff;
+        }
+        padding: 50px 0 0 0;
+    }
+    .copyright {
+        padding: 50px 0 50px 0;
+
+        .logo {
+            left: 40px;
+            top: 30px;
+            font-size: 18px;
+            color:#fff;
+            margin-bottom:10px;
+        }
+    }
 }

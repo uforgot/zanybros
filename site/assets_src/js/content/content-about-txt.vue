@@ -4,10 +4,8 @@
     <div class="content-about-txt"
          :class="jsonData.class"
     >
-        <h1 v-html="txtTitle">
-        </h1>
-        <p v-html="txtComment">
-        </p>
+        <h2 v-html="txtTitle"></h2>
+        <p v-html="txtComment"></p>
     </div>
 </template>
 

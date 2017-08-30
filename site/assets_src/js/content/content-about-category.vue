@@ -27,7 +27,7 @@
                         :dataSrc="item.imageUrl"
                 >
                 </comp-image>
-                <div class="title" v-html="getJsonMultilineTxt(item.title)"></div><!--<img :src="item.imageUrl">-->
+                <div class="title"><h4 v-html="getJsonMultilineTxt(item.title)"></h4></div><!--<img :src="item.imageUrl">-->
             </li>
         </ul>
     </div>

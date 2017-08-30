@@ -31,8 +31,8 @@
 
     import ViewWorksHolder from './view-works-holder.vue';
     import ContentWorksItem from '../content/content-works-item.vue';
-
     import CompVideoFrame from '../component/comp-video-frame.vue';
+
     import ViewWorksMain from './view-works-main.vue';
     import ViewFooter from './view-footer.vue';
 

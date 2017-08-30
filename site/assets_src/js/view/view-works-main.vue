@@ -7,18 +7,18 @@
              height: frameHeight + 'px'
          }"
     >
-        <comp-youtube-frame
-                :video-id="jsonData.videoId"
-                :video-width="jsonData.videoWidth"
-                :video-height="jsonData.videoHeight"
-        ></comp-youtube-frame>
         <div class="title"
              :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }"
->
-
+        >
+            <div class="search">
+                <h6>SEARCH</h6>
+                <div class="box">
+                    <div class="dummy"><h1>ENTER KEYWORD</h1></div>
+                </div>
+            </div>
         </div>
     </div>
 </template>

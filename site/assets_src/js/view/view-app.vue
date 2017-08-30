@@ -4,7 +4,7 @@
 
 <template>
     <div id="app">
-        <keep-alive></keep-alive>
+        <view-background></view-background>
         <router-view class="content-container"></router-view>
         <view-frame></view-frame>
     </div>
@@ -14,6 +14,7 @@
 <script>
     import { EventBus } from '../events/event-bus.js';
     import ViewFrame from './view-frame.vue';
+    import ViewBackground from './view-background.vue';
 
     import VueRouter from 'vue-router';
     import ViewAbout from './view-about.vue';
@@ -37,12 +38,13 @@
         router,
         data: function() {
             return {
-                dataContents:Object
+                dataVideo:Object
             }
         },
 
         components:{
-            ViewFrame
+            ViewFrame,
+            ViewBackground
         },
 
         methods : {

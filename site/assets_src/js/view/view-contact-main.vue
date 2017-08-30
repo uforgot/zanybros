@@ -1,26 +1,41 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="content main contact"
+    <div class="content-holder view-contact-main"
          :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }"
     >
-        <comp-youtube-frame
-                :video-id="jsonData.videoId"
-                :video-width="jsonData.videoWidth"
-                :video-height="jsonData.videoHeight"
-        ></comp-youtube-frame>
         <div class="title"
              :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }"
->
-            <h1>
-                <p>CONTACT TO US</p>
-            </h1>
+        >
+            <div class="container">
+                <section>
+                    <h6>ZANYBROS</h6>
+                    <ul>
+                        <li>
+                            <h1>KOREA H.Q.</h1>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h6>ZANYBROS</h6>
+                    <ul>
+                        <li><h1>PEOPLES</h1></li>
+                    </ul>
+                </section>
+                <section>
+                    <h6>ZANYBROS COMMUNICATION</h6>
+                    <ul>
+                        <li><h1>JAPAN</h1></li>
+                        <li><h1>CHINA</h1></li>
+                    </ul>
+                </section>
+            </div>
         </div>
     </div>
 </template>
@@ -30,6 +45,7 @@
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
+    import CompMainScroll from '../component/comp-main-scroll.vue';
 
     export default {
         mixins: [MixinResizeEvent],
@@ -66,7 +82,8 @@
         },
 
         components:{
-            CompYoutubeFrame,
+            "comp-youtube-frame" : CompYoutubeFrame,
+            "comp-main-scroll" : CompMainScroll
         },
 
         methods:{
@@ -83,7 +100,6 @@
         },
     }
 </script>
-
 
 <style scoped lang="scss">
     @import "~scssMixin";

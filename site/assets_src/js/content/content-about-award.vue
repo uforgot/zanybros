@@ -13,8 +13,8 @@
         <div
                 v-for="item in jsonData.item"
                 class="award">
-            <h1 v-html="getJsonMultilineTxt(item.title)">
-            </h1>
+            <h5 v-html="getJsonMultilineTxt(item.title)">
+            </h5>
             <p v-html="getJsonMultilineTxt(item.comment)">
             </p>
         </div>

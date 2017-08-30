@@ -1,7 +1,13 @@
 {
-    "mainData" : [
-
-    ],
+    "mainData" : {
+        "video": [
+            {
+                "videoId": "6j9UUsnWp_U",
+                "videoWidth": 960,
+                "videoHeight": 540
+            }
+        ]
+    },
 
     "footerData" : {
         "contact": {
@@ -20,9 +26,6 @@
                 {
                     "component": "view-about-main",
                     "data" : {
-                        "videoId" : "DqW4tcUQogU",
-                        "videoWidth" : 960,
-                        "videoHeight" : 540,
                         "width": "100%",
                         "height": "100%"
                     }
@@ -243,8 +246,7 @@
                                         [
                                             {
                                                 "title": [
-                                                    "SNH48 -",
-                                                    "Untitled"
+                                                    "SNH48 - Untitled"
                                                 ],
                                                 "comment": [
                                                     "2016 ASIA NEW SONG RANKING AWARD",
@@ -253,8 +255,7 @@
                                             },
                                             {
                                                 "title": [
-                                                    "2PM -",
-                                                    "WINNER"
+                                                    "2PM -WINNER"
                                                 ],
                                                 "comment": [
                                                     "2014 MNET ASIA MUSIC AWARD",
@@ -263,8 +264,7 @@
                                             },
                                             {
                                                 "title": [
-                                                    "HYUNA -",
-                                                    "RED"
+                                                    "HYUNA - RED"
                                                 ],
                                                 "comment": [
                                                     "2014 ROLLING STONES MAGAZINE",
@@ -273,8 +273,7 @@
                                             },
                                             {
                                                 "title": [
-                                                    "HONG",
-                                                    "WONKI"
+                                                    "HONG WONKI"
                                                 ],
                                                 "comment": [
                                                     "2009 MNET ASIA MUSIC AWARD",
@@ -283,8 +282,7 @@
                                             },
                                             {
                                                 "title": [
-                                                    "Girl’s generation -",
-                                                    "I GOT A BOY"
+                                                    "Girl’s generation - I GOT A BOY"
                                                 ],
                                                 "comment": [
                                                     "2013 YOUTUBE AWARD",
@@ -351,7 +349,13 @@
             "title": "OUR WORKS",
             "class" : "view-works",
             "contents" : [
-
+                {
+                    "component": "view-works-main",
+                    "data" : {
+                        "width": "100%",
+                        "height": "100%"
+                    }
+                },
                 {
                     "component": "view-works-holder",
                     "data" : {
@@ -517,15 +521,264 @@
 
         {
             "title": "CONTACT US",
+            "class" : "view-contact",
             "contents" : [
                 {
                     "component": "view-contact-main",
                     "data" : {
-                        "videoId" : "DqW4tcUQogU",
+                        "videoId" : "Rzh643tlHdM",
                         "videoWidth" : 960,
                         "videoHeight" : 540,
                         "width": "100%",
                         "height": "100%"
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data" : {
+                        "backgroundColor": "#000",
+                        "width": "50%",
+                        "height": "100%",
+
+                        "content" : [
+                            {
+                                "component": "content-contact-txt",
+                                "class":"left",
+                                "title": [
+                                    "ZANYBROS",
+                                    "HEADQUATER"
+                                ],
+                                "comment": [
+                                    "2ND FLOOR TYTEX B/D,",
+                                    "64-24 NONHYUN-DONG",
+                                    "GANGNAM-GU, SEOUL KOREA",
+                                    "",
+                                    "Tel/ 82-2-516-2192",
+                                    "Fax/ 82-2-516-2193",
+                                    "Email/ zanybros@zanybros.com"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data" : {
+                        "backgroundColor": "#000",
+                        "width": "50%",
+                        "height": "100%",
+
+                        "content" : [
+                            {
+                                "component": "content-contact-gallery",
+                                "imageUrl": [
+                                    "assets/images/gallery/1.jpg",
+                                    "assets/images/gallery/2.jpg",
+                                    "assets/images/gallery/3.jpg",
+                                    "assets/images/gallery/4.jpg",
+                                    "assets/images/gallery/5.jpg",
+                                    "assets/images/gallery/6.jpg",
+                                    "assets/images/gallery/7.jpg",
+                                    "assets/images/gallery/8.jpg",
+                                    "assets/images/gallery/9.jpg",
+                                    "assets/images/gallery/10.jpg"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data" : {
+                        "backgroundImg": "assets/images/contact/zanybros_japan.jpg",
+                        "width": "50%",
+                        "height": "100%",
+
+                        "content" : [
+                            {
+                                "component": "content-contact-txt",
+                                "class":"left",
+                                "title": [
+                                    "ZANYBROS",
+                                    "COMMUNICATION",
+                                    "JAPAN"
+                                ],
+                                "comment": [
+                                    "2ND FLOOR TYTEX B/D,",
+                                    "64-24 NONHYUN-DONG",
+                                    "GANGNAM-GU, SEOUL KOREA",
+                                    "",
+                                    "Tel/ 82-2-516-2192",
+                                    "Fax/ 82-2-516-2193",
+                                    "Email/ zanybros@zanybros.com"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data" : {
+                        "backgroundImg": "assets/images/contact/zanybros_china.jpg",
+                        "width": "50%",
+                        "height": "100%",
+
+                        "content" : [
+                            {
+                                "component": "content-contact-txt",
+                                "class":"left",
+                                "title": [
+                                    "ZANYBROS",
+                                    "COMMUNICATION",
+                                    "CHINA"
+                                ],
+                                "comment": [
+                                    "2ND FLOOR TYTEX B/D,",
+                                    "64-24 NONHYUN-DONG",
+                                    "GANGNAM-GU, SEOUL KOREA",
+                                    "",
+                                    "Tel/ 82-2-516-2192",
+                                    "Fax/ 82-2-516-2193",
+                                    "Email/ zanybros@zanybros.com"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data" : {
+                        "backgroundColor": "#000",
+                        "width": "100%",
+
+                        "content" : [
+                            {
+                                "component": "content-contact-people-title",
+                                "title": ["PRODUCTION"]
+                            },
+                            {
+                                "component": "content-contact-people",
+                                "peoples": [
+                                    {
+                                        "title":["CEO/DIRECTOR"],
+                                        "name":["HONG WONKI"],
+                                        "email":["svr75@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["CEO/DIRECTOR OF PHOTOGRAPHY"],
+                                        "name":["KIM JUNHONG"],
+                                        "email":["source2001@zanybros.com"]
+                                    }
+                                ]
+                            },
+                            {
+                                "component": "content-contact-people",
+                                "peoples": [
+                                    {
+                                        "title":["PRODUCER"],
+                                        "name":["KIM LEESEOK"],
+                                        "email":["7051dd@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["DIRECTOR OF PHOTOGRAPHY"],
+                                        "name":["KIM DOYEON"],
+                                        "email":["rladus2@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["DIRECTOR"],
+                                        "name":["LIM SUKJIN"],
+                                        "email":["starzshootz@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["1st ASSIST DIRECTOR"],
+                                        "name":["LIM HAEJIN"],
+                                        "email":["dlgowls6242@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["DIRECTOR OF PHOTOGRAPHY"],
+                                        "name":["LEE DONGYEOL"],
+                                        "email":["nanyeo@zanybros.com"]
+                                    }
+                                ]
+                            },
+                            {
+                                "component": "content-contact-people-title",
+                                "title": ["POST-PRODUCTION"]
+                            },
+                            {
+                                "component": "content-contact-people",
+                                "title": ["EDIT"],
+                                "peoples": [
+                                    {
+                                        "title":["GENERAL MANAGER/EDITOR"],
+                                        "name":["JEONG SEYOUNG"],
+                                        "email":["purin423@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["EDITOR / PRODUCER"],
+                                        "name":["LEE KISUK"],
+                                        "email":["saphirsuk@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["EDITOR"],
+                                        "name":["SONG DONGWOOK"],
+                                        "email":["ehddnr-dia@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["EDITOR"],
+                                        "name":["JUNG SO YOUN"],
+                                        "email":["mythirick@zanybros.com"]
+                                    }
+                                ]
+                            },
+                            {
+                                "component": "content-contact-people",
+                                "title": ["VISUAL ART MOTION GRAPHIC"],
+                                "peoples": [
+                                    {
+                                        "title":["GENERAL MANAGER/EDITOR"],
+                                        "name":["JEONG SEYOUNG"],
+                                        "email":["soulart@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["VISUAL ARTIST"],
+                                        "name":["LEE HYUANG MIN"],
+                                        "email":["crazyjerry@zanybros.com"]
+                                    },
+                                    {
+                                        "title":["VISUAL ARTIST"],
+                                        "name":["LEE SEUNG MIN"],
+                                        "email":["2094300@zanybros.com"]
+                                    }
+                                ]
+                            },
+                            {
+                                "component": "content-contact-people",
+                                "title": ["COLOR GRADING"],
+                                "peoples": [
+                                    {
+                                        "title":["COLORLIST"],
+                                        "name":["LEE HYUNAH"],
+                                        "email":["idsti@zanybros.com"]
+                                    }
+                                ]
+                            },
+
+                            {
+                                "component": "content-contact-people-title",
+                                "title": ["ZANYBROS COMMUNICATION in JAPAN"]
+                            },
+                            {
+                                "component": "content-contact-people",
+                                "peoples": [
+                                    {
+                                        "title":["CEO/PRODUCER"],
+                                        "name":["DAISUKE NOMURA"],
+                                        "email":["nomura1974@zanybros.com"]
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 }
             ]

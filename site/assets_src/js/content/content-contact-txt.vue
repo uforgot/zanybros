@@ -1,14 +1,11 @@
 <!-- template -->
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="comp-image"
-         :style="{
-             width: dataWidth + 'px',
-             height: dataHeight + 'px',
-             'background-image': 'url(' + dataSrc + ')'
-         }
-    ">
-            <slot></slot>
+    <div class="content-contact-txt"
+         :class="jsonData.class"
+    >
+        <h2 v-html="txtTitle"></h2>
+        <p v-html="txtComment"></p>
     </div>
 </template>
 
@@ -21,12 +18,8 @@
         mixins: [mixinResizeEvent],
 
         props : {
-            'data-width' : {
-            },
-            'data-height' : {
-            },
-            'data-src' : {
-                Type : String
+            "json-data" :{
+                Type:Object
             }
         },
 
@@ -36,7 +29,12 @@
         },
 
         computed:{
-
+            txtTitle : function () {
+                return this.getJsonMultilineTxt(this.jsonData.title);
+            },
+            txtComment : function () {
+                return this.getJsonMultilineTxt(this.jsonData.comment);
+            }
         },
 
         beforeMount:function(){

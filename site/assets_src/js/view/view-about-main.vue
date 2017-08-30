@@ -7,11 +7,6 @@
              height: frameHeight + 'px'
          }"
     >
-        <comp-youtube-frame
-                :video-id="jsonData.videoId"
-                :video-width="jsonData.videoWidth"
-                :video-height="jsonData.videoHeight"
-        ></comp-youtube-frame>
         <div class="title"
              :style="{
              width: frameWidth + 'px',
@@ -19,11 +14,11 @@
          }"
         >
             <ul>
-                <li>WHO WE ARE</li>
-                <li>WHAT WE DO</li>
-                <li>2017 SHOWREEL</li>
-                <li>AWARDS</li>
-                <li>PARTNERS</li>
+                <li><h1>WHO WE ARE</h1></li>
+                <li><h1>WHAT WE DO</h1></li>
+                <li><h1>2017 SHOWREEL</h1></li>
+                <li><h1>AWARDS</h1></li>
+                <li><h1>PARTNERS</h1></li>
             </ul>
         </div>
     </div>
