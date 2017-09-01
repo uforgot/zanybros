@@ -1,15 +1,25 @@
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
     <div class="content-works-item" v-show="isShow">
         <slot></slot>
     </div>
 </template>
 
-<script>
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
+<script>
     export default {
-        data: () => ({
-            isShow: false
-        }),
+        mixins:[],
+        components:{},
+
         props: {
             width: {
                 required: true,
@@ -26,7 +36,12 @@
                 default: ''
             }
         },
-        methods: {
+        data: () => ({
+            isShow: false
+        }),
+
+        computed : {},
+        methods : {
             notify () {
                 this.$parent.$emit('reflow', this)
             },
@@ -41,6 +56,10 @@
                 }
             }
         },
+        watch : {},
+
+        //life cycle
+        //beforeCreate : function() {},
         created () {
             this.rect = {
                 top: 0,
@@ -53,15 +72,22 @@
                     this.height
             ), this.notify)
         },
+        //beforeMount : function() {},
         mounted () {
             this.$parent.$once('reflowed', () => {
                 this.isShow = true
             })
-            this.notify()
+            this.notify();
         },
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
         destroyed () {
-            this.notify()
-        }
+            this.notify();
+        },
+        dummy : {}
     }
 
 </script>

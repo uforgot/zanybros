@@ -1,15 +1,21 @@
 /**
-* Created by uforgot on 2017. 7. 18..
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
 */
 
 <template>
     <div id="app">
         <view-background></view-background>
-        <router-view class="content-container"></router-view>
+        <router-view class="view-container"></router-view>
         <view-frame></view-frame>
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
 <script>
     import { EventBus } from '../events/event-bus.js';
@@ -36,32 +42,35 @@
 
     export default {
         router,
+        mixins:[],
+        components:{
+            ViewFrame,
+            ViewBackground
+        },
+
+        props: {},
         data: function() {
             return {
                 dataVideo:Object
             }
         },
 
-        components:{
-            ViewFrame,
-            ViewBackground
-        },
+        computed : {},
+        methods : {},
+        watch : {},
 
-        methods : {
-
-        },
-
-        beforeDestroy: function () {
-
-        },
-
-        mounted : function() {
-
-        },
-
-        created:function(){
-
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
 

@@ -5,44 +5,21 @@
 * -----------------------------------------------------
 */
 
-<template>
-    <div class="comp-image"
-         :style="{
-                 width: dataWidth + 'px',
-                 height: dataHeight + 'px',
-                 'background-image': 'url(' + dataSrc + ')'
-            }"
-    >
-            <slot></slot>
-    </div>
-</template>
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-
-    .comp-image {
-        @include backgroundCover();
-    }
-</style>
-
 <script>
     export default {
         mixins: [],
-        components:{},
+        components: {},
 
-        props : {
-            'data-width' : {
+        props: {
+            "json-data" :{
+                Type:Object
             },
-            'data-height' : {
-            },
-            'data-src' : {
-                Type : String
+            "parent-data" : {
+                Type:Object
             }
         },
-
-        data: function() {
-            return {
-            };
+        data: function () {
+            return {};
         },
 
         computed: {},
@@ -59,9 +36,7 @@
         //activated : function() {},
         //deactivated : function() {},
         //beforeDestroy : function () {},
-        //destroyed : function() {}
-        dummy : {}
+        //destroyed : function() {},
+        dummy: {}
     }
 </script>
-
-

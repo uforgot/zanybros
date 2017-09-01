@@ -23,6 +23,13 @@
     }
 }
 
+/* filter */
+@mixin filter( $value) {
+    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+        #{$prefix}filter: $value;
+    }
+}
+
 /* css-transition */
 @mixin css-value-transition($value) {
     @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
@@ -33,6 +40,13 @@
 /* font */
 @mixin calLetterSpacing( $spacing ){
     letter-spacing: -($spacing / 1000) + em;
+}
+
+/* background cover */
+@mixin backgroundCover() {
+    background-repeat   : no-repeat;
+    background-position : center;
+    background-size     : cover;
 }
 
 

@@ -5,5 +5,8 @@
 import Vue from 'vue'
 export const EventBus = new Vue();
 
-EventBus.MENU_CLICK_EVENT = "menu_click_event";
-EventBus.CONTENTS_FOLDING_EVENT = "contents_folding_event";
+EventBus.WINDOW_RESIZE = "window_resize";
+EventBus.SCROLL_MOVE = "scroll_move";
+EventBus.MENU_CLICK = "menu_click";
+EventBus.CONTENTS_FOLDING = "contents_folding";
+

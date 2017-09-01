@@ -1,4 +1,10 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
     <ul class="view-works-holder"
@@ -32,12 +38,13 @@
                ></div>
             </content-works-item>
         </content-works-list>
-
     </ul>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
-<!-- script -->
 <script>
     import ContentWorksItem from '../content/content-works-item.vue';
     import ContentWorksList from '../content/content-works-list.vue';
@@ -45,13 +52,16 @@
 
     export default {
         mixins: [MixinResizeEvent],
+        components:{
+            ContentWorksList,
+            ContentWorksItem
+        },
 
         props : {
             'json-data': {
                 Type : Object
             }
         },
-
         data: function() {
             return {
                 align:"center",
@@ -96,23 +106,11 @@
             }
         },
 
-        beforeMount:function(){
+        methods:{},
+        watch : {},
 
-        },
-
-        methods:{
-
-        },
-
-        components:{
-            ContentWorksList,
-            ContentWorksItem
-        },
-
-        mounted : function() {
-
-        },
-
+        //life cycle
+        //beforeCreate : function() {},
         created:function(){
             this.content = [];
 
@@ -134,10 +132,15 @@
             this.content.sort(function () {
                 return Math.random() - 0.5
             })
-        }
+        },
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>

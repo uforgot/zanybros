@@ -2,7 +2,7 @@
     "mainData" : {
         "video": [
             {
-                "videoId": "6j9UUsnWp_U",
+                "videoId": "qsWl1--Niyg",
                 "videoWidth": 960,
                 "videoHeight": 540
             }
@@ -33,11 +33,14 @@
                 {
                     "component": "view-content-holder",
                     "data" : {
-                        "backgroundImg": "assets/images/about/section1_bg.jpg",
                         "width": "100%",
                         "height": "100%",
 
                         "content" : [
+                            {
+                                "component":"content-background-image",
+                                "imageUrl": "assets/images/about/section1_bg.jpg"
+                            },
                             {
                                 "component": "content-about-txt",
                                 "class": "left",
@@ -60,12 +63,17 @@
                 {
                     "component": "view-content-holder",
                     "data" : {
-                        "backgroundImg": "assets/images/about/section2_bg.jpg",
                         "width": "100%",
                         "height": "80%",
 
                         "content" : [
                             {
+                                "component":"content-background-image",
+                                "imageUrl": "assets/images/about/section2_bg.jpg"
+                            },
+
+                            {
+
                                 "component": "content-about-txt",
                                 "class": "center",
                                 "title": [
@@ -138,7 +146,6 @@
                         "content" : [
                             {
                                 "component": "content-about-category",
-                                "title": ["WAHT WE DO"],
                                 "width": "80%",
                                 "height": "70%",
                                 "category" : [
@@ -240,7 +247,7 @@
                         "content" : [
                             {
                                 "component": "content-about-award",
-                                "title": ["AWARDS"],
+
                                 "class": "",
                                 "item" :
                                         [
@@ -289,7 +296,6 @@
                                                     "BEST MUSICVIDEO WINNER"
                                                 ]
                                             }
-
                                         ]
                             }
                         ]
@@ -471,11 +477,7 @@
                                 "VideoId" : "U9HBT6sRSZ",
                                 "width" : "400",
                                 "height" : "400"
-                            }
-
-
-
-                        ,
+                            },
                             {
                                 "component": "content-works-item",
                                 "imageUrl" : "assets/images/works/m1.jpg",
@@ -511,8 +513,6 @@
                                 "width" : "400",
                                 "height" : "800"
                             }
-
-
                         ]
                     }
                 }
@@ -646,16 +646,22 @@
                     }
                 },
                 {
+                    "component": "view-content-title",
+                    "data" : {
+                        "height":"10vh",
+                        "backgroundColor": "#272727",
+                        "color": "#fff",
+                        "title" : ["PRODUCTION"]
+                    }
+                },
+                {
                     "component": "view-content-holder",
                     "data" : {
-                        "backgroundColor": "#000",
+                        "backgroundColor": "#272727",
                         "width": "100%",
+                        "class": "__content-list-frame",
 
                         "content" : [
-                            {
-                                "component": "content-contact-people-title",
-                                "title": ["PRODUCTION"]
-                            },
                             {
                                 "component": "content-contact-people",
                                 "peoples": [
@@ -700,11 +706,27 @@
                                         "email":["nanyeo@zanybros.com"]
                                     }
                                 ]
-                            },
-                            {
-                                "component": "content-contact-people-title",
-                                "title": ["POST-PRODUCTION"]
-                            },
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data" : {
+                        "height":"10vh",
+                        "backgroundColor": "#272727",
+                        "color": "#fff",
+                        "title" : ["POST-PRODUCTION"]
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data" : {
+                        "backgroundColor": "#272727",
+                        "width": "100%",
+                        "class": "__content-list-frame",
+
+                        "content" : [
                             {
                                 "component": "content-contact-people",
                                 "title": ["EDIT"],
@@ -762,12 +784,27 @@
                                         "email":["idsti@zanybros.com"]
                                     }
                                 ]
-                            },
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data" : {
+                        "height":"10vh",
+                        "backgroundColor": "#272727",
+                        "color": "#fff",
+                        "title" : ["ZANYBROS COMMUNICATION in JAPAN"]
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data" : {
+                        "backgroundColor": "#272727",
+                        "width": "100%",
+                        "class": "__content-list-frame",
 
-                            {
-                                "component": "content-contact-people-title",
-                                "title": ["ZANYBROS COMMUNICATION in JAPAN"]
-                            },
+                        "content" : [
                             {
                                 "component": "content-contact-people",
                                 "peoples": [
@@ -779,6 +816,13 @@
                                 ]
                             }
                         ]
+                    }
+                },
+                {
+                    "component": "view-content-margin",
+                    "data" : {
+                        "backgroundColor": "#272727",
+                        "height": "5vh"
                     }
                 }
             ]

@@ -29,44 +29,6 @@
     </div>
 </template>
 
-
-<script>
-    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
-    import CompAgile from '../component/comp_agile.vue';
-
-    export default {
-        mixins: [MixinResizeEvent],
-
-        props: {
-            "json-data" :{
-                Type:Object
-            }
-        },
-
-        data: function () {
-            return {}
-        },
-
-        components: {
-            CompAgile
-        },
-
-        methods: {},
-
-        beforeDestroy: function () {
-
-        },
-
-        mounted: function () {
-
-        },
-
-        created: function () {
-
-        }
-    }
-</script>
-
 <style scoped lang="scss">
     @import "~scssMixin";
 
@@ -74,6 +36,43 @@
         align-item:default;
     }
 </style>
+
+
+<script>
+    import MixinContent from '../mixin/mixin-content.vue';
+    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import CompAgile from '../component/comp_agile.vue';
+
+    export default {
+        mixins: [MixinContent, MixinResizeEvent],
+        components: {
+            CompAgile
+        },
+
+        props: {},
+        data: function () {
+            return {}
+        },
+
+        computed : {},
+        methods : {},
+        watch : {},
+
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
+    }
+</script>
+
 
 
 

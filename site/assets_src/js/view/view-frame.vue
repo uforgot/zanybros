@@ -1,5 +1,8 @@
 /**
-* Created by uforgot on 2017. 7. 18..
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
 */
 
 <template>
@@ -28,23 +31,6 @@
     </div>
 </template>
 
-<script>
-    import {EventBus} from '../events/event-bus'
-
-    export default {
-        props : {
-
-        },
-
-        computed:{
-
-        },
-
-        methods : {
-        }
-    }
-</script>
-
 <style scoped lang="scss">
     @import "~scssMixin";
 
@@ -52,3 +38,33 @@
         color:red;
     }
 </style>
+
+<script>
+    export default {
+        mixins:[],
+        components:{},
+
+        props: {},
+        data: function() {
+            return {
+            };
+        },
+
+        computed : {},
+        methods : {},
+        watch : {},
+
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
+    }
+</script>

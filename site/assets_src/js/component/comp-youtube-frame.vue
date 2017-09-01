@@ -1,6 +1,12 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
+
 <template>
-    <!-- 페이지 본문 컨텐츠 영역 -->
     <div class="comp-youtube-frame"
          :style="{
              width: frameWidth + 'px',
@@ -33,13 +39,46 @@
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
 
-<!-- script -->
+    .comp-youtube-frame {
+        display:block;
+        overflow:hidden;
+        position:absolute;
+        left:0;
+        top:0;
+
+        .container {
+            visibility: hidden;
+            position:absolute;
+            display: block;
+            left:50%;
+            top:50%;
+
+            &.show {
+                visibility: visible;
+            }
+        }
+
+        .din  {
+            position:absolute;
+            left:0;
+            top:0;
+            background: #000 ;
+            width:100%;
+            height:100%;
+            @include opacity($video-Din-Opacity);
+        }
+    }
+</style>
+
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
 
     export default {
         mixins: [MixinResizeEvent],
+        components:{},
 
         props : {
             'video-Id': {
@@ -53,7 +92,6 @@
                 Type : Number
             }
         },
-
         data: function() {
             return {
                 isReady:false,
@@ -105,54 +143,26 @@
                 $player.playVideo();
             }
         },
+        watch : {},
 
-
-        components:{
-
-        },
-
-        beforeDestroy: function () {
-            window.removeEventListener('resize', this.handleWindowResize);
-        },
-
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
         mounted() {
             this.handleWindowResize();
             window.addEventListener('resize', this.handleWindowResize);
         },
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        beforeDestroy: function () {
+            window.removeEventListener('resize', this.handleWindowResize);
+        },
+        //destroyed : function() {}
+        dummy : {}
     }
 </script>
 
 
-<style scoped lang="scss">
-    @import "~scssMixin";
-
-    .comp-youtube-frame {
-        display:block;
-        overflow:hidden;
-        position:absolute;
-        left:0;
-        top:0;
-
-        .container {
-            visibility: hidden;
-            position:absolute;
-            display: block;
-            left:50%;
-            top:50%;
-
-            &.show {
-                visibility: visible;
-            }
-        }
-
-        .din  {
-            position:absolute;
-            left:0;
-            top:0;
-            background: #000 ;
-            width:100%;
-            height:100%;
-            @include opacity($video-Din-Opacity);
-        }
-    }
-</style>

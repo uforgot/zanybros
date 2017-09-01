@@ -1,17 +1,13 @@
 /**
 * -----------------------------------------------------
-* Created by uforgot on 2017. 8. 22.
+* Created by uforgot on 2017. 9. 1.
 * zanybros
 * -----------------------------------------------------
 */
 
 <template>
-    <div class="view-content-margin"
-        :style="{
-            'background-color': backgroundColor,
-            height: jsonData.height
-         }"
-    >
+    <div>
+
     </div>
 </template>
 
@@ -24,20 +20,13 @@
         mixins:[],
         components:{},
 
-        props : {
-            'json-data': {
-                Type : Object
-            }
-        },
-        data: function () {
-            return {}
+        props: {},
+        data: function() {
+            return {
+            };
         },
 
-        computed : {
-            backgroundColor : function() {
-                return (this.jsonData.backgroundColor)?this.jsonData.backgroundColor:"#000";
-            }
-        },
+        computed : {},
         methods : {},
         watch : {},
 

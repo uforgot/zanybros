@@ -15,34 +15,41 @@
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
 <script>
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
 
     export default {
-        props: {},
-
-        data: function () {
-            return {}
-        },
-
+        mixins : [],
         components: {
             CompYoutubeFrame
         },
 
-        methods: {},
-
-        beforeDestroy: function () {
-
+        props: {},
+        data: function () {
+            return {}
         },
 
-        mounted: function () {
+        computed : {},
+        methods : {},
+        watch : {},
 
-        },
-
+        //life cycle
+        //beforeCreate : function() {},
         created: function () {
             this.dataVideo = Window.ZanyBrosData.data.mainData.video[0];
-        }
+        },
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-

@@ -29,18 +29,30 @@
 </template>
 
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+
+    .video-holder {
+        visibility: hidden;
+        display: block;
+        position:relative;
+
+        &.show {
+            visibility: visible;
+        }
+    }
+
+</style>
+
 <script>
+    import MixinContent from '../mixin/mixin-content.vue';
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
 
     export default {
-        mixins: [MixinResizeEvent],
+        mixins: [MixinContent, MixinResizeEvent],
+        components:{},
 
-        props: {
-            "json-data" :{
-                Type:Object
-            }
-        },
-
+        props: {},
         data: function () {
             return {
                 isMute:false,
@@ -59,8 +71,6 @@
             }
         },
 
-        components: {},
-
         methods: {
             setYoutubeReady : function($player) {
                 this.player = $player;
@@ -69,7 +79,7 @@
             },
             handleWindowResize: function() {
                 if (this.player !== null) {
-                    console.log(this.videoWidth);
+                    //console.log(this.videoWidth);
                     this.player.setSize(this.videoWidth, this.videoHeight);
                 }
             },
@@ -77,34 +87,24 @@
                 $player.playVideo();
             }
         },
+        watch : {},
 
-        beforeDestroy: function () {
-            window.removeEventListener('resize', this.handleWindowResize);
-        },
-
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
         mounted() {
             this.handleWindowResize();
             window.addEventListener('resize', this.handleWindowResize);
         },
-
-        created: function () {
-
-        }
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        beforeDestroy: function () {
+            window.removeEventListener('resize', this.handleWindowResize);
+        },
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-
-    .video-holder {
-        visibility: hidden;
-        display: block;
-        position:relative;
-
-        &.show {
-            visibility: visible;
-        }
-    }
-
-</style>
-

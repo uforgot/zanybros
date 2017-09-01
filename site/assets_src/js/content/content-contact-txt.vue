@@ -1,6 +1,4 @@
-<!-- template -->
 <template>
-    <!-- 페이지 본문 컨텐츠 영역 -->
     <div class="content-contact-txt"
          :class="jsonData.class"
     >
@@ -9,20 +7,18 @@
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
-<!-- script -->
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import MixinContent from '../mixin/mixin-content.vue';
 
     export default {
-        mixins: [mixinResizeEvent],
+        mixins:[MixinContent],
+        components:{},
 
-        props : {
-            "json-data" :{
-                Type:Object
-            }
-        },
-
+        props : {},
         data: function() {
             return {
             };
@@ -36,31 +32,20 @@
                 return this.getJsonMultilineTxt(this.jsonData.comment);
             }
         },
+        methods : {},
+        watch : {},
 
-        beforeMount:function(){
-
-        },
-
-        methods:{
-
-        },
-
-
-        components:{
-
-        },
-
-        mounted : function() {
-
-        },
-
-        created:function(){
-
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>

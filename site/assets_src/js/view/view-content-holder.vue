@@ -1,4 +1,10 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
     <div class="view-content-holder"
@@ -8,27 +14,28 @@
              height: frameHeight + 'px'
         }"
     >
-        <comp-image v-if="hasBackgroundImage"
-                :data-width="frameWidth"
-                :data-height="frameHeight"
-                :data-src="frameImageSrc"
-        ></comp-image>
-        <div
-                v-for="item in content"
-                :is="item.component"
-                :key ="item.id"
-                :json-data = "item"
-        ></div>
+        <div :class="jsonData.class">
+            <div
+                    v-for="item in content"
+                    :is="item.component"
+                    :key ="item.id"
+                    :json-data = "item"
+                    :parent-data = "parentData"
+            ></div>
+        </div>
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
-<!-- script -->
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompImage from '../component/comp-image.vue';
 
     import ContentImage from '../content/content-image.vue';
+    import ContentBackgroundImage from '../content/content-background-image.vue';
 
     import ContentAboutTxt from '../content/content-about-txt.vue';
     import ContentAboutAward from '../content/content-about-award.vue';
@@ -39,25 +46,48 @@
     import ContentContactGallery from '../content/content-contact-gallery.vue';
     import ContentContactPeople from '../content/content-contact-people.vue';
     import ContentContactPeopleTitle from '../content/content-contact-people-title.vue';
-    import ContentContactPeopleSubTitle from '../content/content-contact-people-sub-title.vue';
 
     import ContentVideo from '../content/content-video.vue';
 
     export default {
         mixins: [MixinResizeEvent],
+        components:{
+            CompImage,
+
+            ContentImage,
+            ContentBackgroundImage,
+            ContentVideo,
+
+            ContentAboutTxt,
+            ContentAboutAward,
+            ContentAboutPartner,
+            ContentAboutCategory,
+
+            ContentContactTxt,
+            ContentContactGallery,
+            ContentContactPeople,
+            ContentContactPeopleTitle
+        },
 
         props : {
             'json-data': {
                 Type : Object
             }
         },
-
         data: function() {
             return {
             };
         },
 
         computed:{
+            parentData : function() {
+                let data = {
+                    width : this.frameWidth,
+                    height : this.frameHeight
+                }
+                return data;
+            },
+
             contentWidth : function() {
                 if (this.isPercentValue(this.jsonData.contentWidth)) {
                     return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.contentWidth), this.frameWidth);
@@ -106,42 +136,19 @@
             }
         },
 
-        beforeMount:function(){
+        methods : {},
+        watch : {},
 
-        },
-
-        methods:{
-
-        },
-
-        components:{
-            CompImage,
-
-            ContentImage,
-            ContentVideo,
-
-            ContentAboutTxt,
-            ContentAboutAward,
-            ContentAboutPartner,
-            ContentAboutCategory,
-
-            ContentContactTxt,
-            ContentContactGallery,
-            ContentContactPeople,
-            ContentContactPeopleTitle,
-            ContentContactPeopleSubTitle
-        },
-
-        mounted : function() {
-
-        },
-
-        created:function(){
-
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {}
     }
 </script>
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>

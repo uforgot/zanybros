@@ -47,7 +47,64 @@ Vue.mixin({
 
         getJsonMultilineTxt : function ($str) {
             return $str.join('\n');
+        },
+
+        getElementAbsoluteOffset : function(element) {
+            let top = 0, left = 0;
+            do {
+                top += element.offsetTop  || 0;
+                left += element.offsetLeft || 0;
+                element = element.offsetParent;
+            } while(element);
+
+            return {
+                top: top,
+                left: left
+            };
+        },
+
+        getElementArray : function(htmlCollection) {
+            let tmpArray = [];
+            let i;
+            let object = {};
+
+            for (i=0;i<htmlCollection.length;i++) {
+                object = {
+                    el:htmlCollection[i],
+                    offset:this.getElementAbsoluteOffset(htmlCollection[i])
+                };
+                tmpArray.push(object);
+            }
+
+            return tmpArray;
+        },
+
+
+        setElementAddClass : function (elem, name) {
+            if (!this.getElementHasClass(elem, name)) {
+                let cur = this.setElAttr(elem, 'class').trim();
+                let res = (cur + ' ' + name).trim();
+                this.setElAttr(elem, 'class', res);
+            }
+        },
+
+        setElementRemoveClass : function (elem, name) {
+            let reg = new RegExp('\\s*\\b' + name + '\\b\\s*', 'g')
+            let res = this.setElAttr(elem, 'class').replace(reg, ' ').trim()
+            this.setElAttr(elem, 'class', res)
+        },
+
+        getElementHasClass : function (elem, name) {
+            return (new RegExp('\\b' + name + '\\b')).test(this.setElAttr(elem, 'class'))
+        },
+
+        setElAttr : function (elem, name, value) {
+            if (typeof value !== 'undefined') {
+                elem.setAttribute(name, value)
+            } else {
+                return elem.getAttribute(name) || ''
+            }
         }
-    }
+}
 });
 

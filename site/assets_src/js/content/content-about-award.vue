@@ -6,53 +6,48 @@
 */
 
 <template>
-    <div class="content-about-award"
+    <div class="content-about-award __content-list-frame"
          :class="jsonData.class"
     >
-        <div class="title" v-html="getJsonMultilineTxt(jsonData.title)"></div>
         <div
                 v-for="item in jsonData.item"
-                class="award">
-            <h5 v-html="getJsonMultilineTxt(item.title)">
-            </h5>
-            <p v-html="getJsonMultilineTxt(item.comment)">
-            </p>
+                class="award"
+        >
+            <h5 v-html="getJsonMultilineTxt(item.title)"></h5>
+            <small v-html="getJsonMultilineTxt(item.comment)"></small>
         </div>
     </div>
 </template>
 
-
 <script>
+    import MixinContent from '../mixin/mixin-content.vue';
 
     export default {
-        props: {
-            "json-data" :{
-                Type:Object
-            }
-        },
+        mixins:[MixinContent],
+        components:{},
 
+        props: {},
         data: function () {
             return {}
         },
 
-        components: {},
+        computed : {},
+        methods : {},
+        watch : {},
 
-        methods: {},
-
-        computed:{
-        },
-
-        beforeDestroy: function () {
-
-        },
-
-        mounted: function () {
-
-        },
-
-        created: function () {
-
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {}
+        dummy : {}
     }
 </script>
+
 

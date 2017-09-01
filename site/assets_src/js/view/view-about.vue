@@ -5,7 +5,6 @@
 * -----------------------------------------------------
 */
 
-
 <template>
     <div>
         <div :class="dataContents.class"
@@ -25,6 +24,9 @@
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
 <script>
     import MixinControlResize from '../mixin/mixin-control-resize.vue';
@@ -39,17 +41,6 @@
 
     export default {
         mixins: [ MixinControlResize ],
-
-        props: {
-
-        },
-
-        data: function() {
-            return {
-                dataContents:Object
-            }
-        },
-
         components:{
             ViewContentHolder,
             ViewContentTitle,
@@ -59,30 +50,37 @@
             CompVideoFrame
         },
 
+        props: {
+
+        },
+        data: function() {
+            return {
+                dataContents:Object
+            }
+        },
+
         computed: {
             frameWidth : function () {
                 return this.windowWidth + 'px';
             }
         },
 
-        methods : {
+        methods : {},
+        watch : {},
 
-        },
-
-        beforeDestroy: function () {
-
-        },
-
-        mounted : function() {
-            console.log('mounted');
-        },
-
+        //life cycle
+        //beforeCreate : function() {},
         created:function(){
             this.dataContents = Window.ZanyBrosData.data.contentsData[0];
-        }
+        },
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>

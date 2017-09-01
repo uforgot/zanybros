@@ -1,7 +1,13 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="content-holder view-contact-main"
+    <div class="view-contact-main"
          :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
@@ -40,8 +46,10 @@
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
-<!-- script -->
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
@@ -49,13 +57,16 @@
 
     export default {
         mixins: [MixinResizeEvent],
+        components:{
+            CompYoutubeFrame,
+            CompMainScroll
+        },
 
         props : {
             'json-data': {
                 Type : Object
             }
         },
-
         data: function() {
             return {
 
@@ -81,26 +92,22 @@
             },
         },
 
-        components:{
-            "comp-youtube-frame" : CompYoutubeFrame,
-            "comp-main-scroll" : CompMainScroll
-        },
+        methods : {},
+        watch : {},
 
-        methods:{
-
-        },
-
-
-        beforeDestroy: function () {
-
-        },
-
-        mounted() {
-
-        },
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
 
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>
+

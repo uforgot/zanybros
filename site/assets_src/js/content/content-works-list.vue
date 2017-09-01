@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
     const MOVE_CLASS_PROP = '_wfMoveClass'
 
     export default {

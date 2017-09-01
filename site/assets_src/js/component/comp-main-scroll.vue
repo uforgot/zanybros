@@ -1,23 +1,39 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
-    <!-- 페이지 본문 컨텐츠 영역 -->
     <div class="main-scroll">SCROLL DOWN</div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
 
-<!-- script -->
+    .img-frame {
+        float:left;
+        display:inline-block;
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+
 <script>
     import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
 
     export default {
         mixins: [mixinResizeEvent],
+        components:{},
 
         props : {
             'json-data': {
                 Type : Object
             }
         },
-
         data: function() {
             return {
             };
@@ -46,39 +62,20 @@
             }
         },
 
-        beforeMount:function(){
+        methods : {},
+        watch : {},
 
-        },
-
-        methods:{
-
-        },
-
-
-        components:{
-
-        },
-
-        mounted : function() {
-
-        },
-
-        created:function(){
-
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {}
+        dummy : {}
     }
 </script>
-
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-
-    .img-frame {
-        float:left;
-        display:inline-block;
-
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
-</style>

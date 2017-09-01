@@ -9,43 +9,41 @@
     <div class="content-image"
         :class="jsonData.class"
     >
-        <div class="title" v-html="getJsonMultilineTxt(jsonData.title)"></div>
         <img :src="jsonData.imageUrl">
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
 <script>
+    import MixinContent from '../mixin/mixin-content.vue';
 
     export default {
-        props: {
-            "json-data" :{
-                Type:Object
-            }
-        },
+        mixins:[MixinContent],
+        components:{},
 
+        props: {},
         data: function () {
             return {}
         },
 
-        components: {},
+        computed : {},
+        methods : {},
+        watch : {},
 
-        methods: {},
-
-        beforeDestroy: function () {
-
-        },
-
-        mounted: function () {
-
-        },
-
-        created: function () {
-
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>

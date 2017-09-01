@@ -7,7 +7,6 @@
 
 <template>
     <div class="content-about-category">
-        <div class="title" v-html="getJsonMultilineTxt(jsonData.title)"></div>
         <ul
             :style="{
                 left : frameLeft + 'px',
@@ -35,27 +34,21 @@
 
 
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
+    import MixinContent from '../mixin/mixin-content.vue';
+
     import CompImage from '../component/comp-image.vue';
 
     export default {
-        mixins: [mixinResizeEvent],
-
-        props: {
-            "json-data" :{
-                Type:Object
-            }
-        },
-
-        data: function () {
-            return {}
-        },
-
+        mixins: [MixinResizeEvent, MixinContent],
         components: {
             CompImage
         },
 
-        methods: {},
+        props: {},
+        data: function () {
+            return {}
+        },
 
         computed:{
             frameLeft : function() {
@@ -82,16 +75,20 @@
             }
         },
 
-        beforeDestroy: function () {
+        methods : {},
+        watch : {},
 
-        },
-
-        mounted: function () {
-
-        },
-
-        created: function () {
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-

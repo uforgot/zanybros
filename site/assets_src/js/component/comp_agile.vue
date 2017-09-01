@@ -23,6 +23,128 @@
     </div>
 </template>
 
+<style lang="scss" type="text/scss">
+    .agile {
+        &, * {
+            &:focus,
+            &:active {
+                outline: none;
+            }
+        }
+
+        &__list {
+            display: block;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            width: 100%;
+        }
+
+        &__track {
+            /*align-items: center;*/
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        &__slide {
+            display: block;
+
+            .agile--fade & {
+                opacity: 0;
+                position: relative;
+                z-index: 0;
+
+                &--active {
+                    opacity: 1;
+                    z-index: 2;
+                }
+
+                &--expiring {
+                    opacity: 1;
+                    transition-duration: 0s;
+                    z-index: 1;
+                }
+            }
+        }
+
+        &__arrow {
+            border: none;
+            bottom: 10px;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            transition-duration: .3s;
+
+            &[disabled] {
+                cursor: default;
+                opacity: .4;
+            }
+
+            &:hover {
+                #arrow-svg {
+                    fill: #333;
+                }
+            }
+
+            &--prev {
+                left: 0;
+
+                #arrow-svg {
+                    transform: scale(-1, 1);
+                }
+            }
+
+            &--next {
+                right: 0;
+            }
+
+            #arrow-svg {
+                fill: #888;
+                height: 20px;
+                transition-duration: .3s;
+            }
+        }
+
+        &__dots {
+            align-items: center;
+            /*display: flex;*/
+            display:none;
+            justify-content: center;
+            list-style: none;
+            margin: 20px 0;
+            padding: 0;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        &__dot {
+            margin: 0 10px;
+
+            button {
+                background-color: #eee;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                display: block;
+                height: 10px;
+                font-size: 0;
+                line-height: 0;
+                margin: 0;
+                transition-duration: .3s;
+                width: 10px;
+            }
+
+            &--current,
+            &:hover {
+                button {
+                    background-color: #888;
+                }
+            }
+        }
+    }
+</style>
+
 <script>
     export default {
         name: 'agile',
@@ -191,26 +313,26 @@
 
                 // Mouse and touch events
                 if ('ontouchstart' in window) {
-                    this.el.track.addEventListener('touchstart', this.handleMouseDown)
-                    this.el.track.addEventListener('touchend', this.handleMouseUp)
-                    this.el.track.addEventListener('touchmove', this.handleMouseMove)
+                    this.el.track.addEventListener('touchstart', this.handleMouseDown);
+                    this.el.track.addEventListener('touchend', this.handleMouseUp);
+                    this.el.track.addEventListener('touchmove', this.handleMouseMove);
                 } else {
-                    this.el.track.addEventListener('mousedown', this.handleMouseDown)
-                    this.el.track.addEventListener('mouseup', this.handleMouseUp)
-                    this.el.track.addEventListener('mousemove', this.handleMouseMove)
+                    this.el.track.addEventListener('mousedown', this.handleMouseDown);
+                    this.el.track.addEventListener('mouseup', this.handleMouseUp);
+                    this.el.track.addEventListener('mousemove', this.handleMouseMove);
                 }
 
                 // Autoplay
                 if (this.autoplay_) {
                     if (this.pauseOnHover_) {
-                        this.el.track.addEventListener('mouseover', this.stopAutoplay)
-                        this.el.track.addEventListener('mouseout', this.startAutoplay)
+                        this.el.track.addEventListener('mouseover', this.stopAutoplay);
+                        this.el.track.addEventListener('mouseout', this.startAutoplay);
                     }
 
                     if (this.pauseOnDotsHover_) {
                         for (let i = 0; i < this.slidesCount; ++i) {
-                            this.el.dots[i].addEventListener('mouseover', this.stopAutoplay)
-                            this.el.dots[i].addEventListener('mouseout', this.startAutoplay)
+                            this.el.dots[i].addEventListener('mouseover', this.stopAutoplay);
+                            this.el.dots[i].addEventListener('mouseout', this.startAutoplay);
                         }
                     }
                 }
@@ -221,25 +343,25 @@
             window.removeEventListener('resize', this.getWidth)
 
             if ('ontouchstart' in window) {
-                this.el.track.removeEventListener('touchstart')
-                this.el.track.removeEventListener('touchend')
-                this.el.track.removeEventListener('touchmove')
+                this.el.track.removeEventListener('touchstart', this.handleMouseDown);
+                this.el.track.removeEventListener('touchend', this.handleMouseUp);
+                this.el.track.removeEventListener('touchmove', this.handleMouseMove);
             } else {
-                this.el.track.removeEventListener('mousedown')
-                this.el.track.removeEventListener('mouseup')
-                this.el.track.removeEventListener('mousemove')
+                this.el.track.removeEventListener('mousedown', this.handleMouseDown);
+                this.el.track.removeEventListener('mouseup', this.handleMouseUp);
+                this.el.track.removeEventListener('mousemove', this.handleMouseMove);
             }
 
             if (this.autoplay_) {
                 if (this.pauseOnHover_) {
-                    this.el.track.removeEventListener('mouseover')
-                    this.el.track.removeEventListener('mouseout')
+                    this.el.track.removeEventListener('mouseover', this.stopAutoplay);
+                    this.el.track.removeEventListener('mouseout', this.startAutoplay);
                 }
 
                 if (this.pauseOnDotsHover_) {
                     for (let i = 0; i < this.slidesCount; ++i) {
-                        this.el.dots[i].removeEventListener('mouseover')
-                        this.el.dots[i].removeEventListener('mouseout')
+                        this.el.dots[i].removeEventListener('mouseover', this.stopAutoplay);
+                        this.el.dots[i].removeEventListener('mouseout', this.startAutoplay);
                     }
                 }
             }
@@ -435,123 +557,4 @@
     }
 </script>
 
-<style lang="scss" type="text/scss">
-    .agile {
-        &, * {
-            &:focus,
-            &:active {
-                outline: none;
-            }
-        }
 
-        &__list {
-            display: block;
-            margin: 0;
-            overflow: hidden;
-            padding: 0;
-            position: relative;
-            width: 100%;
-        }
-
-        &__track {
-            /*align-items: center;*/
-            display: flex;
-            justify-content: flex-start;
-        }
-
-        &__slide {
-            display: block;
-
-            .agile--fade & {
-                opacity: 0;
-                position: relative;
-                z-index: 0;
-
-                &--active {
-                    opacity: 1;
-                    z-index: 2;
-                }
-
-                &--expiring {
-                    opacity: 1;
-                    transition-duration: 0s;
-                    z-index: 1;
-                }
-            }
-        }
-
-        &__arrow {
-            border: none;
-            bottom: 10px;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            transition-duration: .3s;
-
-            &[disabled] {
-                cursor: default;
-                opacity: .4;
-            }
-
-            &:hover {
-                #arrow-svg {
-                    fill: #333;
-                }
-            }
-
-            &--prev {
-                left: 0;
-
-                #arrow-svg {
-                    transform: scale(-1, 1);
-                }
-            }
-
-            &--next {
-                right: 0;
-            }
-
-            #arrow-svg {
-                fill: #888;
-                height: 20px;
-                transition-duration: .3s;
-            }
-        }
-
-        &__dots {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin: 20px 0;
-            padding: 0;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        &__dot {
-            margin: 0 10px;
-
-            button {
-                background-color: #eee;
-                border: none;
-                border-radius: 50%;
-                cursor: pointer;
-                display: block;
-                height: 10px;
-                font-size: 0;
-                line-height: 0;
-                margin: 0;
-                transition-duration: .3s;
-                width: 10px;
-            }
-
-            &--current,
-            &:hover {
-                button {
-                    background-color: #888;
-                }
-            }
-        }
-    }
-</style>

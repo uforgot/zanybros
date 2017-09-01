@@ -1,66 +1,90 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
-    <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="content-about-txt"
-         :class="jsonData.class"
-    >
-        <h2 v-html="txtTitle"></h2>
-        <p v-html="txtComment"></p>
+    <div class="content-about-txt" :class="jsonData.class">
+        <h2>
+            <span v-for="(item, index) in jsonData.title"
+            class="scroll-animation hide"
+            :class="{'last':index == (jsonData.title.length-1) }"
+            >{{item}}</span>
+        </h2>
+        <p>
+            <span  v-for="item in jsonData.comment"
+                class="scroll-animation hide"
+            >{{item}}</span>
+        </p>
     </div>
 </template>
 
-
-<!-- script -->
-<script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
-
-    export default {
-        mixins: [mixinResizeEvent],
-
-        props : {
-            "json-data" :{
-                Type:Object
-            }
-        },
-
-        data: function() {
-            return {
-            };
-        },
-
-        computed:{
-            txtTitle : function () {
-                return this.getJsonMultilineTxt(this.jsonData.title);
-            },
-            txtComment : function () {
-                return this.getJsonMultilineTxt(this.jsonData.comment);
-            }
-        },
-
-        beforeMount:function(){
-
-        },
-
-        methods:{
-
-        },
-
-
-        components:{
-
-        },
-
-        mounted : function() {
-
-        },
-
-        created:function(){
-
-        }
-    }
-</script>
-
-
 <style scoped lang="scss">
     @import "~scssMixin";
+
+    span {display:block;}
+
+    h2 {
+        span {
+            &.hide {
+                @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s');
+                @include opacity(0);
+                @include transform(translate(0px, 40px));
+            }
+            &.show {
+                @include css-value-transition('opacity 0.4s ease-out 0.2s, transform 0.4s ease-out 0.2s');
+                @include opacity(1);
+                @include transform(translate(0px, 0px));
+            }
+        }
+    }
+
+    p {
+        span {
+            &.hide {
+                @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s');
+                @include opacity(0);
+                @include transform(translate(0px, 40px));
+            }
+            &.show {
+                @include css-value-transition('opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.2s');
+                @include opacity(1);
+                @include transform(translate(0px, 0px));
+            }
+        }
+    }
 </style>
+
+<script>
+    import MixinControlScrollAnimation from '../mixin/mixin-control-scroll-animation.vue';
+    import MixinContent from '../mixin/mixin-content.vue';
+
+    export default {
+        mixins: [MixinControlScrollAnimation, MixinContent],
+        components: {},
+
+        props : {},
+        data: function() {
+            return {};
+        },
+
+        computed : {},
+        methods : {},
+        watch : {},
+
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
+    }
+</script>

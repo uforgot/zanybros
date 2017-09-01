@@ -71,12 +71,13 @@ h1 {
   white-space   : pre-line;
   font-size   : 7.5vh;
   font-family : "GothamUltra";
-  line-height : 7.5vh;
+  line-height : 7.0vh;
 }
 
 h2 {
+  text-transform : uppercase;
   white-space   : pre-line;
-  font-family   : "GothamMedium";
+  font-family   : "GothamUltra";
   font-size     : 3.0vh;
   line-height   : 4.0vh;
   font-weight   : normal;
@@ -85,7 +86,7 @@ h2 {
 h3 {
   white-space   : pre-line;
   font-family : "GothamUltra";
-  font-size: 1.5vh;
+  font-size: 1.8vh;
   line-height:2.5vh;
 }
 
@@ -99,24 +100,32 @@ h4 {
 
 h5 {
   white-space   : pre-line;
-  font-family    : "GothamMedium";
-  font-size      : 2vh;
-  line-height: 2vh;
+  font-family    : "GothamUltra";
+  font-size      : 20px;
+  line-height: 28px;
 }
 
 h6 {
   white-space   : pre-line;
-  font-family    : "GothamUltra";
+  font-family    : "GothamMedium";
   font-size      : 14px;
   line-height    : 16px;
 }
-
 
 p {
   white-space : pre-line;
   font-family : "GothamMedium";
   font-size   : 14px;
-  line-height : 20px;
+  line-height : 24px;
+  letter-spacing : -0.02em;
+  @include opacity(0.9);
+}
+
+small {
+  white-space : pre-line;
+  font-family : "GothamMedium";
+  font-size   : 10px;
+  line-height : 14px;
   letter-spacing : -0.02em;
   @include opacity(0.9);
 }

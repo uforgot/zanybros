@@ -13,6 +13,7 @@ Vue.use(VueYouTubeEmbed);
 //전역 유틸 mixin
 import './mixin/mixin-utils-common';
 import App from './view/view-app.vue'
+import {EventBus} from "./events/event-bus";
 
 function init() {
     Axios({
@@ -28,6 +29,15 @@ function init() {
             Window.app = new Vue({
                 render: h => h(App)
             }).$mount('#app');
+
+            document.addEventListener('scroll', ($e) => {
+                EventBus.$emit(EventBus.SCROLL_MOVE, $e);
+            }, true)
+
+            window.addEventListener('resize', ($e) => {
+                EventBus.$emit(EventBus.WINDOW_RESIZE, $e);
+            }, true)
+
         }
     ).catch(
         ($error) => console.log($error)

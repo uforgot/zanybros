@@ -21,39 +21,43 @@
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
 <script>
-
     export default {
-        props: {},
+        mixins:[],
+        components:{},
 
+        props: {},
         data: function () {
             return {
                 dataFooter:Object
             }
         },
 
-        components: {},
-
-        methods: {},
-
         computed: {
             emailLink : function() {
                 return "mailto://" + this.dataFooter.contact.email;
             }
         },
+        methods : {},
+        watch : {},
 
-        beforeDestroy: function () {
-
-        },
-
-        mounted: function () {
-
-        },
-
-        created: function () {
+        //life cycle
+        //beforeCreate : function() {},
+        created:function(){
             this.dataFooter = Window.ZanyBrosData.data.footerData;
-        }
+        },
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-

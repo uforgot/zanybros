@@ -10,9 +10,9 @@
         <div v-if="title" class="title"><h6 v-html="title"></h6></div>
         <ul>
             <li v-for="item in jsonData.peoples">
-                <p v-html="getJsonMultilineTxt(item.title)"></p>
+                <small v-html="getJsonMultilineTxt(item.title)"></small>
                 <h5 v-html="getJsonMultilineTxt(item.name)"></h5>
-                <p v-html="getJsonMultilineTxt(item.email)"></p>
+                <small v-html="getJsonMultilineTxt(item.email)"></small>
             </li>
         </ul>
     </div>
@@ -20,21 +20,16 @@
 
 
 <script>
+    import MixinContent from '../mixin/mixin-content.vue';
 
     export default {
-        props: {
-            "json-data" :{
-                Type:Object
-            }
-        },
+        mixins:[MixinContent],
+        components:{},
 
+        props: {},
         data: function () {
             return {}
         },
-
-        components: {},
-
-        methods: {},
 
         computed:{
             title : function () {
@@ -45,18 +40,22 @@
                 }
             }
         },
+        methods : {},
+        watch : {},
 
-        beforeDestroy: function () {
-
-        },
-
-        mounted: function () {
-
-        },
-
-        created: function () {
-
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
+
 
