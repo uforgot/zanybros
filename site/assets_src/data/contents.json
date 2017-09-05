@@ -64,7 +64,7 @@
                     "component": "view-content-holder",
                     "data" : {
                         "width": "100%",
-                        "height": "80%",
+                        "height": "100%",
 
                         "content" : [
                             {
@@ -98,7 +98,7 @@
                     "data" : {
                         "backgroundColor": "#000",
                         "width": "100%",
-                        "height": "80%",
+                        "height": "100%",
 
                         "content" : [
                             {
@@ -147,7 +147,7 @@
                             {
                                 "component": "content-about-category",
                                 "width": "80%",
-                                "height": "70%",
+                                "height": "100%",
                                 "category" : [
                                     {
                                         "title" : [
@@ -210,6 +210,7 @@
                     "data" : {
                         "backgroundColor": "#000",
                         "width": "100%",
+
 
 
                         "content" : [

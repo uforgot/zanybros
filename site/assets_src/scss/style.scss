@@ -13,6 +13,11 @@ body {
     font-size  : 0; letter-spacing : 0; word-spacing : 0;
 }
 
+.view-container {
+    position:absolute;
+    transition: transform 0.6s;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -91,6 +96,7 @@ body {
     .content-about-category {
         ul {
             position : absolute;
+            overflow:hidden;
             li {
                 position : absolute;
                 .title {
@@ -294,4 +300,11 @@ body {
 
 
 
+.slide-left-enter, .slide-right-leave-active {
+    transform: translate3d(100%,0px,0px);
+}
+
+.slide-right-enter, .slide-left-leave-active {
+    transform: translate3d(-100%,0px,0px);
+}
 

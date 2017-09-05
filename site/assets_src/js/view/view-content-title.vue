@@ -13,17 +13,33 @@
             'color' : color
          }"
     >
-        <h3 v-html="getJsonMultilineTxt(jsonData.title)"></h3>
+        <h3 class="scroll-animation hide"
+            animation-offset="30"
+            v-html="getJsonMultilineTxt(jsonData.title)"></h3>
     </div>
 </template>
 
 <style scoped lang="scss">
     @import "~scssMixin";
+
+    .hide {
+        @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s, left 0.2s ease-out 0s');
+        @include opacity(0);
+        @include transform(translate(0px, -150%));
+    }
+
+    .show {
+        @include css-value-transition('opacity 0.5s ease-out 0s, transform 0.5s ease-out 0s');
+        @include opacity(1.0);
+        @include transform(translate(0px, -50%));
+    }
 </style>
 
 <script>
+    import MixinControlScrollAnimation from '../mixin/mixin-control-scroll-animation.vue';
+
     export default {
-        mixins:[],
+        mixins:[MixinControlScrollAnimation],
         components:{},
 
         props : {

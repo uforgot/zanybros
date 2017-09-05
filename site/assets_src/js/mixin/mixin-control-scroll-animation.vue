@@ -35,11 +35,20 @@
                 let scrollTop = window.pageYOffset + this.windowHeight;
                 let i;
                 let elObject;
+                let animationOffset;
+                let animationOffsetValue;
 
                 for (i=0; i< this.elArray.length; i++) {
                     elObject = this.elArray[i];
 
-                    if (scrollTop > elObject.offset.top) {
+                    animationOffsetValue = 0;
+                    animationOffset = elObject.el.getAttribute('animation-offset');
+
+                    if (animationOffset !== null) {
+                        animationOffsetValue = this.windowHeight * (Number(animationOffset)/100);
+                    }
+
+                    if (scrollTop > (elObject.offset.top + animationOffsetValue)) {
                         this.setElementAddClass(elObject.el, 'show');
                     } else {
                         this.setElementRemoveClass(elObject.el, 'show');

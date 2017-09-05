@@ -65,7 +65,6 @@
             }
         },
 
-        computed : {},
         methods : {},
         watch : {},
 

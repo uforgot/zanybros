@@ -8,7 +8,11 @@
 <template>
     <div id="app">
         <view-background></view-background>
-        <router-view class="view-container"></router-view>
+        <transition :name="transitionDirection">
+            <keep-alive>
+                <router-view class="view-container"></router-view>
+            </keep-alive>
+        </transition>
         <view-frame></view-frame>
     </div>
 </template>
@@ -36,9 +40,9 @@
 
     const router = new VueRouter({
         mode:'hash',
-        routes
-        }
-    );
+        routes,
+    });
+
 
     export default {
         router,
@@ -51,13 +55,22 @@
         props: {},
         data: function() {
             return {
+                transitionDirection: 'slide-left',
                 dataVideo:Object
             }
         },
 
         computed : {},
         methods : {},
-        watch : {},
+        watch: {
+//            '$route'(to, from) {
+                // get route depth based on path
+//                const toDepth = to.path.split('/').length;
+//                const fromDepth = from.path.split('/').length;
+//                this.transitionDirection = toDepth < fromDepth ? 'slide-right' : 'slide-left';
+//                this.transitionDirection = 'slide-left';
+//            }
+        },
 
         //life cycle
         //beforeCreate : function() {},

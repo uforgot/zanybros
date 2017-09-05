@@ -11,7 +11,8 @@
     >
         <div
                 v-for="item in jsonData.item"
-                class="award"
+                class="award scroll-animation hide"
+                animation-offset="30"
         >
             <h5 v-html="getJsonMultilineTxt(item.title)"></h5>
             <small v-html="getJsonMultilineTxt(item.comment)"></small>
@@ -19,11 +20,28 @@
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+
+    .hide {
+        @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s, left 0.2s ease-out 0s');
+        @include opacity(0);
+        @include transform(translate(0px, 40px));
+    }
+
+    .show {
+        @include css-value-transition('opacity 0.5s ease-out 0s, transform 0.5s ease-out 0s');
+        @include opacity(1.0);
+        @include transform(translate(0px, 0px));
+    }
+</style>
+
 <script>
     import MixinContent from '../mixin/mixin-content.vue';
+    import MixinControlScrollAnimation from '../mixin/mixin-control-scroll-animation.vue';
 
     export default {
-        mixins:[MixinContent],
+        mixins:[MixinContent, MixinControlScrollAnimation],
         components:{},
 
         props: {},
