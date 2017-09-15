@@ -48,7 +48,7 @@
                         animationOffsetValue = this.windowHeight * (Number(animationOffset)/100);
                     }
 
-                    if (scrollTop > (elObject.offset.top + animationOffsetValue)) {
+                    if (scrollTop > (elObject.offset.top - animationOffsetValue)) {
                         this.setElementAddClass(elObject.el, 'show');
                     } else {
                         this.setElementRemoveClass(elObject.el, 'show');

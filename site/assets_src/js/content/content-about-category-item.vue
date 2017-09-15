@@ -13,23 +13,39 @@
     >
         <div class="content-about-category-item"
              :style="{
-            width : dataWidth + 'px',
+            width : currentWidth + 'px',
             height : dataHeight + 'px'
+
          }"
         >
             <comp-image
                     class="image"
-                    :class="{'din': dataDin}"
-                    :data-width = "dataWidth"
+                    :class="{'din': dataDin, 'focus':dataFocus}"
+
+                    :data-width = "currentWidth"
                     :data-height = "dataHeight"
                     :data-src = "jsonData.imageUrl"
             ></comp-image>
-            <div class="title"><h4 v-html="getJsonMultilineTxt(jsonData.title)"></h4></div><!--<img :src="item.imageUrl">-->
-            <div class="button"
+
+            <!--<div class="title"-->
+                 <!--:class="{'din': dataDin,'focus': dataFocus}"-->
+            <!--&gt;-->
+                <!--<h4 v-html="getJsonMultilineTxt(jsonData.title)"></h4>-->
+            <!--</div>&lt;!&ndash;<img :src="item.imageUrl">&ndash;&gt;-->
+
+            <div class="content"
                  :style="{
-                    width : dataWidth + 'px',
-                    height : dataHeight + 'px'
-             }"
+                            width : dataMaxWidth + 'px'
+                         }"
+            >
+                <h4 v-html="getJsonMultilineTxt(jsonData.title)"
+                    :class="{'din': dataDin,'focus': dataFocus}"
+                ></h4>
+                <p v-html="getJsonMultilineTxt(jsonData.comment)"
+                   :class="{'focus': dataFocus}"
+                ></p>
+            </div>
+            <div class="button"
                  @mouseover= "onMouseOverHandler"
                  @mouseout= "onMouseOutHandler"
             ></div>
@@ -40,12 +56,43 @@
 <style scoped lang="scss">
     @import "~scssMixin";
 
+    .button {
+        width:100%;
+        height:100%;
+    }
+
     .image {
         cursor:pointer;
-        @include css-value-transition('filter 0.2s ease-out 0s');
+        overflow:hidden;
+        @include css-value-transition('filter 0.2s ease-out 0s, opacity 0.2s ease-out 0s');
+        transform: scale(1.1);
+
+        &.din {
+            filter:grayscale(100%);
+        }
+        &.focus {
+            /*filter: blur(10px);*/
+        }
     }
-    .din {
-        filter:grayscale(100%);;
+
+
+    .content {
+        h4 {
+            &.din {
+                opacity:0;
+            }
+
+
+        }
+        p {
+            @include css-value-transition('transform 0.2s ease-out 0s, opacity 0.2s ease-out 0s');
+            opacity:0;
+            transform:translateY(40px);
+            &.focus {
+                opacity:1;
+                transform:translateY(20px);
+            }
+        }
     }
 
     .button {
@@ -70,12 +117,15 @@
             'data-index':{},
             'data-left':{},
             'data-width': {},
+            'data-max-width' : {},
             'data-height' : {},
+            'data-focus':{},
             'data-din' : {}
         },
         data: function () {
             return {
-                currentLeft:0
+                currentLeft:0,
+                currentWidth:0
             };
         },
 
@@ -95,7 +145,6 @@
         },
         watch : {
             dataLeft : function($newValue, $oldValue){
-
                 function animate() {
                     if (TWEEN.update()) {
                         requestAnimationFrame(animate);
@@ -110,10 +159,27 @@
                         }
                     )
                     .start();
+                animate();
+            },
 
+            dataWidth : function($newValue, $oldValue){
+                function animate() {
+                    if (TWEEN.update()) {
+                        requestAnimationFrame(animate);
+                    }
+                }
 
+                new TWEEN.Tween({ tweeningNumber :  this.currentWidth })
+                    .to({ tweeningNumber : $newValue }, 300).easing(TWEEN.Easing.Quadratic.Out)
+                    .onUpdate(($e) =>
+                        {
+                            this.currentWidth = Number($e.tweeningNumber.toFixed(2));
+                        }
+                    )
+                    .start();
                 animate();
             }
+
         },
 
         //life cycle
@@ -122,6 +188,7 @@
         //beforeMount : function() {},
         mounted : function() {
             this.currentLeft = this.dataLeft;
+            this.currentWidth = this.dataWidth;
         },
         //beforeUpdate : function() {},
         //updated : function() {},

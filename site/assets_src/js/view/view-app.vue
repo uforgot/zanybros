@@ -8,10 +8,8 @@
 <template>
     <div id="app">
         <view-background></view-background>
-        <transition :name="transitionDirection">
-            <keep-alive>
+        <transition :name="transitionDirection" mode="out-in">
                 <router-view class="view-container"></router-view>
-            </keep-alive>
         </transition>
         <view-frame></view-frame>
     </div>
@@ -43,7 +41,14 @@
         routes,
     });
 
+    router.beforeEach((to, from, next) => {
+//        console.log('--> router before each');
+        next();
+    });
 
+    router.afterEach((to, from) => {
+//        console.log('--> router after each')
+    });
     export default {
         router,
         mixins:[],

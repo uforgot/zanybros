@@ -2,20 +2,62 @@
     <div class="content-contact-txt"
          :class="jsonData.class"
     >
-        <h2 v-html="txtTitle"></h2>
-        <p v-html="txtComment"></p>
+        <h2>
+            <span v-for="(item, index) in jsonData.title"
+                  class="scroll-animation hide"
+                  :class="{'last':index == (jsonData.title.length-1) }"
+            >{{item}}</span>
+        </h2>
+        <p>
+            <span  v-for="item in jsonData.comment"
+                   class="scroll-animation hide"
+            >{{item}}</span>
+        </p>
     </div>
 </template>
 
 <style scoped lang="scss">
     @import "~scssMixin";
+
+    span {display:block;}
+
+    h2 {
+        span {
+            &.hide {
+                @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s');
+                @include opacity(0);
+                @include transform(translate(0px, 40px));
+            }
+            &.show {
+                @include css-value-transition('opacity 0.4s ease-out 0.2s, transform 0.4s ease-out 0.2s');
+                @include opacity(1);
+                @include transform(translate(0px, 0px));
+            }
+        }
+    }
+
+    p {
+        span {
+            &.hide {
+                @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s');
+                @include opacity(0);
+                @include transform(translate(0px, 40px));
+            }
+            &.show {
+                @include css-value-transition('opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.2s');
+                @include opacity(1);
+                @include transform(translate(0px, 0px));
+            }
+        }
+    }
 </style>
 
 <script>
+    import MixinControlScrollAnimation from '../mixin/mixin-control-scroll-animation.vue';
     import MixinContent from '../mixin/mixin-content.vue';
 
     export default {
-        mixins:[MixinContent],
+        mixins: [MixinControlScrollAnimation, MixinContent],
         components:{},
 
         props : {},

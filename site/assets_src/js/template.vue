@@ -32,7 +32,7 @@
 
         //life cycle
         //beforeCreate : function() {},
-        //created : function() {},
+        //created = {},
         //beforeMount : function() {},
         //mounted : function() {},
         //beforeUpdate : function() {},

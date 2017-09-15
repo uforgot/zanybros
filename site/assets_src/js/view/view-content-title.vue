@@ -14,7 +14,7 @@
          }"
     >
         <h3 class="scroll-animation hide"
-            animation-offset="30"
+            animation-offset="-20"
             v-html="getJsonMultilineTxt(jsonData.title)"></h3>
     </div>
 </template>

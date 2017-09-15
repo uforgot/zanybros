@@ -74,7 +74,7 @@
             this.dataContents = Window.ZanyBrosData.data.contentsData[2];
         },
         //beforeMount : function() {},
-        //mounted : function() {},
+        mounted : function() {window.scrollTo(0,0);},
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},

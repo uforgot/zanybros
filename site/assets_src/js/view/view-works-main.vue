@@ -19,12 +19,17 @@
              height: frameHeight + 'px'
          }"
         >
-            <div class="search">
+            <ul>
+                <li><h1>MUSIC VIDEO</h1></li>
+                <li><h1>COMMERCIAL FILM</h1></li>
+                <li><h1>MOVIE</h1></li>
+            </ul>
+            <!--<div class="search">
                 <h6>SEARCH</h6>
                 <div class="box">
                     <div class="dummy"><h1>ENTER KEYWORD</h1></div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </template>

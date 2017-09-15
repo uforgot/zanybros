@@ -19,14 +19,16 @@
 
         >
             <content-about-category-item v-for="item, key in jsonData.category"
-                :key="key++"
-                :data-left="itemArray[(key-1)].x"
-                :data-index="key"
-
-                :data-width="itemArray[(key-1)].width"
-                :data-height="categoryHeight"
-                :json-data="item"
-                @categoryOver="onCategoryOverHandler"
+                                         :key="key++"
+                                         :data-index="key"
+                                         :data-left="itemArray[(key-1)].x"
+                                         :data-width="itemArray[(key-1)].width"
+                                         :data-max-width="categoryWidth * 2.2"
+                                         :data-height="categoryHeight"
+                                         :data-focus="itemArray[(key-1)].focus"
+                                         :data-din="itemArray[(key-1)].din"
+                                         :json-data="item"
+                                         @categoryOver="onCategoryOverHandler"
             >
             </content-about-category-item>
         </ul>
@@ -107,18 +109,25 @@
                 if ($idx === -1) {
                     for (i = 0; i < this.itemArray.length; i++) {
                         this.itemArray[i].x = x;
-                        this.itemArray[i].width = this.categoryWidth * 2;
-                        x += this.categoryWidth;
+                        this.itemArray[i].width = this.categoryWidth;
+                        this.itemArray[i].din = false;
+                        this.itemArray[i].focus = false;
+                        x += this.itemArray[i].width;
                     }
                     return;
                 } else {
                     for (i = 0; i < this.itemArray.length; i++) {
                         this.itemArray[i].x = x;
                         if (i===$idx) {
-                            x += this.categoryWidth * 2;
+                            this.itemArray[i].width = this.categoryWidth * 2.2;
+                            this.itemArray[i].din = false;
+                            this.itemArray[i].focus = true;
                         } else {
-                            x += (this.frameWidth-(this.categoryWidth * 2))/(this.dataLength-1);
+                            this.itemArray[i].width = (this.frameWidth-(this.categoryWidth * 2.2))/(this.dataLength-1);
+                            this.itemArray[i].din = true;
+                            this.itemArray[i].focus = false;
                         }
+                        x += this.itemArray[i].width;
                     }
                 }
 
@@ -144,7 +153,9 @@
             for (i=0;i<this.dataLength;i++) {
                 this.itemArray.push({
                     x:0,
-                    width:0
+                    width:0,
+                    din:false,
+                    focuse:false
                 });
             }
 

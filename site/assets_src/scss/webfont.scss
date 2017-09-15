@@ -69,15 +69,16 @@ body,input,textarea,select,button, td {
 
 h1 {
   white-space   : pre-line;
-  font-size   : 7.5vh;
+  font-size   : 7.1vh;
   font-family : "GothamUltra";
-  line-height : 7.0vh;
+  line-height : 5.0vh;
 }
 
 h2 {
-  text-transform : uppercase;
+  //text-transform : uppercase;
   white-space   : pre-line;
   font-family   : "GothamUltra";
+  //font-family: "Gotham";
   font-size     : 3.0vh;
   line-height   : 4.0vh;
   font-weight   : normal;

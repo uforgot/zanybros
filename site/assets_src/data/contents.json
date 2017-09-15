@@ -2,7 +2,7 @@
     "mainData" : {
         "video": [
             {
-                "videoId": "qsWl1--Niyg",
+                "videoId": "OYYbjEgj2wA",
                 "videoWidth": 960,
                 "videoHeight": 540
             }
@@ -64,7 +64,7 @@
                     "component": "view-content-holder",
                     "data" : {
                         "width": "100%",
-                        "height": "100%",
+                        "height": "80%",
 
                         "content" : [
                             {
@@ -98,7 +98,7 @@
                     "data" : {
                         "backgroundColor": "#000",
                         "width": "100%",
-                        "height": "100%",
+                        "height": "70%",
 
                         "content" : [
                             {
@@ -130,7 +130,7 @@
                 {
                     "component": "view-content-title",
                     "data" : {
-                        "height":"10vh",
+                        "height":"10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
                         "title" : ["WHAT WE DO"]
@@ -154,6 +154,12 @@
                                             "MEDIA",
                                             "PRODUCTION"
                                         ],
+                                        "comment" : [
+                                            "We have produced over 1,000 commercial contents, more than 120 each year. From concept planning to production, directing, shooting, 2D / 3D, editing and color correction, we offer you a one-stop solution quickly.",
+                                            "",
+                                            "We are showing high-level visual work with solid teamwork with professional staff in each field.",
+                                            "We are currently producing content with partners around the world, including in Asia."
+                                        ],
                                         "imageUrl" : "assets/images/about/section4_bg_1.jpg"
                                     },
                                     {
@@ -161,12 +167,23 @@
                                             "GLOBAL",
                                             "ENTERTAINMENT"
                                         ],
+                                        "comment" : [
+                                            "ZANYBROS. has a 50% share of the K-POP music video.",
+                                            "",
+                                            "We have also signed an MOU with Korea's best record producer team and Swedish Music Publishing Company, and are expanding our business into entertainment content business including global sound recording business, differentiated visual directing, artist concept establishment, idle production consulting and training."
+                                        ],
                                         "imageUrl" : "assets/images/about/section4_bg_2.jpg"
+
                                     },
                                     {
                                         "title" : [
                                             "NEW MEDIA",
                                             "CONTENT"
+                                        ],
+                                        "comment" : [
+                                            "Mobile, and internet environments.",
+                                            "",
+                                            "We also operate channels that include YouTube broadcasts, micro-movies, web dramas, and snack content through collaborative content creation with companies, entertainment content and global platform providers."
                                         ],
                                         "imageUrl" : "assets/images/about/section4_bg_3.jpg"
                                     },
@@ -175,12 +192,22 @@
                                             "CREATIVE",
                                             "R&D"
                                         ],
+                                        "comment" : [
+                                            "We support various productions and post production progress with technical staff with many years of experience and high-end professional equipment.",
+                                            "",
+                                            "It has become the best supporter in the field of photography by providing shooting studios, lighting equipment and manpower, post-production editing, color grading, 2D & 3D graphic production, studio for photography."
+                                        ],
                                         "imageUrl" : "assets/images/about/section4_bg_4.jpg"
                                     },
                                     {
                                         "title" : [
                                             "VALUE",
                                             "ADDED SUPPORT"
+                                        ],
+                                        "comment" : [
+                                            "Analyze content trends and research various content creation methods.",
+                                            "",
+                                            "We are planning new contents, testing new image techniques such as Virtual Reality (VR) production, drone shooting, and developing and delivering content creation system education programs for overseas creators."
                                         ],
                                         "imageUrl" : "assets/images/about/section4_bg_5.jpg"
                                     }
@@ -199,7 +226,7 @@
                 {
                     "component": "view-content-title",
                     "data" : {
-                        "height":"10vh",
+                        "height":"10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
                         "title" : ["2017 SHOW REEL"]
@@ -211,12 +238,9 @@
                         "backgroundColor": "#000",
                         "width": "100%",
 
-
-
                         "content" : [
                             {
                                 "component": "content-video",
-                                "title": ["SHOW REEL"],
                                 "videoId" : "qsWl1--Niyg",
                                 "width": "80%"
                             }
@@ -233,7 +257,7 @@
                 {
                     "component": "view-content-title",
                     "data" : {
-                        "height":"10vh",
+                        "height":"10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
                         "title" : ["AWARDS"]
@@ -303,9 +327,16 @@
                     }
                 },
                 {
+                    "component": "view-content-margin",
+                    "data" : {
+                        "backgroundColor": "#272727",
+                        "height": "3vw"
+                    }
+                },
+                {
                     "component": "view-content-title",
                     "data" : {
-                        "height":"10vh",
+                        "height":"10vw",
                         "backgroundColor": "#ffffff",
                         "color": "#000",
                         "title" : ["PARTNERS"]
@@ -347,8 +378,14 @@
                             }
                         ]
                     }
+                },
+                {
+                    "component": "view-content-margin",
+                    "data" : {
+                        "backgroundColor": "#fff",
+                        "height": "3vw"
+                    }
                 }
-
             ]
         },
 
@@ -361,6 +398,178 @@
                     "data" : {
                         "width": "100%",
                         "height": "100%"
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data" : {
+                        "height":"10vh",
+                        "backgroundColor": "#000",
+                        "color": "#fff",
+                        "title" : ["MUSIC VIDEO"]
+                    }
+                },
+                {
+                    "component": "view-works-holder",
+                    "data" : {
+                        "content" : [
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s1.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s2.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s3.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s4.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s5.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s6.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s7.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s8.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s9.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s10.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s11.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s12.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s13.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s14.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s15.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/s16.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/m1.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "800"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/m2.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "800"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/m3.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "800"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/m4.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "800"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "imageUrl" : "assets/images/works/m5.jpg",
+                                "VideoId" : "U9HBT6sRSZ",
+                                "width" : "400",
+                                "height" : "800"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data" : {
+                        "height":"10vh",
+                        "backgroundColor": "#000",
+                        "color": "#fff",
+                        "title" : ["COMMERCIAL FILM"]
                     }
                 },
                 {
@@ -517,6 +726,7 @@
                         ]
                     }
                 }
+
             ]
         },
 
@@ -527,9 +737,6 @@
                 {
                     "component": "view-contact-main",
                     "data" : {
-                        "videoId" : "Rzh643tlHdM",
-                        "videoWidth" : 960,
-                        "videoHeight" : 540,
                         "width": "100%",
                         "height": "100%"
                     }
@@ -539,7 +746,7 @@
                     "data" : {
                         "backgroundColor": "#000",
                         "width": "50%",
-                        "height": "100%",
+                        "height": "50%",
 
                         "content" : [
                             {
@@ -567,7 +774,7 @@
                     "data" : {
                         "backgroundColor": "#000",
                         "width": "50%",
-                        "height": "100%",
+                        "height": "50%",
 
                         "content" : [
                             {
@@ -588,12 +795,13 @@
                         ]
                     }
                 },
+
                 {
                     "component": "view-content-holder",
                     "data" : {
-                        "backgroundImg": "assets/images/contact/zanybros_japan.jpg",
+                        "backgroundColor": "#111",
                         "width": "50%",
-                        "height": "100%",
+                        "height": "50%",
 
                         "content" : [
                             {
@@ -622,7 +830,7 @@
                     "data" : {
                         "backgroundImg": "assets/images/contact/zanybros_china.jpg",
                         "width": "50%",
-                        "height": "100%",
+                        "height": "50%",
 
                         "content" : [
                             {
@@ -649,7 +857,7 @@
                 {
                     "component": "view-content-title",
                     "data" : {
-                        "height":"10vh",
+                        "height":"10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
                         "title" : ["PRODUCTION"]
@@ -714,7 +922,7 @@
                 {
                     "component": "view-content-title",
                     "data" : {
-                        "height":"10vh",
+                        "height":"10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
                         "title" : ["POST-PRODUCTION"]
@@ -792,7 +1000,7 @@
                 {
                     "component": "view-content-title",
                     "data" : {
-                        "height":"10vh",
+                        "height":"10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
                         "title" : ["ZANYBROS COMMUNICATION in JAPAN"]
@@ -823,7 +1031,7 @@
                     "component": "view-content-margin",
                     "data" : {
                         "backgroundColor": "#272727",
-                        "height": "5vh"
+                        "height": "3vw"
                     }
                 }
             ]

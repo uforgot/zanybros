@@ -46,6 +46,7 @@
     import ContentContactGallery from '../content/content-contact-gallery.vue';
     import ContentContactPeople from '../content/content-contact-people.vue';
     import ContentContactPeopleTitle from '../content/content-contact-people-title.vue';
+    import ContentMap from '../content/content-map.vue';
 
     import ContentVideo from '../content/content-video.vue';
 
@@ -66,7 +67,8 @@
             ContentContactTxt,
             ContentContactGallery,
             ContentContactPeople,
-            ContentContactPeopleTitle
+            ContentContactPeopleTitle,
+            ContentMap
         },
 
         props : {

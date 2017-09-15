@@ -6,16 +6,18 @@
 */
 
 <template>
-    <div class="content-about-partner __content-list-frame"
-         :class="jsonData.class"
+    <div class="content-background-image"
+         :style="{
+                 width: parentData.width + 'px',
+                 height: parentData.height + 'px'}"
     >
-        <div
-                v-for="item in jsonData.item"
-                class="partner scroll-animation hide"
-                animation-offset="-30"
-        >
-            <img :src="item.imageUrl">
-        </div>
+        <comp-image class="scroll-animation hide"
+                    :style="{
+                 width: parentData.width + 'px',
+                 height: parentData.height + 'px',
+                 'background-image': 'url(' + jsonData.imageUrl + ')'
+            }"
+        ></comp-image>
     </div>
 </template>
 
@@ -23,29 +25,26 @@
     @import "~scssMixin";
 
     .hide {
-        @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s, left 0.2s ease-out 0s');
         @include opacity(0);
-        @include transform(translate(0px, 40px));
     }
 
     .show {
-        @include css-value-transition('opacity 0.5s ease-out 0s, transform 0.5s ease-out 0s');
-        @include opacity(1.0);
-        @include transform(translate(0px, 0px));
+        @include opacity(1);
     }
 </style>
 
-
 <script>
-    import MixinContent from '../mixin/mixin-content.vue';
     import MixinControlScrollAnimation from '../mixin/mixin-control-scroll-animation.vue';
+    import MixinContent from '../mixin/mixin-content.vue';
+    import CompImage from '../component/comp-image.vue';
 
     export default {
-        mixins:[MixinContent, MixinControlScrollAnimation],
-        components:{},
+        mixins:[MixinControlScrollAnimation, MixinContent],
+        components:{
+            CompImage
+        },
 
         props: {},
-
         data: function () {
             return {}
         },
@@ -68,5 +67,3 @@
         dummy : {}
     }
 </script>
-
-

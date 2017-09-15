@@ -8,6 +8,9 @@
 <template>
     <div class="content-video"
          :class="[{show:isReady}]"
+         :style="{
+             height: videoHeight + 'px'
+             }"
     >
         <youtube :video-id="jsonData.videoId"
                  @ready="setYoutubeReady"
@@ -22,8 +25,6 @@
                      }"
                  :mute="isMute"
                  @ended="handlePlayEnd"
-
-                 s
         ></youtube>
     </div>
 </template>

@@ -28,14 +28,11 @@
                     :height="item.height"
                     :order="index"
                     :key="item.id"
+                    :data-focus="item.focus"
+
+                    :json-data="item"
+                    @workItemOver="onWorkItemOverHandler"
             >
-                <div class="img-frame"
-                     :style="{
-                        width: '100%',
-                        height: '100%',
-                        'background-image': 'url(' + item.imageUrl + ')'
-                    }"
-               ></div>
             </content-works-item>
         </content-works-list>
     </ul>
@@ -106,7 +103,21 @@
             }
         },
 
-        methods:{},
+        methods:{
+            onWorkItemOverHandler : function($e) {
+                console.log($e);
+                let i;
+                for (i=0;i< this.content.length;i++) {
+                    if (i===$e) {
+                        this.content[i].focus = true;
+                        console.log(this.content[i].focus);
+                    } else {
+                        this.content[i].focus = false;
+                    }
+                }
+            }
+        },
+
         watch : {},
 
         //life cycle
@@ -120,11 +131,21 @@
             for (i=0;i<this.jsonData.content.length;i++) {
                 this.jsonData.content[i].width =  this.jsonData.content[i].width/2;
                 this.jsonData.content[i].height =  this.jsonData.content[i].height/2;
+                this.jsonData.content[i].focus = false;
             }
 
             for (i=0;i<2;i++) {
                 for (let j=0;j<this.jsonData.content.length;j++) {
-                    this.content.push(this.jsonData.content[j]);
+                    this.content.push(
+                        {
+                            width : this.jsonData.content[j].width,
+                            height : this.jsonData.content[j].height,
+                            focus : this.jsonData.content[j].focus,
+                            imageUrl : this.jsonData.content[j].imageUrl,
+                            videoId : this.jsonData.content[j].videoId
+
+                        }
+                );
                 }
             }
 
