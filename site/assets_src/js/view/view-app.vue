@@ -17,6 +17,26 @@
 
 <style scoped lang="scss">
     @import "~scssMixin";
+
+    .view-container {
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .slide-left-enter {
+        transform: translate3d(0px,0px,0px);
+    }
+
+    .slide-left-leave-active {
+        transform: translate3d(-100%,0px,0px);
+    }
+
+    .slide-right-enter {
+        transform: translate3d(0px,0px,0px);
+    }
+
+    .slide-right-leave-active {
+        transform: translate3d(100%,0px,0px);
+    }
 </style>
 
 <script>
@@ -42,13 +62,15 @@
     });
 
     router.beforeEach((to, from, next) => {
-//        console.log('--> router before each');
+        console.log('--> router before each');
         next();
     });
 
     router.afterEach((to, from) => {
-//        console.log('--> router after each')
+        console.log('--> router after each')
+        console.log(to.path);
     });
+
     export default {
         router,
         mixins:[],
@@ -60,7 +82,7 @@
         props: {},
         data: function() {
             return {
-                transitionDirection: 'slide-left',
+                transitionDirection: 'slide-right',
                 dataVideo:Object
             }
         },
@@ -68,13 +90,19 @@
         computed : {},
         methods : {},
         watch: {
-//            '$route'(to, from) {
-                // get route depth based on path
+            '$route'(to, from) {
+//                 get route depth based on path
 //                const toDepth = to.path.split('/').length;
 //                const fromDepth = from.path.split('/').length;
 //                this.transitionDirection = toDepth < fromDepth ? 'slide-right' : 'slide-left';
 //                this.transitionDirection = 'slide-left';
-//            }
+
+                this.transitionDirection = this.getRouterFlowDirection(
+                    this.getCurrentIndex(from.path),
+                    this.getCurrentIndex(to.path)
+                );
+                EventBus.$emit(EventBus.MENU_CLICK, to.path);
+            }
         },
 
         //life cycle

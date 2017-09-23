@@ -22,12 +22,9 @@
         <div class="txt-frame"
              :class="{'focus':dataFocus}"
         >
-            <h4>SHINHWA TOUCH M/V PRODUCE</h4>
-            <small>Client : Liveworks company
-                Director : Hong Wonki
-                Director of Photography: Kim Joonhong
-                Production Design : Jeon Eunyoung
-                Post production : ASTRO digital.LAB</small>
+            <!--<h4 v-html="jsonData.title"></h4>-->
+            <!--<small v-html="jsonData.comment"></small>-->
+            <h4 v-html="computedTitle"></h4>
         </div>
         <div class="button-frame"
              :class="{'focus':dataFocus}"
@@ -61,11 +58,11 @@
     .img-frame {
         @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s, filter 0.2s ease-out 0s');
 
-        filter:grayscale(100%);
+        filter:grayscale(100%) blur(0px);
         opacity:0.5;
 
         &.focus {
-            filter:grayscale(0%);
+            filter:grayscale(0%) blur(10px);
             transform: scale(1.2);
             opacity:1;
         }
@@ -74,9 +71,11 @@
     .txt-frame {
         @include css-value-transition('opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s, filter 0.3s ease-out 0s');
 
-        transform:translateY(100%);
+        opacity:0;
+        /*transform:translateY(110%);*/
         &.focus {
-            transform:translateY(0%);
+            /*transform:translateY(0%);*/
+            opacity:1;
         }
     }
 </style>
@@ -109,7 +108,12 @@
             isShow: false
         }),
 
-        computed : {},
+        computed : {
+            computedTitle : function() {
+                return this.jsonData.title.split(':').join('<hr>');
+            }
+
+        },
         methods : {
             onMouseOverHandler : function($e) {
                 this.$emit('workItemOver', this.order);
@@ -142,11 +146,12 @@
                 left: 0,
                 width: 0,
                 height: 0
-            }
+            };
             this.$watch(() => (
                 this.width,
                     this.height
-            ), this.notify)
+            ), this.notify);
+
         },
         //beforeMount : function() {},
         mounted () {

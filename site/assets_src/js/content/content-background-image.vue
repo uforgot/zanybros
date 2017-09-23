@@ -27,14 +27,12 @@
     .hide {
         @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s, filter 0.2s ease-out 0.2s');
         @include opacity(0);
-        @include transform(scale(1.1) translate(0px, 40px));
-        @include filter(blur(20px) contrast(200%));
+        @include transform(scale(1) translate(0px, 0px));
     }
     .show {
         @include css-value-transition('opacity 2.0s ease-out 0.2s, transform 4.0s ease-out 0.2s, filter 2.0s ease-out 0.2s');
         @include opacity(1);
         @include transform(scale(1) translate(0px, 0px));
-        @include filter(blur(0px) contrast(100%));
     }
 </style>
 

@@ -10,7 +10,8 @@
     <div class="comp-youtube-frame"
          :style="{
              width: frameWidth + 'px',
-             height: frameHeight + 'px'
+             height: frameHeight + 'px',
+             transform : 'scale(' + videoScale + ')'
          }
     ">
         <div class="container"
@@ -89,6 +90,9 @@
                 Type : Number
             },
             'video-height': {
+                Type : Number
+            },
+            'video-scale' : {
                 Type : Number
             }
         },

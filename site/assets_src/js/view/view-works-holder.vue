@@ -7,7 +7,7 @@
 
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <ul class="view-works-holder"
+    <div class="view-works-holder"
          :style="{
              'background-color': backgroundColor,
              width: frameWidth + 'px',
@@ -15,11 +15,11 @@
         }"
     >
         <content-works-list
-                :line-gap="400"
+                :line-gap="500"
                 :align="align"
                 :min-line-gap="100"
                 :max-line-gap="100"
-                :single-max-width="500"
+                :single-max-width="300"
                 :watch="content"
         >
             <content-works-item
@@ -35,7 +35,7 @@
             >
             </content-works-item>
         </content-works-list>
-    </ul>
+    </div>
 </template>
 
 <style scoped lang="scss">
@@ -105,7 +105,6 @@
 
         methods:{
             onWorkItemOverHandler : function($e) {
-                console.log($e);
                 let i;
                 for (i=0;i< this.content.length;i++) {
                     if (i===$e) {
@@ -125,7 +124,6 @@
         created:function(){
             this.content = [];
 
-            console.log(this.jsonData.content.length);
             let i=0;
 
             for (i=0;i<this.jsonData.content.length;i++) {
@@ -134,25 +132,24 @@
                 this.jsonData.content[i].focus = false;
             }
 
-            for (i=0;i<2;i++) {
-                for (let j=0;j<this.jsonData.content.length;j++) {
-                    this.content.push(
-                        {
-                            width : this.jsonData.content[j].width,
-                            height : this.jsonData.content[j].height,
-                            focus : this.jsonData.content[j].focus,
-                            imageUrl : this.jsonData.content[j].imageUrl,
-                            videoId : this.jsonData.content[j].videoId
-
-                        }
+            for (let j=0;j<this.jsonData.content.length;j++) {
+                this.content.push(
+                    {
+                        title : this.jsonData.content[j].title,
+                        comment : this.jsonData.content[j].comment,
+                        width : this.jsonData.content[j].width,
+                        height : this.jsonData.content[j].height,
+                        focus : this.jsonData.content[j].focus,
+                        imageUrl : this.jsonData.content[j].imageUrl,
+                        videoId : this.jsonData.content[j].videoId
+                    }
                 );
-                }
             }
 
 
-            this.content.sort(function () {
-                return Math.random() - 0.5
-            })
+//            this.content.sort(function () {
+//                return Math.random() - 0.5
+//            })
         },
         //beforeMount : function() {},
         //mounted : function() {},

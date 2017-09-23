@@ -1,44 +1,58 @@
 {
-    "mainData" : {
+    "mainData": {
         "video": [
             {
-                "videoId": "OYYbjEgj2wA",
+                "videoId": "q6f-LLM1H6U",
                 "videoWidth": 960,
                 "videoHeight": 540
             }
         ]
     },
-
-    "footerData" : {
+    "footerData": {
         "contact": {
-            "title": ["LET'S WORKS TOGETHER"],
-            "comment": ["For new business inquiries contact us at"],
+            "title": [
+                "LET'S WORKS TOGETHER"
+            ],
+            "comment": [
+                "For new business inquiries contact us at"
+            ],
             "email": "letswork@zanybros.com"
         },
-        "copyright" : ["All rights reserved ZANYBROS 2017"]
+        "copyright": [
+            "All rights reserved ZANYBROS 2017"
+        ]
     },
-
-    "contentsData" : [
+    "contentsData": [
         {
             "title": "ABOUT US",
-            "class" : "view-about",
-            "contents" : [
+            "class": "view-about",
+            "contents": [
                 {
                     "component": "view-about-main",
-                    "data" : {
+                    "data": {
                         "width": "100%",
                         "height": "100%"
                     }
                 },
                 {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
+                        "backgroundColor": "#000",
+                        "color": "#fff",
+                        "title": [
+                            "WHO WE ARE"
+                        ]
+                    }
+                },
+                {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "width": "100%",
                         "height": "100%",
-
-                        "content" : [
+                        "content": [
                             {
-                                "component":"content-background-image",
+                                "component": "content-background-image",
                                 "imageUrl": "assets/images/about/section1_bg.jpg"
                             },
                             {
@@ -62,18 +76,15 @@
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "width": "100%",
-                        "height": "80%",
-
-                        "content" : [
+                        "height": "100%",
+                        "content": [
                             {
-                                "component":"content-background-image",
+                                "component": "content-background-image",
                                 "imageUrl": "assets/images/about/section2_bg.jpg"
                             },
-
                             {
-
                                 "component": "content-about-txt",
                                 "class": "center",
                                 "title": [
@@ -95,15 +106,16 @@
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#000",
                         "width": "100%",
-                        "height": "70%",
-
-                        "content" : [
+                        "height": "100%",
+                        "content": [
                             {
                                 "component": "content-image",
-                                "title":[""],
+                                "title": [
+                                    ""
+                                ],
                                 "class": "left",
                                 "imageUrl": "assets/images/about/section3_img.jpg"
                             },
@@ -129,87 +141,191 @@
                 },
                 {
                     "component": "view-content-title",
-                    "data" : {
-                        "height":"10vw",
+                    "data": {
+                        "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title" : ["WHAT WE DO"]
+                        "title": [
+                            "WHAT WE DO"
+                        ]
                     }
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#000",
                         "width": "100%",
-                        "height": "70%",
-
-                        "content" : [
+                        "height": "80%",
+                        "content": [
                             {
                                 "component": "content-about-category",
-                                "width": "80%",
-                                "height": "100%",
-                                "category" : [
+                                "width": "90%",
+                                "height": "90%",
+                                "category": [
                                     {
-                                        "title" : [
+                                        "title": [
                                             "MEDIA",
                                             "PRODUCTION"
                                         ],
-                                        "comment" : [
+                                        "comment": [
                                             "We have produced over 1,000 commercial contents, more than 120 each year. From concept planning to production, directing, shooting, 2D / 3D, editing and color correction, we offer you a one-stop solution quickly.",
                                             "",
                                             "We are showing high-level visual work with solid teamwork with professional staff in each field.",
                                             "We are currently producing content with partners around the world, including in Asia."
                                         ],
-                                        "imageUrl" : "assets/images/about/section4_bg_1.jpg"
+                                        "imageUrl": "assets/images/about/section4_bg_1.jpg"
                                     },
                                     {
-                                        "title" : [
+                                        "title": [
                                             "GLOBAL",
                                             "ENTERTAINMENT"
                                         ],
-                                        "comment" : [
+                                        "comment": [
                                             "ZANYBROS. has a 50% share of the K-POP music video.",
                                             "",
                                             "We have also signed an MOU with Korea's best record producer team and Swedish Music Publishing Company, and are expanding our business into entertainment content business including global sound recording business, differentiated visual directing, artist concept establishment, idle production consulting and training."
                                         ],
-                                        "imageUrl" : "assets/images/about/section4_bg_2.jpg"
-
+                                        "imageUrl": "assets/images/about/section4_bg_2.jpg"
                                     },
                                     {
-                                        "title" : [
+                                        "title": [
                                             "NEW MEDIA",
                                             "CONTENT"
                                         ],
-                                        "comment" : [
+                                        "comment": [
                                             "Mobile, and internet environments.",
                                             "",
                                             "We also operate channels that include YouTube broadcasts, micro-movies, web dramas, and snack content through collaborative content creation with companies, entertainment content and global platform providers."
                                         ],
-                                        "imageUrl" : "assets/images/about/section4_bg_3.jpg"
+                                        "imageUrl": "assets/images/about/section4_bg_3.jpg"
                                     },
                                     {
-                                        "title" : [
+                                        "title": [
                                             "CREATIVE",
                                             "R&D"
                                         ],
-                                        "comment" : [
+                                        "comment": [
                                             "We support various productions and post production progress with technical staff with many years of experience and high-end professional equipment.",
                                             "",
                                             "It has become the best supporter in the field of photography by providing shooting studios, lighting equipment and manpower, post-production editing, color grading, 2D & 3D graphic production, studio for photography."
                                         ],
-                                        "imageUrl" : "assets/images/about/section4_bg_4.jpg"
+                                        "imageUrl": "assets/images/about/section4_bg_4.jpg"
                                     },
                                     {
-                                        "title" : [
+                                        "title": [
                                             "VALUE",
                                             "ADDED SUPPORT"
                                         ],
-                                        "comment" : [
+                                        "comment": [
                                             "Analyze content trends and research various content creation methods.",
                                             "",
                                             "We are planning new contents, testing new image techniques such as Virtual Reality (VR) production, drone shooting, and developing and delivering content creation system education programs for overseas creators."
                                         ],
-                                        "imageUrl" : "assets/images/about/section4_bg_5.jpg"
+                                        "imageUrl": "assets/images/about/section4_bg_5.jpg"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
+                        "backgroundColor": "#000",
+                        "color": "#fff",
+                        "title": [
+                            "2017 SHOW REEL"
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data": {
+                        "backgroundColor": "#000",
+                        "width": "100%",
+
+                        "content": [
+                            {
+                                "component": "content-video",
+                                "videoId": "qsWl1--Niyg",
+                                "width": "70%"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-margin",
+                    "data": {
+                        "backgroundColor": "#000",
+                        "height": "20vw"
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
+                        "backgroundColor": "#272727",
+                        "color": "#fff",
+                        "title": [
+                            "AWARDS"
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data": {
+                        "backgroundColor": "#272727",
+                        "width": "100%",
+                        "content": [
+                            {
+                                "component": "content-about-award",
+                                "class": "",
+                                "item": [
+                                    {
+                                        "title": [
+                                            "SNH48 - Untitled"
+                                        ],
+                                        "comment": [
+                                            "2016 ASIA NEW SONG RANKING AWARD",
+                                            "BEST MUSIC VIDEO OF THE YEAR"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "2PM -WINNER"
+                                        ],
+                                        "comment": [
+                                            "2014 MNET ASIA MUSIC AWARD",
+                                            "BEST MUSIC VIDEO OF  THE YEAR"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "HYUNA - RED"
+                                        ],
+                                        "comment": [
+                                            "2014 ROLLING STONES MAGAZINE",
+                                            "BEST MUSIC VIDEO NO.5 IN THE WORLD"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "HONG WONKI"
+                                        ],
+                                        "comment": [
+                                            "2009 MNET ASIA MUSIC AWARD",
+                                            "BEST DIRECTOR OF  THE YEAR WINNER"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "Girlufffduc172 generation - I GOT A BOY"
+                                        ],
+                                        "comment": [
+                                            "2013 YOUTUBE AWARD",
+                                            "BEST MUSICVIDEO WINNER"
+                                        ]
                                     }
                                 ]
                             }
@@ -218,162 +334,92 @@
                 },
                 {
                     "component": "view-content-margin",
-                    "data" : {
-                        "backgroundColor": "#000",
-                        "height": "10vh"
-                    }
-                },
-                {
-                    "component": "view-content-title",
-                    "data" : {
-                        "height":"10vw",
-                        "backgroundColor": "#000",
-                        "color": "#fff",
-                        "title" : ["2017 SHOW REEL"]
-                    }
-                },
-                {
-                    "component": "view-content-holder",
-                    "data" : {
-                        "backgroundColor": "#000",
-                        "width": "100%",
-
-                        "content" : [
-                            {
-                                "component": "content-video",
-                                "videoId" : "qsWl1--Niyg",
-                                "width": "80%"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "component": "view-content-margin",
-                    "data" : {
-                        "backgroundColor": "#000",
-                        "height": "10vh"
-                    }
-                },
-                {
-                    "component": "view-content-title",
-                    "data" : {
-                        "height":"10vw",
-                        "backgroundColor": "#272727",
-                        "color": "#fff",
-                        "title" : ["AWARDS"]
-                    }
-                },
-                {
-                    "component": "view-content-holder",
-                    "data" : {
-                        "backgroundColor": "#272727",
-                        "width": "100%",
-
-                        "content" : [
-                            {
-                                "component": "content-about-award",
-
-                                "class": "",
-                                "item" :
-                                        [
-                                            {
-                                                "title": [
-                                                    "SNH48 - Untitled"
-                                                ],
-                                                "comment": [
-                                                    "2016 ASIA NEW SONG RANKING AWARD",
-                                                    "BEST MUSIC VIDEO OF THE YEAR"
-                                                ]
-                                            },
-                                            {
-                                                "title": [
-                                                    "2PM -WINNER"
-                                                ],
-                                                "comment": [
-                                                    "2014 MNET ASIA MUSIC AWARD",
-                                                    "BEST MUSIC VIDEO OF  THE YEAR"
-                                                ]
-                                            },
-                                            {
-                                                "title": [
-                                                    "HYUNA - RED"
-                                                ],
-                                                "comment": [
-                                                    "2014 ROLLING STONES MAGAZINE",
-                                                    "BEST MUSIC VIDEO NO.5 IN THE WORLD"
-                                                ]
-                                            },
-                                            {
-                                                "title": [
-                                                    "HONG WONKI"
-                                                ],
-                                                "comment": [
-                                                    "2009 MNET ASIA MUSIC AWARD",
-                                                    "BEST DIRECTOR OF  THE YEAR WINNER"
-                                                ]
-                                            },
-                                            {
-                                                "title": [
-                                                    "Girl’s generation - I GOT A BOY"
-                                                ],
-                                                "comment": [
-                                                    "2013 YOUTUBE AWARD",
-                                                    "BEST MUSICVIDEO WINNER"
-                                                ]
-                                            }
-                                        ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "component": "view-content-margin",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#272727",
                         "height": "3vw"
                     }
                 },
                 {
                     "component": "view-content-title",
-                    "data" : {
-                        "height":"10vw",
+                    "data": {
+                        "height": "10vw",
                         "backgroundColor": "#ffffff",
                         "color": "#000",
-                        "title" : ["PARTNERS"]
+                        "title": [
+                            "PARTNERS"
+                        ]
                     }
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#ffffff",
                         "width": "100%",
-
-                        "content" : [
+                        "content": [
                             {
                                 "component": "content-about-partner",
-                                "title": ["PARTNERS"],
+                                "title": [
+                                    "PARTNERS"
+                                ],
                                 "class": "",
-                                "item" :
-                                [
-                                    {"imageUrl": "assets/images/about/partner1.jpg"},
-                                    {"imageUrl": "assets/images/about/partner2.jpg"},
-                                    {"imageUrl": "assets/images/about/partner3.jpg"},
-                                    {"imageUrl": "assets/images/about/partner4.jpg"},
-                                    {"imageUrl": "assets/images/about/partner5.jpg"},
-                                    {"imageUrl": "assets/images/about/partner6.jpg"},
-                                    {"imageUrl": "assets/images/about/partner7.jpg"},
-                                    {"imageUrl": "assets/images/about/partner8.jpg"},
-                                    {"imageUrl": "assets/images/about/partner9.jpg"},
-                                    {"imageUrl": "assets/images/about/partner10.jpg"},
-                                    {"imageUrl": "assets/images/about/partner11.jpg"},
-                                    {"imageUrl": "assets/images/about/partner12.jpg"},
-                                    {"imageUrl": "assets/images/about/partner13.jpg"},
-                                    {"imageUrl": "assets/images/about/partner14.jpg"},
-                                    {"imageUrl": "assets/images/about/partner15.jpg"},
-                                    {"imageUrl": "assets/images/about/partner16.jpg"},
-                                    {"imageUrl": "assets/images/about/partner17.jpg"},
-                                    {"imageUrl": "assets/images/about/partner18.jpg"},
-                                    {"imageUrl": "assets/images/about/partner19.jpg"}
+                                "item": [
+                                    {
+                                        "imageUrl": "assets/images/about/partner1.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner2.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner3.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner4.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner5.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner6.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner7.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner8.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner9.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner10.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner11.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner12.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner13.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner14.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner15.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner16.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner17.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner18.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner19.jpg"
+                                    }
                                 ]
                             }
                         ]
@@ -381,377 +427,1051 @@
                 },
                 {
                     "component": "view-content-margin",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#fff",
                         "height": "3vw"
                     }
                 }
             ]
         },
-
         {
             "title": "OUR WORKS",
-            "class" : "view-works",
-            "contents" : [
+            "class": "view-works",
+            "contents": [
                 {
                     "component": "view-works-main",
-                    "data" : {
+                    "data": {
                         "width": "100%",
                         "height": "100%"
                     }
                 },
                 {
                     "component": "view-content-title",
-                    "data" : {
-                        "height":"10vh",
+                    "data": {
+                        "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title" : ["MUSIC VIDEO"]
+                        "title": [
+                            "MUSIC VIDEO"
+                        ]
                     }
                 },
                 {
                     "component": "view-works-holder",
-                    "data" : {
-                        "content" : [
+                    "data": {
+                        "content": [
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s1.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "SHINHWA : TOUCH M/V PRODUCE",
+                                "comment": "Client : Liveworks companyrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d8b36a882.jpg",
+                                "VideoId": "VITVlI80qgs",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s2.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "G.FRIEND : FINGERTIP M/V PRODUCE",
+                                "comment": "Client : Source musicrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d8ad69511.jpg",
+                                "VideoId": "i1n_1jrUEjU",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s3.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "AOA : Excuse Me M/V PRODUCE",
+                                "comment": "Client : FNC entertainmentrnDirector : Hong WonkirnDirector of Photography: Lee DongyeolrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d8a7dad65.jpg",
+                                "VideoId": "NRlDo3JuzfI",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s4.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "SEVEN SENSES : 7SENSES M/V PRODUCE",
+                                "comment": "Client : Shanghai star48 Future & Media Group Co. LtdrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d8a11ca7f.jpg",
+                                "VideoId": "839TX-5wXhY",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s5.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "SNH48  Ju016b ju00ecng yu012b  : yes or no M/V PRODUCE",
+                                "comment": "Client : Shanghai star48 Cuture & Media Group Co. LtdrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnLocal Production  : Song jiyeon . Newyork. USrnPost production : ASTRO digital.LAB",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d89ad4053.jpg",
+                                "VideoId": "poExkE7AGb4",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s6.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "G FRINED : Rough M/V PRODUCE",
+                                "comment": "Client : Source musicrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d89398312.jpg",
+                                "VideoId": "0VKcLPdY9lI",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s7.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "GIRLu2019S GENERATION YURI X SEOHYUN : SECRET",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d88d03ff7.jpg",
+                                "VideoId": "ZRPgtoEO6OM",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s8.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "IOI : Dream girls M/V PRODUCE",
+                                "comment": "Client : CJ E&M, YMC entertainmentrnDirector : Hong Wonki ,Huh jinhyunrnDirector of Photography: Kim Joonhong, Lee DongyeolrnProduction Design : Lee HyoungwoornPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d88716cea.jpg",
+                                "VideoId": "1BVV9UqELbA",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s9.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "4MINUTE : Hate M/V PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d881c7c85.jpg",
+                                "VideoId": "D_F9HUTYnl0",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s10.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "Drug Restaurant : Mistake M/V PRODUCE",
+                                "comment": "Client : C9 entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d87c54d07.jpg",
+                                "VideoId": "WYWCfpNDg28",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s11.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "SNH48 : Princess cloak M/V PRODUCE",
+                                "comment": "Client : Shanghai star48 Cuture & Media Group Co. LtdrnDirector : Hong Wonki, Lee HaejinrnDirector of Photography: Kim Joonhong, Kim DoyeonrnLocal Production  : Hawai film . Spain madridrnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d875e0327.jpg",
+                                "VideoId": "ATAKVUjYyWM",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s12.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "SNH48 : DREAM ISLAND M/V PRODUCE",
+                                "comment": "Client : Shanghai star48 Cuture & Media Group Co. LtdrnDirector : Hong Wonki, Lee HaejinrnDirector of Photography: Kim Joonhong, Lee DongyeolrnProduction Design : Park SeoyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d86f8e2a6.jpg",
+                                "VideoId": "EN5aaKOgVDM",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s13.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "BEAST : REBORN  M/V PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Park SeoyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d8697bdad.jpg",
+                                "VideoId": "QQXsknBbcG0",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s14.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "HYUN-A : Howu2019s this M/V PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d863bb552.jpg",
+                                "VideoId": "y882AFjrSOM",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s15.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "MAMAMOO : Decalcomanie M/V PRODUCE",
+                                "comment": "Client : RBW entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d85d8afdc.jpg",
+                                "VideoId": "y2OFPvYxZuY",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s16.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "NELL : Dream Catcher",
+                                "comment": "Client : Space Bohemian rnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d852bc4ed.jpg",
+                                "VideoId": "6nepzo6LZqs",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m1.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
+                                "title": "APRIL :TINKER BELL",
+                                "comment": "Client : DSP entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Lee HyounwoornPost production : ASTRO digital.LAB",
+                                "year": "2016",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4d8484ac86.jpg",
+                                "VideoId": "B9FTAcOK3cA",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m2.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
+                                "title": "GIRLu2019S GENERATION : LION HEART M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Park SeoyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ce70502a2.jpg",
+                                "VideoId": "nVCubhQ454c",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m3.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
+                                "title": "TAEYEON : I M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Lee HaejinrnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ce6915159.jpg",
+                                "VideoId": "4OrCA1OInoo",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m4.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
+                                "title": "SUPER JUNIOR : DEVIL,M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Park SeoyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ce604c0a3.jpg",
+                                "VideoId": "gOwERHxXcTs",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m5.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
+                                "title": "god : Funny but sad day M/V PRODUCE",
+                                "comment": "Client : iHQrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ce5814d3d.jpg",
+                                "VideoId": "sXkZgR9gS24",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "AOA : HEART ATTACK M/V PRODUCE",
+                                "comment": "Client : FNC entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ce3ee2e66.jpg",
+                                "VideoId": "1pBgMBBsv4k",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "BTOB : Way back home M/V PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ce350a15e.jpg",
+                                "VideoId": "lr-MkPRHFms",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "4MINUTE : CRAZY M/V PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Park SeoyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ce27e2e60.jpg",
+                                "VideoId": "1nCLBTmjJBY",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "INFINITE : DILEMA M/V PRODUCE",
+                                "comment": "Client : Woollim entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4cdf912a5d.jpg",
+                                "VideoId": "cUTMi0xzQeM",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "FT ISLAND : PRAY M/V PRODUCE",
+                                "comment": "Client : FNC entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4cdf1ee5e8.jpg",
+                                "VideoId": "_1ZUFyS3-e8",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "ELLA : M/V PRODUC/E",
+                                "comment": "Client : HIM international music. TAIWANrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4cdea1e97d.jpg",
+                                "VideoId": "_9WHMyQF9YQ",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "Will pan : Clown M/V PRODUCE",
+                                "comment": "Client : Universal music. TAIWANrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4cde255096.jpg",
+                                "VideoId": "PdcheAL3J9I",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "Alien Huang : Napolu00e9on",
+                                "comment": "Client : ROCK record. TAIWANrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4cddb0b8cc.jpg",
+                                "VideoId": "Tcvk3vw8KUY",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "SNH48 : Halloween night",
+                                "comment": "Client : Shanghai star48 Cuture & Media Group Co. LtdrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnLocal Production  : Boogie film . Czech PraguernPost production : ASTRO digital.LAB",
+                                "year": "2015",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4cdd1b7315.jpg",
+                                "VideoId": "X2i7mH40zes",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "TVXQ : Something M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c82ef2c3d.jpg",
+                                "VideoId": "U9HBT6sRSZ8",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "TVXQ : Spellbound M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c825c1311.jpg",
+                                "VideoId": "RNgUj9hyPRg",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "AOA : Miniskirt M/V PRODUCE",
+                                "comment": "Client : FNC entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c81d383a6.jpg",
+                                "VideoId": "q6f-LLM1H6U",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "GARY : Shower Later M/V PRODUCE",
+                                "comment": "Client : Leessang CompanyrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c81512247.jpg",
+                                "VideoId": "tgfuaDS-S2c",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "EXO : Overdose M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c7f868144.jpg",
+                                "VideoId": "TI0DGvqKZTI",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "VIXX : ERROR M/V PRODUCE",
+                                "comment": "Client : Jellyfish entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c7e8ce5ff.jpg",
+                                "VideoId": "IF8kySIcWNw",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "HYUN A : RED M/V PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c7df22fcc.jpg",
+                                "VideoId": "oTXCgR93zC8",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "2PM : GO CRAZY M/V PRODUCE",
+                                "comment": "Client : JYP entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LA",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c7d5aee5b.jpg",
+                                "VideoId": "uwD51VS0Uko",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "GIRLu2019S GENERATION-TTS : Holler M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c7cb6c3f2.jpg",
+                                "VideoId": "uXfxVm3V55I",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "SUPER JUNIOR : MAMACITA M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c7bf5b625.jpg",
+                                "VideoId": "q_krT35dgDM",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "SEOTAIJI : CHRISTMALO.WIN M/V PRODUCE",
+                                "comment": "Client : Seotaiji CompanyrnDirector : Hong Wonki, Lee haejinrnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c7b61ed66.jpg",
+                                "VideoId": "guovNnTnchQ",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "BTS : War of Hormone M/V PRODUCE",
+                                "comment": "Client : Bighit entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Lee haejinrnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c7aa846a5.jpg",
+                                "VideoId": "XQmpVHUi-0A",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "APINK : LUV M/V PRODUCE",
+                                "comment": "Client : PlanA entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon EunyoungrnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c7a0dc0bd.jpg",
+                                "VideoId": "8dVjSvLzD1I",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "KARA : MAMMA MIA",
+                                "comment": "Client : DSP entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon SunjurnPost production : ASTRO digital.LAB",
+                                "year": "2014",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4c791744d3.jpg",
+                                "VideoId": "6tK0XUQQ3wA",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "Girlu2019s Generation : I Got A Boy",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2013",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4b43a88cbc.jpg",
+                                "VideoId": "wq7ftOZBy0E",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "B.A.P : BADMAN M/V PRODUCE",
+                                "comment": "Client : TS entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnLocal Production  : Song jiyeon . Detroit. USrnPost production : ASTRO digital.LAB",
+                                "year": "2013",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4b42a8bfc0.jpg",
+                                "VideoId": "KLHY_7PgaV0",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "B.A.P : one shot",
+                                "comment": "Client : TS entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2013",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4b42116cb2.jpg",
+                                "VideoId": "1zRzl1d5vNU",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "INFINITE  : Destiny M/V PRODUCE",
+                                "comment": "Client : Woollim entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2013",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4b417b1552.jpg",
+                                "VideoId": "BDbpE6qHDSA",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "VIXX : VOODOO DOLL M/V PRODUCE",
+                                "comment": "Client : Jellyfish entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2013",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4b40a1d620.jpg",
+                                "VideoId": "MOG7BexjPjM",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "BTS : NO MORE DREAM M/V PRODUCE",
+                                "comment": "Client : Bighit entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2013",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4b3fd85a1b.jpg",
+                                "VideoId": "pUkViXyQTI4",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "B.T.S : N.O M/V PRODUCE",
+                                "comment": "Client : Bighit entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2013",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4b3e03f18f.jpg",
+                                "VideoId": "mmgxPLLLyVo",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "KIM HYUN JOONG : Unbreakable M/V PRODUCE",
+                                "comment": "Client : Keyeast entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2013",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4b3d5cfd9c.jpg",
+                                "VideoId": "mPXaR2s7Y90",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "GIRLu2019s GENARATION TTS  :  Twinkle M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ab1db53d6.jpg",
+                                "VideoId": "JmM04_OgajU",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "BEAST  :  Beautiful Night M/V PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnLocal Production  : Song jiyeon . Newyork. USrnPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ab35a36c1.jpg",
+                                "VideoId": "ckIGhwQtd-c",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "F(x)  :  ELECTRONIC SHOCK M/V PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ab4e1e1f6.jpg",
+                                "VideoId": "n8I8QGFA1oM",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "NELL  :  White Night M/V PRODUCE",
+                                "comment": "Client : Woollim entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ab5dc8c58.jpg",
+                                "VideoId": "filhfToaks0",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "EPIKHIGH  :  Donu2019t Hate Me M/V PRODUCE",
+                                "comment": "Client : YG entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ab70911b4.jpg",
+                                "VideoId": "u2ePT5OlZ7o",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "EPIKHIGH  :  UP M/V PRODUCE",
+                                "comment": "Client : YG entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ab846fe46.jpg",
+                                "VideoId": "9EIYWmRkeRE",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "K. Will  :  Please Donu2019t M/V PRODUCE",
+                                "comment": "Client : Starship entertainmentrnDirector : Hong Wonki, Lee HaejinrnDirector of Photography: Kim JoonhongrnProduction Design : LeehaejinrnPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ab94e68fd.jpg",
+                                "VideoId": "PdUiCJnRptk",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "B1A4  :  Walk M/V PRODUCE",
+                                "comment": "Client : WM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4aba65f0ff.jpg",
+                                "VideoId": "IxLV7M1sdjg",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "Kim Tae Woo : WHEN I LOOK AT MYSELF M/V PRODUCE",
+                                "comment": "Client : DoubleKick entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4abbe80bff.jpg",
+                                "VideoId": "LMHzaYX5Swg",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "MIRYO :  DIRTY M/V PRODUCE",
+                                "comment": "Client : Neganetworks entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4abdb5645f.jpg",
+                                "VideoId": "yjr485xFf7A",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "MBLAQ  :  This Is War M/V PRODUCE",
+                                "comment": "Client : J.tune Camp entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4abf023000.jpg",
+                                "VideoId": "Bsiv1mo0HTQ",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "PRIMARY  :  ?",
+                                "comment": "Client : Amoeba Culture.rnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2012",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ac08bd0d6.jpg",
+                                "VideoId": "wo0bnb5U64E",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "TROUBLE MAKER  :  TROUBLE MAKER MV PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2011",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ac1d3d210.jpg",
+                                "VideoId": "s-zRAQmKUkI",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "SUPER Jr.  :  MR. Simple MV PRODUCE",
+                                "comment": "Client : SM entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2011",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ac2ce595b.jpg",
+                                "VideoId": "r6TwzSGYycM",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "B.A.P  :  WARRIOR MV PRODUCE",
+                                "comment": "Client : TS entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2011",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ac4356bef.jpg",
+                                "VideoId": "5tLooPlf2Sw",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "HYUNA  :  Bubble pop MV PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2011",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ac54a5d8f.jpg",
+                                "VideoId": "bw9CALKOvAI",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "BEAST  :  SHOCK MV PRODUCE",
+                                "comment": "Client : CUBE entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2010",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ac6946a6a.jpg",
+                                "VideoId": "JXxGo1MvNls",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "SEO_TAEJI  :  JULIET M/V PRODUCE",
+                                "comment": "Client : Seo taiji CompanyrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2009",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ac7b34572.jpg",
+                                "VideoId": "bQf5JawiSAk",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "EPIK HIGH  :  Wannabe M/V PRODUCE",
+                                "comment": "Client : Map the soulrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LA",
+                                "year": "2009",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ac8b67974.jpg",
+                                "VideoId": "ElW_V6SyfE8",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "Trot M/V PRODUCE",
+                                "comment": "Client : Map the soulrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LA",
+                                "year": "2009",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4aca1262c4.jpg",
+                                "VideoId": "iAJW9JuW-jQ",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "SEO_TAEJI  :  MOAI M/V PRODUCE",
+                                "comment": "Client : Seo taiji CompanyrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2008",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4acb36cba8.jpg",
+                                "VideoId": "9WLcIvqA1Uk",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "SEO_TAEJI  :  TIK TAK M/V PRODUCE",
+                                "comment": "Client : Seo taiji CompanyrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2008",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4acc3544dd.jpg",
+                                "VideoId": "TyfDlvUTL38",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "EPIK HIGH  :  ONE MV PRODUCE",
+                                "comment": "Client : Woollim entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2008",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4acd4da1c1.jpg",
+                                "VideoId": "OpTKLNjUdwQ",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "NELL  :  Walking through the time of remembrance M/V PRODUCE",
+                                "comment": "Client : Woollim entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon JinmornPost production : ASTRO digital.LAB",
+                                "year": "2008",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4acf49448d.jpg",
+                                "VideoId": "K72ZxP9ZAP4",
+                                "width": "400",
+                                "height": "400"
+                            },
+                            {
+                                "component": "content-works-item",
+                                "title": "Good night",
+                                "comment": "Client : Woollim entertainmentrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnPost production : ASTRO digital.LAB",
+                                "year": "2008",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c4ad0424faa.jpg",
+                                "VideoId": "MA6c8nqv9uI",
+                                "width": "400",
+                                "height": "400"
                             }
                         ]
                     }
                 },
                 {
                     "component": "view-content-title",
-                    "data" : {
-                        "height":"10vh",
+                    "data": {
+                        "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title" : ["COMMERCIAL FILM"]
+                        "title": [
+                            "COMMERCIAL FILM"
+                        ]
                     }
                 },
                 {
                     "component": "view-works-holder",
-                    "data" : {
-                        "content" : [
+                    "data": {
+                        "content": [
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s1.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "PANTENE [P&G]Girlu2019s generation YURI, SEOHYUN u201cSYSTEMu201d",
+                                "comment": "Client : P&GrnAgency : Grey. HONGKONGrnProducer : Jenny ChoornDirector : Hong WonkirnProduction Design : Park seoyoung",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3c1abc0d4b.jpg",
+                                "VideoId": "SWArzX-W2OQ",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s2.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "PANTENE [P&G]Girlu2019s generation YURI, SEOHYUN u201c3MMu201d",
+                                "comment": "Client : P&GrnAgency : Grey. HONGKONGrnProducer : Jenny ChoornDirector : Hong WonkirnProduction Design : Park seoyoung",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3c18dd68ed.jpg",
+                                "VideoId": "Y5vzqm2jPjA",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s3.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "Eclair CJ ioi",
+                                "comment": "Client : CJ CheiljedangrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Park seoyoung",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3c110ecc68.jpg",
+                                "VideoId": "nY3gza5rczI",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s4.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "KB Bank LIV ioi",
+                                "comment": "Client : KB BankrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Shin Gwioak",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3c0da2f143.jpg",
+                                "VideoId": "VgbKvcRX-yo",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s5.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "AMERICAN TOURLIST[SAMSONITE] CM / MV PRODUCE",
+                                "comment": "Client : SamsoniternDirector : Hong WonkirnDirector of Photography: Kim JohnnyrnProduction Design : Kwon Sunju",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3c09f798e0.jpg",
+                                "VideoId": "l4_IYPH6oiQ",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s6.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "SAMSUNG NOTEBOOK9  INTRODUCTION",
+                                "comment": "Client : SamsungrnAgency : DesignfeverrnProducer : Noh JinyoungrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon Sunju",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3c057ce40a.jpg",
+                                "VideoId": "va5PTYGzM",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s7.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "SAMSUNG NOTEBOOK9 DESIGN",
+                                "comment": "Client : SamsungrnAgency : DesignfeverrnProducer : Noh JinyoungrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon Sunju",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3bfd448b51.jpg",
+                                "VideoId": "Ae8x-CeBG4",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s8.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "LG 3D TV 3D Content Video Ver u2018GIRLu2019s GENERATIONu2019 PRODUCE",
+                                "comment": "Client : SamsungrnAgency : HSADrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon Jinmo",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3bfac304b6.jpg",
+                                "VideoId": "1mOxK7mVa-8",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s9.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "LG MONITOR  :  SUPER LED MONITOR GLOBAL PROMOTION CM PRODUCE [NORAZO]",
+                                "comment": "Client : SamsungrnAgency : HSADrnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon Jinmo",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3bf785b44b.jpg",
+                                "VideoId": "XHbquTlz584",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s10.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
+                                "title": "SAMSUNG GALAXY MUSIC CN BLUE",
+                                "comment": "Client : SamsungrnAgency : Cheil  rnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Kwon Jinmo",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3bf4227427.jpg",
+                                "VideoId": "gI6nBPjU8o",
+                                "width": "400",
+                                "height": "400"
                             },
                             {
                                 "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s11.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s12.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s13.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s14.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s15.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/s16.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "400"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m1.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m2.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m3.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m4.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
-                            },
-                            {
-                                "component": "content-works-item",
-                                "imageUrl" : "assets/images/works/m5.jpg",
-                                "VideoId" : "U9HBT6sRSZ",
-                                "width" : "400",
-                                "height" : "800"
+                                "title": "ETUDE HOUSE",
+                                "comment": "Client : ETUDE HOUSErnDirector : Hong WonkirnDirector of Photography: Kim JoonhongrnProduction Design : Jeon Eunyoung",
+                                "year": "2017",
+                                "month": "01",
+                                "imageUrl": "http://zanybros.com/cms/upload/works/59c3bf119fe4a.jpg",
+                                "VideoId": "QTdHo9HCA7k",
+                                "width": "400",
+                                "height": "400"
                             }
                         ]
                     }
                 }
-
             ]
         },
-
         {
             "title": "CONTACT US",
-            "class" : "view-contact",
-            "contents" : [
+            "class": "view-contact",
+            "contents": [
                 {
                     "component": "view-contact-main",
-                    "data" : {
+                    "data": {
                         "width": "100%",
                         "height": "100%"
                     }
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#000",
-                        "width": "50%",
-                        "height": "50%",
-
-                        "content" : [
+                        "width": "100%",
+                        "height": "100%",
+                        "content": [
                             {
                                 "component": "content-contact-txt",
-                                "class":"left",
+                                "class": "left",
                                 "title": [
                                     "ZANYBROS",
                                     "HEADQUATER"
@@ -771,42 +1491,14 @@
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
-                        "backgroundColor": "#000",
-                        "width": "50%",
-                        "height": "50%",
-
-                        "content" : [
-                            {
-                                "component": "content-contact-gallery",
-                                "imageUrl": [
-                                    "assets/images/gallery/1.jpg",
-                                    "assets/images/gallery/2.jpg",
-                                    "assets/images/gallery/3.jpg",
-                                    "assets/images/gallery/4.jpg",
-                                    "assets/images/gallery/5.jpg",
-                                    "assets/images/gallery/6.jpg",
-                                    "assets/images/gallery/7.jpg",
-                                    "assets/images/gallery/8.jpg",
-                                    "assets/images/gallery/9.jpg",
-                                    "assets/images/gallery/10.jpg"
-                                ]
-                            }
-                        ]
-                    }
-                },
-
-                {
-                    "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#111",
                         "width": "50%",
                         "height": "50%",
-
-                        "content" : [
+                        "content": [
                             {
                                 "component": "content-contact-txt",
-                                "class":"left",
+                                "class": "left",
                                 "title": [
                                     "ZANYBROS",
                                     "COMMUNICATION",
@@ -827,15 +1519,14 @@
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "backgroundImg": "assets/images/contact/zanybros_china.jpg",
                         "width": "50%",
                         "height": "50%",
-
-                        "content" : [
+                        "content": [
                             {
                                 "component": "content-contact-txt",
-                                "class":"left",
+                                "class": "left",
                                 "title": [
                                     "ZANYBROS",
                                     "COMMUNICATION",
@@ -856,33 +1547,46 @@
                 },
                 {
                     "component": "view-content-title",
-                    "data" : {
-                        "height":"10vw",
+                    "data": {
+                        "height": "10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
-                        "title" : ["PRODUCTION"]
+                        "title": [
+                            "PRODUCTION"
+                        ]
                     }
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#272727",
                         "width": "100%",
                         "class": "__content-list-frame",
-
-                        "content" : [
+                        "content": [
                             {
                                 "component": "content-contact-people",
                                 "peoples": [
                                     {
-                                        "title":["CEO/DIRECTOR"],
-                                        "name":["HONG WONKI"],
-                                        "email":["svr75@zanybros.com"]
+                                        "title": [
+                                            "CEO/DIRECTOR"
+                                        ],
+                                        "name": [
+                                            "HONG WONKI"
+                                        ],
+                                        "email": [
+                                            "svr75@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["CEO/DIRECTOR OF PHOTOGRAPHY"],
-                                        "name":["KIM JUNHONG"],
-                                        "email":["source2001@zanybros.com"]
+                                        "title": [
+                                            "CEO/DIRECTOR OF PHOTOGRAPHY"
+                                        ],
+                                        "name": [
+                                            "KIM JUNHONG"
+                                        ],
+                                        "email": [
+                                            "source2001@zanybros.com"
+                                        ]
                                     }
                                 ]
                             },
@@ -890,29 +1594,59 @@
                                 "component": "content-contact-people",
                                 "peoples": [
                                     {
-                                        "title":["PRODUCER"],
-                                        "name":["KIM LEESEOK"],
-                                        "email":["7051dd@zanybros.com"]
+                                        "title": [
+                                            "PRODUCER"
+                                        ],
+                                        "name": [
+                                            "KIM LEESEOK"
+                                        ],
+                                        "email": [
+                                            "7051dd@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["DIRECTOR OF PHOTOGRAPHY"],
-                                        "name":["KIM DOYEON"],
-                                        "email":["rladus2@zanybros.com"]
+                                        "title": [
+                                            "DIRECTOR OF PHOTOGRAPHY"
+                                        ],
+                                        "name": [
+                                            "KIM DOYEON"
+                                        ],
+                                        "email": [
+                                            "rladus2@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["DIRECTOR"],
-                                        "name":["LIM SUKJIN"],
-                                        "email":["starzshootz@zanybros.com"]
+                                        "title": [
+                                            "DIRECTOR"
+                                        ],
+                                        "name": [
+                                            "LIM SUKJIN"
+                                        ],
+                                        "email": [
+                                            "starzshootz@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["1st ASSIST DIRECTOR"],
-                                        "name":["LIM HAEJIN"],
-                                        "email":["dlgowls6242@zanybros.com"]
+                                        "title": [
+                                            "1st ASSIST DIRECTOR"
+                                        ],
+                                        "name": [
+                                            "LIM HAEJIN"
+                                        ],
+                                        "email": [
+                                            "dlgowls6242@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["DIRECTOR OF PHOTOGRAPHY"],
-                                        "name":["LEE DONGYEOL"],
-                                        "email":["nanyeo@zanybros.com"]
+                                        "title": [
+                                            "DIRECTOR OF PHOTOGRAPHY"
+                                        ],
+                                        "name": [
+                                            "LEE DONGYEOL"
+                                        ],
+                                        "email": [
+                                            "nanyeo@zanybros.com"
+                                        ]
                                     }
                                 ]
                             }
@@ -921,76 +1655,131 @@
                 },
                 {
                     "component": "view-content-title",
-                    "data" : {
-                        "height":"10vw",
+                    "data": {
+                        "height": "10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
-                        "title" : ["POST-PRODUCTION"]
+                        "title": [
+                            "POST-PRODUCTION"
+                        ]
                     }
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#272727",
                         "width": "100%",
                         "class": "__content-list-frame",
-
-                        "content" : [
+                        "content": [
                             {
                                 "component": "content-contact-people",
-                                "title": ["EDIT"],
+                                "title": [
+                                    "EDIT"
+                                ],
                                 "peoples": [
                                     {
-                                        "title":["GENERAL MANAGER/EDITOR"],
-                                        "name":["JEONG SEYOUNG"],
-                                        "email":["purin423@zanybros.com"]
+                                        "title": [
+                                            "GENERAL MANAGER/EDITOR"
+                                        ],
+                                        "name": [
+                                            "JEONG SEYOUNG"
+                                        ],
+                                        "email": [
+                                            "purin423@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["EDITOR / PRODUCER"],
-                                        "name":["LEE KISUK"],
-                                        "email":["saphirsuk@zanybros.com"]
+                                        "title": [
+                                            "EDITOR / PRODUCER"
+                                        ],
+                                        "name": [
+                                            "LEE KISUK"
+                                        ],
+                                        "email": [
+                                            "saphirsuk@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["EDITOR"],
-                                        "name":["SONG DONGWOOK"],
-                                        "email":["ehddnr-dia@zanybros.com"]
+                                        "title": [
+                                            "EDITOR"
+                                        ],
+                                        "name": [
+                                            "SONG DONGWOOK"
+                                        ],
+                                        "email": [
+                                            "ehddnr-dia@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["EDITOR"],
-                                        "name":["JUNG SO YOUN"],
-                                        "email":["mythirick@zanybros.com"]
+                                        "title": [
+                                            "EDITOR"
+                                        ],
+                                        "name": [
+                                            "JUNG SO YOUN"
+                                        ],
+                                        "email": [
+                                            "mythirick@zanybros.com"
+                                        ]
                                     }
                                 ]
                             },
                             {
                                 "component": "content-contact-people",
-                                "title": ["VISUAL ART MOTION GRAPHIC"],
+                                "title": [
+                                    "VISUAL ART MOTION GRAPHIC"
+                                ],
                                 "peoples": [
                                     {
-                                        "title":["GENERAL MANAGER/EDITOR"],
-                                        "name":["JEONG SEYOUNG"],
-                                        "email":["soulart@zanybros.com"]
+                                        "title": [
+                                            "GENERAL MANAGER/EDITOR"
+                                        ],
+                                        "name": [
+                                            "JEONG SEYOUNG"
+                                        ],
+                                        "email": [
+                                            "soulart@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["VISUAL ARTIST"],
-                                        "name":["LEE HYUANG MIN"],
-                                        "email":["crazyjerry@zanybros.com"]
+                                        "title": [
+                                            "VISUAL ARTIST"
+                                        ],
+                                        "name": [
+                                            "LEE HYUANG MIN"
+                                        ],
+                                        "email": [
+                                            "crazyjerry@zanybros.com"
+                                        ]
                                     },
                                     {
-                                        "title":["VISUAL ARTIST"],
-                                        "name":["LEE SEUNG MIN"],
-                                        "email":["2094300@zanybros.com"]
+                                        "title": [
+                                            "VISUAL ARTIST"
+                                        ],
+                                        "name": [
+                                            "LEE SEUNG MIN"
+                                        ],
+                                        "email": [
+                                            "2094300@zanybros.com"
+                                        ]
                                     }
                                 ]
                             },
                             {
                                 "component": "content-contact-people",
-                                "title": ["COLOR GRADING"],
+                                "title": [
+                                    "COLOR GRADING"
+                                ],
                                 "peoples": [
                                     {
-                                        "title":["COLORLIST"],
-                                        "name":["LEE HYUNAH"],
-                                        "email":["idsti@zanybros.com"]
+                                        "title": [
+                                            "COLORLIST"
+                                        ],
+                                        "name": [
+                                            "LEE HYUNAH"
+                                        ],
+                                        "email": [
+                                            "idsti@zanybros.com"
+                                        ]
                                     }
                                 ]
                             }
@@ -999,28 +1788,35 @@
                 },
                 {
                     "component": "view-content-title",
-                    "data" : {
-                        "height":"10vw",
+                    "data": {
+                        "height": "10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
-                        "title" : ["ZANYBROS COMMUNICATION in JAPAN"]
+                        "title": [
+                            "ZANYBROS COMMUNICATION in JAPAN"
+                        ]
                     }
                 },
                 {
                     "component": "view-content-holder",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#272727",
                         "width": "100%",
                         "class": "__content-list-frame",
-
-                        "content" : [
+                        "content": [
                             {
                                 "component": "content-contact-people",
                                 "peoples": [
                                     {
-                                        "title":["CEO/PRODUCER"],
-                                        "name":["DAISUKE NOMURA"],
-                                        "email":["nomura1974@zanybros.com"]
+                                        "title": [
+                                            "CEO/PRODUCER"
+                                        ],
+                                        "name": [
+                                            "DAISUKE NOMURA"
+                                        ],
+                                        "email": [
+                                            "nomura1974@zanybros.com"
+                                        ]
                                     }
                                 ]
                             }
@@ -1029,13 +1825,12 @@
                 },
                 {
                     "component": "view-content-margin",
-                    "data" : {
+                    "data": {
                         "backgroundColor": "#272727",
                         "height": "3vw"
                     }
                 }
             ]
         }
-
     ]
 }

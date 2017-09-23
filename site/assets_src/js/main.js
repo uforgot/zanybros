@@ -12,6 +12,7 @@ Vue.use(VueYouTubeEmbed);
 
 //전역 유틸 mixin
 import './mixin/mixin-utils-common';
+import './mixin/mixin-utils-routes';
 import App from './view/view-app.vue'
 import {EventBus} from "./events/event-bus";
 
@@ -32,11 +33,11 @@ function init() {
 
             document.addEventListener('scroll', ($e) => {
                 EventBus.$emit(EventBus.SCROLL_MOVE, $e);
-            }, true)
+            }, true);
 
             window.addEventListener('resize', ($e) => {
                 EventBus.$emit(EventBus.WINDOW_RESIZE, $e);
-            }, true)
+            }, true);
 
         }
     ).catch(

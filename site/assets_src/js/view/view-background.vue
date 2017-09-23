@@ -11,6 +11,7 @@
                 :video-id="dataVideo.videoId"
                 :video-width="dataVideo.videoWidth"
                 :video-height="dataVideo.videoHeight"
+                :video-scale="currentScale"
         ></comp-youtube-frame>
     </div>
 </template>
@@ -20,44 +21,36 @@
 </style>
 
 <script>
+    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
+    import {EventBus} from "../events/event-bus";
 
     export default {
-        mixins : [],
+        mixins: [mixinResizeEvent],
         components: {
             CompYoutubeFrame
         },
 
         props: {},
         data: function () {
-            return {}
+            return {
+                currentScale:1
+            }
         },
 
-        computed : {},
+        computed : {
+            videoScale : function() {
+                return "scale(" + this.currentScale + ");";
+            }
+        },
         methods : {
+            onResizeHandler :function($e) {
+//                this.setElArray();
+            },
             onScrollHandler : function($e) {
-                let scrollTop = window.pageYOffset + this.windowHeight;
-                let i;
-                let elObject;
-                let animationOffset;
-                let animationOffsetValue;
-
-                for (i=0; i< this.elArray.length; i++) {
-                    elObject = this.elArray[i];
-
-                    animationOffsetValue = 0;
-                    animationOffset = elObject.el.getAttribute('animation-offset');
-
-                    if (animationOffset !== null) {
-                        animationOffsetValue = this.windowHeight * (Number(animationOffset)/100);
-                    }
-
-                    if (scrollTop > (elObject.offset.top - animationOffsetValue)) {
-                        this.setElementAddClass(elObject.el, 'show');
-                    } else {
-                        this.setElementRemoveClass(elObject.el, 'show');
-                    }
-                }
+//                let scrollTop = 1 + ((1-(this.windowHeight - window.pageYOffset)/this.windowHeight) * 3);
+//                this.currentScale = scrollTop;
+//                console.log(scrollTop);
             }
         },
         watch : {},
@@ -68,12 +61,19 @@
             this.dataVideo = Window.ZanyBrosData.data.mainData.video[0];
         },
         //beforeMount : function() {},
-        //mounted : function() {},
+        mounted : function() {
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.onResizeHandler);
+            EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
+            this.onResizeHandler();
+        },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
-        //beforeDestroy : function () {},
+        beforeDestroy : function () {
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.onResizeHandler);
+            EventBus.$off(EventBus.SCROLL_MOVE, this.onScrollHandler);
+        },
         //destroyed : function() {},
         dummy : {}
     }

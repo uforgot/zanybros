@@ -21,7 +21,6 @@
         >
             <div class="container">
                 <section>
-                    <h6>ZANYBROS</h6>
                     <ul>
                         <li>
                             <h1>KOREA H.Q.</h1>
@@ -29,13 +28,11 @@
                     </ul>
                 </section>
                 <section>
-                    <h6>ZANYBROS</h6>
                     <ul>
                         <li><h1>PEOPLES</h1></li>
                     </ul>
                 </section>
                 <section>
-                    <h6>ZANYBROS COMMUNICATION</h6>
                     <ul>
                         <li><h1>JAPAN</h1></li>
                         <li><h1>CHINA</h1></li>

@@ -63,45 +63,45 @@ body,input,textarea,select,button, td {
 
 .logo {
   font-family: "GothamUltra";
-  font-size: 22px;
-  font-style : italic;
+  font-size: 2vw;
+  //font-style : italic;
 }
 
 h1 {
   white-space   : pre-line;
-  font-size   : 7.1vh;
+  font-size   : 6vw;
   font-family : "GothamUltra";
-  line-height : 5.0vh;
+  line-height : 4.2vw;
+  //font-style : italic;
 }
 
 h2 {
   //text-transform : uppercase;
   white-space   : pre-line;
-  font-family   : "GothamUltra";
-  //font-family: "Gotham";
-  font-size     : 3.0vh;
-  line-height   : 4.0vh;
-  font-weight   : normal;
+  //font-family   : "GothamUltra";
+  font-family: "GothamMedium";
+  font-size     : 2vw;
+  line-height   : 2.7vw;
+  //font-weight   : bold;
+  letter-spacing: -0.05em;
 }
 
 h3 {
   white-space   : pre-line;
   font-family : "GothamUltra";
-  font-size: 1.8vh;
-  line-height:2.5vh;
+  font-size: 2vw;
 }
 
 h4 {
   white-space   : pre-line;
-  font-family : "GothamMedium";
-  font-weight : bold;
-  font-size: 1.5vh;
-  line-height: 2vh;
+  font-family : "GothamUltra";
+  font-size: 1.5vw;
+  line-height: 1.6vw;
 }
 
 h5 {
   white-space   : pre-line;
-  font-family    : "GothamUltra";
+  font-family    : "GothamMedium";
   font-size      : 20px;
   line-height: 28px;
 }
@@ -109,17 +109,20 @@ h5 {
 h6 {
   white-space   : pre-line;
   font-family    : "GothamMedium";
-  font-size      : 14px;
-  line-height    : 16px;
+  font-size      : 12px;
+  line-height    : 20px;
 }
 
 p {
   white-space : pre-line;
   font-family : "GothamMedium";
-  font-size   : 14px;
-  line-height : 24px;
+  //font-size   : 14px;
+  //line-height : 24px;
+  font-size: 1vw;
+  line-height: 1.8vw;
+
   letter-spacing : -0.02em;
-  @include opacity(0.9);
+  @include opacity(0.8);
 }
 
 small {
@@ -128,5 +131,15 @@ small {
   font-size   : 10px;
   line-height : 14px;
   letter-spacing : -0.02em;
-  @include opacity(0.9);
+  @include opacity(0.8);
+}
+
+menu {
+  font-family : "GothamMedium";
+
+  mix-blend-mode:difference;
+
+  font-size   : 11px;
+  line-height : 15px;
+  letter-spacing : -0.02em;
 }

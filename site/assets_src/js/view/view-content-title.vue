@@ -25,7 +25,7 @@
     .hide {
         @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s, left 0.2s ease-out 0s');
         @include opacity(0);
-        @include transform(translate(0px, -150%));
+        @include transform(translate(0px, 100%));
     }
 
     .show {

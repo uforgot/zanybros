@@ -7,6 +7,30 @@
 
 <template>
     <div>
+        <div class="prev-container"
+                :class="dataPrevContents.class"
+            :style="{
+                width: frameWidth,
+                top:fixY+'px'
+            }">
+            <div
+                    :is="dataPrevContents.contents[0].component"
+                    :json-data = "dataPrevContents.contents[0].data"
+            >
+            </div>
+        </div>
+        <div class="next-container"
+             :class="dataNextContents.class"
+            :style="{
+                width: frameWidth,
+                top:fixY+'px'
+            }">
+            <div
+                    :is="dataNextContents.contents[0].component"
+                    :json-data = "dataNextContents.contents[0].data"
+            >
+            </div>
+        </div>
         <div :class="dataContents.class"
                 :style="{
                  width: frameWidth
@@ -29,6 +53,7 @@
 </style>
 
 <script>
+    import {EventBus} from "../events/event-bus";
     import MixinControlResize from '../mixin/mixin-control-resize.vue';
 
     import ViewContentHolder from './view-content-holder.vue';
@@ -36,8 +61,11 @@
     import ViewContentTitle from './view-content-title.vue';
 
     import CompVideoFrame from '../component/comp-video-frame.vue';
-    import ViewAboutMain from './view-about-main.vue';
     import ViewFooter from './view-footer.vue';
+
+    import ViewAboutMain from './view-about-main.vue';
+    import ViewContactMain from './view-contact-main.vue';
+    import ViewWorksMain from './view-works-main.vue';
 
     export default {
         mixins: [ MixinControlResize ],
@@ -45,9 +73,12 @@
             ViewContentHolder,
             ViewContentTitle,
             ViewContentMargin,
-            ViewAboutMain,
             ViewFooter,
-            CompVideoFrame
+            CompVideoFrame,
+
+            ViewAboutMain,
+            ViewWorksMain,
+            ViewContactMain
         },
 
         props: {
@@ -55,7 +86,11 @@
         },
         data: function() {
             return {
-                dataContents:Object
+                dataPrevContents:Object,
+                dataNextContents:Object,
+                dataContents:Object,
+
+                fixY:Number
             }
         },
 
@@ -65,21 +100,40 @@
             }
         },
 
-        methods : {},
+        methods : {
+            onResizeHandler :function($e) {
+                this.onScrollHandler();
+            },
+            onScrollHandler : function($e) {
+                let scrollTop = window.pageYOffset;
+                this.fixY = scrollTop;
+            }
+        },
         watch : {},
 
         //life cycle
         //beforeCreate : function() {},
         created:function(){
+            this.dataPrevContents = Window.ZanyBrosData.data.contentsData[2];
+            this.dataNextContents = Window.ZanyBrosData.data.contentsData[1];
             this.dataContents = Window.ZanyBrosData.data.contentsData[0];
         },
         //beforeMount : function() {},
-        mounted : function() {window.scrollTo(0,0);},
+        mounted : function() {
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.onResizeHandler);
+            EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
+            this.onResizeHandler();
+
+            window.scrollTo(0,0);
+        },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
-        //beforeDestroy : function () {},
+        beforeDestroy : function () {
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.onResizeHandler);
+            EventBus.$off(EventBus.SCROLL_MOVE, this.onScrollHandler);
+        },
         //destroyed : function() {},
         dummy : {}
     }
