@@ -10,93 +10,249 @@
         position: absolute;
         left: 40px;
         top: 30px;
-        font-family: "GothamUltraItalic";
-        font-size: 22px;
         color:#fff;
     }
 
     .btn-menu {
         position:absolute;
-        right:20px;
-        top:20px;
+        cursor:pointer;
+        right:32px;
+        top:30px;
+
+        img {
+            width:40px;
+        }
+    }
+
+    .btn-close {
+        position:absolute;
+        cursor:pointer;
+        right:28px;
+        top:25px;
+
+        img {
+            width:50px;
+        }
+    }
+
+    .title {
+        display: block;
+        position:absolute;
+        top:26px;
+        left:50%;
+        width:100px;
+        height:14px;
+        margin-left:-90px;
+    }
+
+    .txt {
+        position:absolute;
+        overflow:hidden;
+        text-align:center;
+        width:100px;
+        height:14px;
+        color:#fff;
+
+        ul {
+            position:absolute;
+            width:100%;
+        }
+    }
+
+    .navigation-container {
+        .button {
+            position:absolute;
+            cursor:pointer;
+            width:70px;
+            height:100px;
+            top:50vh;
+            opacity:0.5;
+            margin-top:-50px;
+            margin-left:-20px;
+
+            &.right {
+                margin-right:-20px;
+            }
+        }
+
+        .txt {
+            top:50px;
+            margin-left:-50px;
+            margin-top:-7px;
+            opacity:0;
+        }
+
+        .bar {
+            position:absolute;
+            width:4px;
+            margin-top:25px;
+            height:50px;
+            background-color:#fff;
+            mix-blend-mode: exclusion;
+        }
+
+        .navigation {
+            //display:none;
+            position:absolute;
+            width:40px;
+            height:100px;
+            top:50vh;
+            margin-top:-50px;
+        }
+
+        .left {
+            left : 40px;
+            .txt {
+                left:16px;
+                transform: rotate(-90deg);
+            }
+        }
+        .right {
+            right : 40px;
+            .txt {
+                left      : 23px;
+                transform : rotate(90deg);
+            }
+            .bar {
+                right : 0;
+            }
+        }
+
     }
 
     .menu-container {
         position:absolute;
-        display:block;
-    }
-    .language-container {
-        display:none;
-    }
-
-    .border-container {
-        display:block;
-        position:absolute;
-        left:0;
+        //border:5px solid #fff;
+        overflow:hidden;
         top:0;
+        left:0;
         width:100vw;
         height:100vh;
-        //background.scss:#f00;
-        border:0 solid #ccc;
-
         pointer-events: none;
-        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
-        background: none !important;
-    }
 
-    .side-menu {
-        position:absolute;
-        font-family: "GothamMedium";
-        font-size:10px;
-        color:#fff;
-        width:170px;
-        top:50vh;
-
-        margin-top:5px;
-
-        .container {
+        ul {
             position:absolute;
-            width:100%;
-            left:0;
-            top:0;
+            left:50vw;
+            top:50vh;
+            transform:translateX(-50%) translateY(-50%);
 
+            li {
+                overflow:hidden;
 
-            height:20px;
-            overflow:hidden;
-
-            ul {
-                position:absolute;
-                left:0;
-                top:0;
-                width:100%;
-                li{
-                    width:100%;
-                    height:20px;
+                display:block;
+                width:50vw;
+                height:8vw;
+                h1 {
                     text-align:center;
+                    margin-top:8vw;
+                    opacity:0;
                 }
             }
         }
 
-        &.left{
-            left:-50px;
-            margin-left:0;
-            @include transform(rotate(90deg));
+        .background {
+            position : absolute;
+            width    : 100vw;
+            height   : 100vh;
+
+            .frame {
+                .bar {
+                    position   : absolute;
+                    background : #fff;
+                }
+
+                .left { left : 0; top : 0; width : 5px; height : 100vh; }
+                .right { right : 0; top : 0; width : 5px; height : 100vh; }
+                .top { left : 0; top : 0; width : 100vw; height : 5px; }
+                .bottom { left : 0; bottom : 0; width : 100vw; height : 5px; }
+            }
+
+            .txt {
+                position:absolute;
+                color:#000;
+                width:100vw;
+                height:100vh;
+                opacity:0.2;
+
+                overflow:auto;
+                .holder {
+                    font-size:20vh;
+                    font-style: italic;
+                    //width:50vh;
+                }
+
+                .left {
+                    position:absolute;
+                    left:0;
+                    top:50vh;
+                    transform:translateX(-70%) translateY(-100%) rotate(90deg);
+                }
+
+                .right {
+                    position:absolute;
+                    right:0;
+                    top:50vh;
+                    transform:translateX(72%) translateY(-100%) rotate(90deg);
+                }
+            }
         }
-        &.right {
-            right:-50px;
-            margin-right:0;
-            @include transform(rotate(-90deg));
+
+
+
+        li {
+            float:left;
+            display:inline-block;
+            padding-left:20px;
         }
     }
-    .bar {
-        position:absolute;
-        top:50vh;
-        width:20px;
-        height:$barWidth;
-        background:#fff;
 
-        pointer-events: none;
-        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='your_transparent.png', sizingMethod='scale');
+    .language-container {
+        display:none;
+    }
+}
 
+
+.view-footer {
+    position:relative;
+    display:block;
+    background:#000;
+
+    width:100%;
+    text-align:center;
+
+    .contact {
+        h1 {
+            font-family: "GothamMedium";
+            font-weight: bold;
+            font-size:20px;
+            margin-bottom:30px
+        }
+        p {
+            font-family: "GothamLight";
+            font-style: italic;
+            font-size:20px;
+            line-height:30px;
+        }
+        .email {
+            display:inline-block;
+            position:relative;
+
+            font-family: "GothamLight";
+            font-style: italic;
+            font-size:20px;
+            border-bottom: 1px solid #ffffff;
+        }
+        padding: 50px 0 0 0;
+    }
+    .copyright {
+        padding: 50px 0 50px 0;
+
+        .logo {
+            left: 40px;
+            top: 30px;
+            font-size: 18px;
+            color:#fff;
+            margin-bottom:10px;
+        }
     }
 }

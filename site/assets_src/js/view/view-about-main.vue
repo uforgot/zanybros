@@ -1,35 +1,38 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
-    <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="content main about"
+    <div class="view-about-main"
          :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }"
     >
-        <comp-youtube-frame
-                :video-id="jsonData.videoId"
-                :video-width="jsonData.videoWidth"
-                :video-height="jsonData.videoHeight"
-        ></comp-youtube-frame>
         <div class="title"
              :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }"
         >
-            <h1>
-                <p>WIDEN</p>
-                <p>THE VIEW OF</p>
-                <p>CREATIVE</p>
-            </h1>
+            <ul>
+                <li><h1>WHO WE ARE</h1></li>
+                <li><h1>WHAT WE DO</h1></li>
+                <li><h1>2017 SHOWREEL</h1></li>
+                <li><h1>AWARDS</h1></li>
+                <li><h1>PARTNERS</h1></li>
+            </ul>
         </div>
-        <comp-main-scroll></comp-main-scroll>
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
-<!-- script -->
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
@@ -37,16 +40,18 @@
 
     export default {
         mixins: [MixinResizeEvent],
+        components:{
+            CompYoutubeFrame,
+            CompMainScroll
+        },
 
         props : {
             'json-data': {
                 Type : Object
             }
         },
-
         data: function() {
             return {
-
             };
         },
 
@@ -66,30 +71,23 @@
                     return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowHeight);
                 }
                 return this.jsonData.height;
-            },
+            }
         },
 
-        components:{
-            "comp-youtube-frame" : CompYoutubeFrame,
-            "comp-main-scroll" : CompMainScroll
-        },
+        methods : {},
+        watch : {},
 
-        methods:{
-
-        },
-
-
-        beforeDestroy: function () {
-
-        },
-
-        mounted() {
-
-        },
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>

@@ -1,169 +1,251 @@
 /**
-* Created by uforgot on 2017. 7. 18..
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
 */
 
 <template>
     <div class="frame-container">
-        <div class="border-container"
-             :class = "{
-                    'border-folding': dataFolding,
-                    'border-animation-folding': dataFolding,
-                    'border-animation-normal': !dataFolding
-            }"
-        >
-        </div>
-
-        <div class="logo"><a href="#about">ZANYBROS</a></div>
-
-        <div class="bar left"
-            :class = "{
-                    'bar-left-folding': dataFolding,
-                    'bar-animation-folding': dataFolding,
-                    'bar-animation-normal': !dataFolding
-            }"
-        ></div>
-
-        <div class="bar right"
-            :class = "{
-                    'bar-right-folding': dataFolding,
-                    'bar-animation-folding': dataFolding,
-                    'bar-animation-normal': !dataFolding
-            }"
-        ></div>
-
-        <!--<div class="side-menu left">-->
-            <!--<div class="container">-->
-                <!--<ul>-->
-                    <!--<li>ABOUT US</li>-->
-                    <!--<li>OUR WORKS</li>-->
-                    <!--<li>CONTACT US</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="side-menu right">-->
-            <!--<div class="container">-->
-                <!--<ul>-->
-                    <!--<li>ABOUT US</li>-->
-                    <!--<li>OUR WORKS</li>-->
-                    <!--<li>CONTACT US</li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</div>-->
+        <div class="logo"><a href="/">ZANYBROS</a></div>
 
         <div class="language-container">
             <div>EN</div>
             <div>CH</div>
         </div>
 
-        <div class="menu-container">
-            <ul>
-                <li :class="{ 'menu-is-active' : dataCurrentMenuIndex == 1}">
-                    <a href="#about">ABOUT US</a>
-                </li>
-                <li :class="{ 'menu-is-active' : dataCurrentMenuIndex == 2}">
-                    <a href="#works">OUR WORKS</a>
-                </li>
-                <li :class="{ 'menu-is-active' : dataCurrentMenuIndex == 3}">
-                    <a href="#contact">CONTACT US</a>
-                </li>
-            </ul>
+        <menu class="title">
+            <comp-navigation-txt
+                    :data-index="currentIndex"
+            ></comp-navigation-txt>
+        </menu>
+
+        <div class="btn-menu"
+            @click="menuShowClickHandler"
+             v-if="!isMenuShow"
+        >
+            <img src="assets/images/svg/menu.svg" alt="">
         </div>
 
+        <menu class="navigation-container">
+            <div class="navigation left"
+                 :class="{'focus':leftNavigationFocus}"
+            >
+                <div class="bar"
+                     :class="{'focus':leftNavigationFocus}"
+                ></div>
+                <comp-navigation-txt
+                        :data-index="leftNavigationIndex"
+                ></comp-navigation-txt>
+            </div>
+            <div class="button left"
+                 @mouseover="leftNavigationOverHandler"
+                 @mouseout="leftNavigationOutHandler"
+                 @click="leftNavigationClickHandler"
+            ></div>
+            <div class="navigation right"
+                 :class="{'focus':rightNavigationFocus}"
+            >
+                <div class="bar"
+                     :class="{'focus':rightNavigationFocus}"
+                ></div>
+                <comp-navigation-txt
+                        :data-index="rightNavigationIndex"
+                ></comp-navigation-txt>
+            </div>
+            <div class="button right"
+                 @mouseover="rightNavigationOverHandler"
+                 @mouseout="rightNavigationOutHandler"
+                 @click="rightNavigationClickHandler"
+            ></div>
+        </menu>
+
+        <content-menu
+            :data-is-menu-show="isMenuShow"
+            @menuClose="menuCloseClickHandler"
+        ></content-menu>
+
+        <div class="btn-close"
+             @click="menuCloseClickHandler"
+             v-if="isMenuShow"
+        >
+            <img src="assets/images/svg/close.svg" alt="">
+        </div>
     </div>
 </template>
-
-<script>
-    import {EventBus} from '../events/event-bus'
-
-    export default {
-        props : {
-            'data-folding': {
-                Type: Boolean,
-                required: true
-            },
-            'data-current-menu-index' : {
-                Type: Number,
-                required:true
-            }
-        },
-
-        computed:{
-
-        },
-
-        methods : {
-        }
-    }
-</script>
 
 <style scoped lang="scss">
     @import "~scssMixin";
 
-    .bar-animation-folding {
-        @include css-value-transition('
-            left 0.1s ease-out,
-            right 0.1s ease-out,
-            width  0.1s ease-out,
-            height  0.2s 0.2s ease-out,
-            margin-top  0.2s 0.2s ease-out
-        ');
+    /*.router-link-active {*/
+        /*color:red;*/
+    /*}*/
+
+    menu {
+        ul {
+            @include css-value-transition('margin-top 0.2s ease-out 0s');
+        }
+
+        .left {
+            @include css-value-transition('left 0.2s ease-out 0s');
+            &.focus {
+                left:20px;
+
+                .txt {
+                    @include css-value-transition('opacity 0.2s ease-out 0.0s');
+                    opacity:1;
+                }
+            }
+
+            .bar {
+                @include css-value-transition('width 0.2s ease-out 0.0s, height 0.2s ease-out 0.2s, margin-top 0.2s ease-out 0.2s, margin-left 0.2s ease-out 0.0s');
+
+                &.focus {
+                    @include css-value-transition('width 0.2s ease-out 0.2s, height 0.2s ease-out 0.0s, margin-top 0.2s ease-out 0.0s, margin-left 0.2s ease-out 0.2s');
+                    width       : 25px;
+                    height      : 4px;
+                    margin-top  : 50px;
+                    margin-left : -25px;
+                }
+            }
+        }
+
+        .right {
+            @include css-value-transition('right 0.2s ease-out 0s');
+            &.focus {
+                right:20px;
+
+                .txt {
+                    @include css-value-transition('opacity 0.2s ease-out 0.0s');
+                    opacity:1;
+                }
+            }
+            .bar {
+                @include css-value-transition('width 0.2s ease-out 0.0s, height 0.2s ease-out 0.2s, margin-top 0.2s ease-out 0.2s, margin-right 0.2s ease-out 0.0s');
+
+                &.focus {
+                    @include css-value-transition('width 0.2s ease-out 0.2s, height 0.2s ease-out 0.0s, margin-top 0.2s ease-out 0.0s, margin-right 0.2s ease-out 0.2s');
+                    width       : 25px;
+                    height      : 4px;
+                    margin-top  : 50px;
+                    margin-right : -25px;
+                }
+            }
+        }
+        .navigation {
+
+        }
     }
-
-    .bar-animation-normal {
-        @include css-value-transition('
-            left 0.2s 0.2s ease-out,
-            right 0.2s 0.2s ease-out,
-            width  0.2s 0.2s ease-out,
-            height  0.1s ease-out,
-            margin-top  0.1s ease-out
-        ');
-    }
-
-    .left {
-        left:20px;
-    }
-
-    .bar-left-folding {
-        left:40px !important;
-        width:$barWidth;
-        height:80px;
-        margin-top:-40px;
-    }
-
-    .right {
-        right:20px;
-    }
-
-    .bar-right-folding {
-        right:40px !important;
-        width:$barWidth;
-        height:80px;
-        margin-top:-40px;
-    }
-
-    .border-animation-folding {
-        @include css-value-transition('
-            border 0.2s ease-out
-        ');
-    }
-
-    .border-animation-normal {
-        @include css-value-transition('
-            border 0.2s ease-out
-        ');
-    }
-
-    .border-folding {
-        border:20px solid #fff;
-    }
-
-
-
-    .menu-is-active {
-        color:#ff0000;
-    }
-
 
 
 </style>
+
+<script>
+    import {EventBus} from "../events/event-bus";
+    import CompNavigationTxt from "../component/comp-navigation-txt.vue";
+    import ContentMenu from "../content/content-menu.vue";
+
+    export default {
+        mixins:[],
+        components:{
+            CompNavigationTxt,
+            ContentMenu
+        },
+
+        props: {},
+        data: function() {
+            return {
+                isMenuShow:false,
+                currentIndex:-1,
+                leftNavigationFocus : false,
+                rightNavigationFocus : false,
+                leftNavigationIndex:-1,
+                rightNavigationIndex:-1
+            };
+        },
+
+        computed : {
+
+        },
+
+        methods : {
+            menuCloseClickHandler : function($e) {
+                this.isMenuShow = false;
+            },
+            menuShowClickHandler : function($e) {
+                this.isMenuShow = true;
+            },
+            leftNavigationOverHandler : function($e) {
+                this.leftNavigationFocus = true;
+            },
+            leftNavigationOutHandler : function($e) {
+                this.leftNavigationFocus = false;
+            },
+            rightNavigationOverHandler : function($e) {
+                this.rightNavigationFocus = true;
+            },
+            rightNavigationOutHandler : function($e) {
+                this.rightNavigationFocus = false;
+            },
+
+            rightNavigationClickHandler : function($e) {
+                console.log(this.getRouterNameByIndex(this.getNextIndex()))
+                this.$router.push(this.getRouterNameByIndex(this.getNextIndex()));
+            },
+
+            leftNavigationClickHandler : function($e) {
+                console.log(this.getRouterNameByIndex(this.getPrevIndex()))
+                this.$router.push(this.getRouterNameByIndex(this.getPrevIndex()));
+            },
+
+            setCurrentIndex : function($e) {
+                this.currentIndex = this.getCurrentIndex($e);
+                this.leftNavigationIndex = this.getPrevIndex();
+                this.rightNavigationIndex = this.getNextIndex();
+                console.log('-->currentIndex' +  this.currentIndex + this.leftNavigationIndex + this.rightNavigationIndex);
+            },
+
+            getPrevIndex : function() {
+                let returnValue;
+                returnValue = this.currentIndex - 1;
+
+                if (returnValue < 0) {
+                    returnValue = 2;
+                }
+
+                return returnValue;
+            },
+
+            getNextIndex : function() {
+                let returnValue;
+                returnValue = this.currentIndex + 1;
+
+                if (returnValue > 2) {
+                    returnValue = 0;
+                }
+
+                return returnValue;
+            }
+        },
+
+        watch : {},
+
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        mounted : function() {
+            EventBus.$on(EventBus.MENU_CLICK, this.setCurrentIndex);
+            this.setCurrentIndex(this.$route.path);
+        },
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        beforeDestroy : function () {
+            EventBus.$off(EventBus.MENU_CLICK, this.setCurrentMenu);
+        },
+        //destroyed : function() {},
+        dummy : {}
+    }
+</script>

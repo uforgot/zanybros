@@ -9,22 +9,11 @@
 
     }
 }
+
 @mixin opacity($opacity) {
     opacity: $opacity;
     $opacityIE: $opacity * 100;
     filter: alpha(opacity=$opacityIE);
-}
-
-@mixin rotateY($degree) {
-    -ms-transform: rotateY($degree); /* IE 9 */
-    -webkit-transform: rotateY($degree); /* Chrome, Safari, Opera */
-    transform: rotateY($degree);
-}
-/* rotate */
-@mixin rotate($degree) {
-    -ms-transform: rotate($degree); /* IE 9 */
-    -webkit-transform: rotate($degree); /* Chrome, Safari, Opera */
-    transform: rotate($degree);
 }
 
 /* transform */
@@ -33,129 +22,19 @@
         #{$prefix}transform: $value;
     }
 }
-@mixin transform-origin( $value) {
+
+/* filter */
+@mixin filter( $value) {
     @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-        #{$prefix}transform-origin: $value;
+        #{$prefix}filter: $value;
     }
 }
-@mixin perspective( $value) {
-    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-        #{$prefix}perspective: $value;
-    }
-}
-/* transition */
-@mixin transition($args) {
-    -webkit-transition: $args;
-    -moz-transition: $args;
-    -ms-transition: $args;
-    transition: $args;
-}
-@mixin no-transition() {
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important;
-}
-/* transform-transition */
-@mixin transform-transition($time:1,$delay:0,$bezier:'') {
-    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-        #{$prefix}transition: #{$prefix}transform #{$time}s cubic-bezier(#{$bezier});
-        #{$prefix}transition-delay: #{$delay}s;
-    }
-}
-@mixin transform-transition-inout($time:1,$delay:0){
-    $bezier: .5, 0, .5, 1;
-    @include transform-transition($time,$delay,$bezier);
-}
-@mixin transform-transition-in($time:1,$delay:0){
-    $bezier: .5, 0, 1, .5;
-    @include transform-transition($time,$delay,$bezier);
-}
-@mixin transform-transition-out($time:1,$delay:0){
-    $bezier: 0, .5, .5, 1;
-    @include transform-transition($time,$delay,$bezier);
-}
+
 /* css-transition */
 @mixin css-value-transition($value) {
     @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
         #{$prefix}transition: #{$value};
     }
-}
-@mixin css-transition($property,$time,$delay,$bezier) {
-    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-        #{$prefix}transition: #{$property} #{$time}s cubic-bezier(#{$bezier});
-        #{$prefix}transition-delay: #{$delay}s;
-    }
-}
-@mixin css-transition-inout($property:all,$time:1,$delay:0){
-    $bezier: .5, 0, .5, 1;
-    @include css-transition($property,$time,$delay,$bezier);
-}
-@mixin css-transition-in($property:all,$time:1,$delay:0){
-    $bezier: .5, 0, 1, .5;
-    @include css-transition($property,$time,$delay,$bezier);
-}
-@mixin css-transition-out($property:all,$time:1,$delay:0){
-    $bezier: 0, .5, .5, 1;
-    @include css-transition($property,$time,$delay,$bezier );
-}
-
-/* transform-css-transition */
-@mixin transform-css-transition($value) {
-    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-        #{$prefix}transition: #{$prefix}transform #{$value};
-    }
-}
-
-
-/* keyframes */
-@mixin keyframes($animation-name) {
-    @-webkit-keyframes #{$animation-name} {
-        @content;
-    }
-    @-moz-keyframes #{$animation-name} {
-        @content;
-    }
-    @-ms-keyframes #{$animation-name} {
-        @content;
-    }
-    @-o-keyframes #{$animation-name} {
-        @content;
-    }
-    @keyframes #{$animation-name} {
-        @content;
-    }
-}
-
-@mixin animation($str) {
-    -webkit-animation: #{$str};
-    -moz-animation: #{$str};
-    -ms-animation: #{$str};
-    -o-animation: #{$str};
-    animation: #{$str};
-}
-@mixin animationFrame($str, $count, $duration:1s,$delay:0,$ease:linear,$direct:normal) {
-    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-        #{$prefix}animation-name: $str;
-        #{$prefix}animation-iteration-count: $count;
-        #{$prefix}animation-duration: $duration;
-        #{$prefix}animation-delay: $delay;
-        #{$prefix}animation-timing-function: $ease;
-        #{$prefix}animation-direction: $direct;
-    }
-}
-@mixin animationDelay($delay) {
-    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-        #{$prefix}animation-delay: $delay;
-    }
-}
-/* line */
-@mixin line($width:1px,$height:1px,$color:#000){
-    width : $width; border-top:#{$height} solid $color;
-}
-
-@mixin lineTop($height:1px,$width:1px,$color:#000){
-    width : $width; height : $height;border-left:#{$width} solid $color;
 }
 
 /* font */
@@ -163,5 +42,13 @@
     letter-spacing: -($spacing / 1000) + em;
 }
 
-$barWidth : 4px;
-$video-Din-Opacity: 0.6;
+/* background cover */
+@mixin backgroundCover() {
+    background-repeat   : no-repeat;
+    background-position : center;
+    background-size     : cover;
+}
+
+
+@charset "utf-8";
+$video-Din-Opacity: 0.5;

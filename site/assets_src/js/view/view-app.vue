@@ -1,78 +1,122 @@
 /**
-* Created by uforgot on 2017. 7. 18..
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
 */
-
 
 <template>
     <div id="app">
-        <view-background :data-folding="isFolding"></view-background>
-        <view-flick-container  :data-folding="isFolding" :data-contents-list="dataContentsList" :data-current-menu-index="currentMenuIndex"></view-flick-container>
-        <view-frame :data-folding="isFolding" :data-contents-list="dataContentsList" :data-current-menu-index="currentMenuIndex"></view-frame>
+        <view-background></view-background>
+        <transition :name="transitionDirection" mode="out-in">
+                <router-view class="view-container"></router-view>
+        </transition>
+        <view-frame></view-frame>
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+
+    .view-container {
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .slide-left-enter {
+        transform: translate3d(0px,0px,0px);
+    }
+
+    .slide-left-leave-active {
+        transform: translate3d(-100%,0px,0px);
+    }
+
+    .slide-right-enter {
+        transform: translate3d(0px,0px,0px);
+    }
+
+    .slide-right-leave-active {
+        transform: translate3d(100%,0px,0px);
+    }
+</style>
 
 <script>
     import { EventBus } from '../events/event-bus.js';
-    import ViewBackground from './view-background';
-    import ViewFlickContainer from './view-flick-container.vue';
     import ViewFrame from './view-frame.vue';
+    import ViewBackground from './view-background.vue';
+
+    import VueRouter from 'vue-router';
+    import ViewAbout from './view-about.vue';
+    import ViewWorks from './view-works.vue';
+    import ViewContact from './view-contact.vue';
+
+    const routes = [
+        { path: '/' , redirect:'/about'},
+        { path: '/about', component: ViewAbout },
+        { path: '/works', component: ViewWorks },
+        { path: '/contact', component: ViewContact }
+    ];
+
+    const router = new VueRouter({
+        mode:'hash',
+        routes,
+    });
+
+    router.beforeEach((to, from, next) => {
+        console.log('--> router before each');
+        next();
+    });
+
+    router.afterEach((to, from) => {
+        console.log('--> router after each')
+        console.log(to.path);
+    });
 
     export default {
+        router,
+        mixins:[],
+        components:{
+            ViewFrame,
+            ViewBackground
+        },
+
+        props: {},
         data: function() {
             return {
-                dataContents:Object,
-                currentMenuIndex:1,
-                isFolding:false
+                transitionDirection: 'slide-right',
+                dataVideo:Object
             }
         },
 
-        components:{
-            "view-background" : ViewBackground,
-            "view-flick-container" : ViewFlickContainer,
-            "view-frame" : ViewFrame
-        },
+        computed : {},
+        methods : {},
+        watch: {
+            '$route'(to, from) {
+//                 get route depth based on path
+//                const toDepth = to.path.split('/').length;
+//                const fromDepth = from.path.split('/').length;
+//                this.transitionDirection = toDepth < fromDepth ? 'slide-right' : 'slide-left';
+//                this.transitionDirection = 'slide-left';
 
-        methods : {
-            setMenuHandler:function($index) {
-                // 메뉴 포커스 제어
-//                console.log('setMenu--> ' + $index);
-                switch ($index) {
-                    case 1:
-                        window.location.href = '#about';
-                        break;
-                    case 2:
-                        window.location.href = '#works';
-                        break;
-                    case 3:
-                        window.location.href = '#contact';
-                        break;
-                }
-
-                this.currentMenuIndex = $index;
-            },
-
-            setFoldingHandler:function ($e) {
-                // 축소 뷰 제어
-                this.isFolding = $e;
+                this.transitionDirection = this.getRouterFlowDirection(
+                    this.getCurrentIndex(from.path),
+                    this.getCurrentIndex(to.path)
+                );
+                EventBus.$emit(EventBus.MENU_CLICK, to.path);
             }
-
-
         },
 
-        beforeDestroy: function () {
-            EventBus.$off(EventBus.MENU_CLICK_EVENT, this.setMenuHandler);
-            EventBus.$off(EventBus.CONTENTS_FOLDING_EVENT, this.setFoldingHandler);
-        },
-
-        mounted : function() {
-            EventBus.$on(EventBus.MENU_CLICK_EVENT, this.setMenuHandler);
-            EventBus.$on(EventBus.CONTENTS_FOLDING_EVENT, this.setFoldingHandler);
-        },
-
-        created:function(){
-            this.dataContentsList = Window.ZanyBrosData.data.contentsData;
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
 

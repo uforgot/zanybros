@@ -1,46 +1,55 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="content main works"
+    <div class="view-works-main"
          :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }"
     >
-        <comp-youtube-frame
-                :video-id="jsonData.videoId"
-                :video-width="jsonData.videoWidth"
-                :video-height="jsonData.videoHeight"
-        ></comp-youtube-frame>
         <div class="title"
              :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }"
->
-            <h1>
-                <p>SOMETHING M.V Prodcution</p>
-                <p>TVXQ</p>
-            </h1>
+        >
+            <ul>
+                <li><h1>MUSIC VIDEO</h1></li>
+                <li><h1>COMMERCIAL FILM</h1></li>
+                <li><h1>MOVIE</h1></li>
+            </ul>
+            <!--<div class="search">
+                <h6>SEARCH</h6>
+                <div class="box">
+                    <div class="dummy"><h1>ENTER KEYWORD</h1></div>
+                </div>
+            </div>-->
         </div>
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
-<!-- script -->
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
-    import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
 
     export default {
         mixins: [MixinResizeEvent],
+        components:{},
 
         props : {
             'json-data': {
                 Type : Object
             }
         },
-
         data: function() {
             return {
 
@@ -66,26 +75,21 @@
             },
         },
 
-        components:{
-            CompYoutubeFrame,
-        },
 
-        methods:{
+        mmethods : {},
+        watch : {},
 
-        },
-
-
-        beforeDestroy: function () {
-
-        },
-
-        mounted() {
-
-        },
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
-
-
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>

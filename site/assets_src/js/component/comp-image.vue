@@ -1,24 +1,34 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
-    <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="img-frame"
+    <div class="comp-image"
          :style="{
-             width: dataWidth + 'px',
-             height: dataHeight + 'px',
-             'background-image': 'url(' + dataSrc + ')'
-         }
-    ">
+                 width: dataWidth + 'px',
+                 height: dataHeight + 'px',
+                 'background-image': 'url(' + dataSrc + ')'
+            }"
+    >
             <slot></slot>
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
 
-<!-- script -->
+    .comp-image {
+        @include backgroundCover();
+    }
+</style>
+
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
-
     export default {
-        mixins: [mixinResizeEvent],
+        mixins: [],
+        components:{},
 
         props : {
             'data-width' : {
@@ -35,34 +45,23 @@
             };
         },
 
-        computed:{
+        computed: {},
+        methods: {},
+        watch: {},
 
-        },
-
-        beforeMount:function(){
-
-        },
-
-        methods:{
-
-        },
-
-
-        components:{
-
-        },
-
-        mounted : function() {
-
-        },
-
-        created:function(){
-
-        }
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {}
+        dummy : {}
     }
 </script>
 
 
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>

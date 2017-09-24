@@ -1,45 +1,69 @@
-<!-- template -->
+/**
+* -----------------------------------------------------
+* Created by uforgot on 2017. 9. 1.
+* zanybros
+* -----------------------------------------------------
+*/
+
 <template>
     <!-- 페이지 본문 컨텐츠 영역 -->
-    <div class="content main contact"
+    <div class="view-contact-main"
          :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }"
     >
-        <comp-youtube-frame
-                :video-id="jsonData.videoId"
-                :video-width="jsonData.videoWidth"
-                :video-height="jsonData.videoHeight"
-        ></comp-youtube-frame>
         <div class="title"
              :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
          }"
->
-            <h1>
-                <p>CONTACT TO US</p>
-            </h1>
+        >
+            <div class="container">
+                <section>
+                    <ul>
+                        <li>
+                            <h1>KOREA H.Q.</h1>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li><h1>PEOPLES</h1></li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li><h1>JAPAN</h1></li>
+                        <li><h1>CHINA</h1></li>
+                    </ul>
+                </section>
+            </div>
         </div>
     </div>
 </template>
 
+<style scoped lang="scss">
+    @import "~scssMixin";
+</style>
 
-<!-- script -->
 <script>
     import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
+    import CompMainScroll from '../component/comp-main-scroll.vue';
 
     export default {
         mixins: [MixinResizeEvent],
+        components:{
+            CompYoutubeFrame,
+            CompMainScroll
+        },
 
         props : {
             'json-data': {
                 Type : Object
             }
         },
-
         data: function() {
             return {
 
@@ -65,26 +89,22 @@
             },
         },
 
-        components:{
-            CompYoutubeFrame,
-        },
+        methods : {},
+        watch : {},
 
-        methods:{
-
-        },
-
-
-        beforeDestroy: function () {
-
-        },
-
-        mounted() {
-
-        },
+        //life cycle
+        //beforeCreate : function() {},
+        //created : function() {},
+        //beforeMount : function() {},
+        //mounted : function() {},
+        //beforeUpdate : function() {},
+        //updated : function() {},
+        //activated : function() {},
+        //deactivated : function() {},
+        //beforeDestroy : function () {},
+        //destroyed : function() {},
+        dummy : {}
     }
 </script>
 
 
-<style scoped lang="scss">
-    @import "~scssMixin";
-</style>
