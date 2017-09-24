@@ -94,6 +94,9 @@
             },
             'video-scale' : {
                 Type : Number
+            },
+            'video-play' : {
+                Type : Boolean
             }
         },
         data: function() {
@@ -147,7 +150,16 @@
                 $player.playVideo();
             }
         },
-        watch : {},
+        watch : {
+            videoPlay : function($newValue, $oldValue) {
+                if (this.player === null) return;
+                if($newValue === false) {
+                    this.player.pauseVideo();
+                } else {
+                    this.player.playVideo();
+                }
+            }
+        },
 
         //life cycle
         //beforeCreate : function() {},

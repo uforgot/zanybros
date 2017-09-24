@@ -9,6 +9,7 @@
     <div class="content-works-item" v-show="isShow"
          @mouseover= "onMouseOverHandler"
          @mouseout= "onMouseOutHandler"
+         @cli[ck="onClickHandler"
     >
         <div class="img-frame"
              :class="{'focus':dataFocus}"
@@ -56,7 +57,7 @@
     }
 
     .img-frame {
-        @include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s, filter 0.2s ease-out 0s');
+        //@include css-value-transition('opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s, filter 0.2s ease-out 0s');
 
         filter:grayscale(100%) blur(0px);
         opacity:0.5;
@@ -69,7 +70,7 @@
     }
 
     .txt-frame {
-        @include css-value-transition('opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s, filter 0.3s ease-out 0s');
+        @include css-value-transition('opacity 0.3s ease-out 0s');
 
         opacity:0;
         /*transform:translateY(110%);*/
@@ -81,6 +82,7 @@
 </style>
 
 <script>
+    import {EventBus} from "../events/event-bus";
     import MixinContent from '../mixin/mixin-content.vue'
 
     export default {
@@ -120,6 +122,9 @@
             },
             onMouseOutHandler : function($e) {
                 this.$emit('workItemOver', -1);
+            },
+            onClickHandler : function($e) {
+                EventBus.$emit(EventBus.WORK_ITEM_CLICK, this.jsonData);
             },
 
             notify () {

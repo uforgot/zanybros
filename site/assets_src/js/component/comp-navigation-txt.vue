@@ -49,7 +49,6 @@
         },
         watch: {
             dataIndex : function($newValue, $oldValue){
-                console.log(this.getRouterFlowDirection($oldValue, $newValue));
 
                 if (this.getRouterFlowDirection($oldValue, $newValue) === 'slide-left') {
                     if(this.currentTop < -30) {
@@ -73,10 +72,6 @@
                     .onUpdate(($e) =>
                         {
                             this.currentTop = Number($e.tweeningNumber.toFixed(2));
-                        }
-                    ).onComplete(($e)=>
-                        {
-                            console.log('--->' + this.currentTop);
                         }
                     )
                     .start();

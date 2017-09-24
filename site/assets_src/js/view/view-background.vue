@@ -6,18 +6,25 @@
 */
 
 <template>
-    <div class="view-background">
+    <div class="view-background"
+         :class="{'hide':!isVideoPlay}"
+    >
         <comp-youtube-frame
                 :video-id="dataVideo.videoId"
                 :video-width="dataVideo.videoWidth"
                 :video-height="dataVideo.videoHeight"
                 :video-scale="currentScale"
+                :video-play="isVideoPlay"
         ></comp-youtube-frame>
     </div>
 </template>
 
 <style scoped lang="scss">
     @import "~scssMixin";
+
+    .hide {
+        /*display:none;*/
+    }
 </style>
 
 <script>
@@ -34,7 +41,8 @@
         props: {},
         data: function () {
             return {
-                currentScale:1
+                currentScale:1,
+                isVideoPlay:true
             }
         },
 
@@ -51,6 +59,12 @@
 //                let scrollTop = 1 + ((1-(this.windowHeight - window.pageYOffset)/this.windowHeight) * 3);
 //                this.currentScale = scrollTop;
 //                console.log(scrollTop);
+                if ( window.pageYOffset > this.windowHeight) {
+                    this.isVideoPlay = false;
+                } else {
+                    this.isVideoPlay = true;
+                }
+
             }
         },
         watch : {},

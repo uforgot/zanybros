@@ -44,6 +44,7 @@
             >
             </div>
         </div>
+
         <view-footer></view-footer>
     </div>
 </template>

@@ -7,7 +7,7 @@
 
 <template>
     <div class="menu-container"
-        :class="{'show':dataIsMenuShow}"
+        :class="{'show':isMenuShow}"
     >
         <div class="background">
             <div class="frame">
@@ -104,22 +104,30 @@
 </style>
 
 <script>
+    import {EventBus} from "../events/event-bus";
+
     export default {
         mixins: [],
         components: {},
 
         props: {
-            'data-is-menu-show':{}
         },
         data: function () {
-            return {};
+            return {
+                isMenuShow:false
+            };
         },
 
         computed: {},
         methods: {
+            setMenuShow : function($e) {
+                this.isMenuShow = true;
+            },
+            setMenuHide : function($e) {
+                this.isMenuShow = false;
+            },
             menuCloseClickHandler : function($e) {
-                console.log('ssss')
-                this.$emit('menuClose');
+                EventBus.$emit(EventBus.MENU_HIDE);
             }
         },
         watch: {
@@ -130,12 +138,18 @@
         //beforeCreate : function() {},
         //created : function() {},
         //beforeMount : function() {},
-        //mounted : function() {},
+        mounted : function() {
+            EventBus.$on(EventBus.MENU_SHOW,this.setMenuShow);
+            EventBus.$on(EventBus.MENU_HIDE,this.setMenuHide);
+        },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
-        //beforeDestroy : function () {},
+        beforeDestroy : function () {
+            EventBus.$off(EventBus.MENU_SHOW,this.setMenuShow);
+            EventBus.$off(EventBus.MENU_HIDE,this.setMenuHide);
+        },
         //destroyed : function() {},
         dummy: {}
     }

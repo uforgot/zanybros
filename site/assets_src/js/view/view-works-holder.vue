@@ -15,11 +15,11 @@
         }"
     >
         <content-works-list
-                :line-gap="500"
+                :line-gap="400"
                 :align="align"
                 :min-line-gap="100"
                 :max-line-gap="100"
-                :single-max-width="300"
+                :single-max-width="400"
                 :watch="content"
         >
             <content-works-item
@@ -109,7 +109,6 @@
                 for (i=0;i< this.content.length;i++) {
                     if (i===$e) {
                         this.content[i].focus = true;
-                        console.log(this.content[i].focus);
                     } else {
                         this.content[i].focus = false;
                     }

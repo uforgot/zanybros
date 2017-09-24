@@ -62,13 +62,13 @@
     });
 
     router.beforeEach((to, from, next) => {
-        console.log('--> router before each');
+//        console.log('--> router before each');
         next();
     });
 
     router.afterEach((to, from) => {
-        console.log('--> router after each')
-        console.log(to.path);
+//        console.log('--> router after each')
+//        console.log(to.path);
     });
 
     export default {

@@ -60,10 +60,7 @@
             ></div>
         </menu>
 
-        <content-menu
-            :data-is-menu-show="isMenuShow"
-            @menuClose="menuCloseClickHandler"
-        ></content-menu>
+        <content-menu></content-menu>
 
         <div class="btn-close"
              @click="menuCloseClickHandler"
@@ -170,10 +167,17 @@
 
         methods : {
             menuCloseClickHandler : function($e) {
-                this.isMenuShow = false;
+                EventBus.$emit(EventBus.MENU_HIDE);
             },
             menuShowClickHandler : function($e) {
+                EventBus.$emit(EventBus.MENU_SHOW);
+            },
+
+            setMenuShow : function($e) {
                 this.isMenuShow = true;
+            },
+            setMenuHide : function($e) {
+                this.isMenuShow = false;
             },
             leftNavigationOverHandler : function($e) {
                 this.leftNavigationFocus = true;
@@ -202,7 +206,6 @@
                 this.currentIndex = this.getCurrentIndex($e);
                 this.leftNavigationIndex = this.getPrevIndex();
                 this.rightNavigationIndex = this.getNextIndex();
-                console.log('-->currentIndex' +  this.currentIndex + this.leftNavigationIndex + this.rightNavigationIndex);
             },
 
             getPrevIndex : function() {
@@ -236,6 +239,8 @@
         //beforeMount : function() {},
         mounted : function() {
             EventBus.$on(EventBus.MENU_CLICK, this.setCurrentIndex);
+            EventBus.$on(EventBus.MENU_SHOW,this.setMenuShow);
+            EventBus.$on(EventBus.MENU_HIDE,this.setMenuHide);
             this.setCurrentIndex(this.$route.path);
         },
         //beforeUpdate : function() {},
@@ -243,7 +248,9 @@
         //activated : function() {},
         //deactivated : function() {},
         beforeDestroy : function () {
-            EventBus.$off(EventBus.MENU_CLICK, this.setCurrentMenu);
+            EventBus.$off(EventBus.MENU_CLICK, this.setCurrentIndex);
+            EventBus.$off(EventBus.MENU_SHOW,this.setMenuShow);
+            EventBus.$off(EventBus.MENU_HIDE,this.setMenuHide);
         },
         //destroyed : function() {},
         dummy : {}
