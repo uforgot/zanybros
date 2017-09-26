@@ -8,8 +8,8 @@
 <template>
     <div>
         <div class="prev-container"
-                :class="dataPrevContents.class"
-            :style="{
+             :class="dataPrevContents.class"
+             :style="{
                 width: frameWidth,
                 top:fixY+'px'
             }">
@@ -21,7 +21,7 @@
         </div>
         <div class="next-container"
              :class="dataNextContents.class"
-            :style="{
+             :style="{
                 width: frameWidth,
                 top:fixY+'px'
             }">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div :class="dataContents.class"
-                :style="{
+             :style="{
                  width: frameWidth
              }"
         >
@@ -45,31 +45,60 @@
             </div>
         </div>
         <view-footer></view-footer>
+        <transition :name="transitionPopup" mode="out-in">
+            <keep-alive>
+            <router-view></router-view>
+            </keep-alive>
+        </transition>
     </div>
 </template>
 
 <style scoped lang="scss">
     @import "~scssMixin";
+    .view-works-view {
+        transition: transform 0.3s ease-out 0s;
+    }
+
+    .popup-enter {
+        transform: translate3d(0,100%,0);
+    }
+
+    .popup-leave-active {
+        transform: translate3d(0,100%,0);
+    }
+
+    .none-enter{
+
+    }
+    .none-leave-active{
+
+    }
 </style>
 
 <script>
-    import {EventBus} from "../events/event-bus";
-    import MixinControlResize from '../mixin/mixin-control-resize.vue';
+    import {EventBus} from "../../events/event-bus";
+    import MixinControlResize from '../../mixin/mixin-control-resize.vue';
 
-    import ViewContentHolder from './view-content-holder.vue';
-    import ViewContentMargin from './view-content-margin.vue';
-    import ViewContentTitle from './view-content-title.vue';
+    import ViewWorksHolder from '.././view-works-holder.vue';
+    import ContentWorksItem from '../../content/content-works-item.vue';
+    import CompVideoFrame from '../../component/comp-video-frame.vue';
 
-    import CompVideoFrame from '../component/comp-video-frame.vue';
-    import ViewFooter from './view-footer.vue';
+    import ViewContentHolder from '.././view-content-holder.vue';
+    import ViewContentMargin from '.././view-content-margin.vue';
+    import ViewContentTitle from '.././view-content-title.vue';
 
-    import ViewAboutMain from './view-about-main.vue';
-    import ViewContactMain from './view-contact-main.vue';
-    import ViewWorksMain from './view-works-main.vue';
+    import ViewFooter from '.././view-footer.vue';
+
+    import ViewAboutMain from '.././view-about-main.vue';
+    import ViewContactMain from '.././view-contact-main.vue';
+    import ViewWorksMain from '.././view-works-main.vue';
 
     export default {
         mixins: [ MixinControlResize ],
         components:{
+            ContentWorksItem,
+
+            ViewWorksHolder,
             ViewContentHolder,
             ViewContentTitle,
             ViewContentMargin,
@@ -81,14 +110,14 @@
             ViewContactMain
         },
 
-        props: {
-
-        },
+        props: {},
         data: function() {
             return {
+                titleArray:Array,
                 dataPrevContents:Object,
                 dataNextContents:Object,
                 dataContents:Object,
+                transitionPopup:'popup',
 
                 fixY:Number
             }
@@ -114,9 +143,9 @@
         //life cycle
         //beforeCreate : function() {},
         created:function(){
-            this.dataPrevContents = Window.ZanyBrosData.data.contentsData[2];
-            this.dataNextContents = Window.ZanyBrosData.data.contentsData[1];
-            this.dataContents = Window.ZanyBrosData.data.contentsData[0];
+            this.dataPrevContents = Window.ZanyBrosData.data.contentsData[0];
+            this.dataNextContents = Window.ZanyBrosData.data.contentsData[2];
+            this.dataContents = Window.ZanyBrosData.data.contentsData[1];
         },
         //beforeMount : function() {},
         mounted : function() {

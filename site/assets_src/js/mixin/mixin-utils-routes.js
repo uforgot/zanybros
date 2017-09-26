@@ -8,21 +8,54 @@ Vue.mixin({
     methods: {
         getCurrentIndex: function($e) {
             switch ($e) {
-                case '/about' : return 0;
-                case '/works' : return 1;
-                case '/contact' : return 2;
+                case 'about' : return 0;
+                case 'works' : return 1;
+                case 'works-view' : return 1;
+                case 'contact' : return 2;
             }
+        },
+        getPrevIndex : function($e) {
+            let returnValue;
+            returnValue = $e - 1;
+
+            if (returnValue < 0) {
+                returnValue = 2;
+            }
+
+            return returnValue;
+        },
+
+        getNextIndex : function($e) {
+            let returnValue;
+            returnValue = $e + 1;
+
+            if (returnValue > 2) {
+                returnValue = 0;
+            }
+
+            return returnValue;
         },
         getRouterNameByIndex: function($index) {
             switch($index) {
                 case 0:
-                    return '/about';
+                    return 'about';
                 case 1:
-                    return '/works';
+                    return 'works';
                 case 2:
-                    return '/contact';
-
+                    return 'contact';
             }
+        },
+        getWorksDataByIndex:function($index) {
+            let i;
+            let data = Window.ZanyBrosWorksData;
+
+            for (i=0;i<data.length;i++) {
+                if (data[i].index === $index) {
+                    return data[i];
+                }
+            }
+
+            return false;
         },
         getRouterFlowDirection: function($fromIndex, $toIndex) {
             let fromToGap = $fromIndex - $toIndex;

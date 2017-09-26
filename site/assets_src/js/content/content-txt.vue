@@ -6,7 +6,13 @@
 */
 
 <template>
-    <div class="content-about-txt" :class="jsonData.class">
+    <div class="content-txt" :class="jsonData.class"
+         :style="{
+            'left':leftPosition,
+            'right':rightPosition,
+            'margin-left':marginLeft
+        }"
+    >
         <h2>
             <span v-for="(item, index) in jsonData.title"
             class="scroll-animation hide"
@@ -67,7 +73,11 @@
 
         props : {},
         data: function() {
-            return {};
+            return {
+                leftPosition:0,
+                rightPosition:0,
+                marginLeft:0
+            };
         },
 
         computed : {},
@@ -78,7 +88,24 @@
         //beforeCreate : function() {},
         //created : function() {},
         //beforeMount : function() {},
-        //mounted : function() {},
+        mounted : function() {
+            if (this.jsonData.class === 'left') {
+                if (this.isPercentValue(this.parentData.jsonData.width)) {
+                    let percentLeft = this.getPercentValue(this.parentData.jsonData.width);
+                    this.leftPosition =  ((100/percentLeft) * 10) +'%';
+                    this.rightPosition =  'auto';
+                }
+            } else if (this.jsonData.class === 'right') {
+                if (this.isPercentValue(this.parentData.jsonData.width)) {
+                    let percentRight = this.getPercentValue(this.parentData.jsonData.width);
+                    this.leftPosition = 'auto';
+                    this.rightPosition =  ((100/percentRight) * 10) +'%';
+                }
+            } else {
+                this.leftPosition = '50%';
+                this.marginLeft = '-20vw';
+            }
+        },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},

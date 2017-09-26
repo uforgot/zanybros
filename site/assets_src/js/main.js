@@ -16,6 +16,73 @@ import './mixin/mixin-utils-routes';
 import App from './view/view-app.vue'
 import {EventBus} from "./events/event-bus";
 
+Window.noTransition = false;
+
+
+function getWorksDatafromJson($data) {
+    let returnArray = [];
+    let tmpNode = $data.data.contentsData;
+    let i,j,k,l;
+
+    for (i=0;i<tmpNode.length;i++) {
+
+        if (!tmpNode[i]) {
+            continue;
+        }
+        if (!tmpNode[i].hasOwnProperty('contents')) {
+            continue;
+        }
+
+        let tmpNode3 = tmpNode[i].contents;
+
+        for (k = 0; k < tmpNode3.length; k++) {
+            let tmpNode4 = tmpNode3[k];
+
+            if (tmpNode4.component === 'view-works-holder') {
+                let tmpNode5 = tmpNode4.data.content;
+
+                for (l = 0; l < tmpNode5.length; l++) {
+                    let tmpNode6 = tmpNode5[l];
+
+                    if (tmpNode6.component === 'content-works-item') {
+                        returnArray.push(tmpNode6);
+                    }
+
+                }
+            }
+        }
+        // }
+    }
+
+    return returnArray;
+}
+
+function getTitleArray($data) {
+    let returnArray = [];
+    let tmpNode = $data.data.contentsData;
+    let i;
+
+    for (i=0;i<tmpNode.length;i++) {
+        returnArray.push(getTitleArrayInContents(tmpNode[i]));
+    }
+    return returnArray;
+}
+
+function getTitleArrayInContents($data) {
+    let i;
+    let returnArray = [];
+
+    for (i=0;i<$data.contents.length;i++) {
+        let tmpData = $data.contents[i];
+        if (tmpData.component === 'view-content-title') {
+            returnArray.push(
+                tmpData.data.title.join('\n')
+            );
+        }
+    }
+    return returnArray;
+}
+
 function init() {
     Axios({
         method:'get',
@@ -27,6 +94,11 @@ function init() {
 
             //컨텐츠 데이터 셋팅
             Window.ZanyBrosData = $response;
+            Window.ZanyBrosWorksData = getWorksDatafromJson(Window.ZanyBrosData);
+            Window.ZanyBrosTitlaArray = getTitleArray(Window.ZanyBrosData);
+
+            // console.log(Window.ZanyBrosTitlaArray);
+
             Window.app = new Vue({
                 render: h => h(App)
             }).$mount('#app');

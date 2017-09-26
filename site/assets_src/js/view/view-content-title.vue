@@ -12,6 +12,7 @@
             height : jsonData.height,
             'color' : color
          }"
+         :title-name="getJsonMultilineTxt(jsonData.title)"
     >
         <h3 class="scroll-animation hide"
             animation-offset="-20"
@@ -69,7 +70,8 @@
         //beforeCreate : function() {},
         //created : function() {},
         //beforeMount : function() {},
-        //mounted : function() {},
+        mounted : function() {
+        },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},

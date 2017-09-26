@@ -36,13 +36,12 @@
 
     import ContentImage from '../content/content-image.vue';
     import ContentBackgroundImage from '../content/content-background-image.vue';
+    import ContentTxt from '../content/content-txt.vue';
 
-    import ContentAboutTxt from '../content/content-about-txt.vue';
     import ContentAboutAward from '../content/content-about-award.vue';
     import ContentAboutPartner from '../content/content-about-partner.vue';
     import ContentAboutCategory from '../content/content-about-category.vue';
 
-    import ContentContactTxt from '../content/content-contact-txt.vue';
     import ContentContactGallery from '../content/content-contact-gallery.vue';
     import ContentContactPeople from '../content/content-contact-people.vue';
     import ContentContactPeopleTitle from '../content/content-contact-people-title.vue';
@@ -58,13 +57,12 @@
             ContentImage,
             ContentBackgroundImage,
             ContentVideo,
+            ContentTxt,
 
-            ContentAboutTxt,
             ContentAboutAward,
             ContentAboutPartner,
             ContentAboutCategory,
 
-            ContentContactTxt,
             ContentContactGallery,
             ContentContactPeople,
             ContentContactPeopleTitle,
@@ -85,7 +83,8 @@
             parentData : function() {
                 let data = {
                     width : this.frameWidth,
-                    height : this.frameHeight
+                    height : this.frameHeight,
+                    jsonData : this.jsonData
                 }
                 return data;
             },

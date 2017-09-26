@@ -20,9 +20,13 @@
          }"
         >
             <ul>
-                <li><h1>MUSIC VIDEO</h1></li>
-                <li><h1>COMMERCIAL FILM</h1></li>
-                <li><h1>MOVIE</h1></li>
+                <li class="noselect"
+                    v-for="item in titleArray"
+                    :key="item.id"
+                    @click="scrollMeTo(item)"
+                >
+                    <h1 v-html="item"></h1>
+                </li>
             </ul>
             <!--<div class="search">
                 <h6>SEARCH</h6>
@@ -36,6 +40,16 @@
 
 <style scoped lang="scss">
     @import "~scssMixin";
+
+    li {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently */
+    }
+
 </style>
 
 <script>
@@ -52,7 +66,7 @@
         },
         data: function() {
             return {
-
+                titleArray:Array,
             };
         },
 
@@ -83,7 +97,9 @@
         //beforeCreate : function() {},
         //created : function() {},
         //beforeMount : function() {},
-        //mounted : function() {},
+        mounted : function() {
+            this.titleArray = Window.ZanyBrosTitlaArray[1];
+        },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},

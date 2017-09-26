@@ -9,7 +9,7 @@
     <div class="content-works-item" v-show="isShow"
          @mouseover= "onMouseOverHandler"
          @mouseout= "onMouseOutHandler"
-         @cli[ck="onClickHandler"
+         @click="onClickHandler"
     >
         <div class="img-frame"
              :class="{'focus':dataFocus}"
@@ -124,7 +124,10 @@
                 this.$emit('workItemOver', -1);
             },
             onClickHandler : function($e) {
-                EventBus.$emit(EventBus.WORK_ITEM_CLICK, this.jsonData);
+                //EventBus.$emit(EventBus.WORK_ITEM_CLICK, this.jsonData);
+                this.$router.push(
+                    {name:'works-view',params:{id:this.jsonData.index}}
+                );
             },
 
             notify () {

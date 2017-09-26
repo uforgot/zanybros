@@ -104,7 +104,23 @@ Vue.mixin({
             } else {
                 return elem.getAttribute(name) || ''
             }
+        },
+
+        scrollMeTo(refName) {
+            let i;
+            let elementArray = this.getElementArray(
+                document.getElementsByClassName('view-content-title')
+            );
+            let top = 0;
+
+            for (i=0;i<elementArray.length;i++) {
+                if (elementArray[i].el.getAttribute('title-name') == refName) {
+                    top = elementArray[i].offset.top;
+                }
+            }
+
+            window.scrollTo(0, top);
         }
-}
+    }
 });
 

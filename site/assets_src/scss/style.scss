@@ -99,12 +99,12 @@ body {
 
     .content-video { position: relative; }
 
-    .content-about-txt {
+    .content-txt {
         position    : absolute;
-        left        : 50%; top : 50%;
+        top : 50%;
         transform   : translateY(-50%);
         width       : 40vw;
-        margin-left : -20vw;
+        //margin-left : -20vw;
 
         h2{
             span {
@@ -114,13 +114,13 @@ body {
         p { }
 
         &.left {
-            margin-left : -40%;
+            //margin-left : -40%;
             text-align  : left;
         }
 
         &.right {
             width       : auto;
-            margin-left : 10%;
+            //margin-left : 10%;
             text-align  : left;
         }
     }
@@ -173,21 +173,6 @@ body {
         }
     }
 
-    .content-contact-txt {
-        position    : absolute;
-        left        : 50%; top : 50%;
-        transform   : translateY(-50%);
-        width       : 350px;
-        margin-left : -175px;
-
-        h2 { margin-bottom : 2vh; }
-
-        &.left {
-            left        : 20%;
-            text-align  : left;
-            margin-left : 0;
-        }
-    }
 
     .content-contact-gallery {
         position : absolute;
@@ -246,6 +231,10 @@ body {
             left       : 50%; width : 80%; bottom : 10%;
             transform  : translateX(-50%);
             text-align : left;
+
+            li {
+                cursor: pointer;
+            }
         }
     }
 }
@@ -268,7 +257,11 @@ body {
                 width       : 50%;
 
                 h1 { }
-                ul { li { } }
+                ul {
+                    li {
+                        cursor : pointer;
+                    }
+                }
 
 
                 &:nth-child(3) {
@@ -295,6 +288,11 @@ body {
             left       : 50%; width : 80%; bottom : 10%;
             transform  : translateX(-50%);
             text-align : left;
+
+            li {
+                cursor : pointer;
+            }
+
         }
 
         .search {
@@ -370,4 +368,38 @@ body {
     }
 }
 
+.view-popup {
+    display:block;
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+.view-works-view {
+    display:block;
+    position:fixed;
+    left:0;
+    top:0;
+    background:#fff;
+    width:100vw;
+    height:100vh;
+
+    .container {
+        position:relative;
+        display:none;
+        top:50%;
+        width:80%;
+        left:10%;
+
+        color:#000;
+        transform:translateY(-50%);
+        .title {
+            margin-top:10px;
+        }
+        .comment {
+            margin-top:10px;
+            text-align:left;
+        }
+    }
+}
 

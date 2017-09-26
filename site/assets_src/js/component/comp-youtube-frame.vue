@@ -166,8 +166,8 @@
         //created : function() {},
         //beforeMount : function() {},
         mounted() {
-            this.handleWindowResize();
             window.addEventListener('resize', this.handleWindowResize);
+            this.handleWindowResize();
         },
         //beforeUpdate : function() {},
         //updated : function() {},

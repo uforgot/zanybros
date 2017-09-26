@@ -140,7 +140,8 @@
                         height : this.jsonData.content[j].height,
                         focus : this.jsonData.content[j].focus,
                         imageUrl : this.jsonData.content[j].imageUrl,
-                        videoId : this.jsonData.content[j].videoId
+                        videoId : this.jsonData.content[j].videoId,
+                        index : this.jsonData.content[j].index
                     }
                 );
             }

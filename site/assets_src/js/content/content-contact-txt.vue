@@ -1,6 +1,10 @@
 <template>
     <div class="content-contact-txt"
          :class="jsonData.class"
+         :style="{
+            'left':leftPosition,
+            'right':rightPosition
+        }"
     >
         <h2>
             <span v-for="(item, index) in jsonData.title"
@@ -63,17 +67,12 @@
         props : {},
         data: function() {
             return {
+                leftPosition:0,
+                rightPosition:0
             };
         },
 
-        computed:{
-            txtTitle : function () {
-                return this.getJsonMultilineTxt(this.jsonData.title);
-            },
-            txtComment : function () {
-                return this.getJsonMultilineTxt(this.jsonData.comment);
-            }
-        },
+        computed:{},
         methods : {},
         watch : {},
 
@@ -81,7 +80,19 @@
         //beforeCreate : function() {},
         //created : function() {},
         //beforeMount : function() {},
-        //mounted : function() {},
+        mounted : function() {
+            if (this.jsonData.class === 'left') {
+                if (this.isPercentValue(this.parentData.jsonData.width)) {
+                    let percentLeft = this.getPercentValue(this.parentData.jsonData.width);
+                    this.leftPosition =  ((100/percentLeft) * 10) +'%';
+                }
+            } else if (this.jsonData.class === 'right') {
+                if (this.isPercentValue(this.parentData.jsonData.width)) {
+                    let percentRight = this.getPercentValue(this.parentData.jsonData.width);
+                    this.rightPosition =  ((100/percentRight) * 10) +'%';
+                }
+            }
+        },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},

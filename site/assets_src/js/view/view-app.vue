@@ -9,7 +9,13 @@
     <div id="app">
         <view-background></view-background>
         <transition :name="transitionDirection" mode="out-in">
-                <router-view class="view-container"></router-view>
+            <!--<keep-alive>-->
+                <router-view
+                        :current-index="getCurrentIndex($route.name)"
+                        :key="getCurrentIndex($route.name)"
+                        class="view-container">
+                </router-view>
+            <!--</keep-alive>-->
         </transition>
         <view-frame></view-frame>
     </div>
@@ -19,23 +25,34 @@
     @import "~scssMixin";
 
     .view-container {
-        transition: opacity 0.3s, transform 0.3s;
+        transition:transform 0.2s ease-out;
     }
 
     .slide-left-enter {
+        transition:transform 0.2s ease-out;
         transform: translate3d(0px,0px,0px);
     }
 
     .slide-left-leave-active {
+        transition:transform 0.2s ease-out;
         transform: translate3d(-100%,0px,0px);
     }
 
     .slide-right-enter {
+        transition:transform 0.2s ease-out;
         transform: translate3d(0px,0px,0px);
     }
 
     .slide-right-leave-active {
+        transition:transform 0.2s ease-out;
         transform: translate3d(100%,0px,0px);
+    }
+
+    .none-enter{
+        transition:transform 0.0s ease-out;
+    }
+    .none-leave-active{
+        transition:transform 0.0s ease-out;
     }
 </style>
 
@@ -45,15 +62,23 @@
     import ViewBackground from './view-background.vue';
 
     import VueRouter from 'vue-router';
-    import ViewAbout from './view-about.vue';
-    import ViewWorks from './view-works.vue';
-    import ViewContact from './view-contact.vue';
+    import ViewAbout from './backup/view-about.vue';
+    import ViewWorks from './backup/view-works.vue';
+    import ViewContact from './backup/view-contact.vue';
+    import ViewWorksView from './view-works-view.vue';
+    import ViewContainer from './view-container.vue';
 
     const routes = [
         { path: '/' , redirect:'/about'},
-        { path: '/about', component: ViewAbout },
-        { path: '/works', component: ViewWorks },
-        { path: '/contact', component: ViewContact }
+        { name:'about', path: '/about', component: ViewContainer },
+        { name:'works', path: '/works', component: ViewContainer,
+            children : [{
+                name:'works-view',
+                path:'view/:id',
+                component:ViewWorksView
+            }]
+        },
+        { name:'contact', path: '/contact', component: ViewContainer}
     ];
 
     const router = new VueRouter({
@@ -68,7 +93,7 @@
 
     router.afterEach((to, from) => {
 //        console.log('--> router after each')
-//        console.log(to.path);
+        console.log(to.path);
     });
 
     export default {
@@ -97,11 +122,17 @@
 //                this.transitionDirection = toDepth < fromDepth ? 'slide-right' : 'slide-left';
 //                this.transitionDirection = 'slide-left';
 
-                this.transitionDirection = this.getRouterFlowDirection(
-                    this.getCurrentIndex(from.path),
-                    this.getCurrentIndex(to.path)
-                );
-                EventBus.$emit(EventBus.MENU_CLICK, to.path);
+                if (Window.noTransition===true) {
+                    this.transitionDirection = 'none';
+                    Window.noTransition = false;
+                } else {
+                    this.transitionDirection = this.getRouterFlowDirection(
+                        this.getCurrentIndex(from.name),
+                        this.getCurrentIndex(to.name)
+                    );
+                }
+                console.log(this.transitionDirection);
+                EventBus.$emit(EventBus.MENU_CLICK, to.name);
             }
         },
 

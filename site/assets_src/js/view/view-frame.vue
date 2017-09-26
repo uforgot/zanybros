@@ -7,7 +7,9 @@
 
 <template>
     <div class="frame-container">
-        <div class="logo"><a href="/">ZANYBROS</a></div>
+        <div class="logo"
+             :class="{'black':isViewShow}"
+        ><a href="/">ZANYBROS&nbsp;</a></div>
 
         <div class="language-container">
             <div>EN</div>
@@ -32,9 +34,13 @@
                  :class="{'focus':leftNavigationFocus}"
             >
                 <div class="bar"
-                     :class="{'focus':leftNavigationFocus}"
+                     :class="{
+                        'focus':leftNavigationFocus,
+                        'black':isViewShow
+                    }"
                 ></div>
                 <comp-navigation-txt
+                        :class="{'black':isViewShow}"
                         :data-index="leftNavigationIndex"
                 ></comp-navigation-txt>
             </div>
@@ -44,12 +50,14 @@
                  @click="leftNavigationClickHandler"
             ></div>
             <div class="navigation right"
-                 :class="{'focus':rightNavigationFocus}"
+                 :class="{'focus':rightNavigationFocus,}"
             >
                 <div class="bar"
-                     :class="{'focus':rightNavigationFocus}"
+                     :class="{'focus':rightNavigationFocus,
+                         'black':isViewShow}"
                 ></div>
                 <comp-navigation-txt
+                        :class="{'black':isViewShow}"
                         :data-index="rightNavigationIndex"
                 ></comp-navigation-txt>
             </div>
@@ -64,7 +72,7 @@
 
         <div class="btn-close"
              @click="menuCloseClickHandler"
-             v-if="isMenuShow"
+             v-if="isMenuShow || isViewShow"
         >
             <img src="assets/images/svg/close.svg" alt="">
         </div>
@@ -77,6 +85,26 @@
     /*.router-link-active {*/
         /*color:red;*/
     /*}*/
+
+    .logo {
+        @include css-value-transition('color 0.5s ease-out 0.2s');
+        &.black {
+            color:#000;
+        }
+    }
+
+    .txt {
+        @include css-value-transition('color 0.5s ease-out 0.2s');
+        &.black {
+            color:#000;
+        }
+    }
+
+    .bar {
+        &.black {
+            background-color:#000;
+        }
+    }
 
     menu {
         ul {
@@ -141,17 +169,20 @@
     import {EventBus} from "../events/event-bus";
     import CompNavigationTxt from "../component/comp-navigation-txt.vue";
     import ContentMenu from "../content/content-menu.vue";
+    import ContentWorksView from "./view-works-view.vue";
 
     export default {
         mixins:[],
         components:{
             CompNavigationTxt,
-            ContentMenu
+            ContentMenu,
+            ContentWorksView
         },
 
         props: {},
         data: function() {
             return {
+                isViewShow:false,
                 isMenuShow:false,
                 currentIndex:-1,
                 leftNavigationFocus : false,
@@ -167,12 +198,14 @@
 
         methods : {
             menuCloseClickHandler : function($e) {
+                if (this.isViewShow) {
+                    this.$router.push({name:'works'});
+                }
                 EventBus.$emit(EventBus.MENU_HIDE);
             },
             menuShowClickHandler : function($e) {
                 EventBus.$emit(EventBus.MENU_SHOW);
             },
-
             setMenuShow : function($e) {
                 this.isMenuShow = true;
             },
@@ -193,55 +226,46 @@
             },
 
             rightNavigationClickHandler : function($e) {
-                console.log(this.getRouterNameByIndex(this.getNextIndex()))
-                this.$router.push(this.getRouterNameByIndex(this.getNextIndex()));
+                this.$router.push(
+                    {name:this.getRouterNameByIndex(this.getNextIndex(this.currentIndex))}
+                    );
             },
 
             leftNavigationClickHandler : function($e) {
-                console.log(this.getRouterNameByIndex(this.getPrevIndex()))
-                this.$router.push(this.getRouterNameByIndex(this.getPrevIndex()));
+                this.$router.push(
+                    {name:this.getRouterNameByIndex(this.getPrevIndex(this.currentIndex))}
+                    );
             },
 
             setCurrentIndex : function($e) {
                 this.currentIndex = this.getCurrentIndex($e);
-                this.leftNavigationIndex = this.getPrevIndex();
-                this.rightNavigationIndex = this.getNextIndex();
+                this.leftNavigationIndex = this.getPrevIndex(this.currentIndex);
+                this.rightNavigationIndex = this.getNextIndex(this.currentIndex);
             },
-
-            getPrevIndex : function() {
-                let returnValue;
-                returnValue = this.currentIndex - 1;
-
-                if (returnValue < 0) {
-                    returnValue = 2;
-                }
-
-                return returnValue;
-            },
-
-            getNextIndex : function() {
-                let returnValue;
-                returnValue = this.currentIndex + 1;
-
-                if (returnValue > 2) {
-                    returnValue = 0;
-                }
-
-                return returnValue;
-            }
         },
 
-        watch : {},
+        watch : {
+            '$route'(to, from) {
+                if(to.name == 'works-view') {
+                    this.isViewShow = true;
+                } else {
+                    this.isViewShow = false;
+                }
+            }
+        },
 
         //life cycle
         //beforeCreate : function() {},
         //created : function() {},
         //beforeMount : function() {},
         mounted : function() {
+            if (this.$route.name == 'works-view') {
+                this.isViewShow = true;
+            }
             EventBus.$on(EventBus.MENU_CLICK, this.setCurrentIndex);
             EventBus.$on(EventBus.MENU_SHOW,this.setMenuShow);
             EventBus.$on(EventBus.MENU_HIDE,this.setMenuHide);
-            this.setCurrentIndex(this.$route.path);
+            this.setCurrentIndex(this.$route.name);
         },
         //beforeUpdate : function() {},
         //updated : function() {},
