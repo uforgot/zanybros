@@ -48,7 +48,7 @@
         //life cycle
         //beforeCreate : function() {},
         created:function(){
-            this.dataFooter = Window.ZanyBrosData.data.footerData;
+            this.dataFooter = window.ZanyBrosData.data.footerData;
         },
         //beforeMount : function() {},
         //mounted : function() {},

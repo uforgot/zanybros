@@ -21,6 +21,7 @@
             <div
                     :is="dataPrevContents.contents[0].component"
                     :json-data = "dataPrevContents.contents[0].data"
+                    :data-index="prevIndex"
             >
             </div>
         </div>
@@ -33,6 +34,7 @@
             <div
                     :is="dataNextContents.contents[0].component"
                     :json-data = "dataNextContents.contents[0].data"
+                    :data-index="nextIndex"
             >
             </div>
         </div>
@@ -46,6 +48,7 @@
                     :is="item.component"
                     :key ="item.id"
                     :json-data = "item.data"
+                    :data-index="currentIndex"
             >
             </div>
         </div>
@@ -67,6 +70,7 @@
     }
 
     .view-works-view {
+        transition: transform 0.3s ease-out 0s;
     }
 
     .popup-enter {
@@ -99,9 +103,7 @@
     import CompVideoFrame from '../component/comp-video-frame.vue';
     import ViewFooter from './view-footer.vue';
 
-    import ViewAboutMain from './view-about-main.vue';
-    import ViewContactMain from './view-contact-main.vue';
-    import ViewWorksMain from './view-works-main.vue';
+    import ViewMain from './view-main.vue';
     import ViewWorksHolder from './view-works-holder.vue';
 
     export default {
@@ -113,9 +115,7 @@
             ViewFooter,
             CompVideoFrame,
 
-            ViewAboutMain,
-            ViewWorksMain,
-            ViewContactMain,
+            ViewMain,
             ViewWorksHolder
         },
 
@@ -125,6 +125,9 @@
 
         data: function() {
             return {
+                nextIndex:Number,
+                prevIndex:Number,
+
                 titleArray:Array,
                 dataPrevContents:Object,
                 dataNextContents:Object,
@@ -132,7 +135,7 @@
 
                 fixY:Number,
 
-                nextIndex:Number,
+                transitionNextIndex:Number,
 
                 isResize:false,
                 isDrag:false,
@@ -166,6 +169,8 @@
         methods : {
             //event
             handleInteractionStart: function ($e) {
+                if (this.$route.name==='works-view') return;
+
                 this.isDrag = true;
                 this.firstX = $e.x;
                 this.firstY = $e.y;
@@ -217,7 +222,7 @@
                 let minX = this.windowWidth;
                 let maxX = (this.windowWidth * 1)*-1; // + (this.windowWidth * 1/8)*-1;
 
-                this.targetContentsX += (this.distanceX * (5));
+                this.targetContentsX += (this.distanceX * (10));
 
                 if (this.targetContentsX > minX) {
                     this.targetContentsX = minX;
@@ -226,6 +231,12 @@
                 if (this.targetContentsX < maxX) {
                     this.targetContentsX = maxX;
                 }
+
+                this.setTransitionNextIndex();
+            },
+
+            setTransitionNextIndex :function() {
+                this.transitionNextIndex = Math.round((this.targetContentsX)/this.windowWidth);
             },
 
             setContentsSnapX: function() {
@@ -234,7 +245,7 @@
             },
 
             setContentsXByIndex: function($index) {
-                this.nextIndex = $index;
+                this.transitionNextIndex = $index;
                 this.targetContentsX = (this.windowWidth ) * ($index);
             },
 
@@ -262,22 +273,23 @@
                     .onUpdate(($e) =>
                         {
                             this.currentContentsX = Number($e.tweeningNumber.toFixed(2));
+                            window.currentContentsX = this.currentContentsX;
                             this.isResize = false;
                         }
                     ).onComplete(($e)=>{
-                        if (this.isDrag) return;
-                        if (this.nextIndex === 0) return;
-                        if (this.currentContentsX !== this.nextIndex * (this.windowWidth)) return;
+                        if (this.transitionNextIndex === 0) return;
+                        if (this.currentContentsX !== this.transitionNextIndex * (this.windowWidth)) return;
 
                         let nextRouteName;
-                        if (this.nextIndex < 0) {
-                            nextRouteName = this.getRouterNameByIndex(this.getNextIndex(this.currentIndex));
+                        if (this.transitionNextIndex < 0) {
+                            nextRouteName = this.getRouterNameByIndex(this.nextIndex);
                         } else {
-                            nextRouteName = this.getRouterNameByIndex(this.getPrevIndex(this.currentIndex));
+                            nextRouteName = this.getRouterNameByIndex(this.prevIndex);
                         }
-                        Window.noTransition = true;
-                        console.log(this.nextIndex + ' ' + nextRouteName);
+                        window.noTransition = true;
                         this.$router.push({name:nextRouteName});
+                        this.currentContentsX = 0;
+                        console.log(nextRouteName + '->ok');
                     })
                     .start();
 
@@ -289,9 +301,11 @@
         //life cycle
         //beforeCreate : function() {},
         created:function(){
-            this.dataPrevContents = Window.ZanyBrosData.data.contentsData[this.getPrevIndex(this.currentIndex)];
-            this.dataNextContents = Window.ZanyBrosData.data.contentsData[this.getNextIndex(this.currentIndex)];
-            this.dataContents = Window.ZanyBrosData.data.contentsData[this.currentIndex];
+            this.prevIndex = this.getPrevIndex(this.currentIndex);
+            this.nextIndex = this.getNextIndex(this.currentIndex);
+            this.dataPrevContents = window.ZanyBrosData.data.contentsData[this.prevIndex];
+            this.dataNextContents = window.ZanyBrosData.data.contentsData[this.nextIndex];
+            this.dataContents = window.ZanyBrosData.data.contentsData[this.currentIndex];
         },
         //beforeMount : function() {},
         mounted : function() {

@@ -25,17 +25,17 @@
         </div>
         <ul>
             <li>
-                <h1><router-link to="/about">
+                <h1><router-link :to="{ name: 'about'}">
                     <div @click="menuCloseClickHandler">ABOUT US</div>
                 </router-link></h1>
             </li>
             <li>
-                <h1><router-link to="/works">
+                <h1><router-link :to="{ name: 'works'}">
                     <div @click="menuCloseClickHandler">OUR WORKS</div>
                 </router-link></h1>
             </li>
             <li>
-                <h1><router-link to="/contact">
+                <h1><router-link :to="{ name: 'contact'}">
                     <div @click="menuCloseClickHandler">CONTACT US</div>
                 </router-link></h1>
             </li>

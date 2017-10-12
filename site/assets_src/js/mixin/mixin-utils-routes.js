@@ -47,7 +47,7 @@ Vue.mixin({
         },
         getWorksDataByIndex:function($index) {
             let i;
-            let data = Window.ZanyBrosWorksData;
+            let data = window.ZanyBrosWorksData;
 
             for (i=0;i<data.length;i++) {
                 if (data[i].index === $index) {

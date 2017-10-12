@@ -67,6 +67,7 @@
             EventBus.$on(EventBus.WINDOW_RESIZE, this.onResizeHandler);
             EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
             this.onResizeHandler();
+            this.onScrollHandler();
         },
         //beforeUpdate : function() {},
         //updated : function() {},

@@ -28,7 +28,7 @@
             "class": "view-about",
             "contents": [
                 {
-                    "component": "view-about-main",
+                    "component": "view-main",
                     "data": {
                         "width": "100%",
                         "height": "100%"
@@ -40,9 +40,8 @@
                         "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title": [
-                            "WHO WE ARE"
-                        ]
+                        "title": "WHO WE ARE",
+                        "menu": "WHO WE ARE"
                     }
                 },
                 {
@@ -145,9 +144,8 @@
                         "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title": [
-                            "WHAT WE DO"
-                        ]
+                        "title": "WHAT WE DO",
+                        "menu": "WHAT WE DO"
                     }
                 },
                 {
@@ -234,9 +232,9 @@
                         "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title": [
-                            "2017 SHOW REEL"
-                        ]
+                        "title": "2017 SHOW REEL",
+                        "menu":"2017 SHOW REEL"
+
                     }
                 },
                 {
@@ -267,9 +265,8 @@
                         "height": "10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
-                        "title": [
-                            "AWARDS"
-                        ]
+                        "title": "AWARDS",
+                        "menu" : "AWARDS"
                     }
                 },
                 {
@@ -345,9 +342,8 @@
                         "height": "10vw",
                         "backgroundColor": "#ffffff",
                         "color": "#000",
-                        "title": [
-                            "PARTNERS"
-                        ]
+                        "title": "PARTNERS",
+                        "menu":"PARTNERS"
                     }
                 },
                 {
@@ -439,7 +435,7 @@
             "class": "view-works",
             "contents": [
                 {
-                    "component": "view-works-main",
+                    "component": "view-main",
                     "data": {
                         "width": "100%",
                         "height": "100%"
@@ -451,9 +447,8 @@
                         "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title": [
-                            "MUSIC VIDEO"
-                        ]
+                        "title": "MUSIC VIDEO",
+                        "menu":"MUSIC VIDEO"
                     }
                 },
                 {
@@ -467,7 +462,7 @@
                                 "comment": "Client : Liveworks company\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d8b36a882.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d8b36a882.jpg",
                                 "videoId": "VITVlI80qgs",
                                 "width": "400",
                                 "height": "400"
@@ -479,7 +474,7 @@
                                 "comment": "Client : Source music\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d8ad69511.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d8ad69511.jpg",
                                 "videoId": "i1n_1jrUEjU",
                                 "width": "400",
                                 "height": "400"
@@ -491,7 +486,7 @@
                                 "comment": "Client : FNC entertainment\nDirector : Hong Wonki\nDirector of Photography: Lee Dongyeol\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d8a7dad65.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d8a7dad65.jpg",
                                 "videoId": "NRlDo3JuzfI",
                                 "width": "400",
                                 "height": "400"
@@ -503,7 +498,7 @@
                                 "comment": "Client : Shanghai star48 Future & Media Group Co. Ltd\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d8a11ca7f.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d8a11ca7f.jpg",
                                 "videoId": "839TX-5wXhY",
                                 "width": "400",
                                 "height": "400"
@@ -515,7 +510,7 @@
                                 "comment": "Client : Shanghai star48 Cuture & Media Group Co. Ltd\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nLocal Production  : Song jiyeon . Newyork. US\nPost production : ASTRO digital.LAB",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d89ad4053.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d89ad4053.jpg",
                                 "videoId": "poExkE7AGb4",
                                 "width": "400",
                                 "height": "400"
@@ -527,7 +522,7 @@
                                 "comment": "Client : Source music\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d89398312.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d89398312.jpg",
                                 "videoId": "0VKcLPdY9lI",
                                 "width": "400",
                                 "height": "400"
@@ -539,7 +534,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d88d03ff7.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d88d03ff7.jpg",
                                 "videoId": "ZRPgtoEO6OM",
                                 "width": "400",
                                 "height": "400"
@@ -551,7 +546,7 @@
                                 "comment": "Client : CJ E&M, YMC entertainment\nDirector : Hong Wonki ,Huh jinhyun\nDirector of Photography: Kim Joonhong, Lee Dongyeol\nProduction Design : Lee Hyoungwoo\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d88716cea.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d88716cea.jpg",
                                 "videoId": "1BVV9UqELbA",
                                 "width": "400",
                                 "height": "400"
@@ -563,7 +558,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d881c7c85.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d881c7c85.jpg",
                                 "videoId": "D_F9HUTYnl0",
                                 "width": "400",
                                 "height": "400"
@@ -575,7 +570,7 @@
                                 "comment": "Client : C9 entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d87c54d07.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d87c54d07.jpg",
                                 "videoId": "WYWCfpNDg28",
                                 "width": "400",
                                 "height": "400"
@@ -587,7 +582,7 @@
                                 "comment": "Client : Shanghai star48 Cuture & Media Group Co. Ltd\nDirector : Hong Wonki, Lee Haejin\nDirector of Photography: Kim Joonhong, Kim Doyeon\nLocal Production  : Hawai film . Spain madrid\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d875e0327.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d875e0327.jpg",
                                 "videoId": "ATAKVUjYyWM",
                                 "width": "400",
                                 "height": "400"
@@ -599,7 +594,7 @@
                                 "comment": "Client : Shanghai star48 Cuture & Media Group Co. Ltd\nDirector : Hong Wonki, Lee Haejin\nDirector of Photography: Kim Joonhong, Lee Dongyeol\nProduction Design : Park Seoyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d86f8e2a6.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d86f8e2a6.jpg",
                                 "videoId": "EN5aaKOgVDM",
                                 "width": "400",
                                 "height": "400"
@@ -611,7 +606,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Park Seoyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d8697bdad.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d8697bdad.jpg",
                                 "videoId": "QQXsknBbcG0",
                                 "width": "400",
                                 "height": "400"
@@ -623,7 +618,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d863bb552.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d863bb552.jpg",
                                 "videoId": "y882AFjrSOM",
                                 "width": "400",
                                 "height": "400"
@@ -635,7 +630,7 @@
                                 "comment": "Client : RBW entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d85d8afdc.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d85d8afdc.jpg",
                                 "videoId": "y2OFPvYxZuY",
                                 "width": "400",
                                 "height": "400"
@@ -647,7 +642,7 @@
                                 "comment": "Client : Space Bohemian \nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d852bc4ed.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d852bc4ed.jpg",
                                 "videoId": "6nepzo6LZqs",
                                 "width": "400",
                                 "height": "400"
@@ -659,7 +654,7 @@
                                 "comment": "Client : DSP entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Lee Hyounwoo\nPost production : ASTRO digital.LAB",
                                 "year": "2016",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4d8484ac86.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4d8484ac86.jpg",
                                 "videoId": "B9FTAcOK3cA",
                                 "width": "400",
                                 "height": "400"
@@ -671,7 +666,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Park Seoyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ce70502a2.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ce70502a2.jpg",
                                 "videoId": "nVCubhQ454c",
                                 "width": "400",
                                 "height": "400"
@@ -683,7 +678,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Lee Haejin\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ce6915159.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ce6915159.jpg",
                                 "videoId": "4OrCA1OInoo",
                                 "width": "400",
                                 "height": "400"
@@ -695,7 +690,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Park Seoyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ce604c0a3.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ce604c0a3.jpg",
                                 "videoId": "gOwERHxXcTs",
                                 "width": "400",
                                 "height": "400"
@@ -707,7 +702,7 @@
                                 "comment": "Client : iHQ\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ce5814d3d.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ce5814d3d.jpg",
                                 "videoId": "sXkZgR9gS24",
                                 "width": "400",
                                 "height": "400"
@@ -719,7 +714,7 @@
                                 "comment": "Client : FNC entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ce3ee2e66.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ce3ee2e66.jpg",
                                 "videoId": "1pBgMBBsv4k",
                                 "width": "400",
                                 "height": "400"
@@ -731,7 +726,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ce350a15e.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ce350a15e.jpg",
                                 "videoId": "lr-MkPRHFms",
                                 "width": "400",
                                 "height": "400"
@@ -743,7 +738,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Park Seoyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ce27e2e60.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ce27e2e60.jpg",
                                 "videoId": "1nCLBTmjJBY",
                                 "width": "400",
                                 "height": "400"
@@ -755,7 +750,7 @@
                                 "comment": "Client : Woollim entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4cdf912a5d.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4cdf912a5d.jpg",
                                 "videoId": "cUTMi0xzQeM",
                                 "width": "400",
                                 "height": "400"
@@ -767,7 +762,7 @@
                                 "comment": "Client : FNC entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4cdf1ee5e8.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4cdf1ee5e8.jpg",
                                 "videoId": "_1ZUFyS3-e8",
                                 "width": "400",
                                 "height": "400"
@@ -779,7 +774,7 @@
                                 "comment": "Client : HIM inte\national music. TAIWAN\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4cdea1e97d.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4cdea1e97d.jpg",
                                 "videoId": "_9WHMyQF9YQ",
                                 "width": "400",
                                 "height": "400"
@@ -791,7 +786,7 @@
                                 "comment": "Client : Universal music. TAIWAN\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4cde255096.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4cde255096.jpg",
                                 "videoId": "PdcheAL3J9I",
                                 "width": "400",
                                 "height": "400"
@@ -803,7 +798,7 @@
                                 "comment": "Client : ROCK record. TAIWAN\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4cddb0b8cc.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4cddb0b8cc.jpg",
                                 "videoId": "Tcvk3vw8KUY",
                                 "width": "400",
                                 "height": "400"
@@ -815,7 +810,7 @@
                                 "comment": "Client : Shanghai star48 Cuture & Media Group Co. Ltd\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nLocal Production  : Boogie film . Czech Prague\nPost production : ASTRO digital.LAB",
                                 "year": "2015",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4cdd1b7315.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4cdd1b7315.jpg",
                                 "videoId": "X2i7mH40zes",
                                 "width": "400",
                                 "height": "400"
@@ -827,7 +822,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c82ef2c3d.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c82ef2c3d.jpg",
                                 "videoId": "U9HBT6sRSZ8",
                                 "width": "400",
                                 "height": "400"
@@ -839,7 +834,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c825c1311.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c825c1311.jpg",
                                 "videoId": "\ngUj9hyPRg",
                                 "width": "400",
                                 "height": "400"
@@ -851,7 +846,7 @@
                                 "comment": "Client : FNC entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c81d383a6.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c81d383a6.jpg",
                                 "videoId": "q6f-LLM1H6U",
                                 "width": "400",
                                 "height": "400"
@@ -863,7 +858,7 @@
                                 "comment": "Client : Leessang Company\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c81512247.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c81512247.jpg",
                                 "videoId": "tgfuaDS-S2c",
                                 "width": "400",
                                 "height": "400"
@@ -875,7 +870,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c7f868144.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c7f868144.jpg",
                                 "videoId": "TI0DGvqKZTI",
                                 "width": "400",
                                 "height": "400"
@@ -887,7 +882,7 @@
                                 "comment": "Client : Jellyfish entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c7e8ce5ff.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c7e8ce5ff.jpg",
                                 "videoId": "IF8kySIcWNw",
                                 "width": "400",
                                 "height": "400"
@@ -899,7 +894,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c7df22fcc.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c7df22fcc.jpg",
                                 "videoId": "oTXCgR93zC8",
                                 "width": "400",
                                 "height": "400"
@@ -911,7 +906,7 @@
                                 "comment": "Client : JYP entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LA",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c7d5aee5b.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c7d5aee5b.jpg",
                                 "videoId": "uwD51VS0Uko",
                                 "width": "400",
                                 "height": "400"
@@ -923,7 +918,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c7cb6c3f2.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c7cb6c3f2.jpg",
                                 "videoId": "uXfxVm3V55I",
                                 "width": "400",
                                 "height": "400"
@@ -935,7 +930,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c7bf5b625.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c7bf5b625.jpg",
                                 "videoId": "q_krT35dgDM",
                                 "width": "400",
                                 "height": "400"
@@ -947,7 +942,7 @@
                                 "comment": "Client : Seotaiji Company\nDirector : Hong Wonki, Lee haejin\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c7b61ed66.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c7b61ed66.jpg",
                                 "videoId": "guovNnTnchQ",
                                 "width": "400",
                                 "height": "400"
@@ -959,7 +954,7 @@
                                 "comment": "Client : Bighit entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Lee haejin\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c7aa846a5.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c7aa846a5.jpg",
                                 "videoId": "XQmpVHUi-0A",
                                 "width": "400",
                                 "height": "400"
@@ -971,7 +966,7 @@
                                 "comment": "Client : PlanA entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c7a0dc0bd.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c7a0dc0bd.jpg",
                                 "videoId": "8dVjSvLzD1I",
                                 "width": "400",
                                 "height": "400"
@@ -983,7 +978,7 @@
                                 "comment": "Client : DSP entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju\nPost production : ASTRO digital.LAB",
                                 "year": "2014",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4c791744d3.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4c791744d3.jpg",
                                 "videoId": "6tK0XUQQ3wA",
                                 "width": "400",
                                 "height": "400"
@@ -995,7 +990,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2013",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4b43a88cbc.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4b43a88cbc.jpg",
                                 "videoId": "wq7ftOZBy0E",
                                 "width": "400",
                                 "height": "400"
@@ -1007,7 +1002,7 @@
                                 "comment": "Client : TS entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nLocal Production  : Song jiyeon . Detroit. US\nPost production : ASTRO digital.LAB",
                                 "year": "2013",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4b42a8bfc0.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4b42a8bfc0.jpg",
                                 "videoId": "KLHY_7PgaV0",
                                 "width": "400",
                                 "height": "400"
@@ -1019,7 +1014,7 @@
                                 "comment": "Client : TS entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2013",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4b42116cb2.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4b42116cb2.jpg",
                                 "videoId": "1zRzl1d5vNU",
                                 "width": "400",
                                 "height": "400"
@@ -1031,7 +1026,7 @@
                                 "comment": "Client : Woollim entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2013",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4b417b1552.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4b417b1552.jpg",
                                 "videoId": "BDbpE6qHDSA",
                                 "width": "400",
                                 "height": "400"
@@ -1043,7 +1038,7 @@
                                 "comment": "Client : Jellyfish entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2013",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4b40a1d620.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4b40a1d620.jpg",
                                 "videoId": "MOG7BexjPjM",
                                 "width": "400",
                                 "height": "400"
@@ -1055,7 +1050,7 @@
                                 "comment": "Client : Bighit entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2013",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4b3fd85a1b.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4b3fd85a1b.jpg",
                                 "videoId": "pUkViXyQTI4",
                                 "width": "400",
                                 "height": "400"
@@ -1067,7 +1062,7 @@
                                 "comment": "Client : Bighit entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2013",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4b3e03f18f.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4b3e03f18f.jpg",
                                 "videoId": "mmgxPLLLyVo",
                                 "width": "400",
                                 "height": "400"
@@ -1079,7 +1074,7 @@
                                 "comment": "Client : Keyeast entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2013",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4b3d5cfd9c.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4b3d5cfd9c.jpg",
                                 "videoId": "mPXaR2s7Y90",
                                 "width": "400",
                                 "height": "400"
@@ -1091,7 +1086,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ab1db53d6.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ab1db53d6.jpg",
                                 "videoId": "JmM04_OgajU",
                                 "width": "400",
                                 "height": "400"
@@ -1103,7 +1098,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nLocal Production  : Song jiyeon . Newyork. US\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ab35a36c1.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ab35a36c1.jpg",
                                 "videoId": "ckIGhwQtd-c",
                                 "width": "400",
                                 "height": "400"
@@ -1115,7 +1110,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ab4e1e1f6.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ab4e1e1f6.jpg",
                                 "videoId": "n8I8QGFA1oM",
                                 "width": "400",
                                 "height": "400"
@@ -1127,7 +1122,7 @@
                                 "comment": "Client : Woollim entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ab5dc8c58.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ab5dc8c58.jpg",
                                 "videoId": "filhfToaks0",
                                 "width": "400",
                                 "height": "400"
@@ -1139,7 +1134,7 @@
                                 "comment": "Client : YG entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ab70911b4.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ab70911b4.jpg",
                                 "videoId": "u2ePT5OlZ7o",
                                 "width": "400",
                                 "height": "400"
@@ -1151,7 +1146,7 @@
                                 "comment": "Client : YG entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ab846fe46.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ab846fe46.jpg",
                                 "videoId": "9EIYWmRkeRE",
                                 "width": "400",
                                 "height": "400"
@@ -1163,7 +1158,7 @@
                                 "comment": "Client : Starship entertainment\nDirector : Hong Wonki, Lee Haejin\nDirector of Photography: Kim Joonhong\nProduction Design : Leehaejin\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ab94e68fd.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ab94e68fd.jpg",
                                 "videoId": "PdUiCJnRptk",
                                 "width": "400",
                                 "height": "400"
@@ -1175,7 +1170,7 @@
                                 "comment": "Client : WM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4aba65f0ff.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4aba65f0ff.jpg",
                                 "videoId": "IxLV7M1sdjg",
                                 "width": "400",
                                 "height": "400"
@@ -1187,7 +1182,7 @@
                                 "comment": "Client : DoubleKick entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4abbe80bff.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4abbe80bff.jpg",
                                 "videoId": "LMHzaYX5Swg",
                                 "width": "400",
                                 "height": "400"
@@ -1199,7 +1194,7 @@
                                 "comment": "Client : Neganetworks entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4abdb5645f.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4abdb5645f.jpg",
                                 "videoId": "yjr485xFf7A",
                                 "width": "400",
                                 "height": "400"
@@ -1211,7 +1206,7 @@
                                 "comment": "Client : J.tune Camp entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4abf023000.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4abf023000.jpg",
                                 "videoId": "Bsiv1mo0HTQ",
                                 "width": "400",
                                 "height": "400"
@@ -1223,7 +1218,7 @@
                                 "comment": "Client : Amoeba Culture.\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2012",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ac08bd0d6.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ac08bd0d6.jpg",
                                 "videoId": "wo0bnb5U64E",
                                 "width": "400",
                                 "height": "400"
@@ -1235,7 +1230,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2011",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ac1d3d210.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ac1d3d210.jpg",
                                 "videoId": "s-zRAQmKUkI",
                                 "width": "400",
                                 "height": "400"
@@ -1247,7 +1242,7 @@
                                 "comment": "Client : SM entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2011",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ac2ce595b.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ac2ce595b.jpg",
                                 "videoId": "r6TwzSGYycM",
                                 "width": "400",
                                 "height": "400"
@@ -1259,7 +1254,7 @@
                                 "comment": "Client : TS entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2011",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ac4356bef.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ac4356bef.jpg",
                                 "videoId": "5tLooPlf2Sw",
                                 "width": "400",
                                 "height": "400"
@@ -1271,7 +1266,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2011",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ac54a5d8f.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ac54a5d8f.jpg",
                                 "videoId": "bw9CALKOvAI",
                                 "width": "400",
                                 "height": "400"
@@ -1283,7 +1278,7 @@
                                 "comment": "Client : CUBE entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2010",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ac6946a6a.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ac6946a6a.jpg",
                                 "videoId": "JXxGo1MvNls",
                                 "width": "400",
                                 "height": "400"
@@ -1295,7 +1290,7 @@
                                 "comment": "Client : Seo taiji Company\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2009",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ac7b34572.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ac7b34572.jpg",
                                 "videoId": "bQf5JawiSAk",
                                 "width": "400",
                                 "height": "400"
@@ -1307,7 +1302,7 @@
                                 "comment": "Client : Map the soul\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LA",
                                 "year": "2009",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ac8b67974.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ac8b67974.jpg",
                                 "videoId": "ElW_V6SyfE8",
                                 "width": "400",
                                 "height": "400"
@@ -1319,7 +1314,7 @@
                                 "comment": "Client : Map the soul\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LA",
                                 "year": "2009",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4aca1262c4.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4aca1262c4.jpg",
                                 "videoId": "iAJW9JuW-jQ",
                                 "width": "400",
                                 "height": "400"
@@ -1331,7 +1326,7 @@
                                 "comment": "Client : Seo taiji Company\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2008",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4acb36cba8.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4acb36cba8.jpg",
                                 "videoId": "9WLcIvqA1Uk",
                                 "width": "400",
                                 "height": "400"
@@ -1343,7 +1338,7 @@
                                 "comment": "Client : Seo taiji Company\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2008",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4acc3544dd.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4acc3544dd.jpg",
                                 "videoId": "TyfDlvUTL38",
                                 "width": "400",
                                 "height": "400"
@@ -1355,7 +1350,7 @@
                                 "comment": "Client : Woollim entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2008",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4acd4da1c1.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4acd4da1c1.jpg",
                                 "videoId": "OpTKLNjUdwQ",
                                 "width": "400",
                                 "height": "400"
@@ -1367,7 +1362,7 @@
                                 "comment": "Client : Woollim entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo\nPost production : ASTRO digital.LAB",
                                 "year": "2008",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4acf49448d.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4acf49448d.jpg",
                                 "videoId": "K72ZxP9ZAP4",
                                 "width": "400",
                                 "height": "400"
@@ -1379,7 +1374,7 @@
                                 "comment": "Client : Woollim entertainment\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nPost production : ASTRO digital.LAB",
                                 "year": "2008",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c4ad0424faa.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c4ad0424faa.jpg",
                                 "videoId": "MA6c8nqv9uI",
                                 "width": "400",
                                 "height": "400"
@@ -1393,9 +1388,8 @@
                         "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title": [
-                            "COMMERCIAL FILM"
-                        ]
+                        "title": "COMMERCIAL FILM",
+                        "menu": "COMMERCIAL FILM"
                     }
                 },
                 {
@@ -1409,7 +1403,7 @@
                                 "comment": "Client : P&G\nAgency : Grey. HONGKONG\nProducer : Jenny Choo\nDirector : Hong Wonki\nProduction Design : Park seoyoung",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3c1abc0d4b.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3c1abc0d4b.jpg",
                                 "videoId": "SWArzX-W2OQ",
                                 "width": "400",
                                 "height": "400"
@@ -1421,7 +1415,7 @@
                                 "comment": "Client : P&G\nAgency : Grey. HONGKONG\nProducer : Jenny Choo\nDirector : Hong Wonki\nProduction Design : Park seoyoung",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3c18dd68ed.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3c18dd68ed.jpg",
                                 "videoId": "Y5vzqm2jPjA",
                                 "width": "400",
                                 "height": "400"
@@ -1433,7 +1427,7 @@
                                 "comment": "Client : CJ Cheiljedang\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Park seoyoung",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3c110ecc68.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3c110ecc68.jpg",
                                 "videoId": "nY3gza5rczI",
                                 "width": "400",
                                 "height": "400"
@@ -1445,7 +1439,7 @@
                                 "comment": "Client : KB Bank\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Shin Gwioak",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3c0da2f143.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3c0da2f143.jpg",
                                 "videoId": "VgbKvcRX-yo",
                                 "width": "400",
                                 "height": "400"
@@ -1457,7 +1451,7 @@
                                 "comment": "Client : Samsonite\nDirector : Hong Wonki\nDirector of Photography: Kim Johnny\nProduction Design : Kwon Sunju",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3c09f798e0.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3c09f798e0.jpg",
                                 "videoId": "l4_IYPH6oiQ",
                                 "width": "400",
                                 "height": "400"
@@ -1469,7 +1463,7 @@
                                 "comment": "Client : Samsung\nAgency : Designfever\nProducer : Noh Jinyoung\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3c057ce40a.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3c057ce40a.jpg",
                                 "videoId": "va5PTYGzM",
                                 "width": "400",
                                 "height": "400"
@@ -1481,7 +1475,7 @@
                                 "comment": "Client : Samsung\nAgency : Designfever\nProducer : Noh Jinyoung\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Sunju",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3bfd448b51.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3bfd448b51.jpg",
                                 "videoId": "Ae8x-CeBG4",
                                 "width": "400",
                                 "height": "400"
@@ -1493,7 +1487,7 @@
                                 "comment": "Client : Samsung\nAgency : HSAD\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3bfac304b6.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3bfac304b6.jpg",
                                 "videoId": "1mOxK7mVa-8",
                                 "width": "400",
                                 "height": "400"
@@ -1505,7 +1499,7 @@
                                 "comment": "Client : Samsung\nAgency : HSAD\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3bf785b44b.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3bf785b44b.jpg",
                                 "videoId": "XHbquTlz584",
                                 "width": "400",
                                 "height": "400"
@@ -1517,7 +1511,7 @@
                                 "comment": "Client : Samsung\nAgency : Cheil  \nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Kwon Jinmo",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3bf4227427.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3bf4227427.jpg",
                                 "videoId": "gI6nBPjU8o",
                                 "width": "400",
                                 "height": "400"
@@ -1529,7 +1523,7 @@
                                 "comment": "Client : ETUDE HOUSE\nDirector : Hong Wonki\nDirector of Photography: Kim Joonhong\nProduction Design : Jeon Eunyoung",
                                 "year": "2017",
                                 "month": "01",
-                                "imageUrl": "/cms/upload/works/59c3bf119fe4a.jpg",
+                                "imageUrl": "/site/cms/upload/works/59c3bf119fe4a.jpg",
                                 "videoId": "QTdHo9HCA7k",
                                 "width": "400",
                                 "height": "400"
@@ -1544,10 +1538,20 @@
             "class": "view-contact",
             "contents": [
                 {
-                    "component": "view-contact-main",
+                    "component": "view-main",
                     "data": {
                         "width": "100%",
                         "height": "100%"
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
+                        "backgroundColor": "#000",
+                        "color": "#fff",
+                        "title": "HEAD QUATER OFFICE",
+                        "menu": "H.Q OFFICE"
                     }
                 },
                 {
@@ -1557,11 +1561,10 @@
                         "width": "100%",
                         "height": "100%",
                         "content": [
-
-                {
-                    "component": "content-background-image",
-                    "imageUrl": "assets/images/map.jpg"
-                },
+                            {
+                                "component": "content-background-image",
+                                "imageUrl": "assets/images/map.jpg"
+                            },
                             {
                                 "component": "content-txt",
                                 "class": "left",
@@ -1580,6 +1583,16 @@
                                 ]
                             }
                         ]
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
+                        "backgroundColor": "#000",
+                        "color": "#fff",
+                        "title": "GLOBAL OFFICE",
+                        "menu": "GLOBAL OFFICE"
                     }
                 },
                 {
@@ -1642,11 +1655,20 @@
                     "component": "view-content-title",
                     "data": {
                         "height": "10vw",
+                        "backgroundColor": "#000",
+                        "color": "#fff",
+                        "title": "PEOPLES",
+                        "menu": "PEOPLES"
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
-                        "title": [
-                            "PRODUCTION"
-                        ]
+                        "title": "PRODUCTION",
+                        "menu" : "-"
                     }
                 },
                 {
@@ -1752,9 +1774,8 @@
                         "height": "10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
-                        "title": [
-                            "POST-PRODUCTION"
-                        ]
+                        "title": "POST-PRODUCTION",
+                        "menu" : "-"
                     }
                 },
                 {
@@ -1885,9 +1906,8 @@
                         "height": "10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
-                        "title": [
-                            "ZANYBROS COMMUNICATION in JAPAN"
-                        ]
+                        "title": "ZANYBROS COMMUNICATION in JAPAN",
+                        "menu" : "-"
                     }
                 },
                 {

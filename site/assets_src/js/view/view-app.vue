@@ -25,26 +25,26 @@
     @import "~scssMixin";
 
     .view-container {
-        transition:transform 0.2s ease-out;
+        transition:transform 0.3s ease-out;
     }
 
     .slide-left-enter {
-        transition:transform 0.2s ease-out;
+        transition:transform 0.3s ease-out;
         transform: translate3d(0px,0px,0px);
     }
 
     .slide-left-leave-active {
-        transition:transform 0.2s ease-out;
+        transition:transform 0.3s ease-out;
         transform: translate3d(-100%,0px,0px);
     }
 
     .slide-right-enter {
-        transition:transform 0.2s ease-out;
+        transition:transform 0.3s ease-out;
         transform: translate3d(0px,0px,0px);
     }
 
     .slide-right-leave-active {
-        transition:transform 0.2s ease-out;
+        transition:transform 0.3s ease-out;
         transform: translate3d(100%,0px,0px);
     }
 
@@ -62,28 +62,40 @@
     import ViewBackground from './view-background.vue';
 
     import VueRouter from 'vue-router';
-    import ViewAbout from './backup/view-about.vue';
-    import ViewWorks from './backup/view-works.vue';
-    import ViewContact from './backup/view-contact.vue';
     import ViewWorksView from './view-works-view.vue';
     import ViewContainer from './view-container.vue';
 
+    console.log('-------v 5');
+
+    window.routerMode = 'history';
+//    window.routerMode = 'hash';
+    if (window.routerMode==='hash') {
+        window.rootPath = '';
+    } else {
+        window.rootPath = '/site';
+    }
+    console.log(window.rootPath);
+
     const routes = [
-        { path: '/' , redirect:'/about'},
-        { name:'about', path: '/about', component: ViewContainer },
-        { name:'works', path: '/works', component: ViewContainer,
+        { path: '*',redirect:window.rootPath+'/about'},
+        { path: window.rootPath, redirect:window.rootPath+'/about'},
+        { name:'about', path: window.rootPath+'/about', component: ViewContainer },
+        { name:'works', path: window.rootPath+'/works', component: ViewContainer,
             children : [{
                 name:'works-view',
                 path:'view/:id',
                 component:ViewWorksView
             }]
         },
-        { name:'contact', path: '/contact', component: ViewContainer}
+        { name:'contact', path: window.rootPath+'/contact', component: ViewContainer}
     ];
-
+//    mode:'history',
     const router = new VueRouter({
-        mode:'hash',
+        mode:window.routerMode,
         routes,
+        scrollBehavior (to, from, savedPosition) {
+            console.log('test');
+        }
     });
 
     router.beforeEach((to, from, next) => {
@@ -93,7 +105,7 @@
 
     router.afterEach((to, from) => {
 //        console.log('--> router after each')
-        console.log(to.path);
+//        console.log(to.path);
     });
 
     export default {
@@ -115,23 +127,24 @@
         computed : {},
         methods : {},
         watch: {
-            '$route'(to, from) {
-//                 get route depth based on path
+            '$route' (to, from) {
+//                get route depth based on path
 //                const toDepth = to.path.split('/').length;
 //                const fromDepth = from.path.split('/').length;
 //                this.transitionDirection = toDepth < fromDepth ? 'slide-right' : 'slide-left';
 //                this.transitionDirection = 'slide-left';
 
-                if (Window.noTransition===true) {
+                console.log('notransition : ' + window.noTransition);
+
+                if (window.noTransition===true) {
                     this.transitionDirection = 'none';
-                    Window.noTransition = false;
+                    window.noTransition = false;
                 } else {
                     this.transitionDirection = this.getRouterFlowDirection(
                         this.getCurrentIndex(from.name),
                         this.getCurrentIndex(to.name)
                     );
                 }
-                console.log(this.transitionDirection);
                 EventBus.$emit(EventBus.MENU_CLICK, to.name);
             }
         },

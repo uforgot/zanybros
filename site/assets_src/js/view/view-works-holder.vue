@@ -14,14 +14,15 @@
              height: frameHeight + 'px'
         }"
     >
-        <content-works-list
-                :line-gap="400"
-                :align="align"
-                :min-line-gap="100"
-                :max-line-gap="100"
-                :single-max-width="400"
-                :watch="content"
-        >
+        <!--<content-works-list-->
+                <!--:line-gap="400"-->
+                <!--:align="align"-->
+                <!--:min-line-gap="100"-->
+                <!--:max-line-gap="100"-->
+                <!--:single-max-width="400"-->
+                <!--:watch="content"-->
+        <!--&gt;-->
+        <div class="content-works">
             <content-works-item
                     v-for="(item, index) in content"
                     :width="item.width"
@@ -34,7 +35,8 @@
                     @workItemOver="onWorkItemOverHandler"
             >
             </content-works-item>
-        </content-works-list>
+        <!--</content-works-list>-->
+        </div>
     </div>
 </template>
 

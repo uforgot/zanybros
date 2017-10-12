@@ -16,6 +16,7 @@ body {
 #app {
     width:100%;
     overflow-x:hidden;
+    overflow-y:scroll;
 }
 
 .view-container {
@@ -221,7 +222,7 @@ body {
     }
 }
 
-.view-about-main {
+.view-main {
     .title {
         position : absolute;
         left     : 0; top : 0; width : 100%; height : 100%;
@@ -233,100 +234,71 @@ body {
             text-align : left;
 
             li {
+                display:block;
+                position:relative;
                 cursor: pointer;
-            }
-        }
-    }
-}
 
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently */
 
-
-.view-contact-main {
-    .title {
-        position : absolute;
-        left     : 0; top      : 0; width    : 100%; height   : 100%;
-
-        .container {
-            position   : absolute;
-            left       : 50%; width : 80%; bottom : 10%;
-            transform  : translateX(-50%);
-            text-align : left;
-
-            section {
-                float       : left;
-                width       : 50%;
-
-                h1 { }
-                ul {
-                    li {
-                        cursor : pointer;
+                .container {
+                    display:inline-block;
+                    position:relative;
+                    h1 {
+                       pointer-events: none;
+                    }
+                    .button {
+                        position:absolute;
+                        left:0;
+                        top:0;
+                        width:100%;
+                        height:101%;
+                        //background:#f00;
+                        //opacity:0.2;
+                    }
+                    .focus-bar {
+                        position:absolute;
+                        left:50%;
+                        top:50%;
+                        width:0%;
+                        height:10px;
+                        margin-top:-2px;
+                        //border:0px solid #fff;
+                        //top:50%;
+                        //margin-left:-1px;
+                        //height:5px;
+                        background:#fff;
+                        //opacity:0;
                     }
                 }
 
-
-                &:nth-child(3) {
-                    padding-top : 4vh;
-                }
-            }
-
-            &:after { visibility : hidden; display : block; font-size : 0; content : " "; clear : both; height : 0; }
-        }
-    }
-}
-
-
-.view-works-main {
-    display  : block;
-    position : relative;
-
-    .title {
-        position : absolute;
-        left     : 0; top : 0; width : 100%; height : 100%;
-
-        ul {
-            position   : absolute;
-            left       : 50%; width : 80%; bottom : 10%;
-            transform  : translateX(-50%);
-            text-align : left;
-
-            li {
-                cursor : pointer;
-            }
-
-        }
-
-        .search {
-            position  : absolute;
-            left      : 50%; width : 80%; bottom : 8%;
-            transform : translateX(-50%);
-
-            h1 { padding-bottom : 10px; }
-
-            .box {
-                display        : inline-block;
-                padding-bottom : 10px;
-                border-bottom  : 4px solid #fff;
-
-                .dummy {
-                }
             }
         }
     }
 }
+
 
 .view-works-holder {
     display     : block;
     position    : relative;
     background : #fff;
 
-    .content-works-list {
+    .content-works {
         position : relative;
         margin-left:0;
         width:100%;
+
         .content-works-item {
             display  : inline-block;
-            position : absolute;
+            //position : absolute;
             overflow : hidden;
+            position: relative;
+            width:25vw;
+            height:25vw;
 
             .img-frame {
                 position : relative;

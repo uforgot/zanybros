@@ -9,7 +9,7 @@
     <div class="frame-container">
         <div class="logo"
              :class="{'black':isViewShow}"
-        ><a href="/">ZANYBROS&nbsp;</a></div>
+        ><router-link :to="{name:'about'}" >ZANYBROS&nbsp;</router-link></div>
 
         <div class="language-container">
             <div>EN</div>
@@ -24,9 +24,9 @@
 
         <div class="btn-menu"
             @click="menuShowClickHandler"
-             v-if="!isMenuShow"
+             :class="{'hide':isMenuShow}"
         >
-            <img src="assets/images/svg/menu.svg" alt="">
+            <img src="/site/assets/images/svg/menu.svg" alt="">
         </div>
 
         <menu class="navigation-container">
@@ -72,9 +72,9 @@
 
         <div class="btn-close"
              @click="menuCloseClickHandler"
-             v-if="isMenuShow || isViewShow"
+             :class="{'hide':(!isMenuShow && !isViewShow)}"
         >
-            <img src="assets/images/svg/close.svg" alt="">
+            <img src="/site/assets/images/svg/close.svg" alt="">
         </div>
     </div>
 </template>
@@ -85,6 +85,9 @@
     /*.router-link-active {*/
         /*color:red;*/
     /*}*/
+    .hide {
+        display:none;
+    }
 
     .logo {
         @include css-value-transition('color 0.5s ease-out 0.2s');
@@ -246,6 +249,7 @@
 
         watch : {
             '$route'(to, from) {
+                console.log(to.name + ':');
                 if(to.name == 'works-view') {
                     this.isViewShow = true;
                 } else {

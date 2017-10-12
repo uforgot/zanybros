@@ -48,3 +48,77 @@
 </p>
 </body>
 </html>
+
+
+.view-contact-main {
+.title {
+position : absolute;
+left     : 0; top      : 0; width    : 100%; height   : 100%;
+
+.container {
+position   : absolute;
+left       : 50%; width : 80%; bottom : 10%;
+transform  : translateX(-50%);
+text-align : left;
+
+section {
+float       : left;
+width       : 50%;
+
+h1 { }
+ul {
+li {
+cursor : pointer;
+}
+}
+
+
+&:nth-child(3) {
+padding-top : 4vh;
+}
+}
+
+&:after { visibility : hidden; display : block; font-size : 0; content : " "; clear : both; height : 0; }
+}
+}
+}
+
+
+.view-works-main {
+display  : block;
+position : relative;
+
+.title {
+position : absolute;
+left     : 0; top : 0; width : 100%; height : 100%;
+
+ul {
+position   : absolute;
+left       : 50%; width : 80%; bottom : 10%;
+transform  : translateX(-50%);
+text-align : left;
+
+li {
+cursor : pointer;
+}
+
+}
+
+.search {
+position  : absolute;
+left      : 50%; width : 80%; bottom : 8%;
+transform : translateX(-50%);
+
+h1 { padding-bottom : 10px; }
+
+.box {
+display        : inline-block;
+padding-bottom : 10px;
+border-bottom  : 4px solid #fff;
+
+.dummy {
+}
+}
+}
+}
+}

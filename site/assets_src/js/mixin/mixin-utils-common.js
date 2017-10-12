@@ -3,6 +3,7 @@
  */
 
 import Vue from 'vue';
+import TWEEN from '../vendor/Tween';
 
 Vue.mixin({
     methods: {
@@ -106,7 +107,9 @@ Vue.mixin({
             }
         },
 
-        scrollMeTo(refName) {
+        scrollToTitle: function(refName) {
+            if ((window.currentContentsX%window.innerWidth) !== 0) return;
+
             let i;
             let elementArray = this.getElementArray(
                 document.getElementsByClassName('view-content-title')
@@ -118,9 +121,36 @@ Vue.mixin({
                     top = elementArray[i].offset.top;
                 }
             }
+            // window.scrollTo(0, top);
+            // console.log('ssss');
+            this.scrollTo(document.body, top, 500);
+        },
 
-            window.scrollTo(0, top);
+        getEaseInOutQuad : function (t, b, c, d) {
+            t /= d/2;
+            if (t < 1) return c/2*t*t + b;
+            t--;
+            return -c/2 * (t*(t-2) - 1) + b;
+        },
+
+        scrollTo : function(element, to, duration) {
+            let start = element.scrollTop,
+                change = to - start,
+                currentTime = 0,
+                increment = 20;
+
+            let animateScroll = ()=>{
+                currentTime += increment;
+                let val = this.getEaseInOutQuad(currentTime, start, change, duration);
+                window.scrollTo(0, val);
+                if(currentTime < duration) {
+                    setTimeout(animateScroll, increment);
+                }
+            };
+            animateScroll();
         }
+
+
     }
 });
 

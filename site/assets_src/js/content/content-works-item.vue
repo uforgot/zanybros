@@ -107,7 +107,7 @@
             }
         },
         data: () => ({
-            isShow: false
+            isShow: true
         }),
 
         computed : {

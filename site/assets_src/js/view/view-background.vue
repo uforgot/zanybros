@@ -72,7 +72,7 @@
         //life cycle
         //beforeCreate : function() {},
         created: function () {
-            this.dataVideo = Window.ZanyBrosData.data.mainData.video[0];
+            this.dataVideo = window.ZanyBrosData.data.mainData.video[0];
         },
         //beforeMount : function() {},
         mounted : function() {

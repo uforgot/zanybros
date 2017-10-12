@@ -16,8 +16,14 @@ import './mixin/mixin-utils-routes';
 import App from './view/view-app.vue'
 import {EventBus} from "./events/event-bus";
 
-Window.noTransition = false;
+window.noTransition = false;
+window.currentContentsX = 0;
+window.rootPath = '';
 
+window.addEventListener('popstate', function (e) {
+    console.log('popstate');
+    // window.noTransition = true;
+})
 
 function getWorksDatafromJson($data) {
     let returnArray = [];
@@ -76,7 +82,10 @@ function getTitleArrayInContents($data) {
         let tmpData = $data.contents[i];
         if (tmpData.component === 'view-content-title') {
             returnArray.push(
-                tmpData.data.title.join('\n')
+                {
+                    title: tmpData.data.title,
+                    menu: tmpData.data.menu
+                }
             );
         }
     }
@@ -93,13 +102,13 @@ function init() {
             console.log('>> data loaded');
 
             //컨텐츠 데이터 셋팅
-            Window.ZanyBrosData = $response;
-            Window.ZanyBrosWorksData = getWorksDatafromJson(Window.ZanyBrosData);
-            Window.ZanyBrosTitlaArray = getTitleArray(Window.ZanyBrosData);
+            window.ZanyBrosData = $response;
+            window.ZanyBrosWorksData = getWorksDatafromJson(window.ZanyBrosData);
+            window.ZanyBrosTitlaArray = getTitleArray(window.ZanyBrosData);
 
-            // console.log(Window.ZanyBrosTitlaArray);
+            // console.log(window.ZanyBrosTitlaArray);
 
-            Window.app = new Vue({
+            window.app = new Vue({
                 render: h => h(App)
             }).$mount('#app');
 
