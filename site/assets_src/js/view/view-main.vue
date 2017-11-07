@@ -32,7 +32,7 @@
         <div class="button"
              @mouseover="titleMouseOverHandler(item.index)"
              @mouseout="titleMouseOutHandler"
-             @click="scrollToTitle(item.title)"
+             @click="scrollToTitle(item.anchor)"
         ></div></div>
                 </li>
             </ul>
@@ -157,14 +157,13 @@
             let targetArray = window.ZanyBrosTitlaArray[this.dataIndex];
             this.titleArray = [];
             for (i=0;i<targetArray.length;i++) {
-                if (targetArray[i].menu === "-") continue;
                 this.titleArray.push(
                     {
                         index:i,
                         isFocus:false,
                         isDin:false,
                         menu:targetArray[i].menu,
-                        title:targetArray[i].title
+                        anchor:targetArray[i].anchor
                     }
                 )
             }

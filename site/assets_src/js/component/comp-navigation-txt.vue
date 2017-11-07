@@ -11,10 +11,10 @@
                 'margin-top': currentTop + 'px'
             }"
         >
-            <li>CONTACT US</li>
-            <li>ABOUT US</li>
             <li>OUR WORKS</li>
-            <li>CONTACT US</li>
+            <li>ABOUT US</li>
+            <li>WHAT WE DO</li>
+            <li>OUR WORKS</li>
             <li>ABOUT US</li>
         </ul>
     </div>

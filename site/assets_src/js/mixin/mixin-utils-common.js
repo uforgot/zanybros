@@ -112,17 +112,18 @@ Vue.mixin({
 
             let i;
             let elementArray = this.getElementArray(
-                document.getElementsByClassName('view-content-title')
+                document.getElementsByClassName('view-content-anchor')
             );
             let top = 0;
 
             for (i=0;i<elementArray.length;i++) {
-                if (elementArray[i].el.getAttribute('title-name') == refName) {
+                console.log(elementArray[i].el.getAttribute('anchor-name') , refName);
+                if (elementArray[i].el.getAttribute('anchor-name') == refName) {
                     top = elementArray[i].offset.top;
+                    console.log('---> ', top);
                 }
             }
             // window.scrollTo(0, top);
-            // console.log('ssss');
             this.scrollTo(document.body, top, 500);
         },
 

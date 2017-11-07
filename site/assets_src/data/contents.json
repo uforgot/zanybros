@@ -35,13 +35,10 @@
                     }
                 },
                 {
-                    "component": "view-content-title",
+                    "component": "view-content-anchor",
                     "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#000",
-                        "color": "#fff",
-                        "title": "WHO WE ARE",
-                        "menu": "WHO WE ARE"
+                        "menu": "WHO WE ARE",
+                        "anchor" : "WHOWEARE"
                     }
                 },
                 {
@@ -139,13 +136,10 @@
                     }
                 },
                 {
-                    "component": "view-content-title",
+                    "component": "view-content-anchor",
                     "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#000",
-                        "color": "#fff",
-                        "title": "WHAT WE DO",
-                        "menu": "WHAT WE DO"
+                        "menu": "WHAT WE DO",
+                        "anchor" : "WHATWEDO"
                     }
                 },
                 {
@@ -153,12 +147,12 @@
                     "data": {
                         "backgroundColor": "#000",
                         "width": "100%",
-                        "height": "80%",
+                        "height": "100%",
                         "content": [
                             {
                                 "component": "content-about-category",
                                 "width": "90%",
-                                "height": "90%",
+                                "height": "80%",
                                 "category": [
                                     {
                                         "title": [
@@ -227,14 +221,10 @@
                     }
                 },
                 {
-                    "component": "view-content-title",
+                    "component": "view-content-anchor",
                     "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#000",
-                        "color": "#fff",
-                        "title": "2017 SHOW REEL",
-                        "menu":"2017 SHOW REEL"
-
+                        "menu": "SHOW REEL",
+                        "anchor" : "SHOWREEL"
                     }
                 },
                 {
@@ -242,21 +232,22 @@
                     "data": {
                         "backgroundColor": "#000",
                         "width": "100%",
-
+                        "height": "100%",
                         "content": [
                             {
                                 "component": "content-video",
                                 "videoId": "qsWl1--Niyg",
-                                "width": "70%"
+                                "width": "70%",
+                                "height": " %"
                             }
                         ]
                     }
                 },
                 {
-                    "component": "view-content-margin",
+                    "component": "view-content-anchor",
                     "data": {
-                        "backgroundColor": "#000",
-                        "height": "20vw"
+                        "menu": "AWARDS",
+                        "anchor" : "AWARDS"
                     }
                 },
                 {
@@ -265,8 +256,7 @@
                         "height": "10vw",
                         "backgroundColor": "#272727",
                         "color": "#fff",
-                        "title": "AWARDS",
-                        "menu" : "AWARDS"
+                        "title": "AWARDS"
                     }
                 },
                 {
@@ -337,13 +327,19 @@
                     }
                 },
                 {
+                    "component": "view-content-anchor",
+                    "data": {
+                        "menu": "PARTNERS",
+                        "anchor" : "PARTNERS"
+                    }
+                },
+                {
                     "component": "view-content-title",
                     "data": {
                         "height": "10vw",
                         "backgroundColor": "#ffffff",
                         "color": "#000",
-                        "title": "PARTNERS",
-                        "menu":"PARTNERS"
+                        "title": "PARTNERS"
                     }
                 },
                 {
@@ -431,6 +427,406 @@
             ]
         },
         {
+            "title": "WHAT WE DO",
+            "class": "view-contact",
+            "contents": [
+                {
+                    "component": "view-main",
+                    "data": {
+                        "width": "100%",
+                        "height": "100%"
+                    }
+                },
+                {
+                    "component": "view-content-anchor",
+                    "data": {
+                        "menu": "H.Q OFFICE",
+                        "anchor" : "HQOFFICE"
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data": {
+                        "backgroundColor": "#000",
+                        "width": "100%",
+                        "height": "100%",
+                        "content": [
+                            {
+                                "component": "content-background-image",
+                                "imageUrl": "assets/images/map.jpg"
+                            },
+                            {
+                                "component": "content-txt",
+                                "class": "left",
+                                "title": [
+                                    "ZANYBROS",
+                                    "HEADQUATER"
+                                ],
+                                "comment": [
+                                    "2ND FLOOR TYTEX B/D,",
+                                    "64-24 NONHYUN-DONG",
+                                    "GANGNAM-GU, SEOUL KOREA",
+                                    "",
+                                    "Tel/ 82-2-516-2192",
+                                    "Fax/ 82-2-516-2193",
+                                    "Email/ zanybros@zanybros.com"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-anchor",
+                    "data": {
+                        "menu": "GLOBAL COMM.",
+                        "anchor" : "GLOBALCOMM"
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data": {
+                        "backgroundColor": "#111",
+                        "width": "50%",
+                        "height": "50%",
+                        "content": [
+                            {
+                                "component": "content-txt",
+                                "class": "left",
+                                "title": [
+                                    "ZANYBROS",
+                                    "COMMUNICATION",
+                                    "JAPAN"
+                                ],
+                                "comment": [
+                                    "2ND FLOOR TYTEX B/D,",
+                                    "64-24 NONHYUN-DONG",
+                                    "GANGNAM-GU, SEOUL KOREA",
+                                    "",
+                                    "Tel/ 82-2-516-2192",
+                                    "Fax/ 82-2-516-2193",
+                                    "Email/ zanybros@zanybros.com"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data": {
+                        "backgroundImg": "assets/images/contact/zanybros_china.jpg",
+                        "width": "50%",
+                        "height": "50%",
+                        "content": [
+                            {
+                                "component": "content-txt",
+                                "class": "left",
+                                "title": [
+                                    "ZANYBROS",
+                                    "COMMUNICATION",
+                                    "CHINA"
+                                ],
+                                "comment": [
+                                    "2ND FLOOR TYTEX B/D,",
+                                    "64-24 NONHYUN-DONG",
+                                    "GANGNAM-GU, SEOUL KOREA",
+                                    "",
+                                    "Tel/ 82-2-516-2192",
+                                    "Fax/ 82-2-516-2193",
+                                    "Email/ zanybros@zanybros.com"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-anchor",
+                    "data": {
+                        "menu": "PEOPLES",
+                        "anchor" : "PEOPLES"
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
+                        "backgroundColor": "#272727",
+                        "color": "#fff",
+                        "title": "PRODUCTION"
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data": {
+                        "backgroundColor": "#272727",
+                        "width": "100%",
+                        "class": "__content-list-frame",
+                        "content": [
+                            {
+                                "component": "content-contact-people",
+                                "peoples": [
+                                    {
+                                        "title": [
+                                            "CEO/DIRECTOR"
+                                        ],
+                                        "name": [
+                                            "HONG WONKI"
+                                        ],
+                                        "email": [
+                                            "svr75@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "CEO/DIRECTOR OF PHOTOGRAPHY"
+                                        ],
+                                        "name": [
+                                            "KIM JUNHONG"
+                                        ],
+                                        "email": [
+                                            "source2001@zanybros.com"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "component": "content-contact-people",
+                                "peoples": [
+                                    {
+                                        "title": [
+                                            "PRODUCER"
+                                        ],
+                                        "name": [
+                                            "KIM LEESEOK"
+                                        ],
+                                        "email": [
+                                            "7051dd@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "DIRECTOR OF PHOTOGRAPHY"
+                                        ],
+                                        "name": [
+                                            "KIM DOYEON"
+                                        ],
+                                        "email": [
+                                            "rladus2@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "DIRECTOR"
+                                        ],
+                                        "name": [
+                                            "LIM SUKJIN"
+                                        ],
+                                        "email": [
+                                            "starzshootz@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "1st ASSIST DIRECTOR"
+                                        ],
+                                        "name": [
+                                            "LIM HAEJIN"
+                                        ],
+                                        "email": [
+                                            "dlgowls6242@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "DIRECTOR OF PHOTOGRAPHY"
+                                        ],
+                                        "name": [
+                                            "LEE DONGYEOL"
+                                        ],
+                                        "email": [
+                                            "nanyeo@zanybros.com"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
+                        "backgroundColor": "#272727",
+                        "color": "#fff",
+                        "title": "POST-PRODUCTION"
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data": {
+                        "backgroundColor": "#272727",
+                        "width": "100%",
+                        "class": "__content-list-frame",
+                        "content": [
+                            {
+                                "component": "content-contact-people",
+                                "title": [
+                                    "EDIT"
+                                ],
+                                "peoples": [
+                                    {
+                                        "title": [
+                                            "GENERAL MANAGER/EDITOR"
+                                        ],
+                                        "name": [
+                                            "JEONG SEYOUNG"
+                                        ],
+                                        "email": [
+                                            "purin423@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "EDITOR / PRODUCER"
+                                        ],
+                                        "name": [
+                                            "LEE KISUK"
+                                        ],
+                                        "email": [
+                                            "saphirsuk@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "EDITOR"
+                                        ],
+                                        "name": [
+                                            "SONG DONGWOOK"
+                                        ],
+                                        "email": [
+                                            "ehddnr-dia@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "EDITOR"
+                                        ],
+                                        "name": [
+                                            "JUNG SO YOUN"
+                                        ],
+                                        "email": [
+                                            "mythirick@zanybros.com"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "component": "content-contact-people",
+                                "title": [
+                                    "VISUAL ART MOTION GRAPHIC"
+                                ],
+                                "peoples": [
+                                    {
+                                        "title": [
+                                            "GENERAL MANAGER/EDITOR"
+                                        ],
+                                        "name": [
+                                            "JEONG SEYOUNG"
+                                        ],
+                                        "email": [
+                                            "soulart@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "VISUAL ARTIST"
+                                        ],
+                                        "name": [
+                                            "LEE HYUANG MIN"
+                                        ],
+                                        "email": [
+                                            "crazyjerry@zanybros.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "VISUAL ARTIST"
+                                        ],
+                                        "name": [
+                                            "LEE SEUNG MIN"
+                                        ],
+                                        "email": [
+                                            "2094300@zanybros.com"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "component": "content-contact-people",
+                                "title": [
+                                    "COLOR GRADING"
+                                ],
+                                "peoples": [
+                                    {
+                                        "title": [
+                                            "COLORLIST"
+                                        ],
+                                        "name": [
+                                            "LEE HYUNAH"
+                                        ],
+                                        "email": [
+                                            "idsti@zanybros.com"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
+                        "backgroundColor": "#272727",
+                        "color": "#fff",
+                        "title": "ZANYBROS COMMUNICATION in JAPAN"
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data": {
+                        "backgroundColor": "#272727",
+                        "width": "100%",
+                        "class": "__content-list-frame",
+                        "content": [
+                            {
+                                "component": "content-contact-people",
+                                "peoples": [
+                                    {
+                                        "title": [
+                                            "CEO/PRODUCER"
+                                        ],
+                                        "name": [
+                                            "DAISUKE NOMURA"
+                                        ],
+                                        "email": [
+                                            "nomura1974@zanybros.com"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-margin",
+                    "data": {
+                        "backgroundColor": "#272727",
+                        "height": "3vw"
+                    }
+                }
+            ]
+        },
+        {
             "title": "OUR WORKS",
             "class": "view-works",
             "contents": [
@@ -442,13 +838,19 @@
                     }
                 },
                 {
+                    "component": "view-content-anchor",
+                    "data": {
+                        "menu": "MUSIC VIDEO",
+                        "anchor" : "MUSICVIDEO"
+                    }
+                },
+                {
                     "component": "view-content-title",
                     "data": {
                         "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title": "MUSIC VIDEO",
-                        "menu":"MUSIC VIDEO"
+                        "title": "MUSIC VIDEO"
                     }
                 },
                 {
@@ -1383,13 +1785,19 @@
                     }
                 },
                 {
+                    "component": "view-content-anchor",
+                    "data": {
+                        "menu": "COMMERCIAL FILM",
+                        "anchor" : "COMMERCIALFILM"
+                    }
+                },
+                {
                     "component": "view-content-title",
                     "data": {
                         "height": "10vw",
                         "backgroundColor": "#000",
                         "color": "#fff",
-                        "title": "COMMERCIAL FILM",
-                        "menu": "COMMERCIAL FILM"
+                        "title": "COMMERCIAL FILM"
                     }
                 },
                 {
@@ -1529,418 +1937,6 @@
                                 "height": "400"
                             }
                         ]
-                    }
-                }
-            ]
-        },
-        {
-            "title": "CONTACT US",
-            "class": "view-contact",
-            "contents": [
-                {
-                    "component": "view-main",
-                    "data": {
-                        "width": "100%",
-                        "height": "100%"
-                    }
-                },
-                {
-                    "component": "view-content-title",
-                    "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#000",
-                        "color": "#fff",
-                        "title": "HEAD QUATER OFFICE",
-                        "menu": "H.Q OFFICE"
-                    }
-                },
-                {
-                    "component": "view-content-holder",
-                    "data": {
-                        "backgroundColor": "#000",
-                        "width": "100%",
-                        "height": "100%",
-                        "content": [
-                            {
-                                "component": "content-background-image",
-                                "imageUrl": "assets/images/map.jpg"
-                            },
-                            {
-                                "component": "content-txt",
-                                "class": "left",
-                                "title": [
-                                    "ZANYBROS",
-                                    "HEADQUATER"
-                                ],
-                                "comment": [
-                                    "2ND FLOOR TYTEX B/D,",
-                                    "64-24 NONHYUN-DONG",
-                                    "GANGNAM-GU, SEOUL KOREA",
-                                    "",
-                                    "Tel/ 82-2-516-2192",
-                                    "Fax/ 82-2-516-2193",
-                                    "Email/ zanybros@zanybros.com"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "component": "view-content-title",
-                    "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#000",
-                        "color": "#fff",
-                        "title": "GLOBAL OFFICE",
-                        "menu": "GLOBAL OFFICE"
-                    }
-                },
-                {
-                    "component": "view-content-holder",
-                    "data": {
-                        "backgroundColor": "#111",
-                        "width": "50%",
-                        "height": "50%",
-                        "content": [
-                            {
-                                "component": "content-txt",
-                                "class": "left",
-                                "title": [
-                                    "ZANYBROS",
-                                    "COMMUNICATION",
-                                    "JAPAN"
-                                ],
-                                "comment": [
-                                    "2ND FLOOR TYTEX B/D,",
-                                    "64-24 NONHYUN-DONG",
-                                    "GANGNAM-GU, SEOUL KOREA",
-                                    "",
-                                    "Tel/ 82-2-516-2192",
-                                    "Fax/ 82-2-516-2193",
-                                    "Email/ zanybros@zanybros.com"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "component": "view-content-holder",
-                    "data": {
-                        "backgroundImg": "assets/images/contact/zanybros_china.jpg",
-                        "width": "50%",
-                        "height": "50%",
-                        "content": [
-                            {
-                                "component": "content-txt",
-                                "class": "left",
-                                "title": [
-                                    "ZANYBROS",
-                                    "COMMUNICATION",
-                                    "CHINA"
-                                ],
-                                "comment": [
-                                    "2ND FLOOR TYTEX B/D,",
-                                    "64-24 NONHYUN-DONG",
-                                    "GANGNAM-GU, SEOUL KOREA",
-                                    "",
-                                    "Tel/ 82-2-516-2192",
-                                    "Fax/ 82-2-516-2193",
-                                    "Email/ zanybros@zanybros.com"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "component": "view-content-title",
-                    "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#000",
-                        "color": "#fff",
-                        "title": "PEOPLES",
-                        "menu": "PEOPLES"
-                    }
-                },
-                {
-                    "component": "view-content-title",
-                    "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#272727",
-                        "color": "#fff",
-                        "title": "PRODUCTION",
-                        "menu" : "-"
-                    }
-                },
-                {
-                    "component": "view-content-holder",
-                    "data": {
-                        "backgroundColor": "#272727",
-                        "width": "100%",
-                        "class": "__content-list-frame",
-                        "content": [
-                            {
-                                "component": "content-contact-people",
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "CEO/DIRECTOR"
-                                        ],
-                                        "name": [
-                                            "HONG WONKI"
-                                        ],
-                                        "email": [
-                                            "svr75@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "CEO/DIRECTOR OF PHOTOGRAPHY"
-                                        ],
-                                        "name": [
-                                            "KIM JUNHONG"
-                                        ],
-                                        "email": [
-                                            "source2001@zanybros.com"
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "component": "content-contact-people",
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "PRODUCER"
-                                        ],
-                                        "name": [
-                                            "KIM LEESEOK"
-                                        ],
-                                        "email": [
-                                            "7051dd@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "DIRECTOR OF PHOTOGRAPHY"
-                                        ],
-                                        "name": [
-                                            "KIM DOYEON"
-                                        ],
-                                        "email": [
-                                            "rladus2@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "DIRECTOR"
-                                        ],
-                                        "name": [
-                                            "LIM SUKJIN"
-                                        ],
-                                        "email": [
-                                            "starzshootz@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "1st ASSIST DIRECTOR"
-                                        ],
-                                        "name": [
-                                            "LIM HAEJIN"
-                                        ],
-                                        "email": [
-                                            "dlgowls6242@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "DIRECTOR OF PHOTOGRAPHY"
-                                        ],
-                                        "name": [
-                                            "LEE DONGYEOL"
-                                        ],
-                                        "email": [
-                                            "nanyeo@zanybros.com"
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "component": "view-content-title",
-                    "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#272727",
-                        "color": "#fff",
-                        "title": "POST-PRODUCTION",
-                        "menu" : "-"
-                    }
-                },
-                {
-                    "component": "view-content-holder",
-                    "data": {
-                        "backgroundColor": "#272727",
-                        "width": "100%",
-                        "class": "__content-list-frame",
-                        "content": [
-                            {
-                                "component": "content-contact-people",
-                                "title": [
-                                    "EDIT"
-                                ],
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "GENERAL MANAGER/EDITOR"
-                                        ],
-                                        "name": [
-                                            "JEONG SEYOUNG"
-                                        ],
-                                        "email": [
-                                            "purin423@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "EDITOR / PRODUCER"
-                                        ],
-                                        "name": [
-                                            "LEE KISUK"
-                                        ],
-                                        "email": [
-                                            "saphirsuk@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "EDITOR"
-                                        ],
-                                        "name": [
-                                            "SONG DONGWOOK"
-                                        ],
-                                        "email": [
-                                            "ehddnr-dia@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "EDITOR"
-                                        ],
-                                        "name": [
-                                            "JUNG SO YOUN"
-                                        ],
-                                        "email": [
-                                            "mythirick@zanybros.com"
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "component": "content-contact-people",
-                                "title": [
-                                    "VISUAL ART MOTION GRAPHIC"
-                                ],
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "GENERAL MANAGER/EDITOR"
-                                        ],
-                                        "name": [
-                                            "JEONG SEYOUNG"
-                                        ],
-                                        "email": [
-                                            "soulart@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "VISUAL ARTIST"
-                                        ],
-                                        "name": [
-                                            "LEE HYUANG MIN"
-                                        ],
-                                        "email": [
-                                            "crazyjerry@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "VISUAL ARTIST"
-                                        ],
-                                        "name": [
-                                            "LEE SEUNG MIN"
-                                        ],
-                                        "email": [
-                                            "2094300@zanybros.com"
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "component": "content-contact-people",
-                                "title": [
-                                    "COLOR GRADING"
-                                ],
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "COLORLIST"
-                                        ],
-                                        "name": [
-                                            "LEE HYUNAH"
-                                        ],
-                                        "email": [
-                                            "idsti@zanybros.com"
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "component": "view-content-title",
-                    "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#272727",
-                        "color": "#fff",
-                        "title": "ZANYBROS COMMUNICATION in JAPAN",
-                        "menu" : "-"
-                    }
-                },
-                {
-                    "component": "view-content-holder",
-                    "data": {
-                        "backgroundColor": "#272727",
-                        "width": "100%",
-                        "class": "__content-list-frame",
-                        "content": [
-                            {
-                                "component": "content-contact-people",
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "CEO/PRODUCER"
-                                        ],
-                                        "name": [
-                                            "DAISUKE NOMURA"
-                                        ],
-                                        "email": [
-                                            "nomura1974@zanybros.com"
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "component": "view-content-margin",
-                    "data": {
-                        "backgroundColor": "#272727",
-                        "height": "3vw"
                     }
                 }
             ]

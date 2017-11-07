@@ -8,10 +8,15 @@
 <template>
     <div class="content-video"
          :class="[{show:isReady}]"
-         :style="{
-             height: videoHeight + 'px'
-             }"
     >
+        <div
+                class="video"
+                :style="{
+                height: videoHeight + 'px',
+                'margin-top' : (videoHeight/2 * -1) + 'px',
+                'margin-left' : (videoWidth/2 * -1) + 'px'
+             }"
+        >
         <youtube :video-id="jsonData.videoId"
                  @ready="setYoutubeReady"
                  :player-vars="{
@@ -26,6 +31,7 @@
                  :mute="isMute"
                  @ended="handlePlayEnd"
         ></youtube>
+        </div>
     </div>
 </template>
 
@@ -33,11 +39,8 @@
 <style scoped lang="scss">
     @import "~scssMixin";
 
-    .video-holder {
+    .content-video {
         visibility: hidden;
-        display: block;
-        position:relative;
-
         &.show {
             visibility: visible;
         }

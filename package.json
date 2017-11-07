@@ -30,6 +30,7 @@
     "vue-youtube-embed": "^2.1.1",
     "webpack": "^3.0.0"
   },
+
   "description": "zanybros official homepage",
   "main": "webpack.config.js",
   "repository": {

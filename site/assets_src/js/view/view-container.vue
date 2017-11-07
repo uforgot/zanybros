@@ -99,6 +99,7 @@
     import ViewContentHolder from './view-content-holder.vue';
     import ViewContentMargin from './view-content-margin.vue';
     import ViewContentTitle from './view-content-title.vue';
+    import ViewContentAnchor from './view-content-anchor.vue';
 
     import CompVideoFrame from '../component/comp-video-frame.vue';
     import ViewFooter from './view-footer.vue';
@@ -112,6 +113,7 @@
             ViewContentHolder,
             ViewContentTitle,
             ViewContentMargin,
+            ViewContentAnchor,
             ViewFooter,
             CompVideoFrame,
 

@@ -12,11 +12,11 @@
             height : jsonData.height,
             'color' : color
          }"
-         :title-name="jsonData.title"
     >
         <h3 class="scroll-animation hide"
             animation-offset="-20"
-            v-html="jsonData.title"></h3>
+            v-html="jsonData.title"
+        ></h3>
     </div>
 </template>
 
