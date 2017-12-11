@@ -55,7 +55,6 @@ const config = {
                 {from:"./js/vendor/modernizr.js", to:"./js/vendor/modernizr.js"},
                 {from:"./js/vendor/detectizr.js", to:"./js/vendor/detectizr.js"},
 
-                {from:"./css/**/*"},
                 {from:"./fonts/**/*"},
                 {from:"./images/**/*"},
                 {from:"./video/**/*"},

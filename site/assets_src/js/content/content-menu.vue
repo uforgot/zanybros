@@ -30,13 +30,13 @@
                 </router-link></h1>
             </li>
             <li>
-                <h1><router-link :to="{ name: 'works'}">
-                    <div @click="menuCloseClickHandler">OUR WORKS</div>
+                <h1><router-link :to="{ name: 'whatwedo'}">
+                    <div @click="menuCloseClickHandler">WHAT WE DO</div>
                 </router-link></h1>
             </li>
             <li>
-                <h1><router-link :to="{ name: 'contact'}">
-                    <div @click="menuCloseClickHandler">CONTACT US</div>
+                <h1><router-link :to="{ name: 'ourworks'}">
+                    <div @click="menuCloseClickHandler">OUR WORKS</div>
                 </router-link></h1>
             </li>
         </ul>

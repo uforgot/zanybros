@@ -9,9 +9,9 @@ Vue.mixin({
         getCurrentIndex: function($e) {
             switch ($e) {
                 case 'about' : return 0;
-                case 'works' : return 1;
-                case 'works-view' : return 1;
-                case 'contact' : return 2;
+                case 'whatwedo' : return 1;
+                case 'ourworks' : return 2;
+                case 'works-view' : return 2;
             }
         },
         getPrevIndex : function($e) {
@@ -40,9 +40,9 @@ Vue.mixin({
                 case 0:
                     return 'about';
                 case 1:
-                    return 'works';
+                    return 'whatwedo';
                 case 2:
-                    return 'contact';
+                    return 'ourworks';
             }
         },
         getWorksDataByIndex:function($index) {

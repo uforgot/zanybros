@@ -80,14 +80,14 @@
         { path: '*',redirect:window.rootPath+'/about'},
         { path: window.rootPath, redirect:window.rootPath+'/about'},
         { name:'about', path: window.rootPath+'/about', component: ViewContainer },
-        { name:'works', path: window.rootPath+'/works', component: ViewContainer,
+        { name:'whatwedo', path: window.rootPath+'/whatwedo', component: ViewContainer},
+        { name:'ourworks', path: window.rootPath+'/ourworks', component: ViewContainer,
             children : [{
                 name:'works-view',
                 path:'view/:id',
                 component:ViewWorksView
             }]
-        },
-        { name:'contact', path: window.rootPath+'/contact', component: ViewContainer}
+        }
     ];
 //    mode:'history',
     const router = new VueRouter({

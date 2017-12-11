@@ -53,18 +53,16 @@
                             },
                             {
                                 "component": "content-txt",
-                                "class": "left",
+                                "class": "center",
                                 "title": [
-                                    "We are creators of content",
-                                    "that pursues newness that is",
-                                    "unforgettable."
+                                    "WE ARE UNFORGETTABLE ",
+                                    "CONTENT CREATORS"
                                 ],
                                 "comment": [
-                                    "It started as a professional music video production in 2001,",
-                                    "and now it is expanding its business field with total contents",
-                                    "channel such as advertisement, movie, drama production,",
-                                    "overseas artist discovery, education and self-visual contents",
-                                    "based on various networking and image technology."
+                                    "Who are always looking for new trends.",
+                                    "In 2001, Hong Won-Ki and Kim Jun-Hong co-founded Zanybros, a music video production company, and now it has become the largest production company in Korea having executed more than 1,000 successful video productions.",
+                                    "<br>",
+                                    "And now, ZANYBROS has been expanding its business field to Entertainment Contents Media Group by creating ZANY-TV, its own content creation channel producing new media contents."
                                 ]
                             }
                         ]
@@ -82,19 +80,15 @@
                             },
                             {
                                 "component": "content-txt",
-                                "class": "center",
+                                "class": "left",
                                 "title": [
-                                    "We eliminate",
-                                    "the boundaries of the creative",
-                                    "and present a new perspective."
+                                    "WE GOT RID OF ",
+                                    "THE WORLD'S CREATIVITY BOUNDARIES",
+                                    "AND PRESENT YOU A NEW PERSPECTIVE"
                                 ],
                                 "comment": [
-                                    "He has global filming experience in Asia, North America, Europe,",
-                                    "and has networking with leading productions and entertainment companies around the world.",
-                                    "",
-                                    "We are presenting new creatives by developing skills necessary for skillful staffs,",
-                                    "genres and visual effects from conceptual planning through production to post",
-                                    "production, crossing continent, language, and cultural boundaries."
+                                    "By crossing continent barriers, language, and cultural boundaries,",
+                                    "We are presenting new creatives by developing our talented staff with skills needed for conceptual planning, production, post-production, and visual effects."
                                 ]
                             }
                         ]
@@ -103,118 +97,54 @@
                 {
                     "component": "view-content-holder",
                     "data": {
-                        "backgroundColor": "#000",
                         "width": "100%",
                         "height": "100%",
                         "content": [
                             {
-                                "component": "content-image",
-                                "title": [
-                                    ""
-                                ],
-                                "class": "left",
-                                "imageUrl": "assets/images/about/section3_img.jpg"
+                                "component": "content-background-image",
+                                "imageUrl": "assets/images/about/section3_bg.jpg"
                             },
                             {
                                 "component": "content-txt",
                                 "class": "right",
                                 "title": [
-                                    "We lead",
-                                    "ever-changing trends and",
-                                    "technologies."
+                                    "WE LEAD CHANGING TRENDS",
+                                    "AND TECHNOLOGIES EVERY DAY."
                                 ],
                                 "comment": [
-                                    "Trends and technologies change day by day, but we have",
-                                    "used that opportunity as an opportunity. Enjoy new things,",
-                                    "share ideas, inspire artists,customers, and advertisers.",
-                                    "",
-                                    " We continually improve and embrace new technologies,",
-                                    "new ways of thinking for our greatest work."
+                                    "Trends and technologies change every day, but we have been using this changes as opportunities.",
+                                    "While enjoying new things, we also like to share ideas, inspiring artists and the public.",
+                                    "<br>",
+                                    "In order to do our next greatest work, we keep evolving, embracing new technologies & new ways of thinking"
                                 ]
                             }
                         ]
                     }
                 },
-                {
-                    "component": "view-content-anchor",
-                    "data": {
-                        "menu": "WHAT WE DO",
-                        "anchor" : "WHATWEDO"
-                    }
-                },
+
                 {
                     "component": "view-content-holder",
                     "data": {
-                        "backgroundColor": "#000",
                         "width": "100%",
                         "height": "100%",
                         "content": [
                             {
-                                "component": "content-about-category",
-                                "width": "90%",
-                                "height": "80%",
-                                "category": [
-                                    {
-                                        "title": [
-                                            "MEDIA",
-                                            "PRODUCTION"
-                                        ],
-                                        "comment": [
-                                            "We have produced over 1,000 commercial contents, more than 120 each year. From concept planning to production, directing, shooting, 2D / 3D, editing and color correction, we offer you a one-stop solution quickly.",
-                                            "",
-                                            "We are showing high-level visual work with solid teamwork with professional staff in each field.",
-                                            "We are currently producing content with partners around the world, including in Asia."
-                                        ],
-                                        "imageUrl": "assets/images/about/section4_bg_1.jpg"
-                                    },
-                                    {
-                                        "title": [
-                                            "GLOBAL",
-                                            "ENTERTAINMENT"
-                                        ],
-                                        "comment": [
-                                            "ZANYBROS. has a 50% share of the K-POP music video.",
-                                            "",
-                                            "We have also signed an MOU with Korea's best record producer team and Swedish Music Publishing Company, and are expanding our business into entertainment content business including global sound recording business, differentiated visual directing, artist concept establishment, idle production consulting and training."
-                                        ],
-                                        "imageUrl": "assets/images/about/section4_bg_2.jpg"
-                                    },
-                                    {
-                                        "title": [
-                                            "NEW MEDIA",
-                                            "CONTENT"
-                                        ],
-                                        "comment": [
-                                            "Mobile, and inte\net environments.",
-                                            "",
-                                            "We also operate channels that include YouTube broadcasts, micro-movies, web dramas, and snack content through collaborative content creation with companies, entertainment content and global platform providers."
-                                        ],
-                                        "imageUrl": "assets/images/about/section4_bg_3.jpg"
-                                    },
-                                    {
-                                        "title": [
-                                            "CREATIVE",
-                                            "R&D"
-                                        ],
-                                        "comment": [
-                                            "We support various productions and post production progress with technical staff with many years of experience and high-end professional equipment.",
-                                            "",
-                                            "It has become the best supporter in the field of photography by providing shooting studios, lighting equipment and manpower, post-production editing, color grading, 2D & 3D graphic production, studio for photography."
-                                        ],
-                                        "imageUrl": "assets/images/about/section4_bg_4.jpg"
-                                    },
-                                    {
-                                        "title": [
-                                            "VALUE",
-                                            "ADDED SUPPORT"
-                                        ],
-                                        "comment": [
-                                            "Analyze content trends and research various content creation methods.",
-                                            "",
-                                            "We are planning new contents, testing new image techniques such as Virtual Reality (VR) production, drone shooting, and developing and delivering content creation system education programs for overseas creators."
-                                        ],
-                                        "imageUrl": "assets/images/about/section4_bg_5.jpg"
-                                    }
+                                "component": "content-background-image",
+                                "imageUrl": "assets/images/about/section4_bg.jpg"
+                            },
+                            {
+                                "component": "content-txt",
+                                "class": "center",
+                                "title": [
+                                    "ASIA NO.1",
+                                    "GLOBAL ENTERTAINMENT CONTENTS",
+                                    "MEDIA GROUP"
+                                ],
+                                "comment": [
+                                    "In 2013, ZANYBROS’s first overseas base, called ZACS (ZANYBROS COMMUNICATIONS) was established in Japan and started overseas business.",
+                                    "Following the goal of becoming Asia’s NO 1 Global Ent Content media group, In 2015, the Global Intern-Ship Program was started in order to promote and develop global talent.",
+                                    "<br>",
+                                    "More recently, in October 2017, ZANYBROS 's Chinese subsidiary, Jiaxing Shanghai Cultural Transformation Co., Ltd., was set up to take over the global market."
                                 ]
                             }
                         ]
@@ -271,47 +201,45 @@
                                 "item": [
                                     {
                                         "title": [
-                                            "SNH48 - Untitled"
+                                            "2017"
                                         ],
                                         "comment": [
-                                            "2016 ASIA NEW SONG RANKING AWARD",
-                                            "BEST MUSIC VIDEO OF THE YEAR"
+                                            "RED DOT AWARD  WINNER - SAMSUNG NOTEBOOK9",
+                                            "SORIBADA K MUSIC AWARD BEST MUSICVIDEO WINNER - ZANYBROS"
                                         ]
                                     },
                                     {
                                         "title": [
-                                            "2PM -WINNER"
+                                            "2016"
                                         ],
                                         "comment": [
-                                            "2014 MNET ASIA MUSIC AWARD",
-                                            "BEST MUSIC VIDEO OF  THE YEAR"
+                                            "ASIA NEW SONG RANKING AWARD BEST MUSIC VIDEO OF  THE YEAR - SNH48 夢想島",
+                                            "Soompi Award  BEST HANRYU WINNER - ZANYBROS"
                                         ]
                                     },
                                     {
                                         "title": [
-                                            "HYUNA - RED"
+                                            "2014"
                                         ],
                                         "comment": [
-                                            "2014 ROLLING STONES MAGAZINE",
-                                            "BEST MUSIC VIDEO NO.5 IN THE WORLD"
+                                            "MNET ASIA MUSIC AWARD BEST MUSIC VIDEO OF  THE YEAR - 2PM WINNER",
+                                            "ROLLING STONES MAGAZINE BEST MUSIC VIDEO NO.5 IN THE WORLD - HYUNA RED"
                                         ]
                                     },
                                     {
                                         "title": [
-                                            "HONG WONKI"
+                                            "2013"
                                         ],
                                         "comment": [
-                                            "2009 MNET ASIA MUSIC AWARD",
-                                            "BEST DIRECTOR OF  THE YEAR WINNER"
+                                            "YOUTUBE AWARD BEST MUSICVIDEO WINNER - Girl’s generation I GOT A BOY"
                                         ]
                                     },
                                     {
                                         "title": [
-                                            "Girlufffduc172 generation - I GOT A BOY"
+                                            "2009"
                                         ],
                                         "comment": [
-                                            "2013 YOUTUBE AWARD",
-                                            "BEST MUSICVIDEO WINNER"
+                                            "MNET ASIA MUSIC AWARD BEST DIRECTOR OF  THE YEAR WINNER - HONG WONKI"
                                         ]
                                     }
                                 ]
@@ -411,6 +339,22 @@
                                     },
                                     {
                                         "imageUrl": "assets/images/about/partner19.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner20.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner21.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner22.jpg"
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/about/partner23.jpg"
+                                    },
+
+                                    {
+                                        "imageUrl": "assets/images/about/partner24.jpg"
                                     }
                                 ]
                             }
@@ -421,6 +365,66 @@
                     "component": "view-content-margin",
                     "data": {
                         "backgroundColor": "#fff",
+                        "height": "3vw"
+                    }
+                },
+                {
+                    "component": "view-content-anchor",
+                    "data": {
+                        "menu": "CONTACT TO US",
+                        "anchor" : "CONTACTTOUS"
+                    }
+                },
+                {
+                    "component": "view-content-title",
+                    "data": {
+                        "height": "10vw",
+                        "backgroundColor": "#272727",
+                        "color": "#fff",
+                        "title": "CONTACT TO US"
+                    }
+                },
+                {
+                    "component": "view-content-holder",
+                    "data": {
+                        "backgroundColor": "#272727",
+                        "width": "100%",
+                        "content": [
+                            {
+                                "component": "content-about-award",
+                                "class": "",
+                                "item": [
+                                    {
+                                        "title": [
+                                            "ZANYBROS co.ltd",
+                                            "KOREA"
+                                        ],
+                                        "comment": [
+                                            "2ND FLOOR TYTEX B/D, 64-24 NONHYUN-DONG, GANGNAM-GU, SEOUL KOREA",
+                                            "TEL. 82 2 516 2192 / FAX. 82 2 516 2193",
+                                            "zanybros75@gmail.com"
+                                        ]
+                                    },
+                                    {
+                                        "title": [
+                                            "ZANYBROS COMMUNICATIONS",
+                                            "JAPAN"
+                                        ],
+                                        "comment": [
+                                            "#707 3-7-1 NISHIGOTANDA, SHINAGAWA-KU, TOKYO JAPAN ZIP 141-0031",
+                                            "TEL. 81 50 3592 3992 / MOBILE. 81 90 4076 0984",
+                                            "nomura1974@gmail.com"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "component": "view-content-margin",
+                    "data": {
+                        "backgroundColor": "#272727",
                         "height": "3vw"
                     }
                 }
@@ -437,11 +441,12 @@
                         "height": "100%"
                     }
                 },
+
                 {
                     "component": "view-content-anchor",
                     "data": {
-                        "menu": "H.Q OFFICE",
-                        "anchor" : "HQOFFICE"
+                        "menu": "MEDIA PROD.",
+                        "anchor" : "MEDIAPRODUCTION"
                     }
                 },
                 {
@@ -453,377 +458,196 @@
                         "content": [
                             {
                                 "component": "content-background-image",
-                                "imageUrl": "assets/images/map.jpg"
+                                "imageUrl": "assets/images/whatwedo/section1_bg.jpg"
                             },
                             {
                                 "component": "content-txt",
-                                "class": "left",
+                                "class": "right",
                                 "title": [
-                                    "ZANYBROS",
-                                    "HEADQUATER"
+                                    "MEDIA",
+                                    "PRODUCTION"
                                 ],
                                 "comment": [
-                                    "2ND FLOOR TYTEX B/D,",
-                                    "64-24 NONHYUN-DONG",
-                                    "GANGNAM-GU, SEOUL KOREA",
-                                    "",
-                                    "Tel/ 82-2-516-2192",
-                                    "Fax/ 82-2-516-2193",
-                                    "Email/ zanybros@zanybros.com"
+                                    "We have been producing more than 100 films per year, totaling more than 1,000 entertainment content outputs.",
+                                    "From concept planning to production, development, cinematography, 2D / 3D, editing and color corrections, Being the only company in Korea to be able to provide all those services based on our one-stop solution method.",
+                                    "<br>",
+                                    "We offer a high level of visual work with strong teamwork from each field of expertise.",
+                                    "We are currently producing content with partners worldwide including Asia."
+
                                 ]
                             }
                         ]
                     }
                 },
+
                 {
                     "component": "view-content-anchor",
                     "data": {
-                        "menu": "GLOBAL COMM.",
-                        "anchor" : "GLOBALCOMM"
+                        "menu": "GLOBAL ENT.",
+                        "anchor" : "GLOBALENTERTAINMENT"
                     }
                 },
                 {
                     "component": "view-content-holder",
                     "data": {
-                        "backgroundColor": "#111",
-                        "width": "50%",
-                        "height": "50%",
+                        "backgroundColor": "#000",
+                        "width": "100%",
+                        "height": "100%",
                         "content": [
+                            {
+                                "component": "content-image",
+                                "title": [
+                                    ""
+                                ],
+                                "class": "right",
+                                "imageUrl": "assets/images/whatwedo/section2_img.jpg"
+                            },
                             {
                                 "component": "content-txt",
                                 "class": "left",
                                 "title": [
-                                    "ZANYBROS",
-                                    "COMMUNICATION",
-                                    "JAPAN"
+                                    "GLOBAL",
+                                    "ENTERTAINMENT"
                                 ],
                                 "comment": [
-                                    "2ND FLOOR TYTEX B/D,",
-                                    "64-24 NONHYUN-DONG",
-                                    "GANGNAM-GU, SEOUL KOREA",
-                                    "",
-                                    "Tel/ 82-2-516-2192",
-                                    "Fax/ 82-2-516-2193",
-                                    "Email/ zanybros@zanybros.com"
+                                    "We are a Joint venture, working together not only with the best music production teams in Korea but also with world-famous producers from countries such as Sweden, UK and USA.",
+                                    "We are expanding our business to the fields of global contents business, differentiated visual directing, artist concept establishment, idol production consulting & training,"
+                                ],
+                                "images":[
+                                    {
+                                        "imageUrl": "assets/images/whatwedo/section2_img_1.jpg",
+                                        "title" : ""
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/whatwedo/section2_img_2.jpg",
+                                        "title" : ""
+                                    },
+                                    {
+                                        "imageUrl": "assets/images/whatwedo/section2_img_3.jpg",
+                                        "title" : ""
+                                    }
                                 ]
                             }
                         ]
                     }
                 },
-                {
-                    "component": "view-content-holder",
-                    "data": {
-                        "backgroundImg": "assets/images/contact/zanybros_china.jpg",
-                        "width": "50%",
-                        "height": "50%",
-                        "content": [
-                            {
-                                "component": "content-txt",
-                                "class": "left",
-                                "title": [
-                                    "ZANYBROS",
-                                    "COMMUNICATION",
-                                    "CHINA"
-                                ],
-                                "comment": [
-                                    "2ND FLOOR TYTEX B/D,",
-                                    "64-24 NONHYUN-DONG",
-                                    "GANGNAM-GU, SEOUL KOREA",
-                                    "",
-                                    "Tel/ 82-2-516-2192",
-                                    "Fax/ 82-2-516-2193",
-                                    "Email/ zanybros@zanybros.com"
-                                ]
-                            }
-                        ]
-                    }
-                },
+
                 {
                     "component": "view-content-anchor",
                     "data": {
-                        "menu": "PEOPLES",
-                        "anchor" : "PEOPLES"
-                    }
-                },
-                {
-                    "component": "view-content-title",
-                    "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#272727",
-                        "color": "#fff",
-                        "title": "PRODUCTION"
+                        "menu": "NEW MEDIA CONT.",
+                        "anchor" : "NEWMEDIACONTENT"
                     }
                 },
                 {
                     "component": "view-content-holder",
                     "data": {
-                        "backgroundColor": "#272727",
+                        "backgroundColor": "#000",
                         "width": "100%",
-                        "class": "__content-list-frame",
+                        "height": "100%",
                         "content": [
                             {
-                                "component": "content-contact-people",
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "CEO/DIRECTOR"
-                                        ],
-                                        "name": [
-                                            "HONG WONKI"
-                                        ],
-                                        "email": [
-                                            "svr75@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "CEO/DIRECTOR OF PHOTOGRAPHY"
-                                        ],
-                                        "name": [
-                                            "KIM JUNHONG"
-                                        ],
-                                        "email": [
-                                            "source2001@zanybros.com"
-                                        ]
-                                    }
-                                ]
+                                "component": "content-background-image",
+                                "imageUrl": "assets/images/whatwedo/section3_bg.jpg"
                             },
                             {
-                                "component": "content-contact-people",
-                                "peoples": [
+                                "component": "content-txt",
+                                "class": "center",
+                                "title" : [
+                                    "NEW MEDIA CONTENTS"
+                                ],
+                                "comment": [
+                                    "We are producing a number of digital video contents suitable for mobile and internet environments.",
+                                    "We also operate channels that include YouTube broadcasts, micro-movies, web dramas, and snack content through collaborative content creation with companies, entertainment content and global platform providers."
+                                ],
+                                "images":[
                                     {
-                                        "title": [
-                                            "PRODUCER"
-                                        ],
-                                        "name": [
-                                            "KIM LEESEOK"
-                                        ],
-                                        "email": [
-                                            "7051dd@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "DIRECTOR OF PHOTOGRAPHY"
-                                        ],
-                                        "name": [
-                                            "KIM DOYEON"
-                                        ],
-                                        "email": [
-                                            "rladus2@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "DIRECTOR"
-                                        ],
-                                        "name": [
-                                            "LIM SUKJIN"
-                                        ],
-                                        "email": [
-                                            "starzshootz@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "1st ASSIST DIRECTOR"
-                                        ],
-                                        "name": [
-                                            "LIM HAEJIN"
-                                        ],
-                                        "email": [
-                                            "dlgowls6242@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "DIRECTOR OF PHOTOGRAPHY"
-                                        ],
-                                        "name": [
-                                            "LEE DONGYEOL"
-                                        ],
-                                        "email": [
-                                            "nanyeo@zanybros.com"
-                                        ]
+                                        "imageUrl": "assets/images/whatwedo/section3_img.jpg",
+                                        "title" : ""
                                     }
                                 ]
                             }
                         ]
                     }
                 },
+
                 {
-                    "component": "view-content-title",
+                    "component": "view-content-anchor",
                     "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#272727",
-                        "color": "#fff",
-                        "title": "POST-PRODUCTION"
+                        "menu": "CREATIVE SUPPORT",
+                        "anchor" : "CREATIVESUPPORT"
                     }
                 },
                 {
                     "component": "view-content-holder",
                     "data": {
-                        "backgroundColor": "#272727",
+                        "backgroundColor": "#000",
                         "width": "100%",
-                        "class": "__content-list-frame",
+                        "height": "100%",
                         "content": [
                             {
-                                "component": "content-contact-people",
-                                "title": [
-                                    "EDIT"
+                                "component": "content-txt",
+                                "class": "center",
+                                "title" : [
+                                    "CREATIVE SUPPORT"
                                 ],
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "GENERAL MANAGER/EDITOR"
-                                        ],
-                                        "name": [
-                                            "JEONG SEYOUNG"
-                                        ],
-                                        "email": [
-                                            "purin423@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "EDITOR / PRODUCER"
-                                        ],
-                                        "name": [
-                                            "LEE KISUK"
-                                        ],
-                                        "email": [
-                                            "saphirsuk@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "EDITOR"
-                                        ],
-                                        "name": [
-                                            "SONG DONGWOOK"
-                                        ],
-                                        "email": [
-                                            "ehddnr-dia@zanybros.com"
-                                        ]
-                                    },
-                                    {
-                                        "title": [
-                                            "EDITOR"
-                                        ],
-                                        "name": [
-                                            "JUNG SO YOUN"
-                                        ],
-                                        "email": [
-                                            "mythirick@zanybros.com"
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "component": "content-contact-people",
-                                "title": [
-                                    "VISUAL ART MOTION GRAPHIC"
+                                "comment": [
+                                    "We support multiple production and post production processes with the technical staff who have many years of experience and high-end professional equipment.",
+                                    "It has become the best supporter in the field with its shooting personnel, lighting equipment and manpower, post-production editing, color grading, 2D & 3D graphics production, studio for shooting."
                                 ],
-                                "peoples": [
+                                "images":[
                                     {
-                                        "title": [
-                                            "GENERAL MANAGER/EDITOR"
-                                        ],
-                                        "name": [
-                                            "JEONG SEYOUNG"
-                                        ],
-                                        "email": [
-                                            "soulart@zanybros.com"
-                                        ]
+                                        "imageUrl": "assets/images/whatwedo/section4_img_1.jpg",
+                                        "title" : "ASTRO Digital Lab"
                                     },
                                     {
-                                        "title": [
-                                            "VISUAL ARTIST"
-                                        ],
-                                        "name": [
-                                            "LEE HYUANG MIN"
-                                        ],
-                                        "email": [
-                                            "crazyjerry@zanybros.com"
-                                        ]
+                                        "imageUrl": "assets/images/whatwedo/section4_img_2.jpg",
+                                        "title" : "Technical Support ROLLCAM"
                                     },
                                     {
-                                        "title": [
-                                            "VISUAL ARTIST"
-                                        ],
-                                        "name": [
-                                            "LEE SEUNG MIN"
-                                        ],
-                                        "email": [
-                                            "2094300@zanybros.com"
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "component": "content-contact-people",
-                                "title": [
-                                    "COLOR GRADING"
-                                ],
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "COLORLIST"
-                                        ],
-                                        "name": [
-                                            "LEE HYUNAH"
-                                        ],
-                                        "email": [
-                                            "idsti@zanybros.com"
-                                        ]
+                                        "imageUrl": "assets/images/whatwedo/section4_img_3.jpg",
+                                        "title" : "STROBE Special Light"
                                     }
                                 ]
                             }
                         ]
                     }
                 },
+
                 {
-                    "component": "view-content-title",
+                    "component": "view-content-anchor",
                     "data": {
-                        "height": "10vw",
-                        "backgroundColor": "#272727",
-                        "color": "#fff",
-                        "title": "ZANYBROS COMMUNICATION in JAPAN"
+                        "menu": "CREATIVE R&D",
+                        "anchor" : "CREATIVER&D"
                     }
                 },
                 {
                     "component": "view-content-holder",
                     "data": {
-                        "backgroundColor": "#272727",
+                        "backgroundColor": "#000",
                         "width": "100%",
-                        "class": "__content-list-frame",
+                        "height": "100%",
                         "content": [
                             {
-                                "component": "content-contact-people",
-                                "peoples": [
-                                    {
-                                        "title": [
-                                            "CEO/PRODUCER"
-                                        ],
-                                        "name": [
-                                            "DAISUKE NOMURA"
-                                        ],
-                                        "email": [
-                                            "nomura1974@zanybros.com"
-                                        ]
-                                    }
+                                "component": "content-background-image",
+                                "imageUrl": "assets/images/whatwedo/section5_bg.jpg"
+                            },
+                            {
+                                "component": "content-txt",
+                                "class": "center",
+                                "title" : [
+                                    "CREATIVE R&D"
+                                ],
+                                "comment": [
+                                    "We analyze content trends and research various content creation methods.",
+                                    "We are developing new styles of video contents, testing new image techniques such as Virtual Reality (VR) production, Drone shooting, and also developing and executing training programs for overseas creators."
                                 ]
                             }
                         ]
-                    }
-                },
-                {
-                    "component": "view-content-margin",
-                    "data": {
-                        "backgroundColor": "#272727",
-                        "height": "3vw"
                     }
                 }
+
+
             ]
         },
         {

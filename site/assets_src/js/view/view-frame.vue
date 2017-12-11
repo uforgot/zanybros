@@ -202,7 +202,7 @@
         methods : {
             menuCloseClickHandler : function($e) {
                 if (this.isViewShow) {
-                    this.$router.push({name:'works'});
+                    this.$router.push({name:'ourworks'});
                 }
                 EventBus.$emit(EventBus.MENU_HIDE);
             },

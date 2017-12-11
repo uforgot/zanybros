@@ -15,14 +15,27 @@
     >
         <h2>
             <span v-for="(item, index) in jsonData.title"
+                  v-html="item"
             class="scroll-animation hide"
             :class="{'last':index == (jsonData.title.length-1) }"
-            >{{item}}</span>
+            ></span>
         </h2>
-        <p>
+        <p class="txt">
             <span  v-for="item in jsonData.comment"
                 class="scroll-animation hide"
-            >{{item}}</span>
+                   v-html="item"
+            ></span>
+        </p>
+        <p class="image">
+            <span v-for="(item, index) in jsonData.images"
+                  class="scroll-animation hide"
+                  :class="{'last':index == (jsonData.images.length-1) }"
+            ><div class="image"><img :src="item.imageUrl"
+                  :style="{
+                    'max-width':imageWidth
+                  }"
+            ></div><div class="title" v-html="item.title"></div>
+            </span>
         </p>
     </div>
 </template>
@@ -76,7 +89,8 @@
             return {
                 leftPosition:0,
                 rightPosition:0,
-                marginLeft:0
+                marginLeft:0,
+                imageWidth:0
             };
         },
 
@@ -102,8 +116,12 @@
                     this.rightPosition =  ((100/percentRight) * 10) +'%';
                 }
             } else {
-                this.leftPosition = '50%';
-                this.marginLeft = '-20vw';
+//                this.leftPosition = '50%';
+//                this.marginLeft = '-20vw';
+            }
+
+            if (this.jsonData.images) {
+                this.imageWidth = (80 - (2 * (this.jsonData.images.length-1))) / (this.jsonData.images.length) + 'vw';
             }
         },
         //beforeUpdate : function() {},

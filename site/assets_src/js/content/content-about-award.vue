@@ -14,8 +14,8 @@
                 class="award scroll-animation hide"
                 animation-offset="-30"
         >
-            <h5 v-html="getJsonMultilineTxt(item.title)"></h5>
-            <small v-html="getJsonMultilineTxt(item.comment)"></small>
+            <h4 v-html="getJsonMultilineTxt(item.title)"></h4>
+            <p v-html="getJsonMultilineTxt(item.comment)"></p>
         </div>
     </div>
 </template>

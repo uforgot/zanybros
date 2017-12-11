@@ -51,7 +51,7 @@
   font-style: normal;
 }
 
-
+@import url(http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
 
 /* 웹 폰트 자간, 행간 디테일 세팅  */
 body,input,textarea,select,button, td {
@@ -80,8 +80,8 @@ h2 {
   white-space   : pre-line;
   //font-family   : "GothamUltra";
   font-family: "GothamMedium";
-  font-size     : 2vw;
-  line-height   : 2.7vw;
+  font-size     : 34px;
+  line-height   : 40px;
   //font-weight   : bold;
   letter-spacing: -0.05em;
 }
@@ -115,11 +115,11 @@ h6 {
 
 p {
   white-space : pre-line;
+  //font-family: "Nanum Gothic";
   font-family : "GothamMedium";
-  //font-size   : 14px;
-  //line-height : 24px;
-  font-size: 1vw;
-  line-height: 1.8vw;
+  font-size   : 14px;
+  line-height : 25px;
+  //font-weight   : bold;
 
   letter-spacing : -0.02em;
   @include opacity(0.8);

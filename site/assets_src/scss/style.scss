@@ -95,7 +95,7 @@ body {
         }
 
         &.left { left : 30%; }
-        &.right { right : 30%; }
+        &.right { left : 70%; }
     }
 
     .content-background-image {
@@ -119,7 +119,7 @@ body {
         position    : absolute;
         top : 50%;
         transform   : translateY(-50%);
-        width       : 40vw;
+        width       : 100%;
         //margin-left : -20vw;
 
         h2{
@@ -127,17 +127,50 @@ body {
                 &.last { margin-bottom : 2vh; }
             }
         }
-        p { }
+
+        .txt {
+            position:relative;
+            max-width:600px;
+            //border:1px solid #fff;
+            left:50vw;
+            width:60vw;
+            transform   : translateX(-50%);
+        }
+
+        .image {
+            margin-top:2vw;
+
+            span {
+                display:inline-block;
+                margin-right:2vw;
+
+                .title {margin-top:1vw;}
+
+                &.last {
+                    margin-right:0;
+                }
+            }
+        }
 
         &.left {
-            //margin-left : -40%;
+            width:auto;
             text-align  : left;
+            .txt {
+                left:0;
+                width:40vw;
+                transform   : translateX(0%);
+            }
         }
 
         &.right {
             width       : auto;
-            //margin-left : 10%;
             text-align  : left;
+            .txt {
+                left:0;
+                width:40vw;
+                transform   : translateX(0%);
+            }
+
         }
     }
 
@@ -165,12 +198,12 @@ body {
 
     .content-about-award {
         .award {
-            display    : inline-block;
+            display    : block;
             position   : relative;
             text-align : center;
             margin     : 0 25px 50px 25px;
 
-            h5 { text-transform : uppercase; margin-bottom  : 5px; }
+            h4 { text-transform : uppercase; margin-bottom  : 5px; }
             p {}
         }
 

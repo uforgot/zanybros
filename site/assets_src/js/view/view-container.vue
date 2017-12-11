@@ -193,7 +193,7 @@
             handleInteractionMove: function ($e) {
                 if (!this.isDrag) return;
 
-                if (Math.abs(this.startY - $e.y) > 15 && !this.isScrollLock && !this.isSwipeLock) {
+                if (Math.abs(this.startY - $e.y) > 5 && !this.isScrollLock && !this.isSwipeLock) {
                     this.isSwipeLock = true;
                 }
                 if(Math.abs(this.startX - $e.x) > 5 && !this.isSwipeLock && !this.isScrollLock) {
