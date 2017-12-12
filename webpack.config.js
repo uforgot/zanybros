@@ -16,26 +16,23 @@ const config = {
     },
 
     module: {
-        rules: [
+        loaders: [
+            // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
             {
                 test: /\.vue$/,
-                use:[{
-                    loader: 'vue-loader',
-                }]
+                loader: 'vue-loader',
+                exclude: /(node_modules|bower_components)/,
+                query: {
+                    presets: ['es2015']
+                }
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: [
-                                ['es2015', {modules: false}]
-                            ]
-                        }
-                    }
-                ]
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env']
+                }
             }
         ]
     },

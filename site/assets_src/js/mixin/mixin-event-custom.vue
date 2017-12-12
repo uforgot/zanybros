@@ -32,15 +32,22 @@
         //created : function() {},
         //beforeMount : function() {},
         mounted() {
-            this.$el.addEventListener('mousedown',  (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_START,     {e:e, x:e.pageX, y:e.pageY, isTouch:false }));
-            this.$el.addEventListener('mouseup',    (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_END,       {e:e, x:e.pageX, y:e.pageY, isTouch:false }));
-            this.$el.addEventListener('mouseleave', (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_CANCEL,    {e:e, x:e.pageX, y:e.pageY, isTouch:false }));
-            this.$el.addEventListener('mousemove',  (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_MOVE,      {e:e, x:e.pageX, y:e.pageY, isTouch:false }));
+            if(_isDeskTop){
+//                console.log('_isDeskTop')
+                this.$el.addEventListener('mousedown',  (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_START,     {e:e, x:e.pageX, y:e.pageY, isTouch:false }));
+                this.$el.addEventListener('mouseup',    (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_END,       {e:e, x:e.pageX, y:e.pageY, isTouch:false }));
+                this.$el.addEventListener('mouseleave', (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_CANCEL,    {e:e, x:e.pageX, y:e.pageY, isTouch:false }));
+                this.$el.addEventListener('mousemove',  (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_MOVE,      {e:e, x:e.pageX, y:e.pageY, isTouch:false }));
+            }else{
+//                console.log('!!_isDeskTop')
+                this.$el.addEventListener('touchstart', (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_START,     {e:e, x:e.touches[0].pageX, y:e.touches[0].pageY,       isTouch:true }));
+                this.$el.addEventListener('touchend',   (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_END,       {e:e, x:e.changedTouches[0].pageX, y:e.changedTouches[0].pageY, isTouch:true }));
+                this.$el.addEventListener('touchcancel',(e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_CANCEL,    {e:e, x:e.changedTouches[0].pageX, y:e.changedTouches[0].pageY, isTouch:true }));
+                this.$el.addEventListener('touchmove',  (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_MOVE,      {e:e, x:e.changedTouches[0].pageX, y:e.changedTouches[0].pageY, isTouch:true }));
+            }
 
-            this.$el.addEventListener('touchstart', (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_START,     {e:e, x:e.touches[0].pageX, y:e.touches[0].pageY,       isTouch:true }));
-            this.$el.addEventListener('touchend',   (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_END,       {e:e, x:e.changedTouches[0].pageX, y:e.changedTouches[0].pageY, isTouch:true }));
-            this.$el.addEventListener('touchcancel',(e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_CANCEL,    {e:e, x:e.changedTouches[0].pageX, y:e.changedTouches[0].pageY, isTouch:true }));
-            this.$el.addEventListener('touchmove',  (e) => this.$emit(this.CUSTOM_EVENT.INTERACTION_MOVE,      {e:e, x:e.changedTouches[0].pageX, y:e.changedTouches[0].pageY, isTouch:true }));
+
+
         },
         //beforeUpdate : function() {},
         //updated : function() {},

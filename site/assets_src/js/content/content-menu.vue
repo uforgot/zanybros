@@ -75,7 +75,7 @@
             ul {
                 li {
                     h1 {
-                        margin-top:0;
+                        margin-top:1vw;
                         opacity:1;
                     }
                 }

@@ -65,16 +65,16 @@
     import ViewWorksView from './view-works-view.vue';
     import ViewContainer from './view-container.vue';
 
-    console.log('-------v 5');
+//    console.log('-------v 5');
 
     window.routerMode = 'history';
-//    window.routerMode = 'hash';
+    //window.routerMode = 'hash';
+
     if (window.routerMode==='hash') {
         window.rootPath = '';
     } else {
         window.rootPath = '/site';
     }
-    console.log(window.rootPath);
 
     const routes = [
         { path: '*',redirect:window.rootPath+'/about'},
@@ -92,10 +92,10 @@
 //    mode:'history',
     const router = new VueRouter({
         mode:window.routerMode,
-        routes,
+        routes: routes/*,
         scrollBehavior (to, from, savedPosition) {
             console.log('test');
-        }
+        }*/
     });
 
     router.beforeEach((to, from, next) => {

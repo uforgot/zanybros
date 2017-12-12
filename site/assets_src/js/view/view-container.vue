@@ -8,6 +8,7 @@
 <template>
     <div>
     <div class="inner-container"
+         :class="{'on-transition':(!isIE)}"
          :style="{
             transform:computedTransform
         }"
@@ -64,11 +65,9 @@
 
 <style scoped lang="scss">
     @import "~scssMixin";
-
-    .inner-container {
+    .on-transition{
         transition: transform 0.3s ease-out 0s;
     }
-
     .view-works-view {
         transition: transform 0.3s ease-out 0s;
     }
@@ -151,10 +150,15 @@
                 isScrollLock:false,
                 isSwipeLock:false,
 
+                isTouchStart:false,
+                isTouchMoved:false,
+                touchMoveTime:0,
+
                 currentContentsX:0,
                 targetContentsX:0,
 
-                transitionPopup:'popup'
+                transitionPopup:'popup',
+                isIE : _isIE
             }
         },
 
@@ -171,47 +175,72 @@
         methods : {
             //event
             handleInteractionStart: function ($e) {
-                if (this.$route.name==='works-view') return;
+                if(!this.isTouchStart){
+                    if (this.$route.name==='works-view') return;
 
-                this.isDrag = true;
-                this.firstX = $e.x;
-                this.firstY = $e.y;
-                this.startX = $e.x;
-                this.startY = $e.y;
-                this.distanceX = 0;
-                this.distanceY = 0;
+                    this.isDrag = true;
+                    this.firstX = $e.x;
+                    this.firstY = $e.y;
+                    this.startX = $e.x;
+                    this.startY = $e.y;
+                    this.distanceX = 0;
+                    this.distanceY = 0;
 
-                this.isScrollLock  = false;
-                this.isSwipeLock  = false;
+                    this.isScrollLock  = false;
+                    this.isSwipeLock  = false;
+
+                    this.isTouchStart = true;
+                    //console.log('handleInteractionStart')
+                }
+
             },
 
             handleInteractionEnd: function () {
-                this.isDrag = false;
-                this.setContentsSnapX();
+                if(this.isTouchMoved && this.isTouchStart){
+                    this.isDrag = false;
+                    this.setContentsSnapX();
+
+                    this.isTouchMoved = false;
+                    this.isTouchStart = false;
+                    //console.log('handleInteractionEnd')
+                }
+
             },
 
             handleInteractionMove: function ($e) {
-                if (!this.isDrag) return;
+                if(this.isTouchStart){
+                    if (!this.isDrag) return;
 
-                if (Math.abs(this.startY - $e.y) > 5 && !this.isScrollLock && !this.isSwipeLock) {
-                    this.isSwipeLock = true;
-                }
-                if(Math.abs(this.startX - $e.x) > 5 && !this.isSwipeLock && !this.isScrollLock) {
-                    this.isScrollLock = true;
+                    if (Math.abs(this.startY - $e.y) > 5 && !this.isScrollLock && !this.isSwipeLock) {
+                        this.isSwipeLock = true;
+                    }
+                    if(Math.abs(this.startX - $e.x) > 5 && !this.isSwipeLock && !this.isScrollLock) {
+                        this.isScrollLock = true;
+                    }
+
+                    if (this.isScrollLock) {
+                        $e.e.preventDefault();
+                    }
+
+                    if (!this.isSwipeLock) {
+                        this.setContentsPosition($e.x, $e.y, $e);
+                    }
+
+                    this.isTouchMoved = true;
+                    //console.log('handleInteractionMove')
                 }
 
-                if (this.isScrollLock) {
-                    $e.e.preventDefault();
-                }
-
-                if (!this.isSwipeLock) {
-                    this.setContentsPosition($e.x, $e.y, $e);
-                }
             },
 
             handleInteractionCancel: function () {
-                this.isDrag = false;
-                this.setContentsSnapX();
+                if(this.isTouchMoved && this.isTouchStart){
+                    this.isDrag = false;
+                    this.setContentsSnapX();
+
+                    this.isTouchMoved = false;
+                    this.isTouchStart = false;
+                }
+
             },
 
             setContentsPosition: function($x, $y, $e) {
@@ -265,16 +294,15 @@
         watch : {
             targetContentsX : function($newValue, $oldValue){
                 function animate() {
-                    if(TWEEN.update()) {
+                    if (TWEEN.update()) {
                         requestAnimationFrame(animate);
                     }
                 }
-
                 new TWEEN.Tween({ tweeningNumber : $oldValue })
-                    .to({ tweeningNumber : $newValue }, 200)
+                    .to({ tweeningNumber : $newValue }, this.touchMoveTime)
                     .onUpdate(($e) =>
                         {
-                            this.currentContentsX = Number($e.tweeningNumber.toFixed(2));
+                            this.currentContentsX = $e.tweeningNumber;//Number($e.tweeningNumber.toFixed(2));
                             window.currentContentsX = this.currentContentsX;
                             this.isResize = false;
                         }
@@ -308,6 +336,8 @@
             this.dataPrevContents = window.ZanyBrosData.data.contentsData[this.prevIndex];
             this.dataNextContents = window.ZanyBrosData.data.contentsData[this.nextIndex];
             this.dataContents = window.ZanyBrosData.data.contentsData[this.currentIndex];
+
+            this.touchMoveTime = _isIE ? 0 : 200;
         },
         //beforeMount : function() {},
         mounted : function() {

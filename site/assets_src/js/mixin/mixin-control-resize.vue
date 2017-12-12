@@ -13,16 +13,16 @@
         props: {},
         data() {
             return {
-                windowWidth: window.innerWidth,
-                windowHeight: window.innerHeight,
+                windowWidth: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                windowHeight: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
             };
         },
 
         computed : {},
         methods: {
             handleWindowResizeMixin : function() {
-                this.windowWidth = window.innerWidth;//event.currentTarget.innerWidth;
-                this.windowHeight = window.innerHeight;
+                this.windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                this.windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
             },
         },
         watch : {},

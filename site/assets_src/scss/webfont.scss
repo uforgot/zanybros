@@ -53,7 +53,6 @@
 
 @import url(http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
 
-/* 웹 폰트 자간, 행간 디테일 세팅  */
 body,input,textarea,select,button, td {
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
@@ -71,7 +70,7 @@ h1 {
   white-space   : pre-line;
   font-size   : 6vw;
   font-family : "GothamUltra";
-  line-height : 4.5vw;
+  line-height : 0.75em;
   //font-style : italic;
 }
 
