@@ -1,6 +1,13 @@
 /**
  * Created by uforgot on 2017. 7. 11..
  */
+
+import es6Promise from 'es6-promise';
+es6Promise.polyfill();
+
+require("babel-polyfill");
+
+
 import Axios from 'axios'
 import Vue from 'vue';
 import VueRouter from 'vue-router';
