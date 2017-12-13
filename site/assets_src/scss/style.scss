@@ -59,6 +59,7 @@ body {
     height:100%;
     overflow : hidden;
 }
+
 .view-content-margin { position : relative; }
 .view-content-title {
     position : relative;
@@ -403,15 +404,19 @@ body {
     background:#fff;
     width:100vw;
     height:100vh;
+    min-height: 768px;
 
     .container {
         position:relative;
         display:none;
-        top:50%;
         width:80%;
+        top:50%;
         left:10%;
-
         color:#000;
+
+
+
+
         transform:translateY(-50%);
         .title {
             margin-top:10px;
