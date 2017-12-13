@@ -190,7 +190,7 @@
                     this.isSwipeLock  = false;
 
                     this.isTouchStart = true;
-                    //console.log('handleInteractionStart')
+                    console.log('handleInteractionStart')
                 }
 
             },
