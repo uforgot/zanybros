@@ -6,7 +6,7 @@
 */
 
 <template>
-    <div class="frame-container">
+    <header class="frame-container">
         <div class="logo"
              :class="{'black':isViewShow}"
         ><router-link :to="{name:'about'}" >ZANYBROS&nbsp;</router-link></div>
@@ -76,7 +76,7 @@
         >
             <img src="/site/assets/images/svg/close.svg" alt="">
         </div>
-    </div>
+    </header>
 </template>
 
 <style scoped lang="scss">
@@ -270,6 +270,8 @@
             EventBus.$on(EventBus.MENU_SHOW,this.setMenuShow);
             EventBus.$on(EventBus.MENU_HIDE,this.setMenuHide);
             this.setCurrentIndex(this.$route.name);
+
+            document.getElementById("app-frame").appendChild(this.$el);
         },
         //beforeUpdate : function() {},
         //updated : function() {},

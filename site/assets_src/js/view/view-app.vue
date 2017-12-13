@@ -7,7 +7,7 @@
 
 <template>
     <div id="app">
-        <!--<view-background></view-background>-->
+        <view-background></view-background>
         <transition :name="transitionDirection" mode="out-in">
             <!--<keep-alive>-->
                 <router-view
@@ -151,7 +151,12 @@
 
         //life cycle
         //beforeCreate : function() {},
-        //created : function() {},
+        created : function() {
+            console.log('xxx');
+            new Vue({
+                render: h => h(ViewFrame)
+            }).$mount('#frame');
+        },
         //beforeMount : function() {},
         //mounted : function() {},
         //beforeUpdate : function() {},

@@ -1,3 +1,13 @@
+header {
+    z-index                : 1;
+    transform              : translateZ(0);
+    -moz-transform         : translatez(0);
+    -ms-transform          : translatez(0);
+    -o-transform           : translatez(0);
+    -webkit-transform      : translateZ(0);
+    -webkit-font-smoothing : antialiased;
+}
+
 @media only screen and (max-width : 767px) {
     .logo {
         font-size:20px;
@@ -6,6 +16,19 @@
     h1 {
         font-size   : 7vw;
         line-height : 0.75em;
+    }
+
+    h2 {
+        font-size     : 6vw;
+        line-height   : 1.2em;
+        letter-spacing: -0.05em;
+    }
+
+    p {
+        font-size   : 3vw;
+        line-height : 1.5em;
+        letter-spacing : -0.02em;
+        @include opacity(0.8);
     }
 
     .frame-container {
@@ -25,8 +48,111 @@
         }
     }
 
-    .menu-container {
+    .view-content-holder {
+        .content-image {
+            overflow:hidden;
+            position  : absolute;
+            left      : 50%; top : 50%;
+            transform : translateX(-50%) translateY(-50%);
+
+            img {
+                width : 40vw;
+            }
+
+            &.left { left : 30%; }
+            &.right { left : 70%; }
+        }
+
+        .content-txt {
+            text-align: left;
+            h2{
+                position:relative;
+                left:50%;
+                transform: translateX(-50%);
+
+                max-width:80vw;
+                width:80vw;
+
+                span {
+                    &.last { margin-bottom : 2vh; }
+                }
+            }
+
+            .txt {
+                position:relative;
+                max-width:80vw;
+                width:80vw;
+            }
+
+            .image {
+                margin-top:2vw;
+
+                span {
+                    display:inline-block;
+                    margin-right:2vw;
+
+                    .title {margin-top:1vw;}
+
+                    &.last {
+                        margin-right:0;
+                    }
+                }
+            }
+
+            &.left {
+                .txt {
+                    max-width : 80vw;
+                    width     : 80vw;
+                }
+            }
+
+            &.right {
+                .txt {
+                    max-width : 80vw;
+                    width     : 80vw;
+                }
+            }
+
+        }
 
     }
 
+    .view-footer {
+        .contact {
+            h1 {
+                font-size:4vw;
+                margin-bottom:1vw
+            }
+            p {
+                font-family: "GothamLight";
+                font-style: italic;
+                font-size:3vw;
+                line-height:2em;
+            }
+            .email {
+                display:inline-block;
+                position:relative;
+
+                font-family: "GothamLight";
+                font-style: italic;
+                font-size:3vw;
+                border-bottom: 1px solid #ffffff;
+            }
+            padding: 4vw 0 0 0;
+        }
+        .copyright {
+            padding: 4vw 0 4vw 0;
+
+            .logo {
+                left: 40px;
+                top: 30px;
+                font-size: 2vw;
+                color:#fff;
+                margin-bottom:10px;
+            }
+        }
+    }
+
 }
+
+

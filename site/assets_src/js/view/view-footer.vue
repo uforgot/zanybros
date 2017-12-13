@@ -16,7 +16,7 @@
         </div>
         <div class="copyright">
             <div class="logo">ZANYBROS</div>
-            <p v-html="dataFooter.copyright.join('')"></p>
+            <small v-html="dataFooter.copyright.join('')"></small>
         </div>
     </div>
 </template>

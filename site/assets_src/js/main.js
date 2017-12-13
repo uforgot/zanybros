@@ -22,6 +22,7 @@ import './mixin/mixin-utils-common';
 import './mixin/mixin-utils-routes';
 import { UtilsData } from './utils/utils-data';
 import App from './view/view-app.vue'
+import Frame from './view/view-frame.vue'
 import {EventBus} from "./events/event-bus";
 
 window.noTransition = false;
