@@ -42,7 +42,6 @@
     import ContentAboutPartner from '../content/content-about-partner.vue';
     import ContentAboutCategory from '../content/content-about-category.vue';
 
-    import ContentContactGallery from '../content/content-contact-gallery.vue';
     import ContentContactPeople from '../content/content-contact-people.vue';
     import ContentContactPeopleTitle from '../content/content-contact-people-title.vue';
     import ContentMap from '../content/content-map.vue';
@@ -63,7 +62,6 @@
             ContentAboutPartner,
             ContentAboutCategory,
 
-            ContentContactGallery,
             ContentContactPeople,
             ContentContactPeopleTitle,
             ContentMap
