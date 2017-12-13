@@ -7,7 +7,7 @@
 
 <template>
     <div id="app">
-        <view-background></view-background>
+        <!--<view-background></view-background>-->
         <transition :name="transitionDirection" mode="out-in">
             <!--<keep-alive>-->
                 <router-view
