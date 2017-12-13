@@ -9,7 +9,8 @@
     <div class="content-background-image"
          :style="{
                  width: parentData.width + 'px',
-                 height: parentData.height + 'px'}"
+                 height: parentData.height + 'px'
+        }"
     >
         <comp-image class="scroll-animation hide"
                 :style="{

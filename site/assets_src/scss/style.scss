@@ -17,6 +17,7 @@ body {
 
 #app {
     width:100%;
+    overflow-x:hidden;
 }
 
 .view-container {
@@ -428,3 +429,4 @@ body {
     }
 }
 
+@import "sin.scss";
