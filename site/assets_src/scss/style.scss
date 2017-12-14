@@ -293,7 +293,7 @@ body {
                 -khtml-user-select: none; /* Konqueror HTML */
                 -moz-user-select: none; /* Firefox */
                 -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; /* Non-prefixed version, currently */
+                user-select: none;   /* Non-prefixed version, currently */
 
                 .container {
                     display:inline-block;
@@ -314,7 +314,7 @@ body {
                         position:absolute;
                         left:50%;
                         top:50%;
-                        width:0%;
+                        width:0;
                         height:0.4vw;
                         margin-top:-0.6vw;
                         //border:0px solid #fff;
@@ -325,7 +325,6 @@ body {
                         //opacity:0;
                     }
                 }
-
             }
         }
     }
@@ -347,7 +346,7 @@ body {
             //position : absolute;
             overflow : hidden;
             position: relative;
-            width:25vw;
+            width:25%;
             height:25vw;
 
             .img-frame {
@@ -399,13 +398,13 @@ body {
 
 .view-works-view {
     display:block;
-    position:fixed;
+    position:absolute;
     left:0;
     top:0;
     background:#fff;
     width:100vw;
     height:100vh;
-    min-height: 768px;
+    min-height: 800px;
 
     .container {
         position:relative;
@@ -430,3 +429,4 @@ body {
 }
 
 @import "sin.scss";
+@import "van.scss";

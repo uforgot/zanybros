@@ -72,8 +72,7 @@
 
         <div class="btn-close"
              @click="menuCloseClickHandler"
-             :class="{'hide':(!isMenuShow && !isViewShow)}"
-        >
+             :class="{'show':(isMenuShow || isViewShow)}">
             <img src="/site/assets/images/svg/close.svg" alt="">
         </div>
     </div>
@@ -85,6 +84,14 @@
     /*.router-link-active {*/
         /*color:red;*/
     /*}*/
+    .btn-close{
+        &.show{
+            top:25px;
+            @include css-value-transition('opacity 0.1s 0.3s');
+            @include opacity(1);
+        }
+    }
+
     .hide {
         display:none;
     }
@@ -202,7 +209,8 @@
         methods : {
             menuCloseClickHandler : function($e) {
                 if (this.isViewShow) {
-                    this.$router.push({name:'ourworks'});
+                    this.$router.go(-1);
+//                    this.$router.push({name:'ourworks'});
                 }
                 EventBus.$emit(EventBus.MENU_HIDE);
             },
@@ -249,7 +257,7 @@
 
         watch : {
             '$route'(to, from) {
-                console.log(to.name + ':');
+                //console.log(to.name + ':');
                 if(to.name == 'works-view') {
                     this.isViewShow = true;
                 } else {

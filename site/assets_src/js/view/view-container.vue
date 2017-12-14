@@ -8,7 +8,10 @@
 <template>
     <div>
     <div class="inner-container"
-         :class="{'on-transition':(!isIE)}"
+         :class="{'on-transition':(!isIE),
+                   'crop-works':isWorksViewShow,
+                   'crop-menu':isMenuViewShow,
+           }"
          :style="{
             transform:computedTransform
         }"
@@ -65,6 +68,17 @@
 
 <style scoped lang="scss">
     @import "~scssMixin";
+    .inner-container{
+        &.crop-works{
+            overflow: hidden;
+            min-height:800px;
+            height:100vh;
+        }
+        &.crop-menu{
+            overflow: hidden;
+            height:100vh;
+        }
+    }
     .on-transition{
         transition: transform 0.3s ease-out 0s;
     }
@@ -158,7 +172,9 @@
                 targetContentsX:0,
 
                 transitionPopup:'popup',
-                isIE : _isIE
+                isIE : _isIE,
+                isWorksViewShow : false,
+                isMenuViewShow : false
             }
         },
 
@@ -190,7 +206,7 @@
                     this.isSwipeLock  = false;
 
                     this.isTouchStart = true;
-                    console.log('handleInteractionStart')
+                    //console.log('handleInteractionStart')
                 }
 
             },
@@ -289,6 +305,13 @@
             onScrollHandler : function($e) {
                 let scrollTop = window.pageYOffset;
                 this.fixY = scrollTop;
+            },
+
+            onMenuShowHandler:function(){
+                this.isMenuViewShow = true;
+            },
+            onMenuHideHandler:function(){
+                this.isMenuViewShow = false;
             }
         },
         watch : {
@@ -325,6 +348,13 @@
 
 
                 animate();
+            },
+            '$route'(to, from) {
+                if(to.name == 'works-view') {
+                    this.isWorksViewShow = true;
+                } else {
+                    this.isWorksViewShow = false;
+                }
             }
         },
 
@@ -341,6 +371,9 @@
         },
         //beforeMount : function() {},
         mounted : function() {
+            if (this.$route.name == 'works-view') {
+                this.isWorksViewShow = true;
+            }
             this.$on(this.CUSTOM_EVENT.INTERACTION_START, (e)=>this.handleInteractionStart(e));
             this.$on(this.CUSTOM_EVENT.INTERACTION_END, (e)=>this.handleInteractionEnd(e));
             this.$on(this.CUSTOM_EVENT.INTERACTION_MOVE, (e)=>this.handleInteractionMove(e));
@@ -348,9 +381,12 @@
 
             EventBus.$on(EventBus.WINDOW_RESIZE, this.onResizeHandler);
             EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
+
+            EventBus.$on(EventBus.MENU_SHOW, this.onMenuShowHandler);
+            EventBus.$on(EventBus.MENU_HIDE, this.onMenuHideHandler);
             this.onResizeHandler();
 
-            window.scrollTo(0,0);
+            //window.scrollTo(0,0);
         },
         //beforeUpdate : function() {},
         //updated : function() {},
@@ -364,6 +400,9 @@
 
             EventBus.$off(EventBus.WINDOW_RESIZE, this.onResizeHandler);
             EventBus.$off(EventBus.SCROLL_MOVE, this.onScrollHandler);
+
+            EventBus.$off(EventBus.MENU_SHOW, this.onMenuShowHandler);
+            EventBus.$off(EventBus.MENU_HIDE, this.onMenuHideHandler);
         },
         //destroyed : function() {},
         dummy : {}

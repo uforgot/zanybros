@@ -70,7 +70,8 @@
 
         computed : {
             videoWidth : function () {
-                return this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowWidth);
+                var w = this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowWidth) > 1000 ? 1000 : this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowWidth);
+                return w;
             },
 
             videoHeight : function () {
