@@ -13,7 +13,8 @@
                    'crop-menu':isMenuViewShow,
            }"
          :style="{
-            transform:computedTransform
+            transform:computedTransform,
+            'min-height' : innerMinH+'px'
         }"
     >
         <div class="prev-container"
@@ -71,7 +72,6 @@
     .inner-container{
         &.crop-works{
             overflow: hidden;
-            min-height:800px;
             height:100vh;
         }
         &.crop-menu{
@@ -174,7 +174,8 @@
                 transitionPopup:'popup',
                 isIE : _isIE,
                 isWorksViewShow : false,
-                isMenuViewShow : false
+                isMenuViewShow : false,
+                innerMinH : 0
             }
         },
 
@@ -300,6 +301,9 @@
                 this.isResize = true;
                 this.setContentsSnapX();
                 this.onScrollHandler();
+
+                this.innerMinH = this.windowWidth*0.8 > 1000 ? 1000*9/16+280 : this.windowWidth*0.8*9/16+280;
+
             },
 
             onScrollHandler : function($e) {
@@ -350,10 +354,11 @@
                 animate();
             },
             '$route'(to, from) {
+                var owner = this;
                 if(to.name == 'works-view') {
-                    this.isWorksViewShow = true;
+                    owner.isWorksViewShow = true;
                 } else {
-                    this.isWorksViewShow = false;
+                    owner.isWorksViewShow = false;
                 }
             }
         },
