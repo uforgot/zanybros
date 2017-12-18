@@ -16,6 +16,12 @@
                 <div class="bar top"></div>
                 <div class="bar bottom"></div>
             </div>
+            <div class="frame-fix">
+                <div class="bar left"></div>
+                <div class="bar right"></div>
+                <div class="bar top"></div>
+                <div class="bar bottom"></div>
+            </div>
             <div class="txt">
                 <h1>
                     <div class="left holder">&nbsp;ZANY&nbsp;</div>
@@ -47,8 +53,10 @@
     @import "~scssMixin";
 
     .menu-container {
-        .bar {
-            @include css-value-transition('width 0.3s ease-out 0s, height 0.3s ease-out 0.2s');
+        .frame {
+            .bar {
+                @include css-value-transition('width 0.3s ease-out 0s, height 0.3s ease-out 0.2s');
+            }
         }
         .holder {
             @include css-value-transition('transform 0.3s ease-out 0.2s');
@@ -60,8 +68,10 @@
 
         &.show {
             pointer-events:auto;
-            .bar {
-                @include css-value-transition('width 0.3s ease-out 0s, height 0.3s ease-out 0s');
+            .frame {
+                .bar {
+                    @include css-value-transition('width 0.3s ease-out 0s, height 0.3s ease-out 0s');
+                }
             }
             .holder {
                 @include css-value-transition('transform 0.3s ease-out 0s');
