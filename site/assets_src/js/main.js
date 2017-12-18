@@ -28,6 +28,8 @@ import {EventBus} from "./events/event-bus";
 window.noTransition = false;
 window.currentContentsX = 0;
 window.rootPath = '';
+window.windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+window.windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
 window.addEventListener('popstate', function (e) {
     //console.log('popstate');
@@ -56,6 +58,19 @@ function init() {
             }, true);
 
             window.addEventListener('resize', ($e) => {
+                let currentWindowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+                if (_isMobile) {
+                    if (currentWindowWidth < currentWindowHeight) {
+                        if(currentWindowHeight < window.windowHeight) {
+                            currentWindowHeight = window.windowHeight;
+                        }
+                    }
+                }
+
+                window.windowWidth = currentWindowWidth;
+                window.windowHeight = currentWindowHeight;
                 EventBus.$emit(EventBus.WINDOW_RESIZE, $e);
             }, true);
         }

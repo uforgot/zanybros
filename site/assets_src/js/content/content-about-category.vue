@@ -53,14 +53,12 @@
 
 <script>
     import MixinControlScrollAnimation from '../mixin/mixin-control-scroll-animation.vue';
-    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import MixinContent from '../mixin/mixin-content.vue';
 
     import ContentAboutCategoryItem from './content-about-category-item.vue'
-    import CompImage from '../component/comp-image.vue';
 
     export default {
-        mixins: [MixinResizeEvent, MixinContent, MixinControlScrollAnimation],
+        mixins: [MixinContent, MixinControlScrollAnimation],
         components: {
             ContentAboutCategoryItem
         },
@@ -68,7 +66,8 @@
         props: {},
         data: function () {
             return {
-                itemArray:[]
+                itemArray:[],
+                windowW : window.windowWidth
             }
         },
 
@@ -76,7 +75,7 @@
             frameLeft : function() {
                 return  this.getPixelValueByPercentValue(
                     (100- this.getPercentValue(this.jsonData.width))/2,
-                    this.windowWidth
+                    this.windowW
                 );
             },
             frameWidth : function() {
@@ -134,6 +133,7 @@
             },
 
             handleWindowResize : function () {
+                this.windowW = window.windowWidth;
                 this.handleWindowResizeMixin();
                 this.setCategory(-1);
             }
