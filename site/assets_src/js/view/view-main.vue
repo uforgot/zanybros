@@ -77,12 +77,10 @@
 </style>
 
 <script>
-    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
     import CompMainScroll from '../component/comp-main-scroll.vue';
-
+    import {EventBus} from "../events/event-bus";
     export default {
-        mixins: [MixinResizeEvent],
         components:{
             CompYoutubeFrame,
             CompMainScroll
@@ -98,14 +96,16 @@
         },
         data: function() {
             return {
-                titleArray:Array
+                titleArray:Array,
+                windowW:window.windowWidth,
+                windowH:window.windowHeight
             };
         },
 
         computed:{
             frameWidth : function () {
                 if (this.isPercentValue(this.jsonData.width)) {
-                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowWidth);
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowW);
                 }
                 return this.jsonData.width;
             },
@@ -115,7 +115,7 @@
                     return this.frameWidth();
                 }
                 if (this.isPercentValue(this.jsonData.height)) {
-                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowHeight);
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowH);
                 }
                 return this.jsonData.height;
             }
@@ -143,6 +143,10 @@
                         this.titleArray[i].isDin = true;
                     }
                 }
+            },
+            handleWindowResize: function() {
+                this.windowW = window.windowWidth;
+                this.windowH = window.windowHeight;
             }
 
         },
@@ -168,12 +172,15 @@
                 )
             }
 //            this.titleArray = Window.ZanyBrosTitlaArray[this.dataIndex];
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
         },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
-        //beforeDestroy : function () {},
+        beforeDestroy: function () {
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+        },
         //destroyed : function() {},
         dummy : {}
     }

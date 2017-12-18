@@ -47,10 +47,8 @@
 </style>
 
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
-
+    import {EventBus} from "../events/event-bus";
     export default {
-        mixins: [mixinResizeEvent],
         components:{},
 
         props : {
@@ -68,17 +66,19 @@
         data: function() {
             return {
                 videoFrameWidth:0,
-                videoFrameHeight:0
+                videoFrameHeight:0,
+                windowW:window.windowWidth,
+                windowH:window.windowHeight
             };
         },
 
         computed:{
             frameWidth : function () {
-                return this.windowWidth;
+                return this.windowW;
             },
 
             frameHeight : function () {
-                return this.windowHeight;
+                return this.windowH;
             },
 
             videoFrameMarginLeft: function () {
@@ -92,6 +92,8 @@
 
         methods:{
             handleWindowResize: function() {
+                this.windowW = window.windowWidth;
+                this.windowH = window.windowHeight;
                 let size = this.getSizeByFrameSize(
                     {width:this.videoWidth, height:this.videoHeight},
                     {width:this.frameWidth, height:this.frameHeight},
@@ -110,14 +112,14 @@
         //beforeMount : function() {},
         mounted() {
             this.handleWindowResize();
-            window.addEventListener('resize', this.handleWindowResize);
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
         },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
         beforeDestroy: function () {
-            window.removeEventListener('resize', this.handleWindowResize);
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.handleWindowResize);
         },
         //destroyed : function() {}
         dummy : {}

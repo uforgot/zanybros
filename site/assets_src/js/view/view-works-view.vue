@@ -61,11 +61,10 @@
 
 <script>
     import {EventBus} from "../events/event-bus";
-    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import MixinContent from '../mixin/mixin-content.vue';
 
     export default {
-        mixins: [MixinContent, MixinResizeEvent],
+        mixins: [MixinContent],
         components:{},
 
         props: {
@@ -81,13 +80,16 @@
                 worksMinH:0,
                 fixY:Number,
                 isShow:false,
-                setTimeoutID:0
+                setTimeoutID:0,
+                windowW:window.windowWidth,
+                windowH:window.windowHeight
             };
         },
 
         computed : {
             videoWidth : function () {
-                var w = this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowWidth) > 1000 ? 1000 : this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowWidth);
+
+                var w = this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowW) > 1000 ? 1000 : this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowW);
                 return w;
             },
 
@@ -104,9 +106,11 @@
             },
             handleWindowResize: function() {
                 if (this.player !== null) {
+                    this.windowW = window.windowWidth;
+                    console.log( this.windowW ,"+++")
                     this.player.setSize(this.videoWidth, this.videoHeight);
                     this.containerW = this.videoWidth;
-                    this.containerX = (this.windowWidth - this.videoWidth)/2;
+                    this.containerX = (window.windowWidth - this.videoWidth)/2;
 
                     this.worksMinH = this.videoWidth*9/16+280;
                 }
@@ -131,7 +135,7 @@
         //created = {},
         //beforeMount : function() {},
         mounted : function() {
-            window.addEventListener('resize', this.handleWindowResize);
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
             EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
             EventBus.$on(EventBus.WORK_VIEW_SHOW, this.onWorkViewShow);
             EventBus.$on(EventBus.WORK_VIEW_HIDE, this.onWorkViewHide);
@@ -145,7 +149,8 @@
         },
         //deactivated : function() {},
         beforeDestroy : function () {
-            window.removeEventListener('resize', this.handleWindowResize);
+
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.handleWindowResize);
             EventBus.$off(EventBus.SCROLL_MOVE, this.onScrollHandler);
         },
         //destroyed : function() {},

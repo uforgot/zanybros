@@ -43,14 +43,14 @@
         //created : function() {},
         //beforeMount : function() {},
         mounted() {
-            window.addEventListener('resize', this.handleWindowResizeMixin);
+            //window.addEventListener('resize', this.handleWindowResizeMixin);
         },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
         beforeDestroy: function () {
-            window.removeEventListener('resize', this.handleWindowResizeMixin);
+            //window.removeEventListener('resize', this.handleWindowResizeMixin);
         },
         //destroyed : function() {},
         dummy : {}

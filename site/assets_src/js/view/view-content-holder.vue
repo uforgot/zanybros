@@ -31,7 +31,6 @@
 </style>
 
 <script>
-    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompImage from '../component/comp-image.vue';
 
     import ContentImage from '../content/content-image.vue';
@@ -47,9 +46,9 @@
     import ContentMap from '../content/content-map.vue';
 
     import ContentVideo from '../content/content-video.vue';
+    import {EventBus} from "../events/event-bus";
 
     export default {
-        mixins: [MixinResizeEvent],
         components:{
             CompImage,
 
@@ -74,6 +73,8 @@
         },
         data: function() {
             return {
+                windowW:window.windowWidth,
+                windowH:window.windowHeight
             };
         },
 
@@ -103,7 +104,7 @@
 
             frameWidth : function () {
                 if (this.isPercentValue(this.jsonData.width)) {
-                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowWidth);
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowW);
                 }
                 return this.jsonData.width;
             },
@@ -113,7 +114,7 @@
                     return this.frameWidth();
                 }
                 if (this.isPercentValue(this.jsonData.height)) {
-                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowHeight);
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowH);
                 }
                 return this.jsonData.height;
             },
@@ -135,19 +136,28 @@
             }
         },
 
-        methods : {},
+        methods : {
+            handleWindowResize: function() {
+                this.windowW = window.windowWidth;
+                this.windowH = window.windowHeight;
+            }
+        },
         watch : {},
 
         //life cycle
         //beforeCreate : function() {},
         //created : function() {},
         //beforeMount : function() {},
-        //mounted : function() {},
+        mounted : function() {
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+        },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
-        //beforeDestroy : function () {},
+        beforeDestroy: function () {
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+        },
         //destroyed : function() {}
     }
 </script>

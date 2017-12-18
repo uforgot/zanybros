@@ -105,7 +105,6 @@
 
 <script>
     import {EventBus} from "../events/event-bus";
-    import MixinControlResize from '../mixin/mixin-control-resize.vue';
     import MixinEventCustom from '../mixin/mixin-event-custom.vue';
     import TWEEN from '../vendor/Tween';
 
@@ -121,7 +120,7 @@
     import ViewWorksHolder from './view-works-holder.vue';
 
     export default {
-        mixins: [ MixinControlResize, MixinEventCustom ],
+        mixins: [ MixinEventCustom ],
         components:{
             ViewContentHolder,
             ViewContentTitle,
@@ -175,7 +174,8 @@
                 isIE : _isIE,
                 isWorksViewShow : false,
                 isMenuViewShow : false,
-                innerMinH : 0
+                innerMinH : 0,
+                windowW:window.windowWidth
             }
         },
 
@@ -185,7 +185,7 @@
 //                return this.targetContentsX  +'px';
             },
             frameWidth : function () {
-                return this.windowWidth + 'px';
+                return this.windowW + 'px';
             }
         },
 
@@ -267,8 +267,8 @@
                 this.startX = $x;
                 this.startY = $y;
 
-                let minX = this.windowWidth;
-                let maxX = (this.windowWidth * 1)*-1; // + (this.windowWidth * 1/8)*-1;
+                let minX = window.windowWidth;
+                let maxX = (window.windowWidth * 1)*-1; // + (window.windowWidth * 1/8)*-1;
 
                 this.targetContentsX += (this.distanceX * (10));
 
@@ -284,17 +284,17 @@
             },
 
             setTransitionNextIndex :function() {
-                this.transitionNextIndex = Math.round((this.targetContentsX)/this.windowWidth);
+                this.transitionNextIndex = Math.round((this.targetContentsX)/window.windowWidth);
             },
 
             setContentsSnapX: function() {
-                let indexX = Math.round((this.targetContentsX)/this.windowWidth);
+                let indexX = Math.round((this.targetContentsX)/window.windowWidth);
                 this.setContentsXByIndex(indexX);
             },
 
             setContentsXByIndex: function($index) {
                 this.transitionNextIndex = $index;
-                this.targetContentsX = (this.windowWidth ) * ($index);
+                this.targetContentsX = (window.windowWidth ) * ($index);
             },
 
             onResizeHandler :function($e) {
@@ -302,7 +302,8 @@
                 this.setContentsSnapX();
                 this.onScrollHandler();
 
-                this.innerMinH = this.windowWidth*0.8 > 1000 ? 1000*9/16+280 : this.windowWidth*0.8*9/16+280;
+                this.windowW = window.windowWidth;
+                this.innerMinH = window.windowWidth*0.8 > 1000 ? 1000*9/16+280 : window.windowWidth*0.8*9/16+280;
 
             },
 
@@ -335,7 +336,7 @@
                         }
                     ).onComplete(($e)=>{
                         if (this.transitionNextIndex === 0) return;
-                        if (this.currentContentsX !== this.transitionNextIndex * (this.windowWidth)) return;
+                        if (this.currentContentsX !== this.transitionNextIndex * (window.windowWidth)) return;
 
                         let nextRouteName;
                         if (this.transitionNextIndex < 0) {
@@ -346,7 +347,7 @@
                         window.noTransition = true;
                         this.$router.push({name:nextRouteName});
                         this.currentContentsX = 0;
-                        console.log(nextRouteName + '->ok');
+                        // console.log(nextRouteName + '->ok');
                     })
                     .start();
 

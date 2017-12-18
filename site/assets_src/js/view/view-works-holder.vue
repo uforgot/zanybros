@@ -47,10 +47,8 @@
 <script>
     import ContentWorksItem from '../content/content-works-item.vue';
     import ContentWorksList from '../content/content-works-list.vue';
-    import MixinResizeEvent from '../mixin/mixin-control-resize.vue';
-
+    import {EventBus} from "../events/event-bus";
     export default {
-        mixins: [MixinResizeEvent],
         components:{
             ContentWorksList,
             ContentWorksItem
@@ -64,7 +62,9 @@
         data: function() {
             return {
                 align:"center",
-                content:Object
+                content:Object,
+                windowW:window.windowWidth,
+                windowH:window.windowHeight
             };
         },
 
@@ -85,7 +85,7 @@
 
             frameWidth : function () {
                 if (this.isPercentValue(this.jsonData.width)) {
-                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowWidth);
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width), this.windowW);
                 }
                 return this.jsonData.width;
             },
@@ -95,7 +95,7 @@
                     return this.frameWidth();
                 }
                 if (this.isPercentValue(this.jsonData.height)) {
-                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowHeight);
+                    return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.height), this.windowH);
                 }
                 return this.jsonData.height;
             },
@@ -115,6 +115,10 @@
                         this.content[i].focus = false;
                     }
                 }
+            },
+            handleWindowResize: function() {
+                this.windowW = window.windowWidth;
+                this.windowH = window.windowHeight;
             }
         },
 
@@ -152,6 +156,7 @@
 //            this.content.sort(function () {
 //                return Math.random() - 0.5
 //            })
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
         },
         //beforeMount : function() {},
         //mounted : function() {},
@@ -159,7 +164,9 @@
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
-        //beforeDestroy : function () {},
+        beforeDestroy: function () {
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+        },
         //destroyed : function() {},
         dummy : {}
     }
