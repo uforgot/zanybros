@@ -14,7 +14,7 @@
            }"
          :style="{
             transform:computedTransform,
-            'min-height' : innerMinH+'px'
+            'height' : innerMinH+'px'
         }"
     >
         <div class="prev-container"
@@ -303,8 +303,9 @@
                 this.onScrollHandler();
 
                 this.windowW = window.windowWidth;
-                this.innerMinH = window.windowWidth*0.8 > 1000 ? 1000*9/16+280 : window.windowWidth*0.8*9/16+280;
-
+                var w = window.windowWidth*0.8 > 1000 ? 1000 : window.windowWidth*0.8;
+                this.innerMinH = w*9/16+280 > window.windowHeight ? w*9/16+280 : window.windowHeight;
+                this.innerMinH = Math.floor(this.innerMinH);
             },
 
             onScrollHandler : function($e) {
