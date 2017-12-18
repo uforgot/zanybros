@@ -77,7 +77,7 @@
                 player:null,
                 containerX:0,
                 containerW:0,
-                worksMinH:0,
+                worksMinH:window.windowHeight,
                 fixY:Number,
                 isShow:false,
                 setTimeoutID:0,
@@ -123,14 +123,15 @@
                     this.videoWidthSet();
                     this.videoHeightSet();
 
-                    this.worksMinH = this.videoWidthGet()*9/16+280;
+                    this.worksMinH = this.videoWidth*9/16+280;//this.videoWidthGet()*9/16+280 > window.windowHeight ? this.videoWidthGet()*9/16+280 : window.windowHeight;
+                    this.worksMinH = Math.ceil(this.worksMinH);
                     this.containerW = this.videoWidthGet();
                     this.containerX = (window.windowWidth - this.videoWidthGet())/2;
                     this.player.setSize(this.videoWidthGet(), this.videoHeightGet());
                 }
             },
             onScrollHandler : function($e) {
-                let scrollTop = window.pageYOffset;
+                // let scrollTop = window.pageYOffset;
                 //this.fixY = -scrollTop;
             },
             onWorkViewShow:function(){
