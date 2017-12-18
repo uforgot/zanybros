@@ -9,7 +9,7 @@
     <div class="view-works-view"
          :class="{'show':isShow}"
          :style="{
-                'min-height':worksMinH+'px'
+                'height':worksH+'px'
              }"
     >
         <div class="container"
@@ -77,10 +77,9 @@
                 player:null,
                 containerX:0,
                 containerW:0,
-                worksMinH:window.windowHeight,
+                worksH:window.windowHeight,
                 fixY:Number,
                 isShow:false,
-                setTimeoutID:0,
                 windowW:window.windowWidth,
                 windowH:window.windowHeight,
                 videoW:this.videoWidthGet(),
@@ -123,8 +122,10 @@
                     this.videoWidthSet();
                     this.videoHeightSet();
 
-                    this.worksMinH = this.videoWidth*9/16+280;//this.videoWidthGet()*9/16+280 > window.windowHeight ? this.videoWidthGet()*9/16+280 : window.windowHeight;
-                    this.worksMinH = Math.ceil(this.worksMinH);
+                    //this.worksMinH = this.videoWidth*9/16+280;//this.videoWidthGet()*9/16+280 > window.windowHeight ? this.videoWidthGet()*9/16+280 : window.windowHeight;
+                    //this.worksMinH = Math.ceil(this.worksMinH);
+                    var h = this.videoWidthGet()*9/16+280 > window.windowHeight ? this.videoWidthGet()*9/16+280 : window.windowHeight;
+                    this.worksH = Math.ceil(h);
                     this.containerW = this.videoWidthGet();
                     this.containerX = (window.windowWidth - this.videoWidthGet())/2;
                     this.player.setSize(this.videoWidthGet(), this.videoHeightGet());
