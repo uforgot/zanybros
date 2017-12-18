@@ -82,22 +82,34 @@
                 isShow:false,
                 setTimeoutID:0,
                 windowW:window.windowWidth,
-                windowH:window.windowHeight
+                windowH:window.windowHeight,
+                videoW:this.videoWidthGet(),
+                videoH:this.videoHeightGet()
             };
         },
 
         computed : {
             videoWidth : function () {
-
-                var w = this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowW) > 1000 ? 1000 : this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowW);
-                return w;
+                return this.videoWidthGet();
             },
 
             videoHeight : function () {
-                return (this.videoWidth /16) * 9;
+                return this.videoHeightGet();
             }
         },
         methods : {
+            videoWidthSet : function(){
+                this.videoW = this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowW) > 1000 ? 1000 : this.getPixelValueByPercentValue(this.getPercentValue('80%'), this.windowW);
+            },
+            videoWidthGet : function(){
+                return this.videoW;
+            },
+            videoHeightSet : function(){
+                this.videoH = (this.videoWidth /16) * 9;
+            },
+            videoHeightGet : function(){
+                return this.videoH;
+            },
             setYoutubeReady : function($player) {
                 this.player = $player;
                 this.isReady = true;
@@ -106,13 +118,15 @@
             },
             handleWindowResize: function() {
                 if (this.player !== null) {
-                    this.windowW = window.windowWidth;
-                    console.log( this.windowW ,"+++")
-                    this.player.setSize(this.videoWidth, this.videoHeight);
-                    this.containerW = this.videoWidth;
-                    this.containerX = (window.windowWidth - this.videoWidth)/2;
 
-                    this.worksMinH = this.videoWidth*9/16+280;
+                    this.windowW = window.windowWidth;
+                    this.videoWidthSet();
+                    this.videoHeightSet();
+
+                    this.worksMinH = this.videoWidthGet()*9/16+280;
+                    this.containerW = this.videoWidthGet();
+                    this.containerX = (window.windowWidth - this.videoWidthGet())/2;
+                    this.player.setSize(this.videoWidthGet(), this.videoHeightGet());
                 }
             },
             onScrollHandler : function($e) {
