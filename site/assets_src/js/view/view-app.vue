@@ -100,7 +100,6 @@
                 if(to.name != 'works-view'){
                     return { x: 0, y: 0 }
                 }
-
             }
         }
     });

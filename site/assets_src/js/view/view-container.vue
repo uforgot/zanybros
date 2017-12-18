@@ -320,6 +320,8 @@
                     var w = window.windowWidth*0.8 > 1000 ? 1000 : window.windowWidth*0.8;
                     var h = w*9/16+280 > window.windowHeight ? w*9/16+280 : window.windowHeight;
                     owner.innerH = Math.floor(h)+'px';
+
+                    EventBus.$emit(EventBus.WORK_VIEW_SHOW_DONE);
                     },400);
 
             },
@@ -377,7 +379,7 @@
                 animate();
             },
             '$route'(to, from) {
-                var owner = this;
+
                 if(to.name == 'works-view') {
                     EventBus.$emit(EventBus.WORK_VIEW_SHOW);
                 } else {
@@ -400,6 +402,7 @@
         //beforeMount : function() {},
         mounted : function() {
             if (this.$route.name == 'works-view') {
+                this.isWorksViewShow = true;
                 EventBus.$emit(EventBus.WORK_VIEW_SHOW);
             }
             this.$on(this.CUSTOM_EVENT.INTERACTION_START, (e)=>this.handleInteractionStart(e));

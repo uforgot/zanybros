@@ -10,6 +10,7 @@
          :class="{'show':isShow}"
          :style="{
                 'height':worksH+'px'
+
              }"
     >
         <div class="container"
@@ -78,7 +79,6 @@
                 containerX:0,
                 containerW:0,
                 worksH:window.windowHeight,
-                fixY:Number,
                 isShow:false,
                 windowW:window.windowWidth,
                 windowH:window.windowHeight,
@@ -135,9 +135,9 @@
                 // let scrollTop = window.pageYOffset;
                 //this.fixY = -scrollTop;
             },
-            onWorkViewShow:function(){
-                var owner = this;
-                this.setTimeoutID = setTimeout(function(){owner.isShow = true;},400);
+            onWorkViewShowDone:function(){
+                this.isShow = true;
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
             },
             onWorkViewHide:function(){
                 clearTimeout(this.setTimeoutID);
@@ -153,8 +153,10 @@
         mounted : function() {
             EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
             EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
-            EventBus.$on(EventBus.WORK_VIEW_SHOW, this.onWorkViewShow);
+            EventBus.$on(EventBus.WORK_VIEW_SHOW_DONE, this.onWorkViewShowDone);
             EventBus.$on(EventBus.WORK_VIEW_HIDE, this.onWorkViewHide);
+
+            this.onWorkViewShowDone();
         },
         //beforeUpdate : function() {},
         //updated : function() {},

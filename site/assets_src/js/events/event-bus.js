@@ -16,6 +16,7 @@ EventBus.MENU_HIDE = "menu_hide";
 EventBus.WORK_ITEM_CLICK = "work_item_click";
 
 EventBus.WORK_VIEW_SHOW = "work_view_show";
+EventBus.WORK_VIEW_SHOW_DONE = "work_view_show_done";
 EventBus.WORK_VIEW_HIDE = "work_view_hide";
 
 EventBus.MENU_CLICK_EVENT = 'menu_click_event';
