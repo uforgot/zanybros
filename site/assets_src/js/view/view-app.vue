@@ -138,7 +138,7 @@
 //                this.transitionDirection = toDepth < fromDepth ? 'slide-right' : 'slide-left';
 //                this.transitionDirection = 'slide-left';
 
-                console.log('notransition : ' + window.noTransition);
+                //console.log('notransition : ' + window.noTransition);
 
                 if (window.noTransition===true) {
                     this.transitionDirection = 'none';

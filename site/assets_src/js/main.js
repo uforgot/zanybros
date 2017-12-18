@@ -30,7 +30,7 @@ window.currentContentsX = 0;
 window.rootPath = '';
 
 window.addEventListener('popstate', function (e) {
-    console.log('popstate');
+    //console.log('popstate');
 })
 
 function init() {

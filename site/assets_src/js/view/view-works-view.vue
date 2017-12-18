@@ -7,40 +7,35 @@
 
 <template>
     <div class="view-works-view"
+         :class="{'show':isShow}"
          :style="{
                 'min-height':worksMinH+'px'
              }"
     >
-        <div class="works-container"
-            :style="{
-                'top':fixY+'px'
-            }"
+        <div class="container"
+             :class="[{'show':isReady}]"
+             :style="{
+                'left':containerX+'px',
+                'width':containerW+'px'
+             }"
         >
-            <div class="container"
-                 :class="[{'show':isReady}]"
-                 :style="{
-                    'left':containerX+'px',
-                    'width':containerW+'px'
-                 }"
-            >
-                <youtube
-                        @ready="setYoutubeReady"
-                        :player-vars="{
-                             autoplay: 0,
-                             loop: 0,
-                             controls: 1,
-                             rel: 0,
-                             fs:0,
-                             modestbranding:0,
-                             showinfo:0
-                         }"
-                ></youtube>
-                <div class="title">
-                    <h3 v-html="viewData.title"></h3>
-                </div>
-                <div class="comment">
-                    <small v-html="viewData.comment"></small>
-                </div>
+            <youtube
+                    @ready="setYoutubeReady"
+                    :player-vars="{
+                         autoplay: 0,
+                         loop: 0,
+                         controls: 1,
+                         rel: 0,
+                         fs:0,
+                         modestbranding:0,
+                         showinfo:0
+                     }"
+            ></youtube>
+            <div class="title">
+                <h3 v-html="viewData.title"></h3>
+            </div>
+            <div class="comment">
+                <small v-html="viewData.comment"></small>
             </div>
         </div>
     </div>
@@ -54,7 +49,9 @@
         width:50%;
         text-align:right;
     }
-
+    .view-works-view {
+        &.show{position:absolute;}
+    }
     .container {
         &.show {
             display:block;
@@ -83,6 +80,8 @@
                 containerW:0,
                 worksMinH:0,
                 fixY:Number,
+                isShow:false,
+                setTimeoutID:0
             };
         },
 
@@ -115,6 +114,16 @@
             onScrollHandler : function($e) {
                 let scrollTop = window.pageYOffset;
                 //this.fixY = -scrollTop;
+            },
+            onWorkViewShow:function(){
+                var owner = this;
+                this.setTimeoutID = setTimeout(function(){owner.isShow = true;},400);
+                console.log('onWorkViewShow')
+            },
+            onWorkViewHide:function(){
+                clearTimeout(this.setTimeoutID);
+                console.log('onWorkViewHide')
+                this.isShow = false;
             }
         },
         watch : {},
@@ -126,6 +135,8 @@
         mounted : function() {
             window.addEventListener('resize', this.handleWindowResize);
             EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
+            EventBus.$on(EventBus.WORK_VIEW_SHOW, this.onWorkViewShow);
+            EventBus.$on(EventBus.WORK_VIEW_HIDE, this.onWorkViewHide);
         },
         //beforeUpdate : function() {},
         //updated : function() {},

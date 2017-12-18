@@ -357,8 +357,10 @@
                 var owner = this;
                 if(to.name == 'works-view') {
                     owner.isWorksViewShow = true;
+                    EventBus.$emit(EventBus.WORK_VIEW_SHOW);
                 } else {
                     owner.isWorksViewShow = false;
+                    EventBus.$emit(EventBus.WORK_VIEW_HIDE);
                 }
             }
         },
@@ -378,6 +380,7 @@
         mounted : function() {
             if (this.$route.name == 'works-view') {
                 this.isWorksViewShow = true;
+                EventBus.$emit(EventBus.WORK_VIEW_SHOW);
             }
             this.$on(this.CUSTOM_EVENT.INTERACTION_START, (e)=>this.handleInteractionStart(e));
             this.$on(this.CUSTOM_EVENT.INTERACTION_END, (e)=>this.handleInteractionEnd(e));
