@@ -14,7 +14,7 @@
            }"
          :style="{
             transform:computedTransform,
-            'min-height' : innerMinH+'px'
+            'height' : innerH
         }"
     >
         <div class="prev-container"
@@ -174,8 +174,10 @@
                 isIE : _isIE,
                 isWorksViewShow : false,
                 isMenuViewShow : false,
-                innerMinH : 1000,
-                windowW:window.windowWidth
+                innerMinH : 0,
+                innerH : 'auto',
+                windowW:window.windowWidth,
+                setTimeoutID:0
             }
         },
 
@@ -301,19 +303,37 @@
                 this.isResize = true;
                 this.setContentsSnapX();
                 this.onScrollHandler();
-
                 this.windowW = window.windowWidth;
-                var w = window.windowWidth*0.8 > 1000 ? 1000 : window.windowWidth*0.8;
-                //this.innerMinH = w*9/16+280 > window.windowHeight ? w*9/16+280 : window.windowHeight;
-                this.innerMinH = window.windowWidth*0.8 > 1000 ? 1000*9/16+280 : window.windowWidth*0.8*9/16+280;
-                this.innerMinH = Math.floor(this.innerMinH);
-            },
+                if(this.isWorksViewShow) {
+                    var w = window.windowWidth*0.8 > 1000 ? 1000 : window.windowWidth*0.8;
+                    var h = w*9/16+280 > window.windowHeight ? w*9/16+280 : window.windowHeight;
+                    this.innerH = Math.floor(h)+'px';
+                }else{
+                    this.innerH = 'auto';
+                }
 
+            },
+            onWorkViewShow:function(){
+                var owner = this;
+                this.setTimeoutID = setTimeout(function(){
+                    owner.isWorksViewShow = true;
+                    var w = window.windowWidth*0.8 > 1000 ? 1000 : window.windowWidth*0.8;
+                    var h = w*9/16+280 > window.windowHeight ? w*9/16+280 : window.windowHeight;
+                    owner.innerH = Math.floor(h)+'px';
+                    },400);
+
+            },
+            onWorkViewHide:function(){
+                clearTimeout(this.setTimeoutID);
+                this.isWorksViewShow = false;
+                this.innerH = 'auto';
+
+            },
             onScrollHandler : function($e) {
                 let scrollTop = window.pageYOffset;
                 this.fixY = scrollTop;
-            },
 
+            },
             onMenuShowHandler:function(){
                 this.isMenuViewShow = true;
             },
@@ -359,10 +379,8 @@
             '$route'(to, from) {
                 var owner = this;
                 if(to.name == 'works-view') {
-                    owner.isWorksViewShow = true;
                     EventBus.$emit(EventBus.WORK_VIEW_SHOW);
                 } else {
-                    owner.isWorksViewShow = false;
                     EventBus.$emit(EventBus.WORK_VIEW_HIDE);
                 }
             }
@@ -382,7 +400,6 @@
         //beforeMount : function() {},
         mounted : function() {
             if (this.$route.name == 'works-view') {
-                this.isWorksViewShow = true;
                 EventBus.$emit(EventBus.WORK_VIEW_SHOW);
             }
             this.$on(this.CUSTOM_EVENT.INTERACTION_START, (e)=>this.handleInteractionStart(e));
@@ -395,6 +412,10 @@
 
             EventBus.$on(EventBus.MENU_SHOW, this.onMenuShowHandler);
             EventBus.$on(EventBus.MENU_HIDE, this.onMenuHideHandler);
+
+            EventBus.$on(EventBus.WORK_VIEW_SHOW, this.onWorkViewShow);
+            EventBus.$on(EventBus.WORK_VIEW_HIDE, this.onWorkViewHide);
+
             this.onResizeHandler();
 
             //window.scrollTo(0,0);
@@ -414,6 +435,9 @@
 
             EventBus.$off(EventBus.MENU_SHOW, this.onMenuShowHandler);
             EventBus.$off(EventBus.MENU_HIDE, this.onMenuHideHandler);
+
+            EventBus.$off(EventBus.WORK_VIEW_SHOW, this.onWorkViewShow);
+            EventBus.$off(EventBus.WORK_VIEW_HIDE, this.onWorkViewHide);
         },
         //destroyed : function() {},
         dummy : {}

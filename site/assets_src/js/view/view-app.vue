@@ -97,7 +97,10 @@
             if (savedPosition) {
                 return savedPosition
             } else {
-                return { x: 0, y: 0 }
+                if(to.name != 'works-view'){
+                    return { x: 0, y: 0 }
+                }
+
             }
         }
     });
