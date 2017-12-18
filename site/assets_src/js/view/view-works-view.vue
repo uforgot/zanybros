@@ -114,7 +114,7 @@
             },
             onScrollHandler : function($e) {
                 let scrollTop = window.pageYOffset;
-                this.fixY = -scrollTop;
+                //this.fixY = -scrollTop;
             }
         },
         watch : {},
