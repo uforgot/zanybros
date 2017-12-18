@@ -61,17 +61,19 @@
                 isMute:false,
                 player:null,
                 isReady:false,
-                windowW:window.windowWidth
+                windowW:window.windowWidth,
+                videoW:this.videoWidthGet(),
+                videoH:this.videoHeightGet()
             }
         },
 
         computed: {
             videoWidth : function () {
-                return this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width),this.windowW);
+                return this.videoWidthGet();
             },
 
             videoHeight : function () {
-                return (this.videoWidth /16) * 9;
+                return this.videoHeightSet();
             }
         },
 
@@ -81,10 +83,24 @@
                 this.handleWindowResize();
                 this.isReady = true;
             },
+            videoWidthSet : function(){
+                this.videoW = this.getPixelValueByPercentValue(this.getPercentValue(this.jsonData.width),this.windowW);
+            },
+            videoWidthGet : function(){
+                return this.videoW;
+            },
+            videoHeightSet : function(){
+                this.videoH = (this.videoWidth /16) * 9;
+            },
+            videoHeightGet : function(){
+                return this.videoH;
+            },
             handleWindowResize: function() {
                 if (this.player !== null) {
                     this.windowW = window.windowWidth;
-                    this.player.setSize(this.videoWidth, this.videoHeight);
+                    this.videoWidthSet();
+                    this.videoHeightSet();
+                    this.player.setSize(this.videoWidthGet(), this.videoHeightGet());
                 }
             },
             handlePlayEnd : function($player) {
