@@ -32,7 +32,7 @@
                   :class="{'last':index == (jsonData.images.length-1) }"
             ><div class="image"><img :src="item.imageUrl"
                   :style="{
-                    'max-width':imageWidth
+                    'max-width':imageWidth + 'vw'
                   }"
             ></div><div class="title" v-html="item.title"></div>
             </span>
@@ -77,6 +77,7 @@
 </style>
 
 <script>
+    import {EventBus} from "../events/event-bus";
     import MixinControlScrollAnimation from '../mixin/mixin-control-scroll-animation.vue';
     import MixinContent from '../mixin/mixin-content.vue';
 
@@ -90,13 +91,31 @@
                 leftPosition:0,
                 rightPosition:0,
                 marginLeft:0,
-                imageWidth:0
+                windowW:window.windowWidth,
+                windowH:window.windowHeight
             };
         },
 
-        computed : {},
-        methods : {},
-        watch : {},
+        computed : {
+            imageWidth : function() {
+                if (this.jsonData.images) {
+                    if (this.windowW < window.MobieWidth ) {
+                        return 80;
+                    }
+
+                    return (80 - (2 * (this.jsonData.images.length-1))) / (this.jsonData.images.length);
+                }
+                return 0;
+            }
+        },
+        methods : {
+            handleWindowResize: function() {
+                console.log(this.windowW + ' : ' + window.MobieWidth);
+                this.windowW = window.windowWidth;
+                this.windowH = window.windowHeight;
+            }
+        },
+        watch : { },
 
         //life cycle
         //beforeCreate : function() {},
@@ -120,15 +139,15 @@
 //                this.marginLeft = '-20vw';
             }
 
-            if (this.jsonData.images) {
-                this.imageWidth = (80 - (2 * (this.jsonData.images.length-1))) / (this.jsonData.images.length) + 'vw';
-            }
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
         },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
-        //beforeDestroy : function () {},
+        beforeDestroy : function () {
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+        },
         //destroyed : function() {},
         dummy : {}
     }
