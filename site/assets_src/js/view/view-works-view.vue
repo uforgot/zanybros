@@ -9,7 +9,7 @@
     <div class="view-works-view"
          :class="{'show':isShow}"
          :style="{
-                'height':worksMinH+'px'
+                'min-height':worksMinH+'px'
              }"
     >
         <div class="container"
@@ -123,7 +123,7 @@
                     this.videoWidthSet();
                     this.videoHeightSet();
 
-                    this.worksMinH = this.videoWidthGet()*9/16+280 > window.windowHeight ? this.videoWidthGet()*9/16+280 : window.windowHeight;
+                    this.worksMinH = this.videoWidth*9/16+280;//this.videoWidthGet()*9/16+280 > window.windowHeight ? this.videoWidthGet()*9/16+280 : window.windowHeight;
                     this.worksMinH = Math.ceil(this.worksMinH);
                     this.containerW = this.videoWidthGet();
                     this.containerX = (window.windowWidth - this.videoWidthGet())/2;
@@ -131,7 +131,7 @@
                 }
             },
             onScrollHandler : function($e) {
-                let scrollTop = window.pageYOffset;
+                // let scrollTop = window.pageYOffset;
                 //this.fixY = -scrollTop;
             },
             onWorkViewShow:function(){
