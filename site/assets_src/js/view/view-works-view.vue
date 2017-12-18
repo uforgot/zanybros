@@ -118,11 +118,9 @@
             onWorkViewShow:function(){
                 var owner = this;
                 this.setTimeoutID = setTimeout(function(){owner.isShow = true;},400);
-                console.log('onWorkViewShow')
             },
             onWorkViewHide:function(){
                 clearTimeout(this.setTimeoutID);
-                console.log('onWorkViewHide')
                 this.isShow = false;
             }
         },
