@@ -14,7 +14,7 @@
            }"
          :style="{
             transform:computedTransform,
-            'height' : innerMinH+'px'
+            'min-height' : innerMinH+'px'
         }"
     >
         <div class="prev-container"
