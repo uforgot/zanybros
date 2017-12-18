@@ -118,7 +118,7 @@
         },
         methods : {
             onMouseOverHandler : function($e) {
-                this.$emit('workItemOver', this.order);
+                if(_isDeskTop)this.$emit('workItemOver', this.order);
             },
             onMouseOutHandler : function($e) {
                 this.$emit('workItemOver', -1);

@@ -8,9 +8,13 @@
 <template>
     <div>
     <div class="inner-container"
-         :class="{'on-transition':(!isIE)}"
+         :class="{'on-transition':(!isIE),
+                   'crop-works':isWorksViewShow,
+                   'crop-menu':isMenuViewShow,
+           }"
          :style="{
-            transform:computedTransform
+            transform:computedTransform,
+            'min-height' : innerMinH+'px'
         }"
     >
         <div class="prev-container"
@@ -65,6 +69,16 @@
 
 <style scoped lang="scss">
     @import "~scssMixin";
+    .inner-container{
+        &.crop-works{
+            overflow: hidden;
+            height:100vh;
+        }
+        &.crop-menu{
+            overflow: hidden;
+            height:100vh;
+        }
+    }
     .on-transition{
         transition: transform 0.3s ease-out 0s;
     }
@@ -158,7 +172,10 @@
                 targetContentsX:0,
 
                 transitionPopup:'popup',
-                isIE : _isIE
+                isIE : _isIE,
+                isWorksViewShow : false,
+                isMenuViewShow : false,
+                innerMinH : 0
             }
         },
 
@@ -190,7 +207,7 @@
                     this.isSwipeLock  = false;
 
                     this.isTouchStart = true;
-                    console.log('handleInteractionStart')
+                    //console.log('handleInteractionStart')
                 }
 
             },
@@ -284,11 +301,21 @@
                 this.isResize = true;
                 this.setContentsSnapX();
                 this.onScrollHandler();
+
+                this.innerMinH = this.windowWidth*0.8 > 1000 ? 1000*9/16+280 : this.windowWidth*0.8*9/16+280;
+
             },
 
             onScrollHandler : function($e) {
                 let scrollTop = window.pageYOffset;
                 this.fixY = scrollTop;
+            },
+
+            onMenuShowHandler:function(){
+                this.isMenuViewShow = true;
+            },
+            onMenuHideHandler:function(){
+                this.isMenuViewShow = false;
             }
         },
         watch : {
@@ -325,6 +352,14 @@
 
 
                 animate();
+            },
+            '$route'(to, from) {
+                var owner = this;
+                if(to.name == 'works-view') {
+                    owner.isWorksViewShow = true;
+                } else {
+                    owner.isWorksViewShow = false;
+                }
             }
         },
 
@@ -341,6 +376,9 @@
         },
         //beforeMount : function() {},
         mounted : function() {
+            if (this.$route.name == 'works-view') {
+                this.isWorksViewShow = true;
+            }
             this.$on(this.CUSTOM_EVENT.INTERACTION_START, (e)=>this.handleInteractionStart(e));
             this.$on(this.CUSTOM_EVENT.INTERACTION_END, (e)=>this.handleInteractionEnd(e));
             this.$on(this.CUSTOM_EVENT.INTERACTION_MOVE, (e)=>this.handleInteractionMove(e));
@@ -348,9 +386,12 @@
 
             EventBus.$on(EventBus.WINDOW_RESIZE, this.onResizeHandler);
             EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
+
+            EventBus.$on(EventBus.MENU_SHOW, this.onMenuShowHandler);
+            EventBus.$on(EventBus.MENU_HIDE, this.onMenuHideHandler);
             this.onResizeHandler();
 
-            window.scrollTo(0,0);
+            //window.scrollTo(0,0);
         },
         //beforeUpdate : function() {},
         //updated : function() {},
@@ -364,6 +405,9 @@
 
             EventBus.$off(EventBus.WINDOW_RESIZE, this.onResizeHandler);
             EventBus.$off(EventBus.SCROLL_MOVE, this.onScrollHandler);
+
+            EventBus.$off(EventBus.MENU_SHOW, this.onMenuShowHandler);
+            EventBus.$off(EventBus.MENU_HIDE, this.onMenuHideHandler);
         },
         //destroyed : function() {},
         dummy : {}
