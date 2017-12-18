@@ -140,8 +140,10 @@
                     {width:this.frameWidth, height:this.frameHeight},
                 );
 
+
                 this.videoFrameWidth = size.width;
                 this.videoFrameHeight = size.height;
+
                 if (this.player !== null) {
                     this.player.setSize(this.videoFrameWidth, this.videoFrameHeight);
                 }

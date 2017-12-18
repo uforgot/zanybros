@@ -151,12 +151,7 @@
 
         //life cycle
         //beforeCreate : function() {},
-        created : function() {
-            console.log('xxx');
-            new Vue({
-                render: h => h(ViewFrame)
-            }).$mount('#frame');
-        },
+        //created : function() {},
         //beforeMount : function() {},
         //mounted : function() {},
         //beforeUpdate : function() {},

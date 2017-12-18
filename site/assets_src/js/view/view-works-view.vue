@@ -103,7 +103,6 @@
         //updated : function() {},
         activated : function() {
             this.handleWindowResize();
-
             this.viewData = this.getWorksDataByIndex(this.$route.params.id);
 
         },
