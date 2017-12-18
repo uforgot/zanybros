@@ -42,12 +42,13 @@ function init() {
         responseType:'json'
     }).then(
         ($response) => {
-            console.log('>> data loaded');
+            console.log('>> data loaded -------- ');
 
             //컨텐츠 데이터 셋팅
             window.ZanyBrosData = $response;
             window.ZanyBrosWorksData = UtilsData.getWorksDatafromJson(window.ZanyBrosData);
             window.ZanyBrosTitlaArray = UtilsData.getTitleArray(window.ZanyBrosData);
+            window.MobieWidth = 767;
 
             window.app = new Vue({
                 render: h => h(App)

@@ -69,7 +69,6 @@ header {
                 position:relative;
                 left:50%;
                 transform: translateX(-50%);
-
                 max-width:80vw;
                 width:80vw;
 
@@ -86,15 +85,12 @@ header {
 
             .image {
                 margin-top:2vw;
-
                 span {
+                    width:100%;
                     display:inline-block;
-                    margin-right:2vw;
 
-                    .title {margin-top:1vw;}
-
-                    &.last {
-                        margin-right:0;
+                    div {
+                        text-align:center;
                     }
                 }
             }
