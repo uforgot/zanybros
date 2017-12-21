@@ -9,13 +9,22 @@
     <div class="view-background"
          :class="{'hide':!isVideoPlay}"
     >
-        <comp-youtube-frame
-                :video-id="dataVideo.videoId"
-                :video-width="dataVideo.videoWidth"
-                :video-height="dataVideo.videoHeight"
-                :video-scale="currentScale"
+        <comp-video-frame
+                video-url="/site/assets/images/mp4/showreel.mp4"
+                video-width="640"
+                video-height="640"
                 :video-play="isVideoPlay"
-        ></comp-youtube-frame>
+        >
+
+        </comp-video-frame>
+        <!--<comp-youtube-frame-->
+                <!--:video-id="dataVideo.videoId"-->
+                <!--:video-width="dataVideo.videoWidth"-->
+                <!--:video-height="dataVideo.videoHeight"-->
+                <!--:video-scale="currentScale"-->
+                <!--:video-play="isVideoPlay"-->
+        <!--&gt;</comp-youtube-frame>-->
+
     </div>
 </template>
 
@@ -30,12 +39,14 @@
 <script>
     import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
+    import CompVideoFrame from '../component/comp-video-frame.vue';
     import {EventBus} from "../events/event-bus";
 
     export default {
         mixins: [mixinResizeEvent],
         components: {
-            CompYoutubeFrame
+            CompYoutubeFrame,
+            CompVideoFrame
         },
 
         props: {},

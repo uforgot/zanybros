@@ -10,6 +10,7 @@
          :style="{
              width: frameWidth + 'px',
              height: frameHeight + 'px'
+
          }
     ">
         <div class="container"
@@ -18,12 +19,14 @@
                          'margin-top': videoFrameMarginTop
                     }"
         >
-            <video  autoplay loop
+            <video  playsinline autoplay loop muted
                     :width="videoFrameWidth"
                     :height="videoFrameHeight"
+                    :src="videoUrl"
             ></video>
-            <!--:src="videoUrl"-->
+
         </div>
+        <div class="din"></div>
     </div>
 </template>
 
@@ -44,6 +47,16 @@
             top:50%;
         }
     }
+
+    .din  {
+        position:absolute;
+        left:0;
+        top:0;
+        background: #000 ;
+        width:100%;
+        height:100%;
+        @include opacity($video-Din-Opacity);
+    }
 </style>
 
 <script>
@@ -61,6 +74,9 @@
             },
             'video-height': {
                 Type : Number
+            },
+            'video-play' : {
+                Type : Boolean
             }
         },
         data: function() {
@@ -94,6 +110,7 @@
             handleWindowResize: function() {
                 this.windowW = window.windowWidth;
                 this.windowH = window.windowHeight;
+
                 let size = this.getSizeByFrameSize(
                     {width:this.videoWidth, height:this.videoHeight},
                     {width:this.frameWidth, height:this.frameHeight},
@@ -104,7 +121,15 @@
             }
         },
 
-        watch : {},
+        watch : {
+            videoPlay : function($newValue, $oldValue) {
+                if($newValue === false) {
+                    //this.player.pauseVideo();
+                } else {
+                    //this.player.playVideo();
+                }
+            }
+        },
 
         //life cycle
         //beforeCreate : function() {},

@@ -62,13 +62,13 @@ function init() {
                 let currentWindowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                 let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-                if (_isMobile) {
-                    if (currentWindowWidth < currentWindowHeight) {
-                        if(currentWindowHeight < window.windowHeight) {
-                            currentWindowHeight = window.windowHeight;
-                        }
-                    }
-                }
+                // if (_isMobile) {
+                //     if (currentWindowWidth < currentWindowHeight) {
+                //         if(currentWindowHeight < window.windowHeight) {
+                //             currentWindowHeight = window.windowHeight;
+                //         }
+                //     }
+                // }
 
                 window.windowWidth = currentWindowWidth;
                 window.windowHeight = currentWindowHeight;
