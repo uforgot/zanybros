@@ -54,30 +54,28 @@ function init() {
                 render: h => h(App)
             }).$mount('#app');
 
-            document.addEventListener('scroll', ($e) => {
-                EventBus.$emit(EventBus.SCROLL_MOVE, $e);
-            }, true);
+            window.addEventListener('resize',resizeHandler, true);
+            document.addEventListener('scroll', scrollHandler, true);
 
-            window.addEventListener('resize', ($e) => {
-                let currentWindowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-                let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-                // if (_isMobile) {
-                //     if (currentWindowWidth < currentWindowHeight) {
-                //         if(currentWindowHeight < window.windowHeight) {
-                //             currentWindowHeight = window.windowHeight;
-                //         }
-                //     }
-                // }
-
-                window.windowWidth = currentWindowWidth;
-                window.windowHeight = currentWindowHeight;
-                EventBus.$emit(EventBus.WINDOW_RESIZE, $e);
-            }, true);
+            resizeHandler(null);
+            scrollHandler(null);
         }
     ).catch (
         ($error) => console.log($error)
     );
+}
+
+function resizeHandler($e){
+    let currentWindowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+    window.windowWidth = currentWindowWidth;
+    window.windowHeight = currentWindowHeight;
+    EventBus.$emit(EventBus.WINDOW_RESIZE, $e);
+}
+
+function scrollHandler($e){
+    EventBus.$emit(EventBus.SCROLL_MOVE, $e);
 }
 
 window.onLoad = init();

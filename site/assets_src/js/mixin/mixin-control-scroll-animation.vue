@@ -32,7 +32,7 @@
                 );
             },
             onScrollHandler : function($e) {
-                let scrollTop = window.pageYOffset + this.windowHeight;
+                let scrollTop = window.pageYOffset + window.windowHeight;
                 let i;
                 let elObject;
                 let animationOffset;
@@ -45,7 +45,7 @@
                     animationOffset = elObject.el.getAttribute('animation-offset');
 
                     if (animationOffset !== null) {
-                        animationOffsetValue = this.windowHeight * (Number(animationOffset)/100);
+                        animationOffsetValue = window.windowHeight * (Number(animationOffset)/100);
                     }
 
                     if (scrollTop > (elObject.offset.top - animationOffsetValue)) {

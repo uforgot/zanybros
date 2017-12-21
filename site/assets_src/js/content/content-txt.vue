@@ -110,7 +110,7 @@
         },
         methods : {
             handleWindowResize: function() {
-                console.log(this.windowW + ' : ' + window.MobieWidth);
+                // console.log(this.windowW + ' : ' + window.MobieWidth);
                 this.windowW = window.windowWidth;
                 this.windowH = window.windowHeight;
             }
