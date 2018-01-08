@@ -1,7 +1,7 @@
 @media only screen and (max-width: 767px){
 
   .view-background {
-    position : absolute;
+    position : fixed;
   }
 
   .view-works-holder {
@@ -12,10 +12,10 @@
 
         .txt-frame {opacity:1;
           h4 {
-            font-size:4vw;
-            line-height:1;
+            font-size:3vw;
+            line-height:1.5em;
             hr {
-              border-top:4px solid #fff;
+              border-top:2px solid #fff;
               margin:0.2em 0;
             }
           }

@@ -6,11 +6,9 @@
 */
 
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import {EventBus} from "../events/event-bus";
 
     export default {
-        mixins: [mixinResizeEvent],
         components: {},
 
         props: {},
@@ -54,6 +52,17 @@
                         this.setElementRemoveClass(elObject.el, 'show');
                     }
                 }
+            },
+            setMobile : function() {
+                this.setElArray();
+
+                let i;
+                let elObject;
+
+                for (i=0; i< this.elArray.length; i++) {
+                    elObject = this.elArray[i];
+                     this.setElementAddClass(elObject.el, 'show');
+                }
             }
         },
 
@@ -64,18 +73,25 @@
         //created : function() {},
         //beforeMount : function() {},
         mounted : function() {
-            EventBus.$on(EventBus.WINDOW_RESIZE, this.onResizeHandler);
-            EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
-            this.onResizeHandler();
-            this.onScrollHandler();
+            if (!_isMobile) {
+                EventBus.$on(EventBus.WINDOW_RESIZE, this.onResizeHandler);
+                EventBus.$on(EventBus.SCROLL_MOVE, this.onScrollHandler);
+                this.onResizeHandler();
+                this.onScrollHandler();
+            } else {
+                this.setMobile();
+            }
+
         },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
         beforeDestroy : function () {
-            EventBus.$off(EventBus.WINDOW_RESIZE, this.onResizeHandler);
-            EventBus.$off(EventBus.SCROLL_MOVE, this.onScrollHandler);
+            if (!_isMobile) {
+                EventBus.$off(EventBus.WINDOW_RESIZE, this.onResizeHandler);
+                EventBus.$off(EventBus.SCROLL_MOVE, this.onScrollHandler);
+            }
         },
         //destroyed : function() {}
     }

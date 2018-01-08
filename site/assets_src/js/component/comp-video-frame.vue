@@ -20,10 +20,12 @@
                     }"
         >
             <video  playsinline autoplay loop muted
+                    id="comp-video-frame"
                     :width="videoFrameWidth"
                     :height="videoFrameHeight"
-                    :src="videoUrl"
-            ></video>
+            >
+                <source :src="videoUrl"></source>
+            </video>
 
         </div>
         <div class="din"></div>
@@ -109,7 +111,7 @@
         methods:{
             handleWindowResize: function() {
                 this.windowW = window.windowWidth;
-                this.windowH = window.windowHeight;
+                this.windowH = window.windowHeight + 300;
 
                 let size = this.getSizeByFrameSize(
                     {width:this.videoWidth, height:this.videoHeight},
@@ -123,10 +125,12 @@
 
         watch : {
             videoPlay : function($newValue, $oldValue) {
+                var video = document.getElementById("comp-video-frame");
+
                 if($newValue === false) {
-                    //this.player.pauseVideo();
+                    video.pause();
                 } else {
-                    //this.player.playVideo();
+                    video.play();
                 }
             }
         },
@@ -138,6 +142,7 @@
         mounted() {
             this.handleWindowResize();
             EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+//            document.getElementById("comp-video-frame").play();
         },
         //beforeUpdate : function() {},
         //updated : function() {},

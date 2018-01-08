@@ -9,7 +9,7 @@
     <div class="view-content-title"
          :style="{
             'background-color': backgroundColor,
-            height : jsonData.height,
+            height : titleHeight,
             'color' : color
          }"
     >
@@ -37,6 +37,7 @@
 </style>
 
 <script>
+    import {EventBus} from "../events/event-bus";
     import MixinControlScrollAnimation from '../mixin/mixin-control-scroll-animation.vue';
 
     export default {
@@ -50,6 +51,7 @@
         },
         data: function () {
             return {
+                titleHeight : String
             }
         },
 
@@ -63,7 +65,15 @@
                 return (this.jsonData.color)?this.jsonData.color:"#fff";
             }
         },
-        methods: {},
+        methods: {
+            handleWindowResize: function() {
+                if (window.windowWidth  < window.MobileWidth ) {
+                    this.titleHeight = '15vw';
+                } else {
+                    this.titleHeight = this.jsonData.height;
+                }
+            }
+        },
         watch : {},
 
         //life cycle
@@ -71,12 +81,16 @@
         //created : function() {},
         //beforeMount : function() {},
         mounted : function() {
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+            this.handleWindowResize();
         },
         //beforeUpdate : function() {},
         //updated : function() {},
         //activated : function() {},
         //deactivated : function() {},
-        //beforeDestroy : function () {},
+        beforeDestroy : function () {
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+        },
         //destroyed : function() {},
         dummy : {}
     }

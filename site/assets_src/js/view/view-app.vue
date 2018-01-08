@@ -9,13 +9,11 @@
     <div id="app">
         <view-background></view-background>
         <transition :name="transitionDirection" mode="out-in">
-            <!--<keep-alive>-->
                 <router-view
                         :current-index="getCurrentIndex($route.name)"
                         :key="getCurrentIndex($route.name)"
                         class="view-container">
                 </router-view>
-            <!--</keep-alive>-->
         </transition>
         <view-frame></view-frame>
     </div>
@@ -73,7 +71,8 @@
     if (window.routerMode==='hash') {
         window.rootPath = '';
     } else {
-        window.rootPath = '/site';
+        window.rootPath = '';
+//        window.rootPath = '/site';
     }
 
     const routes = [

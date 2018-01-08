@@ -26,7 +26,7 @@
             @click="menuShowClickHandler"
              :class="{'hide':isMenuShow}"
         >
-            <img src="/site/assets/images/svg/menu.svg" alt="">
+            <img src="/assets/images/svg/menu.svg" alt="">
         </div>
 
         <menu class="navigation-container">
@@ -68,12 +68,19 @@
             ></div>
         </menu>
 
+        <div v-if="isMobile" class="mobile-border"
+            :style = "{
+                    'top' : (mobileFrameHeight - mobileBorderHeight) + 'px',
+                    'height' : mobileBorderHeight + 'px'
+                }
+            "
+        ></div>
         <content-menu></content-menu>
 
         <div class="btn-close"
              @click="menuCloseClickHandler"
              :class="{'show':(isMenuShow || isViewShow)}">
-            <img src="/site/assets/images/svg/close.svg" alt="">
+            <img src="/assets/images/svg/close.svg" alt="">
         </div>
     </header>
 </template>
@@ -89,6 +96,11 @@
             top:25px;
             @include css-value-transition('opacity 0.1s 0.3s');
             @include opacity(1);
+
+            @media only screen and (max-width : 767px) {
+                top:2px;
+                right:2px;
+            }
         }
     }
 
@@ -192,6 +204,10 @@
         props: {},
         data: function() {
             return {
+                isMobile:_isMobile,
+                mobileBorderHeight:0,
+                mobileFrameHeight:0,
+
                 isViewShow:false,
                 isMenuShow:false,
                 currentIndex:-1,
@@ -207,6 +223,16 @@
         },
 
         methods : {
+            handleWindowResize: function() {
+                let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                this.mobileFrameHeight = currentWindowHeight;
+                if (window.windowHeight > window.windowWidth) {
+                    this.mobileBorderHeight = currentWindowHeight - (window.windowWidth * (16/9));
+                        //window.windowHeight - window.windowWidth * (16 / 9);
+                } else {
+                    this.mobileBorderHeight = 0;
+                }
+            },
             menuCloseClickHandler : function($e) {
                 if (this.isViewShow) {
                     this.$router.go(-1);
@@ -279,6 +305,9 @@
             EventBus.$on(EventBus.MENU_HIDE,this.setMenuHide);
             this.setCurrentIndex(this.$route.name);
 
+            EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+            this.handleWindowResize();
+
             document.getElementById("app-frame").appendChild(this.$el);
         },
         //beforeUpdate : function() {},
@@ -289,6 +318,9 @@
             EventBus.$off(EventBus.MENU_CLICK, this.setCurrentIndex);
             EventBus.$off(EventBus.MENU_SHOW,this.setMenuShow);
             EventBus.$off(EventBus.MENU_HIDE,this.setMenuHide);
+
+            EventBus.$off(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+
         },
         //destroyed : function() {},
         dummy : {}

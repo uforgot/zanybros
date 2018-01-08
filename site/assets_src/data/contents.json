@@ -144,7 +144,7 @@
                                     "In 2013, ZANYBROS’s first overseas base, called ZACS (ZANYBROS COMMUNICATIONS) was established in Japan and started overseas business.",
                                     "Following the goal of becoming Asia’s NO 1 Global Ent Content media group, In 2015, the Global Intern-Ship Program was started in order to promote and develop global talent.",
                                     "<br>",
-                                    "More recently, in October 2017, ZANYBROS 's Chinese subsidiary, Jiaxing Shanghai Cultural Transformation Co., Ltd., was set up to take over the global market."
+                                    "More recently, in October 2017, ZANYBROS's Chinese subsidiary, Jiaxing Shanghai Cultural Transformation Co., Ltd., was set up to take over the global market."
                                 ]
                             }
                         ]
@@ -160,13 +160,13 @@
                 {
                     "component": "view-content-holder",
                     "data": {
-                        "backgroundColor": "#000",
+                        "backgroundColor": "#111111",
                         "width": "100%",
                         "height": "100%",
                         "content": [
                             {
                                 "component": "content-video",
-                                "videoId": "qsWl1--Niyg",
+                                "videoId": "2SIKTmlhWE8",
                                 "width": "70%",
                                 "height": " %"
                             }

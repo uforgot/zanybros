@@ -3,28 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatiable" content="IE=edge">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Zanybros</title>
 
-    <link rel="stylesheet" type="text/css" href="/site/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
-    <script src="/site/assets/js/vendor/modernizr.js"></script>
-    <script src="/site/assets/js/vendor/detectizr.js"></script>
+    <script src="/assets/js/vendor/modernizr.js"></script>
+    <script src="/assets/js/vendor/detectizr.js"></script>
     <script>
         Detectizr.detect({detectScreen:false});
     </script>
 
-    <script src="/site/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
 </head>
 <body>
 <script>
-    const ZanyBrosDataUrl = '/site/assets/data/contents.json';
-//    const ZanyBrosDataUrl = '/cms/proc/content.json.php';
+//    const ZanyBrosDataUrl = '/assets/data/contents.json';
+    const ZanyBrosDataUrl = '/cms/proc/content.json.php';
 </script>
+<!--[if lt IE 9]>
+<div class="browser-upgrade">
+    <div class="txt-box">
+        <div class="logo">ZANYBROS</div>
+        You are using an outdated browser.
+        <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="https://www.google.com/chrome/browser/desktop/index.html">install Google Chrome Frame</a> to better experience this site.<br>
+        오래된 브라우저를 사용하는 것은 컴퓨터를 안전하지 않게 만듭니다.
+        <a href="http://browsehappy.com/">업그레이드</a> 또는 더 좋은 인터넷 경험을 위해 <a href="https://www.google.com/chrome/browser/desktop/index.html">크롬</a>을 사용하세요.
+    </div>
+</div>
+<![endif]-->
+
 <div id="app"></div>
 <div id="app-frame"></div>
-<script src="/site/assets/js/app.bundle.js"></script>
+<script src="/assets/js/app.bundle.js"></script>
 
 </body>
 </html>

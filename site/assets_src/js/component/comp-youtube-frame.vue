@@ -28,8 +28,8 @@
                          loop: 1,
                          controls: 0,
                          rel: 0,
-                         fs:0,
-                         modestbranding:1,
+                         fs:1,
+                         modestbranding:0,
                          showinfo:0
                      }"
                      :mute="true"
@@ -136,6 +136,7 @@
             handleWindowResize: function() {
                 this.windowW = window.windowWidth;
                 this.windowH = window.windowHeight;
+
                 let size = this.getSizeByFrameSize(
                     {width:this.videoWidth, height:this.videoHeight},
                     {width:this.frameWidth, height:this.frameHeight},

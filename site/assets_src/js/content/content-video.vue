@@ -24,9 +24,10 @@
                          loop: 0,
                          controls: 1,
                          rel: 0,
-                         fs:0,
+                         fs:1,
                          modestbranding:1,
-                         showinfo:0
+                         showinfo:1,
+                         title:1
                      }"
                  :mute="isMute"
                  @ended="handlePlayEnd"
@@ -73,7 +74,7 @@
             },
 
             videoHeight : function () {
-                return this.videoHeightSet();
+                return this.videoHeightGet();
             }
         },
 

@@ -1,0 +1,140 @@
+/* Webfont:  */
+
+
+@font-face {
+  font-family: 'GothamMedium';
+  src: url('../fonts/GothamMedium.eot');
+  src: url('../fonts/GothamMedium.eot?#iefix') format('embedded-opentype'),
+    //url('../fonts/GothamMedium.woff2') format('woff2'),
+  url('../fonts/GothamMedium.woff') format('woff'),
+  url('../fonts/GothamMedium.ttf') format('truetype'),
+  url('../fonts/GothamMedium.svg#GothamMedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'GothamThin';
+  src: url('../fonts/GothamThin.eot');
+  src: url('../fonts/GothamThin.eot?#iefix') format('embedded-opentype'),
+    //url('../fonts/GothamThin.woff2') format('woff2'),
+  url('../fonts/GothamThin.woff') format('woff'),
+  url('../fonts/GothamThin.ttf') format('truetype'),
+  url('../fonts/GothamThin.svg#GothamThin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'GothamLight';
+  src: url('../fonts/GothamLight.eot');
+  src: url('../fonts/GothamLight.eot?#iefix') format('embedded-opentype'),
+  //url('../fonts/GothamLight.woff2') format('woff2'),
+  url('../fonts/GothamLight.woff') format('woff'),
+  url('../fonts/GothamLight.ttf') format('truetype'),
+  url('../fonts/GothamLight.svg#GothamLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamUltra';
+  src: url('../fonts/GothamUltra.eot');
+  src: url('../fonts/GothamUltra.eot?#iefix') format('embedded-opentype'),
+  //url('../fonts/GothamUltra.woff2') format('woff2'),
+  url('../fonts/GothamUltra.woff') format('woff'),
+  url('../fonts/GothamUltra.ttf') format('truetype'),
+  url('../fonts/GothamUltra.svg#GothamUltra') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//@import url(http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
+
+body,input,textarea,select,button, td {
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  -moz-font-feature-settings:"liga", "kern";
+}
+
+.logo {
+  font-family: "GothamUltra";
+  font-size: 30px;
+  font-style : italic;
+}
+
+h1 {
+  white-space   : pre-line;
+  font-size   : 6vw;
+  font-family : "GothamUltra";
+  line-height : 0.75em;
+}
+
+h2 {
+  //text-transform : uppercase;
+  white-space   : pre-line;
+  //font-family   : "GothamUltra";
+  font-family: "GothamMedium";
+  font-size     : 34px;
+  line-height   : 40px;
+  //font-weight   : bold;
+  letter-spacing: -0.05em;
+}
+
+h3 {
+  white-space   : pre-line;
+  font-family : "GothamUltra";
+  font-size: 2vw;
+}
+
+h4 {
+  white-space   : pre-line;
+  font-family : "GothamUltra";
+  font-size: 1.5vw;
+  line-height: 1.6vw;
+}
+
+h5 {
+  white-space   : pre-line;
+  font-family    : "GothamMedium";
+  font-size      : 20px;
+  line-height: 28px;
+}
+
+h6 {
+  white-space   : pre-line;
+  font-family    : "GothamMedium";
+  font-size      : 12px;
+  line-height    : 20px;
+}
+
+p {
+  white-space : pre-line;
+  //font-family: "Nanum Gothic";
+  font-family : "GothamMedium";
+  font-size   : 16px;
+  line-height : 25px;
+  //font-weight   : bold;
+
+  letter-spacing : -0.02em;
+  //@include opacity(0.8);
+}
+
+small {
+  white-space : pre-line;
+  font-family : "GothamMedium";
+  font-size   : 10px;
+  line-height : 14px;
+  letter-spacing : -0.02em;
+  @include opacity(0.8);
+}
+
+menu {
+  font-family : "GothamUltra";
+  font-size   : 11px;
+  line-height : 15px;
+  letter-spacing : -0.02em;
+}

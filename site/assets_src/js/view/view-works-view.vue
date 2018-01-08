@@ -27,9 +27,10 @@
                          loop: 0,
                          controls: 1,
                          rel: 0,
-                         fs:0,
-                         modestbranding:0,
-                         showinfo:0
+                         fs:1,
+                         modestbranding:1,
+                         showinfo:1,
+                         title:1
                      }"
             ></youtube>
             <div class="title">

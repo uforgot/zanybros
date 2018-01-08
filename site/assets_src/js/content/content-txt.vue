@@ -26,7 +26,7 @@
                    v-html="item"
             ></span>
         </p>
-        <p class="image">
+        <p class="image-frame">
             <span v-for="(item, index) in jsonData.images"
                   class="scroll-animation hide"
                   :class="{'last':index == (jsonData.images.length-1) }"
@@ -113,6 +113,31 @@
                 // console.log(this.windowW + ' : ' + window.MobieWidth);
                 this.windowW = window.windowWidth;
                 this.windowH = window.windowHeight;
+
+                if (this.jsonData.class === 'left') {
+                    if (this.isPercentValue(this.parentData.jsonData.width)) {
+                        let percentLeft = this.getPercentValue(this.parentData.jsonData.width);
+                        this.leftPosition =  ((100/percentLeft) * 10) +'%';
+                        this.rightPosition =  'auto';
+                    }
+
+                    if (this.windowW < window.MobileWidth ) {
+                        this.leftPosition = 0;
+                    }
+                } else if (this.jsonData.class === 'right') {
+                    if (this.isPercentValue(this.parentData.jsonData.width)) {
+                        let percentRight = this.getPercentValue(this.parentData.jsonData.width);
+                        this.leftPosition = 'auto';
+                        this.rightPosition =  ((100/percentRight) * 10) +'%';
+
+                        if (this.windowW < window.MobileWidth ) {
+                            this.rightPosition = 0;
+                        }
+                    }
+                } else {
+//                this.leftPosition = '50%';
+//                this.marginLeft = '-20vw';
+                }
             }
         },
         watch : { },
@@ -122,24 +147,9 @@
         //created : function() {},
         //beforeMount : function() {},
         mounted : function() {
-            if (this.jsonData.class === 'left') {
-                if (this.isPercentValue(this.parentData.jsonData.width)) {
-                    let percentLeft = this.getPercentValue(this.parentData.jsonData.width);
-                    this.leftPosition =  ((100/percentLeft) * 10) +'%';
-                    this.rightPosition =  'auto';
-                }
-            } else if (this.jsonData.class === 'right') {
-                if (this.isPercentValue(this.parentData.jsonData.width)) {
-                    let percentRight = this.getPercentValue(this.parentData.jsonData.width);
-                    this.leftPosition = 'auto';
-                    this.rightPosition =  ((100/percentRight) * 10) +'%';
-                }
-            } else {
-//                this.leftPosition = '50%';
-//                this.marginLeft = '-20vw';
-            }
-
             EventBus.$on(EventBus.WINDOW_RESIZE, this.handleWindowResize);
+
+            this.handleWindowResize();
         },
         //beforeUpdate : function() {},
         //updated : function() {},

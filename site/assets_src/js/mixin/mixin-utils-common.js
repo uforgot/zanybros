@@ -117,10 +117,10 @@ Vue.mixin({
             let top = 0;
 
             for (i=0;i<elementArray.length;i++) {
-                console.log(elementArray[i].el.getAttribute('anchor-name') , refName);
+                //console.log(elementArray[i].el.getAttribute('anchor-name') , refName);
                 if (elementArray[i].el.getAttribute('anchor-name') == refName) {
                     top = elementArray[i].offset.top;
-                    console.log('---> ', top);
+                    //console.log('---> ', top);
                 }
             }
             // window.scrollTo(0, top);

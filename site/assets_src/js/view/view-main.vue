@@ -80,6 +80,7 @@
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
     import CompMainScroll from '../component/comp-main-scroll.vue';
     import {EventBus} from "../events/event-bus";
+
     export default {
         components:{
             CompYoutubeFrame,

@@ -15,7 +15,7 @@ header {
 
     h1 {
         font-size   : 7vw;
-        line-height : 0.75em;
+        line-height : 1.0em;
     }
 
     h2 {
@@ -24,11 +24,21 @@ header {
         letter-spacing: -0.05em;
     }
 
+    h3 {
+        font-size     : 4.3vw;
+        margin-top:0.2em;
+        line-height : 1.2em;
+    }
+
+    h4 {
+        font-size     : 3vw;
+        line-height   : 1.2em;
+    }
+
     p {
         font-size   : 3vw;
         line-height : 1.5em;
         letter-spacing : -0.02em;
-        @include opacity(0.8);
     }
 
     .frame-container {
@@ -48,23 +58,40 @@ header {
         }
     }
 
+    .view-content-title {
+        h3 {
+            margin-top:-1vw;
+        }
+    }
+
     .view-content-holder {
         .content-image {
-            overflow:hidden;
             position  : absolute;
-            left      : 50%; top : 50%;
-            transform : translateX(-50%) translateY(-50%);
+            left      : 10vw; top : 10vw;
+            transform : translateX(0) translateY(0);
+            overflow:hidden;
+            height:22vh;
 
             img {
-                width : 40vw;
+                width : 80vw;
             }
 
-            &.left { left : 30%; }
-            &.right { left : 70%; }
+            &.left { left :10vw; }
+            &.right { left :10vw; }
+        }
+
+
+        .content-about-partner {
+            .partner {
+                img {
+                    width : 20vw;
+                }
+            }
         }
 
         .content-txt {
             text-align: left;
+
             h2{
                 position:relative;
                 left:50%;
@@ -83,29 +110,42 @@ header {
                 width:80vw;
             }
 
-            .image {
-                margin-top:2vw;
+            .image-frame {
+                margin-top:5vw;
+                margin-left:10vw;
                 span {
-                    width:100%;
+                    //width:100%;
                     display:inline-block;
 
                     div {
                         text-align:center;
                     }
+
+                    .title {
+                        display:none;
+                    }
+                }
+
+                img {
+                    max-height:20vw;
                 }
             }
 
             &.left {
+                width:100vw;
                 .txt {
                     max-width : 80vw;
                     width     : 80vw;
+                    left:10vw;
                 }
             }
 
             &.right {
+                width:100vw;
                 .txt {
                     max-width : 80vw;
                     width     : 80vw;
+                    left:10vw;
                 }
             }
 
@@ -117,7 +157,7 @@ header {
         .contact {
             h1 {
                 font-size:4vw;
-                margin-bottom:1vw
+                margin-bottom:1vw;
             }
             p {
                 font-family: "GothamLight";
@@ -134,10 +174,10 @@ header {
                 font-size:3vw;
                 border-bottom: 1px solid #ffffff;
             }
-            padding: 4vw 0 0 0;
+            padding: 10vw 0 0 0;
         }
         .copyright {
-            padding: 4vw 0 4vw 0;
+            padding: 4vw 0 10vw 0;
 
             .logo {
                 left: 40px;

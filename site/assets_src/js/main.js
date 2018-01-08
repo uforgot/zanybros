@@ -28,14 +28,23 @@ import {EventBus} from "./events/event-bus";
 window.noTransition = false;
 window.currentContentsX = 0;
 window.rootPath = '';
-window.windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-window.windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+window.windowWidth = 0;
+window.windowHeight = 0;
+
+window.MobileWidth = 767;
+
+let WINDOW_MODE_NONE = 'none';
+let WINDOW_MODE_LANDSCAPE = 'landscape';
+let WINDOW_MODE_PORTRAIT = 'portarit';
+window.windowMode = WINDOW_MODE_NONE;
 
 window.addEventListener('popstate', function (e) {
     //console.log('popstate');
-})
+});
 
 function init() {
+    resizeHandler();
+
     Axios({
         method:'get',
         url: ZanyBrosDataUrl,
@@ -48,7 +57,6 @@ function init() {
             window.ZanyBrosData = $response;
             window.ZanyBrosWorksData = UtilsData.getWorksDatafromJson(window.ZanyBrosData);
             window.ZanyBrosTitlaArray = UtilsData.getTitleArray(window.ZanyBrosData);
-            window.MobieWidth = 767;
 
             window.app = new Vue({
                 render: h => h(App)
@@ -69,8 +77,30 @@ function resizeHandler($e){
     let currentWindowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
+    let windowMode;
+
+    // console.log('resize');
+
+    if ( _isMobile) {
+        // console.log('currentWindowWidth');
+        currentWindowHeight = currentWindowWidth * (16/9);
+    }
+
+    if (_isMobile) {
+        if(window.windowWidth > window.windowHeight) {
+            windowMode = WINDOW_MODE_LANDSCAPE;
+        } else {
+            windowMode = WINDOW_MODE_PORTRAIT;
+        }
+
+        if (windowMode != window.windowMode) {
+            window.windowMode = windowMode;
+        }
+
+    }
+
     window.windowWidth = currentWindowWidth;
-    window.windowHeight = currentWindowHeight;
+    window.windowHeight = Math.round(currentWindowHeight);
     EventBus.$emit(EventBus.WINDOW_RESIZE, $e);
 }
 

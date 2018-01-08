@@ -58,6 +58,12 @@
             </div>
         </div>
         <view-footer></view-footer>
+        <div v-if="isMobile" class="mobile-margin"
+             :style = "{
+                    'height' : mobileBorderHeight + 'px'
+                }
+            "
+        ></div>
     </div>
         <transition :name="transitionPopup" mode="out-in">
             <keep-alive>
@@ -139,6 +145,10 @@
 
         data: function() {
             return {
+                isMobile:_isMobile,
+                mobileBorderHeight:0,
+                mobileFrameHeight:0,
+
                 nextIndex:Number,
                 prevIndex:Number,
 
@@ -196,6 +206,9 @@
             handleInteractionStart: function ($e) {
                 if(!this.isTouchStart){
                     if (this.$route.name==='works-view') return;
+                    if (_isMobile === false) {
+                        if ($e.y > window.windowHeight) return;
+                    }
 
                     this.isDrag = true;
                     this.firstX = $e.x;
@@ -312,6 +325,13 @@
                     this.innerH = 'auto';
                 }
 
+                let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                this.mobileFrameHeight = currentWindowHeight;
+                if (window.windowHeight > window.windowWidth) {
+                    this.mobileBorderHeight = currentWindowHeight - (window.windowWidth * (16/9));
+                } else {
+                    this.mobileBorderHeight = 0;
+                }
             },
             onWorkViewShow:function(){
                 var owner = this;
@@ -334,7 +354,7 @@
             onScrollHandler : function($e) {
                 let scrollTop = window.pageYOffset;
                 this.fixY = scrollTop;
-
+                this.handleInteractionCancel();
             },
             onMenuShowHandler:function(){
                 this.isMenuViewShow = true;

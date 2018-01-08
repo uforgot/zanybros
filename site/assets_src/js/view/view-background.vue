@@ -8,9 +8,13 @@
 <template>
     <div class="view-background"
          :class="{'hide':!isVideoPlay}"
+         :style="{
+             width: windowW + 'px',
+             height: windowH + 'px'
+        }"
     >
         <comp-video-frame
-                video-url="/site/assets/images/mp4/showreel.mp4"
+                video-url="/assets/images/mp4/showreel.mp4"
                 video-width="640"
                 video-height="640"
                 :video-play="isVideoPlay"
@@ -37,13 +41,11 @@
 </style>
 
 <script>
-    import mixinResizeEvent from '../mixin/mixin-control-resize.vue';
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
     import CompVideoFrame from '../component/comp-video-frame.vue';
     import {EventBus} from "../events/event-bus";
 
     export default {
-        mixins: [mixinResizeEvent],
         components: {
             CompYoutubeFrame,
             CompVideoFrame
@@ -53,7 +55,9 @@
         data: function () {
             return {
                 currentScale:1,
-                isVideoPlay:true
+                isVideoPlay:true,
+                windowW:window.windowWidth,
+                windowH:window.windowHeight
             }
         },
 
@@ -64,13 +68,11 @@
         },
         methods : {
             onResizeHandler :function($e) {
-//                this.setElArray();
+                this.windowW = window.windowWidth;
+                this.windowH = window.windowHeight;
             },
             onScrollHandler : function($e) {
-//                let scrollTop = 1 + ((1-(this.windowHeight - window.pageYOffset)/this.windowHeight) * 3);
-//                this.currentScale = scrollTop;
-//                console.log(scrollTop);
-                if ( window.pageYOffset > this.windowHeight) {
+                if ( window.pageYOffset > this.windowH) {
                     this.isVideoPlay = false;
                 } else {
                     this.isVideoPlay = true;
