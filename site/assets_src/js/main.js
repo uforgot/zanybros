@@ -27,10 +27,9 @@ import {EventBus} from "./events/event-bus";
 
 window.noTransition = false;
 window.currentContentsX = 0;
-window.rootPath = '';
 window.windowWidth = 0;
 window.windowHeight = 0;
-
+window.mobileRatio = 16/9.5;
 window.MobileWidth = 767;
 
 let WINDOW_MODE_NONE = 'none';
@@ -83,7 +82,7 @@ function resizeHandler($e){
 
     if ( _isMobile) {
         // console.log('currentWindowWidth');
-        currentWindowHeight = currentWindowWidth * (16/9);
+        currentWindowHeight = currentWindowWidth * window.mobileRatio;
     }
 
     if (_isMobile) {

@@ -14,8 +14,12 @@ header {
     }
 
     h1 {
-        font-size   : 7vw;
+        font-size   : 7.8vw;
         line-height : 1.0em;
+        letter-spacing: -0.05em;
+
+        box-shadow:
+        inset 0 -0.18em white,
     }
 
     h2 {
@@ -41,6 +45,14 @@ header {
         letter-spacing : -0.02em;
     }
 
+    menu {
+        font-family : 'Montserrat', sans-serif;
+        font-size   : 8px;
+        line-height : 20px;
+        letter-spacing : -0.02em;
+        font-weight : 900;
+    }
+
     .frame-container {
         .logo {
             left:20px;
@@ -56,6 +68,10 @@ header {
         .navigation-container {
             display:none;
         }
+
+        .language-container {
+            display:none;
+        }
     }
 
     .view-content-title {
@@ -64,7 +80,25 @@ header {
         }
     }
 
+    .view-main {
+        .title {
+            ul {
+                position   : absolute;
+                left       : 50%; width : 80%; bottom : 10%;
+                transform  : translateX(-50%);
+                text-align : center;
+
+                li {
+                    width         : 100%;
+                    margin-bottom : 2vw;
+                    text-align    : left;
+                }
+            }
+        }
+    }
+
     .view-content-holder {
+
         .content-image {
             position  : absolute;
             left      : 10vw; top : 10vw;
@@ -158,6 +192,8 @@ header {
             h1 {
                 font-size:4vw;
                 margin-bottom:1vw;
+
+                box-shadow:none;
             }
             p {
                 font-family: "GothamLight";

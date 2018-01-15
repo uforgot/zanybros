@@ -11,9 +11,20 @@
              :class="{'black':isViewShow}"
         ><router-link :to="{name:'about'}" >ZANYBROS&nbsp;</router-link></div>
 
-        <div class="language-container">
-            <div>EN</div>
-            <div>CH</div>
+        <div class="language-container"
+            :style="{
+                'top' : (windowH -50) +'px'
+            }"
+        >
+            <div class="language-txt">
+                <menu
+                        :class="{'focus':languageEn}"
+                ><a href="http://www.zanybros.com/">EN</a></menu>
+                <menu
+                        :class="{'focus':languageCh}"
+                ><a href="http://www.zanybros.com/cn/">CH</a></menu>
+                <div class="bar"></div>
+            </div>
         </div>
 
         <menu class="title">
@@ -71,11 +82,14 @@
         <div v-if="isMobile" class="mobile-border"
             :style = "{
                     'top' : (mobileFrameHeight - mobileBorderHeight) + 'px',
-                    'height' : mobileBorderHeight + 'px'
+                    'height' : '1000px'
                 }
             "
         ></div>
-        <content-menu></content-menu>
+        <content-menu
+                :language-en="languageEn"
+                :language-ch="languageCh"
+        ></content-menu>
 
         <div class="btn-close"
              @click="menuCloseClickHandler"
@@ -204,6 +218,11 @@
         props: {},
         data: function() {
             return {
+                languageEn:true,
+                languageCh:false,
+                windowW:window.windowWidth,
+                windowH:window.windowHeight,
+
                 isMobile:_isMobile,
                 mobileBorderHeight:0,
                 mobileFrameHeight:0,
@@ -227,11 +246,14 @@
                 let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
                 this.mobileFrameHeight = currentWindowHeight;
                 if (window.windowHeight > window.windowWidth) {
-                    this.mobileBorderHeight = currentWindowHeight - (window.windowWidth * (16/9));
+                    this.mobileBorderHeight = currentWindowHeight - (window.windowWidth * window.mobileRatio);
                         //window.windowHeight - window.windowWidth * (16 / 9);
                 } else {
                     this.mobileBorderHeight = 0;
                 }
+
+                this.windowW = window.windowWidth;
+                this.windowH = window.windowHeight;
             },
             menuCloseClickHandler : function($e) {
                 if (this.isViewShow) {
@@ -284,7 +306,7 @@
         watch : {
             '$route'(to, from) {
                 //console.log(to.name + ':');
-                if(to.name == 'works-view') {
+                if(to.name === 'works-view') {
                     this.isViewShow = true;
                 } else {
                     this.isViewShow = false;
@@ -297,9 +319,16 @@
         //created : function() {},
         //beforeMount : function() {},
         mounted : function() {
-            if (this.$route.name == 'works-view') {
+            //language focus
+            if (window.rootPath === '/cn') {
+                this.languageCh = true;
+                this.languageEn = false;
+            }
+
+            if (this.$route.name === 'works-view') {
                 this.isViewShow = true;
             }
+
             EventBus.$on(EventBus.MENU_CLICK, this.setCurrentIndex);
             EventBus.$on(EventBus.MENU_SHOW,this.setMenuShow);
             EventBus.$on(EventBus.MENU_HIDE,this.setMenuHide);

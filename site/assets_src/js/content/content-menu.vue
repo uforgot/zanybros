@@ -45,12 +45,23 @@
                     <div @click="menuCloseClickHandler">OUR WORKS</div>
                 </router-link></h1>
             </li>
+            <li>
+                <div class="language-container">
+                    <menu
+                            :class="{'focus':languageEn}"
+                    ><a href="http://www.zanybros.com/">ENGLISH</a></menu>
+                    <menu
+                            :class="{'focus':languageCh}"
+                    ><a href="http://www.zanybros.com/cn/">CHINESE</a></menu>
+                </div>
+            </li>
         </ul>
     </div>
 </template>
 
 <style scoped lang="scss">
     @import "~scssMixin";
+
 
     .menu-container {
         .frame {
@@ -81,10 +92,18 @@
                 @include css-value-transition('margin-top 0.2s ease-out 0.3s, opacity 0.2s ease-out 0.3s');
             }
 
+            .language-container {
+                @include css-value-transition('margin-top 0.2s ease-out 0.3s, opacity 0.2s ease-out 0.3s');
+            }
 
             ul {
                 li {
                     h1 {
+                        margin-top:1vw;
+                        opacity:1;
+                    }
+
+                    .language-container {
                         margin-top:1vw;
                         opacity:1;
                     }
@@ -121,6 +140,8 @@
         components: {},
 
         props: {
+            'language-en':{},
+            'language-ch':{}
         },
         data: function () {
             return {

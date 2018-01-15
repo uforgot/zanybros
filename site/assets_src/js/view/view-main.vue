@@ -19,24 +19,29 @@
          }"
         >
             <ul>
-                <li
-                    v-for="item in titleArray"
-                ><div class="container"
+                <li v-for="item in titleArray">
+                    <div class="container"
                       :class="{'din':item.isDin}">
-                    <div class="focus-bar"
-                         :class="{'focus':item.isFocus}"
-                    ></div>
-                    <h1 v-html="item.menu"
-                        :class="{'focus':item.isFocus}"
-                    ></h1>
-        <div class="button"
-             @mouseover="titleMouseOverHandler(item.index)"
-             @mouseout="titleMouseOutHandler"
-             @click="scrollToTitle(item.anchor)"
-        ></div></div>
+                        <div class="focus-bar"
+                             :class="{'focus':item.isFocus}"
+                        ></div>
+                        <h1 v-html="item.menu"
+                            :class="{'focus':item.isFocus}"
+                        ></h1>
+                        <div class="button"
+                             @mouseover="titleMouseOverHandler(item.index)"
+                             @mouseout="titleMouseOutHandler"
+                             @click="scrollToTitle(item.anchor)"
+                        ></div>
+                    </div>
                 </li>
             </ul>
         </div>
+        <comp-scroll
+                :data-width="frameWidth"
+                :data-height="frameHeight"
+            :data-top="frameHeight"
+        ></comp-scroll>
     </div>
 </template>
 
@@ -50,6 +55,10 @@
                         @include css-value-transition('opacity 0.2s ease-out 0s');
                         &.din {
                             opacity:0.1;
+
+                            @media only screen and (max-width : 767px) {
+                                opacity:1.0;
+                            }
                         }
                     }
 
@@ -60,6 +69,10 @@
                             /*border:2vw solid #fff;*/
                             left:0%;
                             width:100%;
+
+                            @media only screen and (max-width : 767px) {
+                                width:0%;
+                            }
                         }
                     }
 
@@ -78,13 +91,13 @@
 
 <script>
     import CompYoutubeFrame from '../component/comp-youtube-frame.vue';
-    import CompMainScroll from '../component/comp-main-scroll.vue';
+    import CompScroll from '../component/comp-scroll.vue';
     import {EventBus} from "../events/event-bus";
 
     export default {
         components:{
             CompYoutubeFrame,
-            CompMainScroll
+            CompScroll
         },
 
         props : {

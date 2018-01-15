@@ -39,7 +39,7 @@
 
         computed: {
             emailLink : function() {
-                return "mailto://" + this.dataFooter.contact.email;
+                return "mailto:" + this.dataFooter.contact.email;
             }
         },
         methods : {},

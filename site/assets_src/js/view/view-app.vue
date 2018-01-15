@@ -68,12 +68,12 @@
     window.routerMode = 'history';
     //window.routerMode = 'hash';
 
-    if (window.routerMode==='hash') {
-        window.rootPath = '';
-    } else {
-        window.rootPath = '';
+//    if (window.routerMode==='hash') {
+//        window.rootPath = '';
+//    } else {
+//        window.rootPath = '';
 //        window.rootPath = '/site';
-    }
+//    }
 
     const routes = [
         { path: '*',redirect:window.rootPath+'/about'},
