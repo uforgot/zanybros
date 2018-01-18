@@ -24,8 +24,10 @@
                 top:fixY+'px'
             }">
             <div
-                    :is="dataPrevContents.contents[0].component"
-                    :json-data = "dataPrevContents.contents[0].data"
+                    v-for="index in 3"
+                    :is="dataPrevContents.contents[index-1].component"
+                    :key ="dataPrevContents.contents[index-1].id"
+                    :json-data = "dataPrevContents.contents[index-1].data"
                     :data-index="prevIndex"
             >
             </div>
@@ -37,8 +39,10 @@
                 top:fixY+'px'
             }">
             <div
-                    :is="dataNextContents.contents[0].component"
-                    :json-data = "dataNextContents.contents[0].data"
+                    v-for="index in 3"
+                    :is="dataNextContents.contents[index-1].component"
+                    :key ="dataNextContents.contents[index-1].id"
+                    :json-data = "dataNextContents.contents[index-1].data"
                     :data-index="nextIndex"
             >
             </div>
@@ -58,12 +62,6 @@
             </div>
         </div>
         <view-footer></view-footer>
-        <div v-if="isMobile" class="mobile-margin"
-             :style = "{
-                    'height' : mobileBorderHeight + 'px'
-                }
-            "
-        ></div>
     </div>
         <transition :name="transitionPopup" mode="out-in">
             <keep-alive>
@@ -146,8 +144,6 @@
         data: function() {
             return {
                 isMobile:_isMobile,
-                mobileBorderHeight:0,
-                mobileFrameHeight:0,
 
                 nextIndex:Number,
                 prevIndex:Number,
@@ -317,6 +313,7 @@
                 this.setContentsSnapX();
                 this.onScrollHandler();
                 this.windowW = window.windowWidth;
+
                 if(this.isWorksViewShow) {
                     var w = window.windowWidth*0.8 > 1000 ? 1000 : window.windowWidth*0.8;
                     var h = w*9/16+280 > window.windowHeight ? w*9/16+280 : window.windowHeight;
@@ -326,12 +323,6 @@
                 }
 
                 let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-                this.mobileFrameHeight = currentWindowHeight;
-                if (window.windowHeight > window.windowWidth) {
-                    this.mobileBorderHeight = currentWindowHeight - (window.windowWidth * (16/9));
-                } else {
-                    this.mobileBorderHeight = 0;
-                }
             },
             onWorkViewShow:function(){
                 var owner = this;

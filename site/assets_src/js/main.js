@@ -82,7 +82,8 @@ function resizeHandler($e){
 
     if ( _isMobile) {
         // console.log('currentWindowWidth');
-        currentWindowHeight = currentWindowWidth * window.mobileRatio;
+        // currentWindowHeight = currentWindowWidth * window.mobileRatio;
+        currentWindowHeight = 600;
     }
 
     if (_isMobile) {

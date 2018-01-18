@@ -79,13 +79,6 @@
             ></div>
         </menu>
 
-        <div v-if="isMobile" class="mobile-border"
-            :style = "{
-                    'top' : (mobileFrameHeight - mobileBorderHeight) + 'px',
-                    'height' : '1000px'
-                }
-            "
-        ></div>
         <content-menu
                 :language-en="languageEn"
                 :language-ch="languageCh"
@@ -224,8 +217,6 @@
                 windowH:window.windowHeight,
 
                 isMobile:_isMobile,
-                mobileBorderHeight:0,
-                mobileFrameHeight:0,
 
                 isViewShow:false,
                 isMenuShow:false,
@@ -243,15 +234,6 @@
 
         methods : {
             handleWindowResize: function() {
-                let currentWindowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-                this.mobileFrameHeight = currentWindowHeight;
-                if (window.windowHeight > window.windowWidth) {
-                    this.mobileBorderHeight = currentWindowHeight - (window.windowWidth * window.mobileRatio);
-                        //window.windowHeight - window.windowWidth * (16 / 9);
-                } else {
-                    this.mobileBorderHeight = 0;
-                }
-
                 this.windowW = window.windowWidth;
                 this.windowH = window.windowHeight;
             },

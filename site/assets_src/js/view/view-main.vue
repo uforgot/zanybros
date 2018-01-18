@@ -63,16 +63,10 @@
                     }
 
                     .focus-bar {
-                        @include css-value-transition('left 0.2s ease-out 0s, width 0.2s ease-out 0s');
+                        @include css-value-transition('bottom 0.2s ease-out 0s');
 
                         &.focus {
-                            /*border:2vw solid #fff;*/
-                            left:0%;
-                            width:100%;
-
-                            @media only screen and (max-width : 767px) {
-                                width:0%;
-                            }
+                            bottom:44%;
                         }
                     }
 

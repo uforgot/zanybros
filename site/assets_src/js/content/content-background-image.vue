@@ -35,6 +35,15 @@
         @include opacity(1);
         @include transform(scale(1) translate(0px, 0px));
     }
+
+    @media only screen and (max-width : 767px) {
+        .hide {
+            @include css-value-transition(none);
+        }
+        .show {
+            @include css-value-transition(none);
+        }
+    }
 </style>
 
 <script>
